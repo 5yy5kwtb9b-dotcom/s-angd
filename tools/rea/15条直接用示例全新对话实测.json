@@ -1,0 +1,424 @@
+{
+  "日期": "2026-11-20",
+  "原文提交": "0d8ecebaaf81e00a057448b4b3ff9f3b5afef2a9",
+  "概要": "15 条原文均在一条用户消息内完成目标，其中 14 条全程 MCP 零报错。最终 15 条指令均通过零报错核验。共使用 16 个独立临时对话。",
+  "逐条结果": [
+    {
+      "编号": 1,
+      "工具": "inspect_packet_fields",
+      "最终指令": "请用 `mac_pcap` 的 `inspect_packet_fields` 查找以 frame.len 开头的 Wireshark 字段，告诉我哪个字段表示帧长。",
+      "观察结果": "frame.len 的标签为 Frame Length，表示以字节计的帧长。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "2467e778c5d35a9b",
+          "轮次指纹": "87b065ad870190af",
+          "用户消息数": 1,
+          "指令SHA256": "47c813496ead8898c04912a6062ee83533c7fbb6dda40dfed7a21d213f9a8961",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "inspect_packet_fields",
+              "有效返回": true,
+              "服务": "mac_pcap",
+              "返回摘要SHA256": "1b8b9dd90ae9b5c073c8b598a30228b862f6c4744f81c16764fedc3379ca534f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 4,
+      "工具": "inspect_pcap_client",
+      "最终指令": "请用 `rea` 的 `inspect_pcap_client` 检查这台 Mac 上 TShark 和 capinfos 的实际路径和版本。",
+      "观察结果": "返回 TShark 和 capinfos 的本机路径，两者版本均为 4.6.10。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "097505c54f999f5c",
+          "轮次指纹": "3edf3e37b17d445f",
+          "用户消息数": 1,
+          "指令SHA256": "607823e039145fc0d5240f53e61ec64d2ca642a952768a0f1e5fa19c2163422a",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "inspect_pcap_client",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_b805e5bad0da859a48437dfd850b0bcc5fd7385741c58bd94b1dd1823381a934",
+              "返回摘要SHA256": "41b791c9f0252585517c429c9d3dcf0238d63212414aa70a4b066d1eeaa3f3f4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 33,
+      "工具": "inspect_apktool_client",
+      "最终指令": "请用 `rea` 的 `inspect_apktool_client` 检查这台 Mac 实际使用的 Apktool 启动命令和版本。",
+      "观察结果": "返回了实际启动命令，Apktool 版本为 3.0.3。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "b6b3980e2867ddca",
+          "轮次指纹": "6ca20380dde526c1",
+          "用户消息数": 1,
+          "指令SHA256": "6b6def99de65525b4afe5fd7f83b01452012c996902dbd8beb39a824361bdcaf",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "inspect_apktool_client",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_8a33e1623b683f13c2ee10841de11b74462c23a3c78ee05cf35fde8ef1ad6957",
+              "返回摘要SHA256": "7c8547ff56f457fc0e9669f2b79ad6d8c0e87fc86f3e47a228ff74bcc5c070a1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 35,
+      "工具": "inspect_adb_client",
+      "最终指令": "请用 `rea` 的 `inspect_adb_client` 告诉我本机 ADB 客户端的安装位置和版本。",
+      "观察结果": "返回 ADB 安装路径和版本 37.0.1-15733141。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "e04236e936bba6dd",
+          "轮次指纹": "8ee004363bbd39a7",
+          "用户消息数": 1,
+          "指令SHA256": "db1abf6ad82fd701578d45db994684cd53460a019d3fe7b1bd6a7fe19690a794",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "inspect_adb_client",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a1816d9a3d7b43e8a7e09b1f10ecc5636500e5b7fe685bc5992691d3f161d34f",
+              "返回摘要SHA256": "1322568cba8150d75d974495d1a3c656ae75281ac6bfe77e358c5f8d685cedfc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 36,
+      "工具": "list_adb_devices",
+      "最终指令": "请用 `rea` 的 `list_adb_devices` 只列出 ADB 当前可见的设备和连接状态，若列表为空就告诉我。",
+      "观察结果": "ADB 当前可见设备为 0 台。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "4d263191d82bacb8",
+          "轮次指纹": "8284a1d250e43567",
+          "用户消息数": 1,
+          "指令SHA256": "ac063e75871e1c58a2b2908a80a84160bacbfd294c08f48e4671fc6121ab671b",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "list_adb_devices",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_6a97be5368f6cb40b85be6d6a699fb9f333db4af95b5c0f16603507a16296366",
+              "返回摘要SHA256": "cb8099355856ca96b6816a047cdccf578f7c28250f4e1ee85a0412f0b7cc2cf2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 55,
+      "工具": "binary_session",
+      "最终指令": "请用 `rea` 的 `binary_session` 告诉我当前 REA 会话选中哪个文件、使用哪个分析后端。",
+      "观察结果": "当前会话没有选中文件，也没有绑定分析后端。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "816b3d6f86181934",
+          "轮次指纹": "80ce78e433877e3f",
+          "用户消息数": 1,
+          "指令SHA256": "0ea3afa6eb40aecc902c5ee0aa8b8feb798c812457710c98fd5e3b23ae1e0d46",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "binary_session",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "145bebcb271a0370b17d5f7fe4bfdae2796db1c0a2217b3d9dd47039f5302b2b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 68,
+      "工具": "list_cutter_sessions",
+      "最终指令": "请用 `rea` 的 `list_cutter_sessions` 列出这台 Mac 当前可发现的 Cutter 桥接会话，没有会话就报告空列表。",
+      "观察结果": "当前可发现的 Cutter 桥接会话为 0 个。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "751af1729f8b7c48",
+          "轮次指纹": "723cf9d5a29482f9",
+          "用户消息数": 1,
+          "指令SHA256": "eee6effeb382ed7ead9058978b08d539bec6c8b731999d1cbbdeacdecbe2f65d",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "list_cutter_sessions",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "9ec2e5be60d1575cef9da00fc88db652a15fb3270c734a36f913975010809957"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 101,
+      "工具": "get_evidence_bundle",
+      "最终指令": "请用 `rea` 的 `get_evidence_bundle` 以摘要列出当前会话保留的证据，给出记录 ID 和产生记录的工具。",
+      "观察结果": "摘要中有 0 条保留证据。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "1aaa6398ff9b0f16",
+          "轮次指纹": "7b0aed5b19d1ae37",
+          "用户消息数": 1,
+          "指令SHA256": "7b4b9e1122b6c3ee2017e777ad1f8780f2fb8190461d48c42a70eb328d50dbf5",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "60e382639c417a9132fd0f1e63cba2a98df115547c74daf07b7e3c0561968adb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 102,
+      "工具": "export_evidence_bundle",
+      "最终指令": "请用 `rea` 的 `export_evidence_bundle` 把本次测试会话的证据包保存为工作区中新文件 demo-evidence.json。",
+      "观察结果": "成功写入并解析 demo-evidence.json，105 字节，内含 0 条证据。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "e423afe8f4dd403e",
+          "轮次指纹": "08131e2d607bf498",
+          "用户消息数": 1,
+          "指令SHA256": "0f46991bdba5e0e8e1f604363de0d8cbafb4a6d84c808d56f92ae002cceaba97",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "export_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "c6669b9fdd32d49e9cfb60d97549902958bba44fe146d4f7bcbac5571f495478"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 112,
+      "工具": "record_unknown",
+      "最终指令": "请用 `rea` 的 `record_unknown` 在“离线输出”领域登记中等严重度问题“相同输入是否生成相同摘要”，以受控重放的实测结果为结案依据，暂不指定环境、关联记录或后续探针，并返回问题 ID。",
+      "观察结果": "登记了一项中等严重度待解问题并返回问题 ID，结案要求为受控重放的实测结果。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "75f19a40d678d703",
+          "轮次指纹": "66b8d1dd20e66e05",
+          "用户消息数": 1,
+          "指令SHA256": "a9c9886383c59cbab933ae1eee109473c21d9af62d741c25210a324516c02a19",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "record_unknown",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "9e54f8a2793b2c7ce299445753261366d245f12944cd2c030fe2ed62e158a5b2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 113,
+      "工具": "list_unknowns",
+      "最终指令": "请用 `rea` 的 `list_unknowns` 列出当前调查中严重度为中等的待解问题，最多显示十条。",
+      "观察结果": "按中等严重度筛选，当前调查返回 0 条。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "468788f3a8be4cc8",
+          "轮次指纹": "dfe28d8e7975d62a",
+          "用户消息数": 1,
+          "指令SHA256": "c4b88b5278f4ed27de0f2af12da34beaf96456c01e0019732d48a2e8a4747624",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "list_unknowns",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "0997db3debdbcc3cdb878ee087ae375cbe4d620070ea9c8fe235f83cbc7f8c43"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 118,
+      "工具": "guided_workflows",
+      "最终指令": "请用 `rea` 的 `guided_workflows` 列出 REA 内置的工作流程，并指出哪一个适合初次检查应用包。",
+      "观察结果": "返回 6 个内置流程。已有功能线索时可选 investigate_feature，流程列表未提供通用的单包初检。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "d3aeb189ef743971",
+          "轮次指纹": "65a2ef9a83b97c9c",
+          "用户消息数": 1,
+          "指令SHA256": "716f591adae74c85f73b5319d3345c39ae27a3d19a6bdc9cc0e321693208b580",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "guided_workflows",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "2e8d6d34bc3b9d8db35f8b03052e00e6348483b1ea961d9af2c0b0b916affa71"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 119,
+      "工具": "search_guidance",
+      "最终指令": "请用 `rea` 的 `search_guidance` 在已安装的指南中搜索 JavaScript module，给出最相关的三个章节及定位信息。",
+      "观察结果": "JavaScript module 命中 10 个章节，返回了前三项及其定位信息。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "bd00f063314d938d",
+          "轮次指纹": "42b05c2d30ffd3ec",
+          "用户消息数": 1,
+          "指令SHA256": "0e1a48a8b531f41121aa47688de7d8c0e3aa8781e4da6c86f2ec2c22a099e0e8",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "search_guidance",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "edf3787d8a1fd34c07db0e251cea93ca77347df8d0a61d0ec3bda44c07dc896c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 121,
+      "工具": "inspect_analysis_settings",
+      "最终指令": "请用 `rea` 的 `inspect_analysis_settings` 查看 asar.max_header_bytes 的当前值、允许范围和生效时机。",
+      "观察结果": "当前值为 16 MiB，允许范围为 1 字节至 256 MiB，下一次适用操作生效。",
+      "修订说明": "",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "4d3f76b9a03bd35c",
+          "轮次指纹": "d62701f0ff6b621b",
+          "用户消息数": 1,
+          "指令SHA256": "91bc1d9b37f78cd6c95c97532b6322126a6cbdbba7b2f2dbebd69f0acf201b54",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "inspect_analysis_settings",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "fdbd417390370f67b977d7ad66de082e1152eeb26687345e3ea94b937d6262fa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 122,
+      "工具": "update_analysis_settings",
+      "最终指令": "请用 `rea` 的 `update_analysis_settings`，按参数 {\"changes\":[{\"setting\":\"asar.max_header_bytes\",\"action\":\"reset\"}]} 仅将本次 REA 服务的这一项恢复到启动值，报告恢复后的值和 changed 标志。",
+      "观察结果": "重置后的值为 16 MiB，与启动值相同，changed=false。",
+      "修订说明": "首轮误传 reset: true，返回 invalid_request。修订指令明确指定 changes[0].action 为 reset。",
+      "对话记录": [
+        {
+          "指令版本": "original",
+          "对话指纹": "b8d4edf825952361",
+          "轮次指纹": "fa110fe51223650a",
+          "用户消息数": 1,
+          "指令SHA256": "7634a240b2e5938bcf7d4fcb6add5de5c8bfd6043d528c6fc5902fad93d92006",
+          "完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "工具": "update_analysis_settings",
+              "有效返回": false,
+              "服务": "rea",
+              "错误": "invalid_request"
+            },
+            {
+              "工具": "update_analysis_settings",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "7255fe15d533e371bff187aab956d425c192327735703adbb3d452609c001970"
+            }
+          ]
+        },
+        {
+          "指令版本": "revised",
+          "对话指纹": "d77587b035ed59ae",
+          "轮次指纹": "37e6c7273078c2e1",
+          "用户消息数": 1,
+          "指令SHA256": "ab1caf5109c9e36827cbee2598dfb5730d8098fe531a79661703462258e896f9",
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "工具": "update_analysis_settings",
+              "有效返回": true,
+              "服务": "rea",
+              "返回摘要SHA256": "7255fe15d533e371bff187aab956d425c192327735703adbb3d452609c001970"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

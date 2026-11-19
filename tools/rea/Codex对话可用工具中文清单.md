@@ -8,6 +8,8 @@
 
 **练习入口**　[下载测试样例包](./测试样例.zip) · [50 条文件示例和 58 条会话准备指令](./Codex样例与会话准备.md)。各行工具名后的链接可直达本项。
 
+[15 条直接用示例的最终指令和全新对话实测](./15条直接用示例全新对话实测.md)
+
 ## 对话实测结果（2026-11-20）
 
 逐句发送示例并核对 Codex 实际发起的 MCP 调用。全部 **123 条**都在本机得到与示例对应的结果，其中 **15 条直接用**，**50 条先备文件或材料**，**58 条先备会话或前序结果**。本轮调整了 12 句，清单采用的每个版本都已通过对话复测。[逐条调用记录](./Codex中文示例逐条实测.json)
@@ -238,5 +240,5 @@
 | 119 | `search_guidance` | 按关键词查找已安装的 REA 指南章节。 | REA | **直接用** · 本机已安装 REA 指南 | 请用 `rea` 的 `search_guidance` 在已安装的指南中搜索 JavaScript module，给出最相关的三个章节及定位信息。 | 关键词命中 10 章，给出前三章及定位信息。 |
 | 120 | `read_guidance_section` [〔准备〕](./Codex样例与会话准备.md#item-120) | 读取选定的指南章节。 | REA | **先备会话或前序结果** · 上次指南搜索返回的章节定位符 | 请用 `rea` 的 `read_guidance_section` 用上一条指南搜索结果中第一项的定位信息读取该节，并概括操作步骤。 | 成功读到首个匹配章节及操作步骤。 |
 | 121 | `inspect_analysis_settings` | 查看分析的大小限制、超时和工作进程内存设置。 | REA | **直接用** · 指定设置名即可 | 请用 `rea` 的 `inspect_analysis_settings` 查看 asar.max_header_bytes 的当前值、允许范围和生效时机。 | 读到 ASAR 文件头限制默认值 16 MiB 及允许范围。 |
-| 122 | `update_analysis_settings` | 调整或重置后续分析任务使用的运行时设置。 | REA | **直接用** · 指定设置及重置动作即可 | 请用 `rea` 的 `update_analysis_settings` 仅将本次 REA 服务中的 asar.max_header_bytes 重置为启动时的值，并报告结果。 | 恢复到启动值；原值已经相同，返回 changed=false。 |
+| 122 | `update_analysis_settings` | 调整或重置后续分析任务使用的运行时设置。 | REA | **直接用** · 指定设置及重置动作即可 | 请用 `rea` 的 `update_analysis_settings`，按参数 {"changes":[{"setting":"asar.max_header_bytes","action":"reset"}]} 仅将本次 REA 服务的这一项恢复到启动值，报告恢复后的值和 changed 标志。 | 恢复到启动值；原值已经相同，返回 changed=false。 |
 | 123 | `inspect_analysis_view` [〔准备〕](./Codex样例与会话准备.md#item-123) | 按视图读取已保留的分析结果，支持分段浏览。 | REA | **先备会话或前序结果** · 接口对比摘要的父证据 ID 及对应视图 | 请用 `rea` 的 `inspect_analysis_view` 使用刚得到的接口对比摘要中的 parent_evidence_id，在 endpoint-comparison 视图的 static-endpoints 集合中读取前十条接口记录。 | 从 static-endpoints 读到 /demo/report，与 HAR 匹配。 |
