@@ -1,0 +1,2001 @@
+{
+  "日期": "2026-11-20",
+  "原文提交": "0b2d2501bf0e3220a2fe7ba1b7248b42fdc06ed0",
+  "首轮原文通过": 58,
+  "最终通过": 58,
+  "独立对话数": 61,
+  "逐条结果": [
+    {
+      "序号": 6,
+      "工具": "inspect_web_page",
+      "修订说明": "",
+      "观察结果": "页面标题为 REA 本机测试页，发现一段内联脚本。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "fe0bb00a46ee3907bf8aba1bdc9041c03487e50474b9d474ce588787a7255fce",
+          "对话指纹": "a89526c7498652c4",
+          "轮次指纹": "a564e75fab7a2cbc",
+          "目标工具": "inspect_web_page",
+          "MCP调用": [
+            {
+              "工具": "inspect_web_page",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 7,
+      "工具": "inspect_web_event_listeners",
+      "修订说明": "",
+      "观察结果": "#submit 直接注册了一个 click 监听器。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "1e9fd7eb6b63766c28111aea9923410e105a4babfb72e3419d68b3890b783d2a",
+          "对话指纹": "7b75e515ac324da4",
+          "轮次指纹": "bbecf16062d1b3da",
+          "目标工具": "inspect_web_event_listeners",
+          "MCP调用": [
+            {
+              "工具": "inspect_web_event_listeners",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 8,
+      "工具": "capture_web_screenshot",
+      "修订说明": "",
+      "观察结果": "成功取得当前可见区域的 PNG。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "a4464cb383734f935a919f69b3ee9994a476bbb658ba953e019f66e51f7a3ddd",
+          "对话指纹": "67e7554e40118185",
+          "轮次指纹": "67a9289abe8f66c3",
+          "目标工具": "capture_web_screenshot",
+          "MCP调用": [
+            {
+              "工具": "capture_web_screenshot",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 9,
+      "工具": "compare_web_screenshots",
+      "修订说明": "",
+      "观察结果": "比较了两个单像素截图，变化比例为 0%。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "0b6deb14a3319e95b9b3b1c1108965cad6168ef0e20819c45030abb26b3d4771",
+          "对话指纹": "29a806ff705b2919",
+          "轮次指纹": "e5c64941a116f02c",
+          "目标工具": "compare_web_screenshots",
+          "MCP调用": [
+            {
+              "工具": "compare_web_screenshots",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 10,
+      "工具": "observe_web_session",
+      "修订说明": "",
+      "观察结果": "完成 10 秒观察，静置期间记录了 0 个页面事件。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "1f6f59deb357570f74bf77231e2e87e8949f19d7e45286f93f0d30e00d9090b0",
+          "对话指纹": "3ab45cc35555f365",
+          "轮次指纹": "766bd2abb5c2afba",
+          "目标工具": "observe_web_session",
+          "MCP调用": [
+            {
+              "工具": "observe_web_session",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 11,
+      "工具": "compare_web_captures",
+      "修订说明": "",
+      "观察结果": "main.js 导出的 sample 从 1 变为 2。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "572aae9cdcb3f468403d56aef332d6053e803b77f1a08aafe41c76ef8f44e5ad",
+          "对话指纹": "e80d72e1f402e4b1",
+          "轮次指纹": "f1ffea6afb8c7b1d",
+          "目标工具": "compare_web_captures",
+          "MCP调用": [
+            {
+              "工具": "compare_web_captures",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 12,
+      "工具": "discover_webmcp_tools",
+      "修订说明": "",
+      "观察结果": "测试页声明了 0 个 WebMCP 工具。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "5217fda0aa964a033af62227acfc0d5c16568df08f4e3ab2d6c93d82971c9a75",
+          "对话指纹": "c81e7842a9abd7b5",
+          "轮次指纹": "14b5a5299d5e0048",
+          "目标工具": "discover_webmcp_tools",
+          "MCP调用": [
+            {
+              "工具": "discover_webmcp_tools",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 14,
+      "工具": "inspect_electron_page",
+      "修订说明": "",
+      "观察结果": "主框架路径指向 live/page.html，并换算成 file URL。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "b4dd817989e14534e26840ffcd2e47a5347ad4ef8293a9e384d8c6ab59f63ea6",
+          "对话指纹": "f8812f52d9ea1546",
+          "轮次指纹": "07c950f580e4245d",
+          "目标工具": "inspect_electron_page",
+          "MCP调用": [
+            {
+              "工具": "inspect_electron_page",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 17,
+      "工具": "trace_application_feature",
+      "修订说明": "",
+      "观察结果": "追踪到 renderer.js 导入 profile.js。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "82b1568d4d19eaeb3f04ea0f833e6335e8de571ddb86de103a9d9cfcc58ab80e",
+          "对话指纹": "ea457013aff68b95",
+          "轮次指纹": "183dee265170b115",
+          "目标工具": "trace_application_feature",
+          "MCP调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "trace_application_feature",
+              "有效返回": false
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "trace_application_feature",
+              "有效返回": false
+            },
+            {
+              "工具": "trace_application_feature",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 18,
+      "工具": "trace_javascript_semantics",
+      "修订说明": "",
+      "观察结果": "命中 getProfile 的返回节点，回溯没有更早的边。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "cad3f8c8abc4990a92da6b5c208f40ac0fbe227d49eff1ee2a8622f0ad894ca8",
+          "对话指纹": "e8799bd7cbbd2da0",
+          "轮次指纹": "8dadc3c7dc474612",
+          "目标工具": "trace_javascript_semantics",
+          "MCP调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "trace_javascript_semantics",
+              "有效返回": false
+            },
+            {
+              "工具": "trace_javascript_semantics",
+              "有效返回": false
+            },
+            {
+              "工具": "trace_javascript_semantics",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 22,
+      "工具": "compare_source_to_bundle",
+      "修订说明": "",
+      "观察结果": "历史清单不完整，两个候选模块的修改状态均为 unknown。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "4d08a83f1e91417f8c37621e927ec5920f6da9e5d47894c1095cdd7eb53eb982",
+          "对话指纹": "5f45c508eeba03ab",
+          "轮次指纹": "0a8faad00402cc6c",
+          "目标工具": "compare_source_to_bundle",
+          "MCP调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_source_to_bundle",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_source_to_bundle",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 23,
+      "工具": "compare_application_versions",
+      "修订说明": "",
+      "观察结果": "使用新旧应用图的父证据 ID 完成比较。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "2fd3473f87b70e5164e08b89bf90ffb131269167aff92ed23523b5788dd0494f",
+          "对话指纹": "7b12cf2c144ead44",
+          "轮次指纹": "12eff6cfba934296",
+          "目标工具": "compare_application_versions",
+          "MCP调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 24,
+      "工具": "compare_javascript_export_shapes",
+      "修订说明": "",
+      "观察结果": "新版 getProfile 增加 count，原有 name 保留。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "b0337f5b2906880f8baf8959f5a4b5fd8c6c8a23ac769f8bd970eed09fe8b9fe",
+          "对话指纹": "3b88ab608c7cec7b",
+          "轮次指纹": "dfc8db66f3686fca",
+          "目标工具": "compare_javascript_export_shapes",
+          "MCP调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_javascript_export_shapes",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_javascript_export_shapes",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_javascript_export_shapes",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 25,
+      "工具": "observe_javascript_runtime",
+      "修订说明": "",
+      "观察结果": "观测到 83 个 Node 脚本，包含 node/idle.cjs。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "b907c5c4690d966a4459591c7cc9f4b3d1c0ec602fc16265190201df30e46dfb",
+          "对话指纹": "8946a8c26e16743b",
+          "轮次指纹": "080b58a5bd4e69c0",
+          "目标工具": "observe_javascript_runtime",
+          "MCP调用": [
+            {
+              "工具": "observe_javascript_runtime",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 26,
+      "工具": "reconcile_javascript_runtime",
+      "修订说明": "",
+      "观察结果": "静态与运行时均确认了 node/idle.cjs。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "00e9a789123ac481590ec4a4ad7499ad770f35075d15df1f88c26eecd4053cd8",
+          "对话指纹": "8dfe13423fb803c9",
+          "轮次指纹": "a5052c65ffd01693",
+          "目标工具": "reconcile_javascript_runtime",
+          "MCP调用": [
+            {
+              "工具": "observe_javascript_runtime",
+              "有效返回": true
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "reconcile_javascript_runtime",
+              "有效返回": false
+            },
+            {
+              "工具": "reconcile_javascript_runtime",
+              "有效返回": false
+            },
+            {
+              "工具": "reconcile_javascript_runtime",
+              "有效返回": false
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": false
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": false
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "reconcile_javascript_runtime",
+              "有效返回": false
+            },
+            {
+              "工具": "reconcile_javascript_runtime",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 27,
+      "工具": "compare_static_and_observed_endpoints",
+      "修订说明": "",
+      "观察结果": "命中 GET /demo/report。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "8c1dfee3e1512a0d2227f3929c3d299eae87f0915b5d5307932709532665f51d",
+          "对话指纹": "1182ab05861de63f",
+          "轮次指纹": "0faac96bdf895d34",
+          "目标工具": "compare_static_and_observed_endpoints",
+          "MCP调用": [
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_static_and_observed_endpoints",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_static_and_observed_endpoints",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 37,
+      "工具": "project_android_application_graph",
+      "修订说明": "原文同时提到两个 APK，首轮分析了两份。修订后只指向 mobile/toy.apk。",
+      "观察结果": "toy.apk 图中有 AndroidManifest.xml，运行时线索为空。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "c27afb40bcc03acbbb8cce5f2d9d73f546f88843df7ebe572e0d9e343c744cff",
+          "对话指纹": "07083d0fb5f33db1",
+          "轮次指纹": "c77da9f5fa01c428",
+          "目标工具": "project_android_application_graph",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "project_android_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "project_android_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        },
+        {
+          "版本": "revised",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "f53beb75aa47ff1cd4fc30792554aa55d512fd8a404ff6253dd5ce565a367687",
+          "对话指纹": "8fc401e1b812b6cc",
+          "轮次指纹": "822c9c7a9347d03a",
+          "目标工具": "project_android_application_graph",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "project_android_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 40,
+      "工具": "project_harmony_application_graph",
+      "修订说明": "首轮已返回 entry.hap。将末句的 demo.app 改为样例路径 mobile/harmony.app。",
+      "观察结果": "子包位于 modules/entry.hap。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "102516777663cab4d79c463ce154bbcc90a99d582bc601d88e196bd2b834fae6",
+          "对话指纹": "79bafc97dbd523a3",
+          "轮次指纹": "9f5337741afe150e",
+          "目标工具": "project_harmony_application_graph",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "project_harmony_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        },
+        {
+          "版本": "revised",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "22b281658ffae27e1b7550f7cf1b4ef07e4c4dda1addadb54a4da9c1b9a620d7",
+          "对话指纹": "4eef30b4760ff394",
+          "轮次指纹": "0feccdb3c7ae3a53",
+          "目标工具": "project_harmony_application_graph",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "project_harmony_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 41,
+      "工具": "project_apple_application_graph",
+      "修订说明": "首轮已识别主应用。将末句的 Demo.ipa 改为实际样例 mobile/toy.ipa。",
+      "观察结果": "主应用目录为 Payload/Fixture.app/，未发现扩展。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "22fc5630a07215c95083e6c085ebbea7614da9f371c73b6511c5ea0ade0bb59d",
+          "对话指纹": "6d127282108da454",
+          "轮次指纹": "cae080b37a8d30a2",
+          "目标工具": "project_apple_application_graph",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "project_apple_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "project_apple_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        },
+        {
+          "版本": "revised",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "272da01ecade7561acf031609d166db5a9eaf1a413183fc533ed51a2fe1cf18c",
+          "对话指纹": "218ffcbc467ac78f",
+          "轮次指纹": "993d3e81b85bb275",
+          "目标工具": "project_apple_application_graph",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "project_apple_application_graph",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 43,
+      "工具": "decode_interface_builder",
+      "修订说明": "",
+      "观察结果": "识别出一个 storyboard 场景及其中两个界面对象。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "52d648fc0e46614efdab60717fd39fb367175832ba75f97c810f975701589b42",
+          "对话指纹": "87369a17932a9453",
+          "轮次指纹": "7a8b09db6bd3b2f4",
+          "目标工具": "decode_interface_builder",
+          "MCP调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true
+            },
+            {
+              "工具": "decode_interface_builder",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 44,
+      "工具": "inspect_asset_catalog",
+      "修订说明": "",
+      "观察结果": "从临时副本中的 Assets.car 读取到资源记录。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "85a172f82b88de266a0754970493c609a2c7a1919afa40dbe730b294a4d65805",
+          "对话指纹": "816258578660e063",
+          "轮次指纹": "e6fe0f99cc3fee2b",
+          "目标工具": "inspect_asset_catalog",
+          "MCP调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_asset_catalog",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 45,
+      "工具": "inspect_keyed_archive",
+      "修订说明": "",
+      "观察结果": "归档根入口指向 UID 1，根对象类为 NSArray。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "19816100e451a6cf3684eea1b6a2cb9977cc2253f8265a0cdbd29ea333ac2b63",
+          "对话指纹": "59cd3f0717757e50",
+          "轮次指纹": "d4132d31d1f5e7bc",
+          "目标工具": "inspect_keyed_archive",
+          "MCP调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_keyed_archive",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 46,
+      "工具": "inspect_plist",
+      "修订说明": "",
+      "观察结果": "读出应用包标识和版本。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "33f4525ef9f4fa6dfd00f2785a3a6da1b98d6dacd97a61894cef19500aaa1816",
+          "对话指纹": "ac11ac8b4c2e498d",
+          "轮次指纹": "9ccfbe6b73cc2bd7",
+          "目标工具": "inspect_plist",
+          "MCP调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_plist",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 47,
+      "工具": "inspect_macho",
+      "修订说明": "",
+      "观察结果": "打开通用 Mach-O 并读出切片和加载命令。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "b96c76cbf1c159c003ba4fd4d489c4051281460666a1b9ac85e902ab94c6642c",
+          "对话指纹": "a0001ae554912f33",
+          "轮次指纹": "d813a0ebd2f078b1",
+          "目标工具": "inspect_macho",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_macho",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 48,
+      "工具": "inspect_signature",
+      "修订说明": "",
+      "观察结果": "读取了通用 Mach-O 的签名信息。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "fe945cf769e43008418d6b1c0ca5e38887047b3dd299da0ba1022346a71146e2",
+          "对话指纹": "50246999b1f22166",
+          "轮次指纹": "9554349dac497792",
+          "目标工具": "inspect_signature",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_signature",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 50,
+      "工具": "demangle_swift",
+      "修订说明": "",
+      "观察结果": "Swift 符号还原为 Test.foo() -> ()。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "215f7f74288bbee64b787d8ad7be3f8d66507c3908fae984c1305b61d77e08a0",
+          "对话指纹": "af8d32b7bb85e11b",
+          "轮次指纹": "c322ca7bd6e3649f",
+          "目标工具": "demangle_swift",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "demangle_swift",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 51,
+      "工具": "analyze_swift_types",
+      "修订说明": "",
+      "观察结果": "匹配到 DemoTypes.AccountSample。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "3e66dcc9e2a54c8944d6a9250feec4f9fd4397da9b6ac49e1f2205d429d697a4",
+          "对话指纹": "8508814859e07336",
+          "轮次指纹": "c64a654a63341335",
+          "目标工具": "analyze_swift_types",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "analyze_swift_types",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 52,
+      "工具": "get_objc_classes",
+      "修订说明": "",
+      "观察结果": "返回一个名称匹配的 Objective-C 类。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "3c62867f2c3830d167b2de9d4af35a2fe9d74ce782d7f995b5ea02a806ced34a",
+          "对话指纹": "144740ff4d047eb5",
+          "轮次指纹": "2865f36aff4c22df",
+          "目标工具": "get_objc_classes",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "get_objc_classes",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 53,
+      "工具": "get_objc_protocols",
+      "修订说明": "",
+      "观察结果": "当前后端识别到 0 个 Objective-C 协议。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "302c513be3cbe37e2068d250463cb4e2ff8e2ee30c4cafbef00fe5f07bfdf783",
+          "对话指纹": "decf47a95efaddfd",
+          "轮次指纹": "b63672cf4b91149e",
+          "目标工具": "get_objc_protocols",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "get_objc_protocols",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 56,
+      "工具": "close_binary",
+      "修订说明": "",
+      "观察结果": "关闭成功，复查 open=false。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "c6572802a01e6c1a7ef09ed46e31fb8d5e023fedb772106ec04911776f86d5fd",
+          "对话指纹": "7360cdeaea8811c3",
+          "轮次指纹": "9e28a73cfd816234",
+          "目标工具": "close_binary",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true
+            },
+            {
+              "工具": "list_documents",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 57,
+      "工具": "binary_overview",
+      "修订说明": "",
+      "观察结果": "识别 2 个函数和 10 个字符串。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "77bcade936ce534b1a0e8cd9fcae96323b70aa6e3191cd119360db466d1dc7d6",
+          "对话指纹": "4b9fb572edb8cba7",
+          "轮次指纹": "c6456dc6bf16bff2",
+          "目标工具": "binary_overview",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "binary_overview",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 58,
+      "工具": "list_architectures",
+      "修订说明": "",
+      "观察结果": "枚举出 x86_64 和 arm64。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "76720fa43e96571c29210cffbb01f18cf4b8d30420b217a5a5198be5504d95c4",
+          "对话指纹": "b6590bf549e0a898",
+          "轮次指纹": "f9f6a06e8d352a99",
+          "目标工具": "list_architectures",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_architectures",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 59,
+      "工具": "list_documents",
+      "修订说明": "",
+      "观察结果": "列出的唯一文档对应当前测试程序。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "8ebbe6a073ca6c675b4d6374268f110e525d471593576f9edd09ef403169e962",
+          "对话指纹": "4f8f7abd3cc2cb58",
+          "轮次指纹": "eff0cdce8bb1e0b5",
+          "目标工具": "list_documents",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_documents",
+              "有效返回": true
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 60,
+      "工具": "list_segments",
+      "修订说明": "",
+      "观察结果": "列出 5 个内存块及其地址范围。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "f69d3ff5177032f4e35905bd148291c36a282a276fc651ab2d471237b5be6797",
+          "对话指纹": "7f81ad959d113a61",
+          "轮次指纹": "36d7552af43c79fe",
+          "目标工具": "list_segments",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_segments",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 61,
+      "工具": "list_procedures",
+      "修订说明": "",
+      "观察结果": "返回 _demo_value 与 entry 两个函数。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "1df7da4264fa2fd57d57610f9d688a01e22e99ebaa91b88fda0220385cbfa0c7",
+          "对话指纹": "30240451be680130",
+          "轮次指纹": "d8bd3d6110daf1fb",
+          "目标工具": "list_procedures",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 62,
+      "工具": "search_procedures",
+      "修订说明": "",
+      "观察结果": "搜索 main，匹配到一个函数。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "cc5963452a1d2f984ee51cd2dba5547258b5fe41f94f2ae77952b1517516aecf",
+          "对话指纹": "1376d9086cb7fc50",
+          "轮次指纹": "3199dba3d5c189eb",
+          "目标工具": "search_procedures",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true
+            },
+            {
+              "工具": "search_procedures",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 63,
+      "工具": "list_names",
+      "修订说明": "",
+      "观察结果": "列出 9 组地址和名称。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "2d3aa708e2840e953aa1c986b9c94e5c96b980b56d377987716789f579ccc4e9",
+          "对话指纹": "cc8b0c5039940d57",
+          "轮次指纹": "19ec0091d1133094",
+          "目标工具": "list_names",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_names",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 64,
+      "工具": "address_name",
+      "修订说明": "",
+      "观察结果": "首个函数地址对应 _demo_value。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "a757daad50dd5fda16dda40ddd0d314bc949df6ed0c605c26f727602ecaa6b4a",
+          "对话指纹": "0bb3fe9f50f0283c",
+          "轮次指纹": "4eff74e7cb1f7a9b",
+          "目标工具": "address_name",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true
+            },
+            {
+              "工具": "address_name",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 65,
+      "工具": "inspect_address_context",
+      "修订说明": "",
+      "观察结果": "确认首个函数的所属范围及上下文。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "24160e533a6ad0f4459c11e362737eefcaf1478d6ca001b3cff390c69728e9aa",
+          "对话指纹": "56ecf1909d95cf54",
+          "轮次指纹": "281d86ccdc2a57a1",
+          "目标工具": "inspect_address_context",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_address_context",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 66,
+      "工具": "set_address_name",
+      "修订说明": "",
+      "观察结果": "将首个函数改为 demo_entry，回读一致。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "07af22dffe8bd0f7e84466037bbb56d85ba173ecf484d09157fbf070535c56c5",
+          "对话指纹": "f71c293d14314d4a",
+          "轮次指纹": "72a9d1866e1fdc01",
+          "目标工具": "set_address_name",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true
+            },
+            {
+              "工具": "set_address_name",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 67,
+      "工具": "set_addresses_names",
+      "修订说明": "",
+      "观察结果": "两个地址分别改为 demo_load 和 demo_save，回读成功。另行关闭时，后端因元数据已改动拒绝保存快照。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "063e157c2d14f0f97cb4cb89c116cd850cce20f358380aca1102f67ea3ac66bb",
+          "对话指纹": "08fd5fdec3aa4123",
+          "轮次指纹": "d1f1d11b2fc2a89a",
+          "目标工具": "set_addresses_names",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true
+            },
+            {
+              "工具": "set_addresses_names",
+              "有效返回": true
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": false
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 87,
+      "工具": "compare_managed_members",
+      "修订说明": "",
+      "观察结果": "两项成员精确匹配，签名未变。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "3ad9400248084345631929eef44e48f78fdfcf593fee031ee0a0dfe7488e2266",
+          "对话指纹": "a633d0013bdfcdda",
+          "轮次指纹": "d91b97901283ea5c",
+          "目标工具": "compare_managed_members",
+          "MCP调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_managed_members",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 89,
+      "工具": "verify_managed_native_boundaries",
+      "修订说明": "",
+      "观察结果": "唯一的 P/Invoke 声明与原生导出入口匹配。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "264633ca1ca5c7daf769bc62b2c948d06c9424afea673b554afcc0950c941629",
+          "对话指纹": "8bdb427359e2a4f3",
+          "轮次指纹": "3a4ce03da2b392f7",
+          "目标工具": "verify_managed_native_boundaries",
+          "MCP调用": [
+            {
+              "工具": "inspect_managed_native_boundaries",
+              "有效返回": true
+            },
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_macho",
+              "有效返回": true
+            },
+            {
+              "工具": "verify_managed_native_boundaries",
+              "有效返回": false
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": false
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": false
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "verify_managed_native_boundaries",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 90,
+      "工具": "project_managed_application_graph",
+      "修订说明": "",
+      "观察结果": "生成托管应用图，包含一个类型、一个方法和一个字段。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "3bf56afef0e0e8a02bd54ad90288668770683017caa2fc92df2c3eaf778e62f5",
+          "对话指纹": "8bd92a22ce063f72",
+          "轮次指纹": "a66824a9c6eaadad",
+          "目标工具": "project_managed_application_graph",
+          "MCP调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "project_managed_application_graph",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 93,
+      "工具": "compare_wasm_interfaces",
+      "修订说明": "",
+      "观察结果": "新版新增 greet，移除 hello。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "e99bbb5d582f72cfe279cc702616bb7f928454e167e97207e23d3ee86e80966f",
+          "对话指纹": "213de000435f4739",
+          "轮次指纹": "bf31afbcec015ba7",
+          "目标工具": "compare_wasm_interfaces",
+          "MCP调用": [
+            {
+              "工具": "inspect_wasm_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_wasm_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_wasm_interfaces",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_wasm_interfaces",
+              "有效返回": false
+            },
+            {
+              "工具": "compare_wasm_interfaces",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 96,
+      "工具": "inspect_artifact",
+      "修订说明": "",
+      "观察结果": "归档中查到 README.txt 和对应的 occurrence_id。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "d7db897f7c8dd3c35fdf2aa23d0ac3b13c4f19cb27a58933e04cc882df64764a",
+          "对话指纹": "b5e2e686a5a53af9",
+          "轮次指纹": "9c14003c53a49d70",
+          "目标工具": "inspect_artifact",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 97,
+      "工具": "extract_artifact",
+      "修订说明": "",
+      "观察结果": "按条目标识提取出 README.txt，36 字节。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "5901044e8f6093b202af30208cad81f38a912dba66dbd3667d53cc60658cae88",
+          "对话指纹": "ff139e134818cac2",
+          "轮次指纹": "3fb632dd833d54d5",
+          "目标工具": "extract_artifact",
+          "MCP调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true
+            },
+            {
+              "工具": "extract_artifact",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 105,
+      "工具": "compare_artifacts",
+      "修订说明": "",
+      "观察结果": "未列出新增文件，变化发生在根产物本身。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "74492cc6642eaefe74dfbcc1b9a92b86e3a34372aae4d0584741cd034f1022da",
+          "对话指纹": "ac0dc1d3a644cc7c",
+          "轮次指纹": "41cd17172c2ddb32",
+          "目标工具": "compare_artifacts",
+          "MCP调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_artifacts",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 106,
+      "工具": "compare_process_captures",
+      "修订说明": "",
+      "观察结果": "两份进程记录的终端输出一致。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "815cc9984ba68423f8d7da207cde6155b0fb169796c06117eb081c6aa78d75df",
+          "对话指纹": "a456c2e6b55f6690",
+          "轮次指纹": "fbaa502b19135725",
+          "目标工具": "compare_process_captures",
+          "MCP调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 107,
+      "工具": "find_changed_behavior",
+      "修订说明": "",
+      "观察结果": "找到根产物静态差异，未确认运行行为有变化。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "de020405694c746d7a97fb46311e2d2b6476d6490637bddeeda64720576273f1",
+          "对话指纹": "1919415275013cde",
+          "轮次指纹": "a7b25b5a3ba55139",
+          "目标工具": "find_changed_behavior",
+          "MCP调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_artifacts",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true
+            },
+            {
+              "工具": "find_changed_behavior",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 108,
+      "工具": "correlate_static_and_runtime",
+      "修订说明": "",
+      "观察结果": "函数伪代码文本变化，终端输出保持一致。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "7f91068f7d5a86c8b9619d84c55027d11ffa8d016c12907a0721f1ba7f9cc458",
+          "对话指纹": "dd0fda1719ce2e2f",
+          "轮次指纹": "818145d48f84ac4e",
+          "目标工具": "correlate_static_and_runtime",
+          "MCP调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true
+            },
+            {
+              "工具": "correlate_static_and_runtime",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 111,
+      "工具": "verify_reconstruction",
+      "修订说明": "",
+      "观察结果": "规格中的 stdout 断言通过。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "fd0ef85722dee1e44a58df5a9f4918d13a873090d1b746a0562f1881bfe93e76",
+          "对话指纹": "364e52a03339c9ba",
+          "轮次指纹": "83f963c1d32540b8",
+          "目标工具": "verify_reconstruction",
+          "MCP调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true
+            },
+            {
+              "工具": "verify_reconstruction",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 114,
+      "工具": "update_unknown",
+      "修订说明": "",
+      "观察结果": "登记新问题，再将其状态改为调查中。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "e3324296fb3257d4f3e1ab213b84b214d0e4fa05fe47525e914ebb7509787fd0",
+          "对话指纹": "0e4e70cf9fee4fca",
+          "轮次指纹": "dac3d13f38c4d284",
+          "目标工具": "update_unknown",
+          "MCP调用": [
+            {
+              "工具": "record_unknown",
+              "有效返回": true
+            },
+            {
+              "工具": "update_unknown",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 115,
+      "工具": "verify_unknown_resolution",
+      "修订说明": "",
+      "观察结果": "缺少受控重放证据，未达到结案条件。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "9557dce34a877096a235f18cd90287707e1099692b54bc1c74e65312e7a0f4c1",
+          "对话指纹": "544c1d35fef809eb",
+          "轮次指纹": "a6377f7d06a866a6",
+          "目标工具": "verify_unknown_resolution",
+          "MCP调用": [
+            {
+              "工具": "record_unknown",
+              "有效返回": true
+            },
+            {
+              "工具": "verify_unknown_resolution",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 116,
+      "工具": "export_environment_bundle",
+      "修订说明": "",
+      "观察结果": "从本轮 HAR 证据导出了 offline-demo 环境包。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "d812830a7e061b896c7b699f8a0310f97db2810a4ee0f2ddd2433e5faa157a04",
+          "对话指纹": "eb51143c6b755876",
+          "轮次指纹": "56e1b666767765fc",
+          "目标工具": "export_environment_bundle",
+          "MCP调用": [
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true
+            },
+            {
+              "工具": "export_environment_bundle",
+              "有效返回": false
+            },
+            {
+              "工具": "export_environment_bundle",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 117,
+      "工具": "reset_investigation",
+      "修订说明": "",
+      "观察结果": "确认初始调查为空，备份单条 HAR 证据后复查证据和问题列表均为空。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "f3f9f02dce50f5254cbd30db34a62bfc6ffaa82526c293935fd71b91c56f3a4a",
+          "对话指纹": "518d3ecba8d07189",
+          "轮次指纹": "1df05b72dd593fae",
+          "目标工具": "reset_investigation",
+          "MCP调用": [
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "list_unknowns",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true
+            },
+            {
+              "工具": "reset_investigation",
+              "有效返回": true
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true
+            },
+            {
+              "工具": "list_unknowns",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 120,
+      "工具": "read_guidance_section",
+      "修订说明": "",
+      "观察结果": "使用本轮搜索首项的 locator 读到了对应指南章节。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "e9da0138928ee5386042a733e9d9d539a3c41aee7e93b706c8c9d5f19abdd91f",
+          "对话指纹": "8d54dec4e6466fbf",
+          "轮次指纹": "be82f1728c2c4103",
+          "目标工具": "read_guidance_section",
+          "MCP调用": [
+            {
+              "工具": "search_guidance",
+              "有效返回": true
+            },
+            {
+              "工具": "read_guidance_section",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    },
+    {
+      "序号": 123,
+      "工具": "inspect_analysis_view",
+      "修订说明": "",
+      "观察结果": "使用父证据 ID 读取 static-endpoints，返回一条接口记录。",
+      "轮次": [
+        {
+          "版本": "original",
+          "成功": true,
+          "消息数": 1,
+          "指令SHA256": "af893108eff02e41da0046664d38f182b64bd251d5c928cb2abe0360d7bd488e",
+          "对话指纹": "d5e5103e1a1b438e",
+          "轮次指纹": "c3041f6884b23bf6",
+          "目标工具": "inspect_analysis_view",
+          "MCP调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true
+            },
+            {
+              "工具": "compare_static_and_observed_endpoints",
+              "有效返回": true
+            },
+            {
+              "工具": "inspect_analysis_view",
+              "有效返回": true
+            }
+          ],
+          "判定备注": "取得目标工具返回，完成示例"
+        }
+      ]
+    }
+  ]
+}

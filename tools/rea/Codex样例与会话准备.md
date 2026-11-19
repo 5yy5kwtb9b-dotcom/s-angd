@@ -646,6 +646,8 @@
 
 ## 58 条会话或前序结果示例
 
+[查看这 58 条指令在全新对话里的首轮和复测结果](./58条准备指令全新对话实测.md)
+
 ### 网页、浏览器与 Electron
 
 <a id="item-6"></a>
@@ -819,7 +821,7 @@
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
 用 open_binary 打开 mobile/toy.apk，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。
-请用 rea 的 project_android_application_graph 根据本对话里 demo.apk 的嵌套文件清单证据，列出组件路径及运行时线索。
+请用 rea 的 project_android_application_graph 根据本对话里 mobile/toy.apk 的嵌套文件清单证据，列出组件路径及运行时线索。
 ```
 
 <a id="item-40"></a>
@@ -829,7 +831,7 @@
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
 用 open_binary 打开 mobile/harmony.app，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。
-请用 rea 的 project_harmony_application_graph 根据本对话里 demo.app 鸿蒙 App Pack 的嵌套清单证据，列出子包名称及路径。
+请用 rea 的 project_harmony_application_graph 根据本对话里 mobile/harmony.app 鸿蒙 App Pack 的嵌套清单证据，列出子包名称及路径。
 ```
 
 ### Apple 应用、Swift 与 Objective-C
@@ -841,7 +843,7 @@
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
 用 open_binary 打开 mobile/toy.ipa，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。
-请用 rea 的 project_apple_application_graph 根据本对话里 Demo.ipa 的嵌套清单证据，列出主应用和内嵌扩展所在的目录。
+请用 rea 的 project_apple_application_graph 根据本对话里 mobile/toy.ipa 的嵌套清单证据，列出主应用和内嵌扩展所在的目录。
 ```
 
 <a id="item-43"></a>
