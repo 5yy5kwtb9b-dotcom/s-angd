@@ -1,0 +1,3824 @@
+{
+  "验收日期": "2026-11-20",
+  "原文提交": "b2908fbf572fa30acd545f85f98a34863547463c",
+  "统计": "123 条指令中，首轮完成目标 123 条，其中全程 MCP 零报错 122 条。最终 123 条均已在全新对话中一次发送并零报错通过。共用 124 个独立对话，记录 224 次 MCP 调用。",
+  "逐条结果": [
+    {
+      "编号": 1,
+      "工具": "inspect_packet_fields",
+      "原文": "请用 `mac_pcap` 的 `inspect_packet_fields` 查找以 frame.len 开头的 Wireshark 字段，告诉我哪个字段表示帧长。",
+      "最终指令": "请用 `mac_pcap` 的 `inspect_packet_fields` 查找以 frame.len 开头的 Wireshark 字段，告诉我哪个字段表示帧长。",
+      "本轮最终实测结果": "frame.len 表示以字节计的帧长。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "7243e37ebb513fc8",
+          "轮次指纹": "c4f4ff5f88f0c883",
+          "指令SHA256": "47c813496ead8898c04912a6062ee83533c7fbb6dda40dfed7a21d213f9a8961",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_packet_fields",
+              "有效返回": true,
+              "服务": "mac_pcap",
+              "返回指纹": "7d18fefc3529e69c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 2,
+      "工具": "inspect_packet_capture",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/两帧样例.pcap。\n请用 mac_pcap 的 inspect_packet_capture 读取我提供的 web/两帧样例.pcap，按帧号列出 frame.number 和 frame.len。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/两帧样例.pcap。\n请用 mac_pcap 的 inspect_packet_capture 读取我提供的 web/两帧样例.pcap，按帧号列出 frame.number 和 frame.len。",
+      "本轮最终实测结果": "两帧长度分别为 60 和 74 字节。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b02281dc3460a24e",
+          "轮次指纹": "cae5f6ef3e828a90",
+          "指令SHA256": "dfa7cbb68a8cc15604a10943331fcc8a2958d295164a03a34b833843b08b5ef1",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_packet_capture",
+              "有效返回": true,
+              "服务": "mac_pcap",
+              "返回指纹": "1c56f2104c037f77"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 3,
+      "工具": "inspect_pcap_capture",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/两帧样例.pcap。\n请用 mac_pcap 的 inspect_pcap_capture 汇总我提供的 web/两帧样例.pcap，告诉我包数、线上字节总数和持续时间。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/两帧样例.pcap。\n请用 mac_pcap 的 inspect_pcap_capture 汇总我提供的 web/两帧样例.pcap，告诉我包数、线上字节总数和持续时间。",
+      "本轮最终实测结果": "两帧共 134 个线上字节，间隔 1 秒。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "023b4065652cd53a",
+          "轮次指纹": "e07149b0b5500426",
+          "指令SHA256": "cc8dea9554001f18e20f32d4564d3498598ef43e85cbd48537942c947980c0fe",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_pcap_capture",
+              "有效返回": true,
+              "服务": "mac_pcap",
+              "返回指纹": "e2c8a15b733f09e4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 4,
+      "工具": "inspect_pcap_client",
+      "原文": "请用 `rea` 的 `inspect_pcap_client` 检查这台 Mac 上 TShark 和 capinfos 的实际路径和版本。",
+      "最终指令": "请用 `rea` 的 `inspect_pcap_client` 检查这台 Mac 上 TShark 和 capinfos 的实际路径和版本。",
+      "本轮最终实测结果": "TShark 和 capinfos 的实际路径已返回，版本均为 4.6.10。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "97ce83179a25ccac",
+          "轮次指纹": "3d28efb01a9cda8f",
+          "指令SHA256": "607823e039145fc0d5240f53e61ec64d2ca642a952768a0f1e5fa19c2163422a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_pcap_client",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_b805e5bad0da859a48437dfd850b0bcc5fd7385741c58bd94b1dd1823381a934"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 5,
+      "工具": "inspect_web_network_capture",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/requests.har。\n请用 rea 的 inspect_web_network_capture 读取我提供的 web/requests.har，按记录顺序列出前五个请求的方法、路径和响应状态码。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/requests.har。\n调用参数只填 {\"capture_path\":\"<web/requests.har 的绝对路径>\",\"format\":\"har\"}。从返回的现有记录中按顺序展示最多五条。\n请用 rea 的 inspect_web_network_capture 读取我提供的 web/requests.har，按记录顺序列出前五个请求的方法、路径和响应状态码。",
+      "本轮最终实测结果": "HAR 中只有一条 GET /demo/report，状态码 200。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f2e92c06bd2889a7",
+          "轮次指纹": "10a1e30c3ab438de",
+          "指令SHA256": "11f8b179118679bcca101b0461dd87b67d863b8dff6e8258adc103f02aaf90a7",
+          "完成目标": true,
+          "MCP报错次数": 1,
+          "实际调用": [
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": false,
+              "服务": "rea",
+              "错误码": "invalid_request"
+            },
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_11af3cc481aa24eda408253e8f88e2453e62361d751b11d418edf1156a7a3b06"
+            }
+          ]
+        },
+        {
+          "版本": "r1",
+          "用户消息数": 1,
+          "对话指纹": "2ddf19363143a5f0",
+          "轮次指纹": "9167fdbec60e89d5",
+          "指令SHA256": "1220b461f6418d062f893f2c700da263125fcbec04df5b6c069c4a8827559513",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_9b05c8d90771e518a62c35a2fbec3a04f5190a7079c7df1f5bd11f32eeb2b2b5"
+            }
+          ],
+          "修订原因": "首轮指定了五个序号，样例只有一条记录，工具报告序号越界。改为先读取实际记录，再限制展示条数。",
+          "该轮指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/requests.har。\n调用参数只填 {\"capture_path\":\"<web/requests.har 的绝对路径>\",\"format\":\"har\"}。从返回的现有记录中按顺序展示最多五条。\n请用 rea 的 inspect_web_network_capture 读取我提供的 web/requests.har，按记录顺序列出前五个请求的方法、路径和响应状态码。"
+        }
+      ]
+    },
+    {
+      "编号": 6,
+      "工具": "inspect_web_page",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 inspect_web_page 检查我通过本机 CDP 连接并指定的测试页，告诉我页面标题和加载了哪些脚本。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 inspect_web_page 检查我通过本机 CDP 连接并指定的测试页，告诉我页面标题和加载了哪些脚本。",
+      "本轮最终实测结果": "页面标题为“REA 本机测试页”，有一个内联脚本。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fc4e89ebe84a63e2",
+          "轮次指纹": "c1cd9483db42a09c",
+          "指令SHA256": "fe0bb00a46ee3907bf8aba1bdc9041c03487e50474b9d474ce588787a7255fce",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_web_page",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_f1b86fa56de5da357e8cebf91709c2e9cc3682e3806d2e17d7498f52da982554"
+            },
+            {
+              "工具": "inspect_web_page",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_ad7b49e9739284d0055d395420949de49fe8e8e3cadf277063322a228c03a630"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 7,
+      "工具": "inspect_web_event_listeners",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 inspect_web_event_listeners 查看指定 CDP 测试页上 #submit 按钮直接注册的监听器，列出事件类型及可定位的回调脚本。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 inspect_web_event_listeners 查看指定 CDP 测试页上 #submit 按钮直接注册的监听器，列出事件类型及可定位的回调脚本。",
+      "本轮最终实测结果": "#submit 直接注册了一个 click 监听器。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1e03e4b538d27742",
+          "轮次指纹": "5d172c90427fd05e",
+          "指令SHA256": "1e9fd7eb6b63766c28111aea9923410e105a4babfb72e3419d68b3890b783d2a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_web_event_listeners",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_466189893be1aabcf7b373cadb45075a8bbf0cba6af71005df2a8f07132c9113"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 8,
+      "工具": "capture_web_screenshot",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 capture_web_screenshot 为我指定的本机 CDP 测试页截一张当前可见区域的 PNG。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 capture_web_screenshot 为我指定的本机 CDP 测试页截一张当前可见区域的 PNG。",
+      "本轮最终实测结果": "截取了 756 × 469 像素的 PNG。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "180458b4d61e73de",
+          "轮次指纹": "fd0e56dd7e28602f",
+          "指令SHA256": "a4464cb383734f935a919f69b3ee9994a476bbb658ba953e019f66e51f7a3ddd",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "capture_web_screenshot",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a29b469bd7b24bf9c53a138389790b91a95d81eaf460a06b7d9a6b58469fe14e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 9,
+      "工具": "compare_web_screenshots",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n读取 web/screenshots.json，将 before 和 after 两份截图按文件内的实际字段名及顺序作为比较参数，保留像素和校验字段。\n请用 rea 的 compare_web_screenshots 比较本对话中先后取得的两份 REA 网页截图，给出发生变化的像素占比。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n读取 web/screenshots.json，将 before 和 after 两份截图按文件内的实际字段名及顺序作为比较参数，保留像素和校验字段。\n请用 rea 的 compare_web_screenshots 比较本对话中先后取得的两份 REA 网页截图，给出发生变化的像素占比。",
+      "本轮最终实测结果": "合成截图的变化像素占比为 0%。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "ea5564aec0fee315",
+          "轮次指纹": "84e7f11e9a8ca51d",
+          "指令SHA256": "0b6deb14a3319e95b9b3b1c1108965cad6168ef0e20819c45030abb26b3d4771",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "compare_web_screenshots",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_36a354b3b5f2f3640e02bccf7d93fa9521f5bc68b66ebeea86881abb76b86265"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 10,
+      "工具": "observe_web_session",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。 观察时长填 10000 毫秒；页面可以静置。\n请用 rea 的 observe_web_session 在我操作指定的本机 CDP 测试页时观察 10 秒，按顺序概括记录到的页面事件。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。 观察时长填 10000 毫秒；页面可以静置。\n请用 rea 的 observe_web_session 在我操作指定的本机 CDP 测试页时观察 10 秒，按顺序概括记录到的页面事件。",
+      "本轮最终实测结果": "静置观察 10 秒，记录到 0 个页面事件。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1158d0be1e4c6a51",
+          "轮次指纹": "d7c792174e2cfdc7",
+          "指令SHA256": "1f6f59deb357570f74bf77231e2e87e8949f19d7e45286f93f0d30e00d9090b0",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "observe_web_session",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_25d028619b6e3ca111a839e538495f2abafd4cd2a33d2f40c5ab06cd54916d6e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 11,
+      "工具": "compare_web_captures",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n读取 web/web-scenario1.json 和 web/web-scenario2.json 的 JSON 内容，依次传入 before_scenario 和 after_scenario。\n请用 rea 的 compare_web_captures 比较我提供的改版前后两份同类 REA 浏览器场景记录，列出有变化的页面资源。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n读取 web/web-scenario1.json 和 web/web-scenario2.json 的 JSON 内容，依次传入 before_scenario 和 after_scenario。\n请用 rea 的 compare_web_captures 比较我提供的改版前后两份同类 REA 浏览器场景记录，列出有变化的页面资源。",
+      "本轮最终实测结果": "main.js 中的 sample 从 1 变为 2。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "05445d67aaba1990",
+          "轮次指纹": "000f4a9af87fd3cd",
+          "指令SHA256": "572aae9cdcb3f468403d56aef332d6053e803b77f1a08aafe41c76ef8f44e5ad",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "compare_web_captures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_1a7084bae96aa3bb2890f5367d042e0444409dede91988a278dabd0af137551b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 12,
+      "工具": "discover_webmcp_tools",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。 样例页未注册 WebMCP 工具，报告实际条数即可。\n请用 rea 的 discover_webmcp_tools 查看我指定的本机 CDP 测试页声明了哪些 WebMCP 工具，给出名称和参数。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py browser，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。 样例页未注册 WebMCP 工具，报告实际条数即可。\n请用 rea 的 discover_webmcp_tools 查看我指定的本机 CDP 测试页声明了哪些 WebMCP 工具，给出名称和参数。",
+      "本轮最终实测结果": "测试页的 WebMCP 工具数为 0。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f18bd8633cfdfba8",
+          "轮次指纹": "54b7720c21384576",
+          "指令SHA256": "5217fda0aa964a033af62227acfc0d5c16568df08f4e3ab2d6c93d82971c9a75",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "discover_webmcp_tools",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_608549fc9c0087a7cde3b66d47e23d9e68f2e5c06456f980d34a71af291788ef"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 13,
+      "工具": "inspect_playwright_trace",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/trace.zip。\n请用 rea 的 inspect_playwright_trace 读取我提供的 web/trace.zip，按记录顺序列出前十条网络事件。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/trace.zip。\n请用 rea 的 inspect_playwright_trace 读取我提供的 web/trace.zip，按记录顺序列出前十条网络事件。",
+      "本轮最终实测结果": "按记录顺序返回 3 条网络事件。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "92c5b17ba437d960",
+          "轮次指纹": "9d3c72ad198fb41b",
+          "指令SHA256": "a37d03a7a0b51806ee4e8ccbce0520c5b0489e6d4fcee04a83f82f9448abfdf2",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_playwright_trace",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_97d7a56bf51418aaec037e1729130e0c2eb111c10d4b4f289dfa9f5bd137e230"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 14,
+      "工具": "inspect_electron_page",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用独立的 Electron 运行时。Apple 芯片的 Mac 若没有 electron，可将官方 https://github.com/electron/electron/releases/download/v45.4.1/electron-v45.4.1-darwin-arm64.zip 下载到临时目录。若官方直连超时，可从 https://registry.npmmirror.com/-/binary/electron/v45.4.1/electron-v45.4.1-darwin-arm64.zip 续传同一发行文件。用 shasum -a 256 核对 d080c3b05a01bd16137f2c12ab9ebf083c577757fe846844ba325bafa8e8bdf4，再用 ditto -xk 解压，将 ELECTRON_BIN 指向解压后的 Electron.app/Contents/MacOS/Electron。用 Python 3 在独立的终端任务启动 live/start.py electron，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 inspect_electron_page 使用我提供的本机 CDP 端点和目标 ID，查看 Electron 测试应用中本地文件页的主框架 URL。若返回 frames[].file_path，取 parent_frame_id 为空的那一帧，并把该路径转为 file URL，注明这是从工具返回路径换算的。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用独立的 Electron 运行时。Apple 芯片的 Mac 若没有 electron，可将官方 https://github.com/electron/electron/releases/download/v45.4.1/electron-v45.4.1-darwin-arm64.zip 下载到临时目录。若官方直连超时，可从 https://registry.npmmirror.com/-/binary/electron/v45.4.1/electron-v45.4.1-darwin-arm64.zip 续传同一发行文件。用 shasum -a 256 核对 d080c3b05a01bd16137f2c12ab9ebf083c577757fe846844ba325bafa8e8bdf4，再用 ditto -xk 解压，将 ELECTRON_BIN 指向解压后的 Electron.app/Contents/MacOS/Electron。用 Python 3 在独立的终端任务启动 live/start.py electron，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 inspect_electron_page 使用我提供的本机 CDP 端点和目标 ID，查看 Electron 测试应用中本地文件页的主框架 URL。若返回 frames[].file_path，取 parent_frame_id 为空的那一帧，并把该路径转为 file URL，注明这是从工具返回路径换算的。",
+      "本轮最终实测结果": "读取了 Electron 主框架的本地 page.html 路径并换算成 file URL。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "9e6855b014ad94fa",
+          "轮次指纹": "cb3ac11f963d0ca0",
+          "指令SHA256": "b4dd817989e14534e26840ffcd2e47a5347ad4ef8293a9e384d8c6ab59f63ea6",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_electron_page",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_8fa515f0b75e5c46597399a0ef098811b9767cd9e7543a0bb0bf08c124a61616"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 15,
+      "工具": "inspect_electron_fuses",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 electron/Demo.app。\n请用 rea 的 inspect_electron_fuses 检查我提供的 electron/Demo.app，列出其中 Electron 功能开关的名称和当前值。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 electron/Demo.app。\n请用 rea 的 inspect_electron_fuses 检查我提供的 electron/Demo.app，列出其中 Electron 功能开关的名称和当前值。",
+      "本轮最终实测结果": "从样例的 arm64 切片读取了 4 个功能开关。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5e3405eba2b01af9",
+          "轮次指纹": "8d0f2f36a2cc43a1",
+          "指令SHA256": "715969ffaf1429984c86a7872f39f41b019e07bf52771d73dff72e0e795cca4a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_electron_fuses",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_eeeeda33f4d58c2353f58ae79ac2e909355f11ea51b60cc1046d35843f531ac2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 16,
+      "工具": "analyze_javascript_application",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 js/app.asar。\n请用 rea 的 analyze_javascript_application 分析我提供的 js/app.asar，列出入口模块及其直接导入的模块。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 js/app.asar。\n请用 rea 的 analyze_javascript_application 分析我提供的 js/app.asar，列出入口模块及其直接导入的模块。",
+      "本轮最终实测结果": "renderer.js 直接导入 profile.js。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "909d3b89d7526256",
+          "轮次指纹": "01b12b541994ae8e",
+          "指令SHA256": "026d3cceebd53aeb22b4789d7e54681e0a2c1ce32c013bd2eda64d4322ea868d",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a933aeb60847d3ae38a439ce297818663e61f58813c5b591f24ecb4bcce7e1cd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 17,
+      "工具": "trace_application_feature",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。\n调用 trace_application_feature 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}, \"seed\": {\"kind\": \"module\", \"value\": \"renderer.js\", \"match\": \"exact\"}, \"direction\": \"outgoing\"}\n请用 rea 的 trace_application_feature 在刚生成的 JavaScript 应用图中，以 renderer.js 模块为起点追踪它关联的功能。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。\n调用 trace_application_feature 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}, \"seed\": {\"kind\": \"module\", \"value\": \"renderer.js\", \"match\": \"exact\"}, \"direction\": \"outgoing\"}\n请用 rea 的 trace_application_feature 在刚生成的 JavaScript 应用图中，以 renderer.js 模块为起点追踪它关联的功能。",
+      "本轮最终实测结果": "从 renderer.js 追踪到 profile.js 及其 getProfile 导出。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "e8170db3c8c334fc",
+          "轮次指纹": "6382376d72c11fc1",
+          "指令SHA256": "ec1d6cc8d55be4554e918e4a816384fa6c17621ac61c7c43fa993fa5d9ace1a1",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_5359936b8f0084e13fb6d21b97afaa9040760e2a1f2fd160c1df27938c3141c6"
+            },
+            {
+              "工具": "trace_application_feature",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_368ac443ba23e55873e5fe5d5126a28502f9f975f2cb18f1daeee791d05a6f60"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 18,
+      "工具": "trace_javascript_semantics",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。从该结果的语义图取 profile.js 中 getProfile 的 return 节点，把实际的 jsrg_node_ 标识作为返回节点ID。\n调用 trace_javascript_semantics 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}, \"query\": {\"seed\": {\"kind\": \"semantic-node\", \"node_id\": \"<返回节点ID>\"}, \"direction\": \"backward-provenance\"}}\n请用 rea 的 trace_javascript_semantics 使用我选中的语义节点 ID，在本对话的 JavaScript 应用图中向后追溯它的值来自哪里。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。从该结果的语义图取 profile.js 中 getProfile 的 return 节点，把实际的 jsrg_node_ 标识作为返回节点ID。\n调用 trace_javascript_semantics 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}, \"query\": {\"seed\": {\"kind\": \"semantic-node\", \"node_id\": \"<返回节点ID>\"}, \"direction\": \"backward-provenance\"}}\n请用 rea 的 trace_javascript_semantics 使用我选中的语义节点 ID，在本对话的 JavaScript 应用图中向后追溯它的值来自哪里。",
+      "本轮最终实测结果": "向后追溯命中 getProfile 的 return 节点。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "0ee54704bed9e04b",
+          "轮次指纹": "b45a465e1717111d",
+          "指令SHA256": "144e097d29009863981a76eb9dfa152c141f92f16072d1b11460b59ee566e11a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_8bbe466e62805f04524827c179c939196450332dd2c4f54cc7e41b8541d69713"
+            },
+            {
+              "工具": "trace_javascript_semantics",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_9ad80c36688f5152088f623323ceec34161656eb0764ce9110ad714f0cb7f4ac"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 19,
+      "工具": "trace_web_module_imports",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/exported-traces/manifest.json。\n请用 rea 的 trace_web_module_imports 读取我提供的脚本导出清单 web/exported-traces/manifest.json，列出编号 0 的脚本导入了哪些模块。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/exported-traces/manifest.json。\n请用 rea 的 trace_web_module_imports 读取我提供的脚本导出清单 web/exported-traces/manifest.json，列出编号 0 的脚本导入了哪些模块。",
+      "本轮最终实测结果": "编号 0 的脚本没有原生 ES 模块导入。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b34db680dfe0f095",
+          "轮次指纹": "bba3395915084acf",
+          "指令SHA256": "e9f776bcea8de646c56f6cd011d431ecfee4f55ddd4393b3dffd3a17dcd7d5ca",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "trace_web_module_imports",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_689aa38df44346d45e69be752b75328c8178155895fa2742ebfe4dce60498c5f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 20,
+      "工具": "trace_web_source_location",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先用 unzip 将整个测试样例.zip 完整解压到新临时目录，保留 samples/web/exported-traces/files/ 及其所有子目录。确认编号 0 对应的 main.js、web/exported-traces/manifest.json 和 web/main.js.map 三者都在，再调用工具。使用下面的工具参数，把两个占位符换成本次解压后的绝对路径。\n{\"manifest_path\":\"<manifest.json绝对路径>\",\"script_index\":0,\"generated_position\":{\"line\":1,\"column\":0},\"source_map\":{\"path\":\"<main.js.map绝对路径>\",\"url\":\"https://example.test/main.js.map\"}}\n请用 rea 的 trace_web_source_location 用我提供的脚本清单、配套 source map 本地路径和原始 URL，将编号 0 的脚本第 1 行、第 0 列映射回源码。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先用 unzip 将整个测试样例.zip 完整解压到新临时目录，保留 samples/web/exported-traces/files/ 及其所有子目录。确认编号 0 对应的 main.js、web/exported-traces/manifest.json 和 web/main.js.map 三者都在，再调用工具。使用下面的工具参数，把两个占位符换成本次解压后的绝对路径。\n{\"manifest_path\":\"<manifest.json绝对路径>\",\"script_index\":0,\"generated_position\":{\"line\":1,\"column\":0},\"source_map\":{\"path\":\"<main.js.map绝对路径>\",\"url\":\"https://example.test/main.js.map\"}}\n请用 rea 的 trace_web_source_location 用我提供的脚本清单、配套 source map 本地路径和原始 URL，将编号 0 的脚本第 1 行、第 0 列映射回源码。",
+      "本轮最终实测结果": "main.js 第 1 行第 0 列映射到 main.ts 同一位置。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "10f5e078fd7d2234",
+          "轮次指纹": "141ef7c4cb4cd2b3",
+          "指令SHA256": "2359ca0fc7d9cde6a57dddec2178de6927fa824535e3baacd401af694045bb91",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "trace_web_source_location",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_df3e2e91c8afe7b65bed3238d73af4bb7d3b95ce42e2a227d3ecf0cdfa3ea77c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 21,
+      "工具": "export_web_scripts",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/web-scenario1.json。输出写入新建临时工作目录下尚不存在的 scripts-export。\n请用 rea 的 export_web_scripts 从我提供的页面检查记录 web/web-scenario1.json 导出已保存的脚本，将脚本和清单写入工作区新目录 scripts-export。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/web-scenario1.json。输出写入新建临时工作目录下尚不存在的 scripts-export。\n请用 rea 的 export_web_scripts 从我提供的页面检查记录 web/web-scenario1.json 导出已保存的脚本，将脚本和清单写入工作区新目录 scripts-export。",
+      "本轮最终实测结果": "导出了 1 个脚本及其清单。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "ab7d0a522b0f5e6b",
+          "轮次指纹": "ee9d90da9921e192",
+          "指令SHA256": "00c809c2913b3d73dfa7dc8ff9ab39784628014f9fba18529a5b400fbf0a3712",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "export_web_scripts",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_3ee479b2f101b4518e20bdc4bc5b4cb470fb13305446d70a26f03e7a9d0f4322"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 22,
+      "工具": "compare_source_to_bundle",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。取 js/reference.json 解压后的绝对路径。\n调用 compare_source_to_bundle 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"reference\": {\"kind\": \"file\", \"path\": \"<reference.json绝对路径>\"}, \"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}}\n请用 rea 的 compare_source_to_bundle 将我提供的历史源码图 HistoricalSourceGraph 与本对话的打包应用图比对，列出修改过的模块。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。取 js/reference.json 解压后的绝对路径。\n调用 compare_source_to_bundle 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"reference\": {\"kind\": \"file\", \"path\": \"<reference.json绝对路径>\"}, \"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}}\n请用 rea 的 compare_source_to_bundle 将我提供的历史源码图 HistoricalSourceGraph 与本对话的打包应用图比对，列出修改过的模块。",
+      "本轮最终实测结果": "无模块被判定为 modified，两个候选模块的差异状态均为 unknown。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "313e17d3241bc978",
+          "轮次指纹": "7db0c67d7c79f532",
+          "指令SHA256": "f3085723711a0cc1760943fdc772005ecba2c02b0fe63f4eea64fe70a23de658",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_b7e4fdab3cf33e1cfab59b58cd4dd5e730d8d6467ae5d6dbe5020d00313ecb4f"
+            },
+            {
+              "工具": "compare_source_to_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_321deaa07e96b3bf936049d8586eac0882b47a8544f898b473dd85bc669f4bc7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 23,
+      "工具": "compare_application_versions",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n对 js/v1 和 js/v2 分别调用 analyze_javascript_application，detail 填 summary。从各自 normalized_result.parent_evidence_id 取旧版ID和新版ID。\n调用 compare_application_versions 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"left\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<旧版ID>\"}, \"right\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<新版ID>\"}}\n请用 rea 的 compare_application_versions 使用本会话中新旧两份 JavaScript 分析摘要各自的 parent_evidence_id 对比应用图，分别列出新增和删除的模块。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n对 js/v1 和 js/v2 分别调用 analyze_javascript_application，detail 填 summary。从各自 normalized_result.parent_evidence_id 取旧版ID和新版ID。\n调用 compare_application_versions 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"left\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<旧版ID>\"}, \"right\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<新版ID>\"}}\n请用 rea 的 compare_application_versions 使用本会话中新旧两份 JavaScript 分析摘要各自的 parent_evidence_id 对比应用图，分别列出新增和删除的模块。",
+      "本轮最终实测结果": "v1 与 v2 的应用图对比得到 2 个新增、2 个删除的 JavaScript 模块节点。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "77490398a0d556c9",
+          "轮次指纹": "0bf3717e1e87c0bd",
+          "指令SHA256": "da1f719cf328e0dd31b357b9acc7fd286d037b54b3391a4576b47097996be13e",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_d2c4bf50c47ac50ecfc12bc3fa430baabf0cdab764e2adc9aa02119ee077ab57"
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_ad4e3a78fdd95fd694cf143efd6e0bc062e8165fcf4c714e562fc98aa19d8c29"
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a5510476bd835dd5096d039595cd51e01737417b106f52dd1adc6b3be19ad26d"
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a5510476bd835dd5096d039595cd51e01737417b106f52dd1adc6b3be19ad26d"
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a5510476bd835dd5096d039595cd51e01737417b106f52dd1adc6b3be19ad26d"
+            },
+            {
+              "工具": "compare_application_versions",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a5510476bd835dd5096d039595cd51e01737417b106f52dd1adc6b3be19ad26d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 24,
+      "工具": "compare_javascript_export_shapes",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n对 js/v1 和 js/v2 分别调用 analyze_javascript_application，detail 填 summary。从各自 normalized_result.parent_evidence_id 取旧版ID和新版ID。\n调用 compare_javascript_export_shapes 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"left\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<旧版ID>\"}, \"right\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<新版ID>\"}, \"left_export_name\": \"getProfile\", \"right_export_name\": \"getProfile\", \"left_module_path\": \"profile.js\", \"right_module_path\": \"profile.js\"}\n请用 rea 的 compare_javascript_export_shapes 使用新旧 JavaScript 分析摘要各自的 parent_evidence_id，比较两版 profile.js 中 getProfile 的静态返回属性。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n对 js/v1 和 js/v2 分别调用 analyze_javascript_application，detail 填 summary。从各自 normalized_result.parent_evidence_id 取旧版ID和新版ID。\n调用 compare_javascript_export_shapes 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"left\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<旧版ID>\"}, \"right\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<新版ID>\"}, \"left_export_name\": \"getProfile\", \"right_export_name\": \"getProfile\", \"left_module_path\": \"profile.js\", \"right_module_path\": \"profile.js\"}\n请用 rea 的 compare_javascript_export_shapes 使用新旧 JavaScript 分析摘要各自的 parent_evidence_id，比较两版 profile.js 中 getProfile 的静态返回属性。",
+      "本轮最终实测结果": "新版 getProfile 的返回对象新增 count，值为 1。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "163b1a8713f34184",
+          "轮次指纹": "92ff903a14b09667",
+          "指令SHA256": "9be2170cb0294f30276021421c4c14a664eac7e3258ca8f624d4fb24ec2bdcbd",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_930e333bbfa61b8766a3ef64533e23bb9b6bf4ec1ddb7f9c89acfe10e225f29e"
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_95c4f615459c8da318ef1ddc13f96db60a9b1ceca3654b0fa5bfc20519ff1879"
+            },
+            {
+              "工具": "compare_javascript_export_shapes",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a81628d003ebf22767956bcd6ccc7e673347f3d680d810ca1af9854937f22159"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 25,
+      "工具": "observe_javascript_runtime",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py node，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 observe_javascript_runtime 使用我提供的本机 V8 Inspector 端点和目标 ID，列出 Node 测试进程已载入的脚本。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 在独立的终端任务启动 live/start.py node，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。完成后停止这次启动的进程。\n请用 rea 的 observe_javascript_runtime 使用我提供的本机 V8 Inspector 端点和目标 ID，列出 Node 测试进程已载入的脚本。",
+      "本轮最终实测结果": "V8 观测到 83 个脚本，含样例 idle.cjs。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fc6b324c0727b59c",
+          "轮次指纹": "bdf64e09d222a1af",
+          "指令SHA256": "b907c5c4690d966a4459591c7cc9f4b3d1c0ec602fc16265190201df30e46dfb",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "observe_javascript_runtime",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_7f86148fbc8b2e3beb68981890058269d3a2e843994cd76718448d4939a87742"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 26,
+      "工具": "reconcile_javascript_runtime",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 启动 live/start.py node，保持它运行。将首行 JSON 原样传给 observe_javascript_runtime，取该观测的证据ID。用 analyze_javascript_application 分析 node 目录，detail 填 summary，取 normalized_result.parent_evidence_id 作为应用图ID。完成比对后停止本次启动的 Node 测试进程。\n调用 reconcile_javascript_runtime 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"static_layers\": [{\"role\": \"application\", \"analysis\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}}], \"runtime_observations\": [{\"kind\": \"retained-evidence\", \"evidence_id\": \"<观测的证据ID>\"}]}\n请用 rea 的 reconcile_javascript_runtime 对齐本对话的 JavaScript 静态应用图和已有的 V8 观测记录，列出两边都能确认的脚本。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 Python 3 启动 live/start.py node，保持它运行。将首行 JSON 原样传给 observe_javascript_runtime，取该观测的证据ID。用 analyze_javascript_application 分析 node 目录，detail 填 summary，取 normalized_result.parent_evidence_id 作为应用图ID。完成比对后停止本次启动的 Node 测试进程。\n调用 reconcile_javascript_runtime 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"static_layers\": [{\"role\": \"application\", \"analysis\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}}], \"runtime_observations\": [{\"kind\": \"retained-evidence\", \"evidence_id\": \"<观测的证据ID>\"}]}\n请用 rea 的 reconcile_javascript_runtime 对齐本对话的 JavaScript 静态应用图和已有的 V8 观测记录，列出两边都能确认的脚本。",
+      "本轮最终实测结果": "静态与运行时均确认了 idle.cjs，其余 82 个脚本的对应关系为 unknown。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b8b9aa0246544fba",
+          "轮次指纹": "b5188cbf243ad6d1",
+          "指令SHA256": "ef6b0d85326161946d7ff74374173eda033174eb9a42ca6f8f8889580cba38ee",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_2c4c57dfe73dc9463181ccbf1f95e3c2e1e0063f58c0fa49980362220c40ec2b"
+            },
+            {
+              "工具": "observe_javascript_runtime",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_4645291d715edd68563e1abd822dee51c320f7e92a14662055d11f233f674131"
+            },
+            {
+              "工具": "reconcile_javascript_runtime",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_f89d41794b7d5d94a97dad1a2d0c026e79b840ab7269e12e04bee7dc41436887"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 27,
+      "工具": "compare_static_and_observed_endpoints",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n分别用以下参数准备两份摘要，路径换成本次解压的绝对路径。\nanalyze_javascript_application 用 {\"input_path\":\"<js/endpoint目录>\",\"detail\":\"summary\"}。\ninspect_web_network_capture 用 {\"capture_path\":\"<web/demo.har文件>\",\"format\":\"har\",\"detail\":\"summary\"}。\n依次取两份摘要的 normalized_result.parent_evidence_id，作为应用图ID和抓包ID。\n调用 compare_static_and_observed_endpoints 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}, \"capture\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<抓包ID>\"}, \"origin\": \"https://fixture.invalid\", \"detail\": \"complete\"}\n请用 rea 的 compare_static_and_observed_endpoints 核对本对话的应用图与同一测试应用的 HAR 分析结果，列出代码声明且抓包中出现过的接口。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n分别用以下参数准备两份摘要，路径换成本次解压的绝对路径。\nanalyze_javascript_application 用 {\"input_path\":\"<js/endpoint目录>\",\"detail\":\"summary\"}。\ninspect_web_network_capture 用 {\"capture_path\":\"<web/demo.har文件>\",\"format\":\"har\",\"detail\":\"summary\"}。\n依次取两份摘要的 normalized_result.parent_evidence_id，作为应用图ID和抓包ID。\n调用 compare_static_and_observed_endpoints 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"application\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<应用图ID>\"}, \"capture\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<抓包ID>\"}, \"origin\": \"https://fixture.invalid\", \"detail\": \"complete\"}\n请用 rea 的 compare_static_and_observed_endpoints 核对本对话的应用图与同一测试应用的 HAR 分析结果，列出代码声明且抓包中出现过的接口。",
+      "本轮最终实测结果": "静态代码中的 /demo/report 匹配 HAR 中的一条 GET 请求。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5f5824c9aa2ec88c",
+          "轮次指纹": "77f36cd3809bb19c",
+          "指令SHA256": "f43c7a3e76418cae713ae368fc2bb828e9b7cdca132eb087ec68b0405bb84284",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_917bfb4eafff78ae651ec1769518c2fab32f2a56efdfcbc0c3fbae8436aa15f3"
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_af50b879b723cef8d07e68132432d7206c925abe34f6a04946c4c9479c82ac79"
+            },
+            {
+              "工具": "compare_static_and_observed_endpoints",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_5e2a61d54acb3d3b50dafe71ebe059a4b9bba3787d1cd67561aba508da1c4c80"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 28,
+      "工具": "inspect_api_contract",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/openapi.json。\n请用 rea 的 inspect_api_contract 读取我提供的 web/openapi.json，按路径列出声明的 HTTP 方法。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 web/openapi.json。\n请用 rea 的 inspect_api_contract 读取我提供的 web/openapi.json，按路径列出声明的 HTTP 方法。",
+      "本轮最终实测结果": "OpenAPI 定义了一条路径 /books，方法为 GET。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "3c3c89d41222ff29",
+          "轮次指纹": "e91c21ca56027495",
+          "指令SHA256": "ced6e57b922647971b353e3d3af75d0fb696ae8230533b7c5d568ce2c3ab1652",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_api_contract",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_0049e4d2415995c108439c3174bbcaae376927f7cbbf8b50393d3b21e2f8ab6e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 29,
+      "工具": "inspect_android_package",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。\n请用 rea 的 inspect_android_package 查看我提供的 mobile/Demo.apk，列出包名、目标 SDK 和声明的权限。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。\n请用 rea 的 inspect_android_package 查看我提供的 mobile/Demo.apk，列出包名、目标 SDK 和声明的权限。",
+      "本轮最终实测结果": "APK 包名为 demo.fixture，目标 SDK 为 28，声明权限数为 0。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b023ddb01c99c7b6",
+          "轮次指纹": "c4ff2989b0e8ddd2",
+          "指令SHA256": "f1ed9c1565362ceec00bb30bd8adbd94563f2e3620d76b1edab660188775711e",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_android_package",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_9e5a26f08a00cf73fb67db7beaab5d1130b54090bcdd1646618ce57ebbbf98e9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 30,
+      "工具": "inspect_apk_signature",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。\n请用 rea 的 inspect_apk_signature 读取我提供的 mobile/Demo.apk，列出检测到的签名方案和签名证书指纹。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。\n请用 rea 的 inspect_apk_signature 读取我提供的 mobile/Demo.apk，列出检测到的签名方案和签名证书指纹。",
+      "本轮最终实测结果": "检测到 v1 签名、1 个签名者并读出了证书 SHA-256 指纹。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "269cc65ab1816330",
+          "轮次指纹": "eb7fd2b4bdb234ff",
+          "指令SHA256": "1c70a56482fbd187ac77c248d62275c1c2ab83f783437ad1cfd30ec81d838d2c",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_apk_signature",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_538b9072e97a5f679bc4bc70c8b228f25a19d96ac0eb1174779ce94e610d3a79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 31,
+      "工具": "search_android_classes",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。\n请用 rea 的 search_android_classes 在我提供的 mobile/Demo.apk 中搜索名称含 Activity 的类，列出完整类名。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。\n请用 rea 的 search_android_classes 在我提供的 mobile/Demo.apk 中搜索名称含 Activity 的类，列出完整类名。",
+      "本轮最终实测结果": "命中 demo.fixture.MainActivity。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "c221040c69af26ad",
+          "轮次指纹": "6c6ff9eba5e76fca",
+          "指令SHA256": "4245b98c7c3be46f34cb5f0b82cd119cc9ad35cefab8c1fccffdde5b23042321",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "search_android_classes",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a25e375a9d227c0c2f61983761a5a1fd6b66184102b3a6f8050ba5845a835b97"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 32,
+      "工具": "inspect_android_class",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。选用样例内的完整类名 demo.fixture.MainActivity。\n请用 rea 的 inspect_android_class 在我提供的 APK 里，读取demo.fixture.MainActivity，列出该类声明的字段和方法。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。选用样例内的完整类名 demo.fixture.MainActivity。\n请用 rea 的 inspect_android_class 在我提供的 APK 里，读取demo.fixture.MainActivity，列出该类声明的字段和方法。",
+      "本轮最终实测结果": "MainActivity 声明了 1 个字段和 1 个方法。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "af86fc6ec841132d",
+          "轮次指纹": "5352bdaa215cdcb4",
+          "指令SHA256": "0918d996e2065c91b8c90417994ed0976fcef037aec36a2cb6578d16e185739e",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_android_class",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_8a827240687bed7251342a28485847534a5eafed8d924524ebc90e2f0d69c6cd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 33,
+      "工具": "inspect_apktool_client",
+      "原文": "请用 `rea` 的 `inspect_apktool_client` 检查这台 Mac 实际使用的 Apktool 启动命令和版本。",
+      "最终指令": "请用 `rea` 的 `inspect_apktool_client` 检查这台 Mac 实际使用的 Apktool 启动命令和版本。",
+      "本轮最终实测结果": "探测到 Apktool 的启动路径，版本为 3.0.3。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "6fc6f830dce5d180",
+          "轮次指纹": "b903b277b66a84e5",
+          "指令SHA256": "6b6def99de65525b4afe5fd7f83b01452012c996902dbd8beb39a824361bdcaf",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_apktool_client",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_8a33e1623b683f13c2ee10841de11b74462c23a3c78ee05cf35fde8ef1ad6957"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 34,
+      "工具": "decode_android_resources",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。先读取默认表，再指定 locales 为 [\"zh\"] 读中文表；每个表各举一个字符串。\n请用 rea 的 decode_android_resources 解码我提供的 mobile/Demo.apk，列出实际包含的语言资源，并从每种语言中举一个字符串示例。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/Demo.apk。先读取默认表，再指定 locales 为 [\"zh\"] 读中文表；每个表各举一个字符串。\n请用 rea 的 decode_android_resources 解码我提供的 mobile/Demo.apk，列出实际包含的语言资源，并从每种语言中举一个字符串示例。",
+      "本轮最终实测结果": "分别读取了默认表与中文表，均含 1 个字符串。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5a1b284cc601e92a",
+          "轮次指纹": "57a1f633f5345ebd",
+          "指令SHA256": "bc647d842fa0de628cd034b39f28599c4c89967869f3d8af7997c1d4ba14310e",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "decode_android_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_7960e377dde011b1fd76de7ec748e17b9444dc6d3810561ffad3676032c1e907"
+            },
+            {
+              "工具": "decode_android_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_09db160e410aed3e9255092e8e18817bcfd9239704bd24161fb3dffbb926bace"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 35,
+      "工具": "inspect_adb_client",
+      "原文": "请用 `rea` 的 `inspect_adb_client` 告诉我本机 ADB 客户端的安装位置和版本。",
+      "最终指令": "请用 `rea` 的 `inspect_adb_client` 告诉我本机 ADB 客户端的安装位置和版本。",
+      "本轮最终实测结果": "探测到 ADB 客户端路径，版本为 37.0.1-15733141。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "2bfe07f72994dbd2",
+          "轮次指纹": "44c88447b1d4cdec",
+          "指令SHA256": "db1abf6ad82fd701578d45db994684cd53460a019d3fe7b1bd6a7fe19690a794",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_adb_client",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a1816d9a3d7b43e8a7e09b1f10ecc5636500e5b7fe685bc5992691d3f161d34f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 36,
+      "工具": "list_adb_devices",
+      "原文": "请用 `rea` 的 `list_adb_devices` 只列出 ADB 当前可见的设备和连接状态，若列表为空就告诉我。",
+      "最终指令": "请用 `rea` 的 `list_adb_devices` 只列出 ADB 当前可见的设备和连接状态，若列表为空就告诉我。",
+      "本轮最终实测结果": "ADB 返回的可见设备列表为空。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "2add9bf818e22a1b",
+          "轮次指纹": "64efe958d9a5dbca",
+          "指令SHA256": "ac063e75871e1c58a2b2908a80a84160bacbfd294c08f48e4671fc6121ab671b",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "list_adb_devices",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_6a97be5368f6cb40b85be6d6a699fb9f333db4af95b5c0f16603507a16296366"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 37,
+      "工具": "project_android_application_graph",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 mobile/toy.apk，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。\n请用 rea 的 project_android_application_graph 根据本对话里 mobile/toy.apk 的嵌套文件清单证据，列出组件路径及运行时线索。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 mobile/toy.apk，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。\n请用 rea 的 project_android_application_graph 根据本对话里 mobile/toy.apk 的嵌套文件清单证据，列出组件路径及运行时线索。",
+      "本轮最终实测结果": "应用图仅识别出 AndroidManifest.xml，运行时线索为空。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "95e8b9d677acd979",
+          "轮次指纹": "74a46827e0e39aa5",
+          "指令SHA256": "f53beb75aa47ff1cd4fc30792554aa55d512fd8a404ff6253dd5ce565a367687",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "c74c1de1c7db7eab"
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a8796868f1a49ed1d9151d2a54b921582ea8433205c3e5a403847c2786ec2211"
+            },
+            {
+              "工具": "project_android_application_graph",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_76b3a64b71ea8e9944ca1d8b5fddca8e60cb69116b02bf79898902f2cfa6d81e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 38,
+      "工具": "identify_flutter_build",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/flutter.apk。\n请用 rea 的 identify_flutter_build 检查我提供的 Flutter 安装包 mobile/flutter.apk，列出其中的 ABI 和可识别的 Dart 快照标识。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/flutter.apk。\n请用 rea 的 identify_flutter_build 检查我提供的 Flutter 安装包 mobile/flutter.apk，列出其中的 ABI 和可识别的 Dart 快照标识。",
+      "本轮最终实测结果": "识别到 arm64-v8a 并读出 Dart 快照标识。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "225be1f4ae9636f2",
+          "轮次指纹": "1e64dcbd4cf64f42",
+          "指令SHA256": "a0865f18f1bf07d6291b16fc21235c6adc7f4c673e692e8d1c2ec6b658c19f70",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "identify_flutter_build",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_078e40113c7589d3479ad890f18b26674b9010b4217d941372e3dcc1e32062f0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 39,
+      "工具": "inspect_dart_aot",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/flutter.apk。\n请用 rea 的 inspect_dart_aot 读取我提供的旧版 Flutter 测试 APK 中 arm64-v8a 的 Dart AOT 快照，概括可识别的结构。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 mobile/flutter.apk。\n请用 rea 的 inspect_dart_aot 读取我提供的旧版 Flutter 测试 APK 中 arm64-v8a 的 Dart AOT 快照，概括可识别的结构。",
+      "本轮最终实测结果": "VM 与 isolate 各自导出一块数据和一块指令。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "9e6c87eee3add471",
+          "轮次指纹": "a5bd66b321b227f0",
+          "指令SHA256": "e1f899720a18a3067ad5b16a219816921cabc1b48eed89c85dbc27d1d0c57571",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_dart_aot",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_7016c532da10a096c20fd5a27edf44195d42852c2464394ced577c9e361de785"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 40,
+      "工具": "project_harmony_application_graph",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 mobile/harmony.app，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。\n请用 rea 的 project_harmony_application_graph 根据本对话里 mobile/harmony.app 鸿蒙 App Pack 的嵌套清单证据，列出子包名称及路径。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 mobile/harmony.app，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。\n请用 rea 的 project_harmony_application_graph 根据本对话里 mobile/harmony.app 鸿蒙 App Pack 的嵌套清单证据，列出子包名称及路径。",
+      "本轮最终实测结果": "子包为 modules/entry.hap。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "6daf59ef8985ebae",
+          "轮次指纹": "c589a96a1a97cb0e",
+          "指令SHA256": "22b281658ffae27e1b7550f7cf1b4ef07e4c4dda1addadb54a4da9c1b9a620d7",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "bb8e7628a4395614"
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_11cacbbe9dab9a81c7c8cf750a0e4c9137b0d9c47b3914a605048986be662df6"
+            },
+            {
+              "工具": "project_harmony_application_graph",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_cdcf08198df6c830b73705c96b18d955b9ee09ebd283a7364ab460698dd92d63"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 41,
+      "工具": "project_apple_application_graph",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 mobile/toy.ipa，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。\n请用 rea 的 project_apple_application_graph 根据本对话里 mobile/toy.ipa 的嵌套清单证据，列出主应用和内嵌扩展所在的目录。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 mobile/toy.ipa，再调用 inspect_artifact 获得嵌套清单。把刚返回的完整证据作为 retained-evidence 放进 inventory_evidence 数组。\n请用 rea 的 project_apple_application_graph 根据本对话里 mobile/toy.ipa 的嵌套清单证据，列出主应用和内嵌扩展所在的目录。",
+      "本轮最终实测结果": "主应用是 Payload/Fixture.app/，未检出内嵌扩展。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "311232488b64d199",
+          "轮次指纹": "3728e232944a2d1a",
+          "指令SHA256": "272da01ecade7561acf031609d166db5a9eaf1a413183fc533ed51a2fe1cf18c",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "86b6ef0e8876f9b4"
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_9223545416de645df68f62f9698bcee8b1423fe764432439edda033187eed6d9"
+            },
+            {
+              "工具": "project_apple_application_graph",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_b662b0f843c36170dbbbc8ec0874ade268f1b7867d43ff463f0516a2620c470a"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 42,
+      "工具": "open_bundle_resources",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.app。\n请用 rea 的 open_bundle_resources 以只读方式打开我提供的 apple/Demo.app 资源目录，告诉我当前选中了哪个应用包。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.app。\n请用 rea 的 open_bundle_resources 以只读方式打开我提供的 apple/Demo.app 资源目录，告诉我当前选中了哪个应用包。",
+      "本轮最终实测结果": "以只读方式打开了 apple/Demo.app。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "efb17a3bc594ba12",
+          "轮次指纹": "9ed53fd9456440b0",
+          "指令SHA256": "426558d393768bff00f789bf53c3094f858cf3b89cdae55070738541d7c54596",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ed2846de59b7d0c0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 43,
+      "工具": "decode_interface_builder",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用 open_bundle_resources 打开 apple/Demo.app，保持该资源会话。 编译界面位于 Contents/Resources/Demo.storyboardc。\n请用 rea 的 decode_interface_builder 查看当前已打开的 Demo.app 中编译后的 storyboard，列出可识别的界面层级和控件连接。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用 open_bundle_resources 打开 apple/Demo.app，保持该资源会话。 编译界面位于 Contents/Resources/Demo.storyboardc。\n请用 rea 的 decode_interface_builder 查看当前已打开的 Demo.app 中编译后的 storyboard，列出可识别的界面层级和控件连接。",
+      "本轮最终实测结果": "读到 Demo.nib 场景中的 2 个界面对象。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "549ff6333f946b34",
+          "轮次指纹": "c1f275f9d0fa755e",
+          "指令SHA256": "52d648fc0e46614efdab60717fd39fb367175832ba75f97c810f975701589b42",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "8909002636b19cbd"
+            },
+            {
+              "工具": "decode_interface_builder",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_2b0d966edfdf8c42eb54f17b32b570891dcfd987815495c483f4de18f460dd03"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 44,
+      "工具": "inspect_asset_catalog",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n在新的临时目录复制 apple/Demo.app。把本机 /System/Applications/Calculator.app/Contents/Resources/Assets.car 复制到样例副本的 Contents/Resources/Assets.car。用 open_bundle_resources 打开该副本。接下来调用 inspect_asset_catalog 时，offset 填 0，limit 填 10。若本机缺少此系统文件，报告具体路径。\n请用 rea 的 inspect_asset_catalog 查看当前已打开的 Demo.app 的资源目录，从第一项起列出最多十个资源条目。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n在新的临时目录复制 apple/Demo.app。把本机 /System/Applications/Calculator.app/Contents/Resources/Assets.car 复制到样例副本的 Contents/Resources/Assets.car。用 open_bundle_resources 打开该副本。接下来调用 inspect_asset_catalog 时，offset 填 0，limit 填 10。若本机缺少此系统文件，报告具体路径。\n请用 rea 的 inspect_asset_catalog 查看当前已打开的 Demo.app 的资源目录，从第一项起列出最多十个资源条目。",
+      "本轮最终实测结果": "从 Demo.app 临时副本读取了本机 Calculator.app 的 Assets.car。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "88d1adab5878a850",
+          "轮次指纹": "c43efa468e2efbdc",
+          "指令SHA256": "85a172f82b88de266a0754970493c609a2c7a1919afa40dbe730b294a4d65805",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "be78879d1c3269a9"
+            },
+            {
+              "工具": "inspect_asset_catalog",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_6478b6fa7627908b55397fcc8074c74aa53a875c1a3fda677edc24c0ecb55938"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 45,
+      "工具": "inspect_keyed_archive",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用 open_bundle_resources 打开 apple/Demo.app，保持该资源会话。 使用包内相对路径 Contents/Resources/Model.plist。\n请用 rea 的 inspect_keyed_archive 读取当前 Demo.app 中的 Contents/Resources/Model.plist 键值归档，列出根对象及其引用的类。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用 open_bundle_resources 打开 apple/Demo.app，保持该资源会话。 使用包内相对路径 Contents/Resources/Model.plist。\n请用 rea 的 inspect_keyed_archive 读取当前 Demo.app 中的 Contents/Resources/Model.plist 键值归档，列出根对象及其引用的类。",
+      "本轮最终实测结果": "根对象 UID 1 的类为 NSArray，两个元素均引用 UID 2。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "06f032861bd94193",
+          "轮次指纹": "2707bfd43ec564ad",
+          "指令SHA256": "19816100e451a6cf3684eea1b6a2cb9977cc2253f8265a0cdbd29ea333ac2b63",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "dd04cf46268356a0"
+            },
+            {
+              "工具": "inspect_keyed_archive",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_f6b1b79300009f04f11afb2452be09219c13dba3d6c0b2d6368aa27aeee83387"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 46,
+      "工具": "inspect_plist",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用 open_bundle_resources 打开 apple/Demo.app，保持该资源会话。 使用包内相对路径 Contents/Info.plist。\n请用 rea 的 inspect_plist 读取当前 Demo.app 的 Contents/Info.plist，告诉我 CFBundleIdentifier 和 CFBundleVersion。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n使用 open_bundle_resources 打开 apple/Demo.app，保持该资源会话。 使用包内相对路径 Contents/Info.plist。\n请用 rea 的 inspect_plist 读取当前 Demo.app 的 Contents/Info.plist，告诉我 CFBundleIdentifier 和 CFBundleVersion。",
+      "本轮最终实测结果": "包标识为 dev.example.rea-smoke，版本为字符串 1。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "41248f3718f0891e",
+          "轮次指纹": "0aa5ec99bbed7e99",
+          "指令SHA256": "33f4525ef9f4fa6dfd00f2785a3a6da1b98d6dacd97a61894cef19500aaa1816",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_bundle_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "3f2cd5a0fcda8ccd"
+            },
+            {
+              "工具": "inspect_plist",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_c20b213150d6e02bdd993a9960b5a77f47084764acf5b94cc7ec5e77ff33d0a1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 47,
+      "工具": "inspect_macho",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/universal，使用自动识别，确认返回已打开，再在同一会话继续。\n请用 rea 的 inspect_macho 在已用 open_binary 成功打开的 Mach-O 样例中，列出切片架构和加载命令。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/universal，使用自动识别，确认返回已打开，再在同一会话继续。\n请用 rea 的 inspect_macho 在已用 open_binary 成功打开的 Mach-O 样例中，列出切片架构和加载命令。",
+      "本轮最终实测结果": "通用 Mach-O 含 x86_64 和 arm64 两个切片，返回了各自的加载命令。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "99badc8231a12c84",
+          "轮次指纹": "096aa6a8f8849603",
+          "指令SHA256": "b96c76cbf1c159c003ba4fd4d489c4051281460666a1b9ac85e902ab94c6642c",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "c3bcec9a10dbf9fe"
+            },
+            {
+              "工具": "inspect_macho",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_3c138616653bda81a442145f6b717819e89bb3ca6271af19cce446383244e1fc"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 48,
+      "工具": "inspect_signature",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/universal，使用自动识别，确认返回已打开，再在同一会话继续。\n请用 rea 的 inspect_signature 读取刚成功打开的 Mach-O 样例，列出它的签名身份和声明的授权项。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/universal，使用自动识别，确认返回已打开，再在同一会话继续。\n请用 rea 的 inspect_signature 读取刚成功打开的 Mach-O 样例，列出它的签名身份和声明的授权项。",
+      "本轮最终实测结果": "读取了切片签名信息，arm64 切片的签名标识为 demo。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "dc6194a5df0342a4",
+          "轮次指纹": "534332072c60b13e",
+          "指令SHA256": "fe945cf769e43008418d6b1c0ca5e38887047b3dd299da0ba1022346a71146e2",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "3d9a9c1c61a3f9cf"
+            },
+            {
+              "工具": "inspect_signature",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_48a1aed0538e3edad57d01f1452a605f9fefdc41ead6da23809e475fdd7bbf87"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 49,
+      "工具": "inspect_apple_ips",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.ips。\n请用 rea 的 inspect_apple_ips 读取我提供的 apple/Demo.ips 崩溃报告，找出异常类型和触发崩溃的线程。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.ips。\n请用 rea 的 inspect_apple_ips 读取我提供的 apple/Demo.ips 崩溃报告，找出异常类型和触发崩溃的线程。",
+      "本轮最终实测结果": "崩溃类型为 EXC_BAD_ACCESS，触发者为索引 0 的主线程。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "218e575ac4682301",
+          "轮次指纹": "efd0be4ea81a43d2",
+          "指令SHA256": "a4a8849eee7224de7bf777aa2372b11288be4a5f371f6b6001b56e4c9112c932",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_apple_ips",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_90602ddefa0a000b8f9d206dada805bd27c901f870b97d4ea7a0f6af60d5ac12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 50,
+      "工具": "demangle_swift",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 demangle_swift 在已打开的 Mach-O 测试目标中，把 Swift 符号 $s4Test3fooyyF 还原成可读名称。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 demangle_swift 在已打开的 Mach-O 测试目标中，把 Swift 符号 $s4Test3fooyyF 还原成可读名称。",
+      "本轮最终实测结果": "Swift 符号还原为 Test.foo() -> ()。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "ff6f220d93736ff1",
+          "轮次指纹": "d1ff887b95eda56d",
+          "指令SHA256": "215f7f74288bbee64b787d8ad7be3f8d66507c3908fae984c1305b61d77e08a0",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "68d0546b443d4a46"
+            },
+            {
+              "工具": "demangle_swift",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_88bca16e0e4c5ccfdc8ac19634b97f694029d0085c74bb1a6088d13630e64b7b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 51,
+      "工具": "analyze_swift_types",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 analyze_swift_types 在当前打开的 Swift 测试程序里查找名称含 Account 的类。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 analyze_swift_types 在当前打开的 Swift 测试程序里查找名称含 Account 的类。",
+      "本轮最终实测结果": "匹配到 Swift 类 DemoTypes.AccountSample。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "00dcea98f6b2b910",
+          "轮次指纹": "8d46d98956fc0c15",
+          "指令SHA256": "3e66dcc9e2a54c8944d6a9250feec4f9fd4397da9b6ac49e1f2205d429d697a4",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "071fd0c72784687f"
+            },
+            {
+              "工具": "analyze_swift_types",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_0920e090dd5438d090e5d04c30b43228a1a6b04cfd16c01af41e122dfa45dcee"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 52,
+      "工具": "get_objc_classes",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 get_objc_classes 在当前打开的测试程序中列出名称含 ViewController 的 Objective-C 类。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 get_objc_classes 在当前打开的测试程序中列出名称含 ViewController 的 Objective-C 类。",
+      "本轮最终实测结果": "找到 Objective-C 类 DemoViewController。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fb969ad128556e4d",
+          "轮次指纹": "fecfc7cb063a6b38",
+          "指令SHA256": "3c62867f2c3830d167b2de9d4af35a2fe9d74ce782d7f995b5ea02a806ced34a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "07e41587e849e70f"
+            },
+            {
+              "工具": "get_objc_classes",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_ce4b033025e5bb88ad76739dca1fecbf0c1630b559f9d9f9670ad3690d91b325"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 53,
+      "工具": "get_objc_protocols",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 get_objc_protocols 列出当前分析后端在已打开的测试程序中识别到的 Objective-C 协议；如果列表为空，就报告零项。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/types-demo。它包含 AccountSample 和 DemoViewController，打开成功后在同一会话继续。\n请用 rea 的 get_objc_protocols 列出当前分析后端在已打开的测试程序中识别到的 Objective-C 协议；如果列表为空，就报告零项。",
+      "本轮最终实测结果": "Ghidra 返回空列表，识别到 0 个 Objective-C 协议。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "61b16162285d260b",
+          "轮次指纹": "ffb887fcd5220989",
+          "指令SHA256": "302c513be3cbe37e2068d250463cb4e2ff8e2ee30c4cafbef00fe5f07bfdf783",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "e05ed1a3093fc471"
+            },
+            {
+              "工具": "get_objc_protocols",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_205d2be661da4a16f75ee116d8c1af3267408c2e4acd6865dc937327cfc7ff1c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 54,
+      "工具": "open_binary",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/demo。\n请用 rea 的 open_binary 用 Ghidra 打开我提供的 native/demo，并报告识别到的文件格式。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/demo。\n请用 rea 的 open_binary 用 Ghidra 打开我提供的 native/demo，并报告识别到的文件格式。",
+      "本轮最终实测结果": "Ghidra 识别为 ARM64 Mach-O 可执行文件。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "985a165fa438cc25",
+          "轮次指纹": "dfc3b3a5bed5ec7d",
+          "指令SHA256": "f329c36f8dcceb6cdde8d3ceb28c7c76e4402bb367bcfbbf85e5e5da820680da",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "b642c19f7fcbd271"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 55,
+      "工具": "binary_session",
+      "原文": "请用 `rea` 的 `binary_session` 告诉我当前 REA 会话选中哪个文件、使用哪个分析后端。",
+      "最终指令": "请用 `rea` 的 `binary_session` 告诉我当前 REA 会话选中哪个文件、使用哪个分析后端。",
+      "本轮最终实测结果": "会话返回 open: false，未选中文件或绑定后端。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "a2f1bee5ac2aa109",
+          "轮次指纹": "86a1096b6e157f9e",
+          "指令SHA256": "0ea3afa6eb40aecc902c5ee0aa8b8feb798c812457710c98fd5e3b23ae1e0d46",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "binary_session",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "a72db0529bcf8281"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 56,
+      "工具": "close_binary",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 close_binary 关闭本对话当前打开的测试二进制，并报告关闭结果。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 close_binary 关闭本对话当前打开的测试二进制，并报告关闭结果。",
+      "本轮最终实测结果": "已关闭测试二进制，复查 open=false、cleanup_pending=false。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f87dc77ae5d6c749",
+          "轮次指纹": "8723128fe9dd3d0e",
+          "指令SHA256": "c6572802a01e6c1a7ef09ed46e31fb8d5e023fedb772106ec04911776f86d5fd",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "2d6dff6d1a191faa"
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "5fe604924bcaba66"
+            },
+            {
+              "工具": "list_documents",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_14a550e4dbdb26092c10b26940aa13a982da6b2aff2d3e2066131db60837e737"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "6b7b8dc4e6f5ab5f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 57,
+      "工具": "binary_overview",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 binary_overview 汇总当前打开的测试程序，告诉我后端已识别多少个函数和字符串。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 binary_overview 汇总当前打开的测试程序，告诉我后端已识别多少个函数和字符串。",
+      "本轮最终实测结果": "Ghidra 在样例中识别到 2 个函数和 10 个字符串。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "7130ee367f984a6c",
+          "轮次指纹": "f193be5c0630c26c",
+          "指令SHA256": "77bcade936ce534b1a0e8cd9fcae96323b70aa6e3191cd119360db466d1dc7d6",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "00d813245f10cf9f"
+            },
+            {
+              "工具": "binary_overview",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_010e9f7b809910713807cbf4ffa17ecd40d4545fb64f4f267905696644a09369"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 58,
+      "工具": "list_architectures",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/universal，使用自动识别，确认返回已打开，再在同一会话继续。\n请用 rea 的 list_architectures 在刚成功打开的通用 Mach-O 文件中枚举架构，逐项给出工具识别的架构名。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 打开 native/universal，使用自动识别，确认返回已打开，再在同一会话继续。\n请用 rea 的 list_architectures 在刚成功打开的通用 Mach-O 文件中枚举架构，逐项给出工具识别的架构名。",
+      "本轮最终实测结果": "返回 x86_64 和 arm64 两个架构。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b31a85579080a02e",
+          "轮次指纹": "57a4ea47a0e1850f",
+          "指令SHA256": "76720fa43e96571c29210cffbb01f18cf4b8d30420b217a5a5198be5504d95c4",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "177c27e9fe084eac"
+            },
+            {
+              "工具": "list_architectures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_847e1551ef6d861a62a0eefdffc2a29dff01716d4cd79777b265bf7ac6626241"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 59,
+      "工具": "list_documents",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_documents 列出当前分析后端可见的文档，并告诉我哪些对应刚打开的测试程序。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_documents 列出当前分析后端可见的文档，并告诉我哪些对应刚打开的测试程序。",
+      "本轮最终实测结果": "Ghidra 列出的唯一文档对应刚打开的 native/demo。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "a487c12f3a3cbf6d",
+          "轮次指纹": "f0610c33f53bdc7c",
+          "指令SHA256": "8ebbe6a073ca6c675b4d6374268f110e525d471593576f9edd09ef403169e962",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "63a01394f304018c"
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "e41e71f1d103cbde"
+            },
+            {
+              "工具": "list_documents",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_14a550e4dbdb26092c10b26940aa13a982da6b2aff2d3e2066131db60837e737"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 60,
+      "工具": "list_segments",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_segments 列出当前测试程序的内存段名称以及各段的起止地址。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_segments 列出当前测试程序的内存段名称以及各段的起止地址。",
+      "本轮最终实测结果": "返回了 5 个内存块的名称及地址范围。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "49551a75dbde41f3",
+          "轮次指纹": "2b93ff9a4e171c49",
+          "指令SHA256": "f69d3ff5177032f4e35905bd148291c36a282a276fc651ab2d471237b5be6797",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7e18ae954fc4f28e"
+            },
+            {
+              "工具": "list_segments",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_8d85c27ebaa467fd2c6e33e56d37676254da4ae4b8e72c980c2a52b5ee6ff4db"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 61,
+      "工具": "list_procedures",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_procedures 列出当前测试程序中已识别的函数，先展示前十个名称和地址。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_procedures 列出当前测试程序中已识别的函数，先展示前十个名称和地址。",
+      "本轮最终实测结果": "返回 2 个已识别函数及其起始地址。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fa62cff3984fb910",
+          "轮次指纹": "f237842f61c455cd",
+          "指令SHA256": "1df7da4264fa2fd57d57610f9d688a01e22e99ebaa91b88fda0220385cbfa0c7",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "18ed5d51379e426a"
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_99c9a8a1d4c734f28b72bf495d2b3a3f366cf623c97833592c9cdb586e034990"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 62,
+      "工具": "search_procedures",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 search_procedures 在当前测试程序中按字面、不区分大小写搜索 main，列出匹配的函数。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 search_procedures 在当前测试程序中按字面、不区分大小写搜索 main，列出匹配的函数。",
+      "本轮最终实测结果": "main 匹配到 entry 的别名 _main。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "d129f60eb7d3f5f7",
+          "轮次指纹": "aacc885f2b10fa8a",
+          "指令SHA256": "cc5963452a1d2f984ee51cd2dba5547258b5fe41f94f2ae77952b1517516aecf",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "5468625a158e2e29"
+            },
+            {
+              "工具": "binary_session",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "e9dfc48c3676e19e"
+            },
+            {
+              "工具": "search_procedures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_34fd9dce90f03d820d517c41be8544e8edf4488537ceef84b2b1127a8fc6e171"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 63,
+      "工具": "list_names",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_names 列出当前测试程序的已命名符号，先展示十组地址和名称。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。\n请用 rea 的 list_names 列出当前测试程序的已命名符号，先展示十组地址和名称。",
+      "本轮最终实测结果": "列出全部 9 组地址和名称。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f37174d936ec14a2",
+          "轮次指纹": "a024b87cbad9d6fa",
+          "指令SHA256": "2d3aa708e2840e953aa1c986b9c94e5c96b980b56d377987716789f579ccc4e9",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ce3319f055597609"
+            },
+            {
+              "工具": "list_names",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_6f2f14ea3300db0341fc8e99c59be3e343997675b20cd1e34a7fbda686d382b6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 64,
+      "工具": "address_name",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 address_name 查询上一条函数列表中第一个函数的起始地址，告诉我它的符号名。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 address_name 查询上一条函数列表中第一个函数的起始地址，告诉我它的符号名。",
+      "本轮最终实测结果": "首个函数地址 0x100000328 的符号名为 _demo_value。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "0beaa9fe091aa57e",
+          "轮次指纹": "5c9f94d68f85b3b2",
+          "指令SHA256": "a757daad50dd5fda16dda40ddd0d314bc949df6ed0c605c26f727602ecaa6b4a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "555544bfbf7fb608"
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_99c9a8a1d4c734f28b72bf495d2b3a3f366cf623c97833592c9cdb586e034990"
+            },
+            {
+              "工具": "address_name",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a7a6c3808dd03df1cee9a2267139c9ecae31c9dbb58069168c7f9422a22cf61c"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 65,
+      "工具": "inspect_address_context",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 inspect_address_context 检查上一条函数列表中第一个函数的起始地址，给出所属函数和可读取的注释。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 inspect_address_context 检查上一条函数列表中第一个函数的起始地址，给出所属函数和可读取的注释。",
+      "本轮最终实测结果": "地址属于 _demo_value，当前 Ghidra 后端的普通注释和行内注释均为 unavailable。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "da901d6f0100ad52",
+          "轮次指纹": "9ad7abac09b3a1e7",
+          "指令SHA256": "24160e533a6ad0f4459c11e362737eefcaf1478d6ca001b3cff390c69728e9aa",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "90493a391c53fe88"
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_99c9a8a1d4c734f28b72bf495d2b3a3f366cf623c97833592c9cdb586e034990"
+            },
+            {
+              "工具": "inspect_address_context",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "0d3261d4005405f5"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            },
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "90493a391c53fe88"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 66,
+      "工具": "set_address_name",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 set_address_name 将我选中的测试函数起始地址重命名为 demo_entry，并告诉我改动的地址。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 set_address_name 将我选中的测试函数起始地址重命名为 demo_entry，并告诉我改动的地址。",
+      "本轮最终实测结果": "把临时会话中的首个函数改名为 demo_entry，回读一致。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "9eb036c577081a40",
+          "轮次指纹": "33167e9ebb966c1b",
+          "指令SHA256": "07af22dffe8bd0f7e84466037bbb56d85ba173ecf484d09157fbf070535c56c5",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "5d27ed8f801b2878"
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_99c9a8a1d4c734f28b72bf495d2b3a3f366cf623c97833592c9cdb586e034990"
+            },
+            {
+              "工具": "set_address_name",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_2e595064b335e7ec0f605aadc5927ace00661372ff40a6afa135ccb370a22a54"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 67,
+      "工具": "set_addresses_names",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n将 native/demo 的临时副本用 open_binary 打开，provider_id 填 ghidra。调用 list_procedures，按顺序取前两个不同函数的起始地址作为下面的键。保留改名返回的回读结果，最后用空参数 {} 调用 close_binary 关闭本次临时目标。\n调用 set_addresses_names 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"names\": {\"<第一个地址>\": \"demo_load\", \"<第二个地址>\": \"demo_save\"}}\n请用 rea 的 set_addresses_names 将我依次选中的两个不同测试函数地址分别命名为 demo_load 和 demo_save。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n将 native/demo 的临时副本用 open_binary 打开，provider_id 填 ghidra。调用 list_procedures，按顺序取前两个不同函数的起始地址作为下面的键。保留改名返回的回读结果，最后用空参数 {} 调用 close_binary 关闭本次临时目标。\n调用 set_addresses_names 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"names\": {\"<第一个地址>\": \"demo_load\", \"<第二个地址>\": \"demo_save\"}}\n请用 rea 的 set_addresses_names 将我依次选中的两个不同测试函数地址分别命名为 demo_load 和 demo_save。",
+      "本轮最终实测结果": "两个地址分别改名为 demo_load 和 demo_save，回读均一致。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "ef013e1ba83e25ba",
+          "轮次指纹": "4637e3c6e82e5597",
+          "指令SHA256": "b08b6deefe8f94841bfa991a472caa8e4b02929b817bb5d845b82280b0276adf",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "4765da13cdae11ec"
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_99c9a8a1d4c734f28b72bf495d2b3a3f366cf623c97833592c9cdb586e034990"
+            },
+            {
+              "工具": "set_addresses_names",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a1be9aba548e7fc64aecc48c1da6c92f56a34459637dc04a9cef8add09ca2330"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 68,
+      "工具": "list_cutter_sessions",
+      "原文": "请用 `rea` 的 `list_cutter_sessions` 列出这台 Mac 当前可发现的 Cutter 桥接会话，没有会话就报告空列表。",
+      "最终指令": "请用 `rea` 的 `list_cutter_sessions` 列出这台 Mac 当前可发现的 Cutter 桥接会话，没有会话就报告空列表。",
+      "本轮最终实测结果": "可发现的 Cutter 桥接会话为 0 个。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5b6d018837e91921",
+          "轮次指纹": "8271e629410144d5",
+          "指令SHA256": "eee6effeb382ed7ead9058978b08d539bec6c8b731999d1cbbdeacdecbe2f65d",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "list_cutter_sessions",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "8946023d3ff80702"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 69,
+      "工具": "inspect_native_exports",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/libdemo.so。\n请用 rea 的 inspect_native_exports 从我提供的 native/libdemo.so 列出已定义的动态导出符号，先显示前十个。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/libdemo.so。\n请用 rea 的 inspect_native_exports 从我提供的 native/libdemo.so 列出已定义的动态导出符号，先显示前十个。",
+      "本轮最终实测结果": "唯一已定义的动态导出符号是 demo_add。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "a8fd562eec172437",
+          "轮次指纹": "d3c1c6b6160d0d22",
+          "指令SHA256": "2e6fa6b4ef2a197e2a7b4b384976d59001a3bc56b8d38ebc1c08391858007b4e",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_native_exports",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_f60fffc09e548075b474d86d664bc05cf6d50c6a41d8dd040075581b3272e845"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 70,
+      "工具": "inspect_binary_hardening",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/go.elf。\n请用 rea 的 inspect_binary_hardening 检查我提供的 native/go.elf，列出它声明的 PIE、NX 和 RELRO 状态。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/go.elf。\n请用 rea 的 inspect_binary_hardening 检查我提供的 native/go.elf，列出它声明的 PIE、NX 和 RELRO 状态。",
+      "本轮最终实测结果": "PIE 与 RELRO 未启用，NX 缺少声明，状态为 unknown。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f5a99d699db53a1d",
+          "轮次指纹": "6bb650fe0d5b8900",
+          "指令SHA256": "691bd8458ea682cbfb1d26a9d0ad3f38ff6aec64b576567670bd15c9db6fb518",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_binary_hardening",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_08a88141ff76b565b59b8eb37cdfd191b4c9675a28d15141ecff5b0a4036c1eb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 71,
+      "工具": "inspect_byte_entropy",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/kernel.bin。\n请用 rea 的 inspect_byte_entropy 计算我提供的 native/kernel.bin 的整体字节熵，并按 4096 字节分块展示分布。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/kernel.bin。\n请用 rea 的 inspect_byte_entropy 计算我提供的 native/kernel.bin 的整体字节熵，并按 4096 字节分块展示分布。",
+      "本轮最终实测结果": "整体熵为 6.5213 比特/字节，446 字节全部落入同一块。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "187110dc278aa9d3",
+          "轮次指纹": "5ade74296b7e7b7d",
+          "指令SHA256": "77bc183d9635a5db7fce9e6448f569dd87dd62c586582a5c8ace2c53b36196ba",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_byte_entropy",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_9c21a9e845754dabf748ffd2f325af0ba17fafe1d9f46b0c05f7753e0f41c331"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 72,
+      "工具": "inspect_pe_imports",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/native.exe。\n请用 rea 的 inspect_pe_imports 读取我提供的 native/native.exe，按 DLL 分组列出它导入的函数。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/native.exe。\n请用 rea 的 inspect_pe_imports 读取我提供的 native/native.exe，按 DLL 分组列出它导入的函数。",
+      "本轮最终实测结果": "标准导入与延迟导入均为 0 项。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5f6e080758a97ec1",
+          "轮次指纹": "7776a98ce5edb963",
+          "指令SHA256": "a9dc8c85cce72b5f49bdb67ecf63b8655b02fde5b97e9eb0064035453d3ca9a0",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_pe_imports",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_70bc0abc36bfd318ccdce80be5005cf3aa9cefe2e06ab71e3c7592857862c602"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 73,
+      "工具": "inspect_pe_resources",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/resources.exe。\n请用 rea 的 inspect_pe_resources 查看我提供的 native/resources.exe 的资源树，列出资源类型和对应的语言编号。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/resources.exe。\n请用 rea 的 inspect_pe_resources 查看我提供的 native/resources.exe 的资源树，列出资源类型和对应的语言编号。",
+      "本轮最终实测结果": "PE 资源树包含 3 种资源类型和 5 个条目，读到了语言编号 1033 与 1041。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "a583ff5600220abe",
+          "轮次指纹": "52c7c43aa68a2eeb",
+          "指令SHA256": "7e39de3622d60c1a408d485ce349a4897dd2047b3db4ff99d3228d44860ccdaa",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_pe_resources",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a278947656ae09c3047997009821b7a8732774adada791bede1f53ef992111f1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 74,
+      "工具": "inspect_pe_certificates",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/certificate.exe。\n请用 rea 的 inspect_pe_certificates 读取我提供的 native/certificate.exe 的证书表，列出其中记录的签名者和摘要算法。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/certificate.exe。\n请用 rea 的 inspect_pe_certificates 读取我提供的 native/certificate.exe 的证书表，列出其中记录的签名者和摘要算法。",
+      "本轮最终实测结果": "读到 1 条 PKCS#7 记录，含 1 位签名者及其摘要算法。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8d270944bec503d5",
+          "轮次指纹": "add77c5830404e36",
+          "指令SHA256": "5e1f1be94d520bf1e0217dde3cf96fb78a7a1c11fb6ca92f47c45e349be8efdc",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_pe_certificates",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_68d42b7f9e7094503b21284d17990b7dec7eae596817176d1a1219fd6773ce51"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 75,
+      "工具": "inspect_windows_shortcut",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/readme.lnk。\n请用 rea 的 inspect_windows_shortcut 静态读取我提供的 native/readme.lnk，告诉我它记录的目标路径和工作目录。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/readme.lnk。\n请用 rea 的 inspect_windows_shortcut 静态读取我提供的 native/readme.lnk，告诉我它记录的目标路径和工作目录。",
+      "本轮最终实测结果": "快捷方式记录的目标为 ./readme.txt，工作目录为 C:\\Example。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "338328d38d8c574b",
+          "轮次指纹": "bef95dca7ca5c259",
+          "指令SHA256": "070e92548a1298f7d75a9a0893ce79935790a605b555d730713bd12848e40694",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_windows_shortcut",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_7e53b8869a46d88b7acb7e88e9e774f91b6afeea65100a86ef12b7b0fdf57383"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 76,
+      "工具": "inspect_ntfs_journal",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/records 和 native/journal。records 是 MFT，journal 是同一合成卷的 USN。\n请用 rea 的 inspect_ntfs_journal 使用我提供的同一卷的 MFT 和 USN 日志文件，列出最先读到的十条变更记录。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/records 和 native/journal。records 是 MFT，journal 是同一合成卷的 USN。\n请用 rea 的 inspect_ntfs_journal 使用我提供的同一卷的 MFT 和 USN 日志文件，列出最先读到的十条变更记录。",
+      "本轮最终实测结果": "从偏移 0 读到 3 条 USN 变更记录，已到末页。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fd64c98aa535614b",
+          "轮次指纹": "e89336cf1193514b",
+          "指令SHA256": "45adacf67d5b998ade06a7857a2874c66e886d017e6893de0e1948b196fa92ac",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_ntfs_journal",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_fe2a3bf95c7e7ac596fc01f058f98bcfce226f327dad60fdf3788bb3bd9207c1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 77,
+      "工具": "inspect_elf_notes",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/notes.elf。\n请用 rea 的 inspect_elf_notes 读取我提供的 native/notes.elf，列出注记的所有者和类型，并标出可识别的构建 ID。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/notes.elf。\n请用 rea 的 inspect_elf_notes 读取我提供的 native/notes.elf，列出注记的所有者和类型，并标出可识别的构建 ID。",
+      "本轮最终实测结果": "按偏移去重后有两条 ELF 注记，含 GNU 构建 ID。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5845aa53ca52ae02",
+          "轮次指纹": "ccdeccee1e4970a7",
+          "指令SHA256": "9d9a859511163729b9a63b6e2745eae1f8b7301919771f689909af799beec3eb",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_elf_notes",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_eedebcd5d2a4cf001be71217941e722502054ed707ba2e644ac1cfa9bce73fb8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 78,
+      "工具": "inspect_kernel_build_config",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/kernel.bin。\n请用 rea 的 inspect_kernel_build_config 查看我提供的 native/kernel.bin 中嵌入的配置，告诉我 CONFIG_SMP 的记录值。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/kernel.bin。\n请用 rea 的 inspect_kernel_build_config 查看我提供的 native/kernel.bin 中嵌入的配置，告诉我 CONFIG_SMP 的记录值。",
+      "本轮最终实测结果": "读到 9 个配置项，CONFIG_SMP 未记录。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b90fa4f498bf7657",
+          "轮次指纹": "69670e8bfefec46b",
+          "指令SHA256": "ed537e756183edb7fdf8f365f42d8f050cf996ede2ae000fa586f20efe5fa190",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_kernel_build_config",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_99940408ae0e864ec21bb65d07203cd09bf9727bf3b49c4bf0038e30e544853c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 79,
+      "工具": "inspect_kernel_module",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/module.ko。\n请用 rea 的 inspect_kernel_module 从我提供的 native/module.ko 中读取模块名称、许可证以及声明的依赖。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/module.ko。\n请用 rea 的 inspect_kernel_module 从我提供的 native/module.ko 中读取模块名称、许可证以及声明的依赖。",
+      "本轮最终实测结果": "模块名为 demo，许可证为 GPL，依赖字段为空。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "6c13b8e395f5bb66",
+          "轮次指纹": "7cb50ec97addae41",
+          "指令SHA256": "bb3cfeefa360d81b41e53defa400901deeffb00112a64be94746f128da4d9486",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_kernel_module",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_6947c9f48f24a0a5cf05e76b6b69d32c17b8250717e2683bb8a0df3a9cdacdb1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 80,
+      "工具": "inspect_devicetree",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/device.dtb。\n请用 rea 的 inspect_devicetree 读取我提供的 native/device.dtb，列出根节点下的设备节点及其 compatible 属性。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/device.dtb。\n请用 rea 的 inspect_devicetree 读取我提供的 native/device.dtb，列出根节点下的设备节点及其 compatible 属性。",
+      "本轮最终实测结果": "根节点有 4 个直接子节点，均未定义 compatible 属性。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "833bdd988237f61d",
+          "轮次指纹": "d1a4dcd0f1cae066",
+          "指令SHA256": "20ddf888f31b0a0a386dd2bfa0ab9378b5dccdd584963c7f609e10e5fb8b51aa",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_devicetree",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_c6e18c6dd30a5b793a2b2ed9c665595ae5847dc17da6aced1307d98578beade6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 81,
+      "工具": "inspect_go_binary",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/go.elf。\n请用 rea 的 inspect_go_binary 检查我提供的 Go 测试程序，列出编译器版本、主模块和依赖模块。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/go.elf。\n请用 rea 的 inspect_go_binary 检查我提供的 Go 测试程序，列出编译器版本、主模块和依赖模块。",
+      "本轮最终实测结果": "Go 编译器版本为 go1.26.0，主模块为 example.com/tool。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8efce2fe6a08dfd7",
+          "轮次指纹": "c41b2214f19da97f",
+          "指令SHA256": "5bab598342a7a8b4d23202ac26d49b5e2cf4ccc8d35169cdb3042d4f552afaf1",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_go_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_725d953190f942d457b0efea379df48c31cf9a24b63b733bced1002e894ee096"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 82,
+      "工具": "inspect_rust_binary",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/rust.elf。\n请用 rea 的 inspect_rust_binary 从我提供的含 cargo-auditable 元数据的 Rust 测试程序中列出依赖包及版本。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/rust.elf。\n请用 rea 的 inspect_rust_binary 从我提供的含 cargo-auditable 元数据的 Rust 测试程序中列出依赖包及版本。",
+      "本轮最终实测结果": "根包 sample 0.1.0 的直接依赖为 itoa 1.0.18。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8ffbc0621f004331",
+          "轮次指纹": "9bc5995c22a2fa65",
+          "指令SHA256": "c522bbaf738b308275fcef58b6841022bc1c4a58c7426f0a19a8f120b4391939",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_rust_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_44b92025825f739220cacf03d453d451da2d67a1bbc57178a26aad60fb32564d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 83,
+      "工具": "inspect_erlang_beam",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.beam。\n请用 rea 的 inspect_erlang_beam 读取我提供的 native/sample.beam，列出导出函数的名称及参数个数。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.beam。\n请用 rea 的 inspect_erlang_beam 读取我提供的 native/sample.beam，列出导出函数的名称及参数个数。",
+      "本轮最终实测结果": "导出 start/0、module_info/0 和 module_info/1。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "518a80697c06ad12",
+          "轮次指纹": "995f3d0ab390b2fe",
+          "指令SHA256": "6c52f70fda08ee47e24f9eac6243414b7aae7555435a50b5f70f76e01394cc8f",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_erlang_beam",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_d0378511844272801cc34675e7f3968fd56241c30a53d10d04c445b779525332"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 84,
+      "工具": "inspect_python_pyc",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.pyc。\n请用 rea 的 inspect_python_pyc 查看我提供的 native/sample.pyc，告诉我其对应的 CPython 版本及记录的代码对象名称。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.pyc。\n请用 rea 的 inspect_python_pyc 查看我提供的 native/sample.pyc，告诉我其对应的 CPython 版本及记录的代码对象名称。",
+      "本轮最终实测结果": "识别为 CPython 3.12，读到顶层模块和 inner 两个代码对象。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "15b29dc23de6f605",
+          "轮次指纹": "6b26cd737e5d4438",
+          "指令SHA256": "b36c7a4c2dd5d30b4d175f778855d540ec21d003c008996fec0909af9987219d",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_python_pyc",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_b0d46588af55c50a2c6a0d7ad9356606ad60227a1874f6f04c8dbdff6e7c7619"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 85,
+      "工具": "inspect_v8_code_cache",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.jsc。\n请用 rea 的 inspect_v8_code_cache 读取我提供的 native/sample.jsc，列出可识别的 V8 缓存文件头字段。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.jsc。\n请用 rea 的 inspect_v8_code_cache 读取我提供的 native/sample.jsc，列出可识别的 V8 缓存文件头字段。",
+      "本轮最终实测结果": "32 字节的 V8 缓存头包含 8 个四字节字段。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "3abdb22285fbc5f1",
+          "轮次指纹": "b848d42a4587ce1e",
+          "指令SHA256": "c0ac312f9949f0a912081ebe309e3f3ea3350a706ab16dd0cdc37cd68724ca11",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_v8_code_cache",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_7016d2b6965e45f4073d7c5ace7d4b7590b17bc19af54c3d2fdb45d752ffe40f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 86,
+      "工具": "inspect_managed_artifact",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/Interop.dll。\n请用 rea 的 inspect_managed_artifact 读取我提供的 native/Interop.dll，告诉我程序集名称、版本和托管元数据概况。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/Interop.dll。\n请用 rea 的 inspect_managed_artifact 读取我提供的 native/Interop.dll，告诉我程序集名称、版本和托管元数据概况。",
+      "本轮最终实测结果": "读到程序集 Fixture.Managed，版本为 1.2.3.4。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "acf3b5780ea1192f",
+          "轮次指纹": "bae433a37bad2e12",
+          "指令SHA256": "cec6fb638c48bd7bb2549a5dfed46dcb822efc19d92803665e93f9201db4fbfc",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_managed_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_397e872920de0a9ad35afbba837d5e8fb6165380b78ffbbe9531da1f0c110133"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 87,
+      "工具": "compare_managed_members",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先 import_evidence_bundle 导入 evidence/members.json，再读取 evidence/args-87.json 作为本项参数；其中的 ID 对应这个样例包中的成员证据。\n请用 rea 的 compare_managed_members 比较我提供的新旧两份 REA 托管成员证据，列出能够匹配的成员及其签名变化。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先 import_evidence_bundle 导入 evidence/members.json，再读取 evidence/args-87.json 作为本项参数；其中的 ID 对应这个样例包中的成员证据。\n请用 rea 的 compare_managed_members 比较我提供的新旧两份 REA 托管成员证据，列出能够匹配的成员及其签名变化。",
+      "本轮最终实测结果": "一个方法和一个字段均精确匹配，签名均无变化。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "a3af9be4296f548b",
+          "轮次指纹": "e01bd38f470332f6",
+          "指令SHA256": "3ad9400248084345631929eef44e48f78fdfcf593fee031ee0a0dfe7488e2266",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "da2f61d0a496e6e0"
+            },
+            {
+              "工具": "compare_managed_members",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_773543a4b123505623c89131945d0c8d98dc40825e13eb830be9b9233f722a11"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 88,
+      "工具": "inspect_managed_native_boundaries",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/Interop.dll。\n请用 rea 的 inspect_managed_native_boundaries 从我提供的 native/Interop.dll 列出 P/Invoke 声明及各自引用的原生库。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/Interop.dll。\n请用 rea 的 inspect_managed_native_boundaries 从我提供的 native/Interop.dll 列出 P/Invoke 声明及各自引用的原生库。",
+      "本轮最终实测结果": "读到 1 条 P/Invoke 声明，Main 引用 libdemo.dylib 的 demo_value。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "be2270493f31070c",
+          "轮次指纹": "53a1a4f1fcfd29e5",
+          "指令SHA256": "3bbdd4ccb3d3e667a7fa25aa9dbf2894406950eca692d6350b8f70c9f84893f1",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_managed_native_boundaries",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_61e98529e845fbd201679c5cc1e5f19a777a50e082d32f36b5e881c9e31a4eef"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 89,
+      "工具": "verify_managed_native_boundaries",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 inspect_managed_native_boundaries 读 native/Interop.dll，取声明证据ID。再用 open_binary 打开 native/libdemo.dylib，调用 inspect_macho 取得导出证据ID。直接在当前会话引用这两份记录。\n调用 verify_managed_native_boundaries 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"managed_boundaries\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<声明证据ID>\"}, \"native_observations\": [{\"kind\": \"retained-evidence\", \"evidence_id\": \"<导出证据ID>\"}]}\n请用 rea 的 verify_managed_native_boundaries 用本对话的 P/Invoke 声明证据和对应动态库的 inspect_macho 导出证据，逐项核对入口名并说明匹配依据。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 inspect_managed_native_boundaries 读 native/Interop.dll，取声明证据ID。再用 open_binary 打开 native/libdemo.dylib，调用 inspect_macho 取得导出证据ID。直接在当前会话引用这两份记录。\n调用 verify_managed_native_boundaries 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"managed_boundaries\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<声明证据ID>\"}, \"native_observations\": [{\"kind\": \"retained-evidence\", \"evidence_id\": \"<导出证据ID>\"}]}\n请用 rea 的 verify_managed_native_boundaries 用本对话的 P/Invoke 声明证据和对应动态库的 inspect_macho 导出证据，逐项核对入口名并说明匹配依据。",
+      "本轮最终实测结果": "托管入口 demo_value 与 libdemo.dylib 的导出符号 _demo_value 匹配。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "0567328457320129",
+          "轮次指纹": "13214409e3b6c5bf",
+          "指令SHA256": "d348dbec3b75bfb78880451a29641cfeb983b72fec6b5f4a75cac55d72cf1f24",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_managed_native_boundaries",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_436bbaec4037f538d8a108d32a7671b5183f7e9d1cf3d63181e703f276383c0c"
+            },
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ee52cde766f84954"
+            },
+            {
+              "工具": "inspect_macho",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_1420d619a79215698683ea2d597b634ee871f86c50c668d0d166da8a5f005be2"
+            },
+            {
+              "工具": "verify_managed_native_boundaries",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_782dbceee04dfa466d4ccd505b7f3bdc03949c2bcdd6b503b331ed6abaa80009"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "7b83b63d38944d79"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 90,
+      "工具": "project_managed_application_graph",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先 import_evidence_bundle 导入 evidence/members.json，再读取 evidence/args-90.json 作为本项参数；其中的 ID 对应这个样例包中的成员证据。\n请用 rea 的 project_managed_application_graph 使用我提供的 REA 托管成员证据生成 .NET 应用关系图，列出其中可识别的类型与成员。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先 import_evidence_bundle 导入 evidence/members.json，再读取 evidence/args-90.json 作为本项参数；其中的 ID 对应这个样例包中的成员证据。\n请用 rea 的 project_managed_application_graph 使用我提供的 REA 托管成员证据生成 .NET 应用关系图，列出其中可识别的类型与成员。",
+      "本轮最终实测结果": "生成 5 个节点、5 条边的关系图，识别出 1 个类型、1 个方法和 1 个字段。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5d9c650146d5652d",
+          "轮次指纹": "bd222fd5e98ac6ee",
+          "指令SHA256": "3bf56afef0e0e8a02bd54ad90288668770683017caa2fc92df2c3eaf778e62f5",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "da2f61d0a496e6e0"
+            },
+            {
+              "工具": "project_managed_application_graph",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_defa25c5cc5a4c6dd8cff4a3c9d66ec3e7633636a521462377d98385184478c3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 91,
+      "工具": "inspect_il2cpp_metadata",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/global-metadata.dat。\n请用 rea 的 inspect_il2cpp_metadata 读取我提供的 Unity 测试项目的 native/global-metadata.dat，列出元数据版本和可识别的表。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/global-metadata.dat。\n请用 rea 的 inspect_il2cpp_metadata 读取我提供的 Unity 测试项目的 native/global-metadata.dat，列出元数据版本和可识别的表。",
+      "本轮最终实测结果": "IL2CPP 元数据版本为 39，有 31 个表或数据区段，其中 11 个非空。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "7cd8c3e8d7fc3082",
+          "轮次指纹": "0a75785b0d6a8617",
+          "指令SHA256": "bbb787814811e4e5fbf4c270aa387efda037bd87e4dc71e08ed91275487cd9ba",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_il2cpp_metadata",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_43ce4f99be77c39047a3978f81c04957b4498864f6c3d99c93b0fca50467be9c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 92,
+      "工具": "inspect_wasm_artifact",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/old.wasm。\n请用 rea 的 inspect_wasm_artifact 验证我提供的 native/old.wasm，列出模块导入和导出的名称。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/old.wasm。\n请用 rea 的 inspect_wasm_artifact 验证我提供的 native/old.wasm，列出模块导入和导出的名称。",
+      "本轮最终实测结果": "WASM 验证通过，导入为 0 项，唯一导出为函数 hello。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b6457a5df2ef1388",
+          "轮次指纹": "de1702e684f62727",
+          "指令SHA256": "76c4d88906e3eb2a04dae57795fd975fc5c6fe595e1ea6793a265c146f1235e7",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_wasm_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_8caa4c7b1036fe0c137c5daf08334954c6deebfa3f037959a91cee6ccf83ac7c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 93,
+      "工具": "compare_wasm_interfaces",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 inspect_wasm_artifact 依次读取 native/old.wasm 和 native/new.wasm，detail 均填 complete，各取顶层 evidence_id 作为旧版ID和新版ID。\n调用 compare_wasm_interfaces 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"left\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<旧版ID>\"}, \"right\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<新版ID>\"}, \"scope\": \"exports\"}\n请用 rea 的 compare_wasm_interfaces 比较本对话中两份 WASM 模块检查结果，列出新增、移除或签名变化的导出项。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 inspect_wasm_artifact 依次读取 native/old.wasm 和 native/new.wasm，detail 均填 complete，各取顶层 evidence_id 作为旧版ID和新版ID。\n调用 compare_wasm_interfaces 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"left\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<旧版ID>\"}, \"right\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<新版ID>\"}, \"scope\": \"exports\"}\n请用 rea 的 compare_wasm_interfaces 比较本对话中两份 WASM 模块检查结果，列出新增、移除或签名变化的导出项。",
+      "本轮最终实测结果": "新版新增导出 greet，移除 hello，同名导出签名变化为 0 项。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "6d8819372f3f888c",
+          "轮次指纹": "bf79ea877008aede",
+          "指令SHA256": "7b3898283eab6727a9cdc8f38294b7ca35d1d4347bf5dbf3900a4ed516d3cade",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_wasm_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_577df565a434ba0784c6d3a0a8198872e91469e64be1591f49b2709863e6f10b"
+            },
+            {
+              "工具": "inspect_wasm_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_ba67684fe55293f4b444f18ecdc0ed7d5fcda3aa520f3f5b1e6c1b308c131297"
+            },
+            {
+              "工具": "compare_wasm_interfaces",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_711bebdaf84ac54f0f2ee76b2d8e6f7dfea15522aa6a52b596c943131dcb135e"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 94,
+      "工具": "inspect_gpu_code_objects",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.cubin。\n请用 rea 的 inspect_gpu_code_objects 盘点我提供的 native/sample.cubin，列出可识别的 GPU 目标架构。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/sample.cubin。\n请用 rea 的 inspect_gpu_code_objects 盘点我提供的 native/sample.cubin，列出可识别的 GPU 目标架构。",
+      "本轮最终实测结果": "唯一 GPU 代码对象的目标架构为 sm_80。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "e6b7089e1bd81678",
+          "轮次指纹": "1bc03af9ae6f9495",
+          "指令SHA256": "8e875ae95b952dca8a2504721e81a6b0c98294a3ddefac495cc19d5a5aa135e4",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_gpu_code_objects",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_6d94dfc5d427841a3110b4d3ffb55feea9f0ce4ffe0303512281692060ad23bd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 95,
+      "工具": "inspect_model_artifact",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/weights.safetensors。\n请用 rea 的 inspect_model_artifact 读取我提供的 native/weights.safetensors，列出每个张量的名称、数据类型和形状。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 native/weights.safetensors。\n请用 rea 的 inspect_model_artifact 读取我提供的 native/weights.safetensors，列出每个张量的名称、数据类型和形状。",
+      "本轮最终实测结果": "张量 example 的类型为 F32，形状为 [1]。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "404730bc4fe2d30a",
+          "轮次指纹": "f9af24da464f8eb2",
+          "指令SHA256": "bf51865a5b41a9691bb59d383d8512a04f539450bb90bbb4f3cf1e28193d967d",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_model_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_3ca0056b0e7093dad3bb9946f93e3c9d10eb8f964a075a0a8b896d6fe705a3d8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 96,
+      "工具": "inspect_artifact",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先用 open_binary 打开 data/demo.zip，保持当前归档会话。\n请用 rea 的 inspect_artifact 检查当前已打开的 demo.zip，列出内部文件的路径和条目标识。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先用 open_binary 打开 data/demo.zip，保持当前归档会话。\n请用 rea 的 inspect_artifact 检查当前已打开的 demo.zip，列出内部文件的路径和条目标识。",
+      "本轮最终实测结果": "归档有一个 README.txt，返回了对应的条目标识。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f9b4dfa89e8abb3c",
+          "轮次指纹": "b9e6d0910d1d32fe",
+          "指令SHA256": "d7db897f7c8dd3c35fdf2aa23d0ac3b13c4f19cb27a58933e04cc882df64764a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "9654aa88989bfb90"
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_d579905d322e68fb184f5f4f332bb03a590c45645baa3890a43a6f1375d65130"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 97,
+      "工具": "extract_artifact",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先用 open_binary 打开 data/demo.zip，保持当前归档会话。 再用 inspect_artifact 取 README.txt 的 occurrence_id，选一个新的空输出目录作为 output_root。\n请用 rea 的 extract_artifact 按上一条清单中 README.txt 的条目标识，只把这个文件解包到工作区新目录 demo-extract。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n先用 open_binary 打开 data/demo.zip，保持当前归档会话。 再用 inspect_artifact 取 README.txt 的 occurrence_id，选一个新的空输出目录作为 output_root。\n请用 rea 的 extract_artifact 按上一条清单中 README.txt 的条目标识，只把这个文件解包到工作区新目录 demo-extract。",
+      "本轮最终实测结果": "仅提取了 README.txt，共 36 字节。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "ab032404ce0d188f",
+          "轮次指纹": "00a31eb7ac2dde48",
+          "指令SHA256": "5901044e8f6093b202af30208cad81f38a912dba66dbd3667d53cc60658cae88",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "afda772c811be358"
+            },
+            {
+              "工具": "inspect_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_0f36201eb8778b780883e532149496f8378c2bd2e9ecc318652e039a9b777def"
+            },
+            {
+              "工具": "extract_artifact",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_81eef44a35cb4e95bf7450b24a809c5664585111d4bd2172e467a0a6357717bb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 98,
+      "工具": "inspect_desktop_application",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.app。\n请用 rea 的 inspect_desktop_application 检查我提供的桌面应用安装目录，根据文件和元数据列出可能使用的运行时。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.app。\n请用 rea 的 inspect_desktop_application 检查我提供的桌面应用安装目录，根据文件和元数据列出可能使用的运行时。",
+      "本轮最终实测结果": "REA 枚举了 8 个条目，运行时候选列表为空。补查文件类型确认主程序是 arm64 Mach-O。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "beda1997e50649b7",
+          "轮次指纹": "9d7d8686e4d4cb81",
+          "指令SHA256": "46c3056e1dcaf4e4d609b200955ef5b117364a7f136761059376418ca32a5b62",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_desktop_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_e1a3030fa6db2cbb195f65ece6a793e79917607a02bcf7ff4f76a1425ca3c35c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 99,
+      "工具": "audit_release_exposure",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.app。\n请用 rea 的 audit_release_exposure 检查我自己的 apple/Demo.app 发布包，列出可从成品静态读取的信息及对应文件。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 apple/Demo.app。\n请用 rea 的 audit_release_exposure 检查我自己的 apple/Demo.app 发布包，列出可从成品静态读取的信息及对应文件。",
+      "本轮最终实测结果": "发布包共检查 15 项，工具标为 exposed 的有 0 项。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "e506304b780174d0",
+          "轮次指纹": "0728eec1450faf55",
+          "指令SHA256": "6e00091fd615c66f720494f745bd3df45a6e8c3d476acb809045de12f3a3ce2c",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "audit_release_exposure",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_fca1fefb7313d9c03886c1de9d2a88471b7209d3c171d5a9681d4cb68f1ffce1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 100,
+      "工具": "inspect_sqlite_database",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 data/demo.sqlite。\n请用 rea 的 inspect_sqlite_database 从我提供的 data/demo.sqlite 快照的 products 表中读取前五行，只显示 id 和 name 两列。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 data/demo.sqlite。\n请用 rea 的 inspect_sqlite_database 从我提供的 data/demo.sqlite 快照的 products 表中读取前五行，只显示 id 和 name 两列。",
+      "本轮最终实测结果": "products 表只有一行，id 为 1，name 为“纸杯”。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "176e0ae20b8653c7",
+          "轮次指纹": "7fe46050f05711c0",
+          "指令SHA256": "4e7d40518475c0f87b0532369e895525b446f70468566360e41bb3019b2bf956",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_sqlite_database",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_08add25780d0322177e5f11035bd2426d2814068af66f7184a395eaf19b18cdd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 101,
+      "工具": "get_evidence_bundle",
+      "原文": "请用 `rea` 的 `get_evidence_bundle` 以摘要列出当前会话保留的证据，给出记录 ID 和产生记录的工具。",
+      "最终指令": "请用 `rea` 的 `get_evidence_bundle` 以摘要列出当前会话保留的证据，给出记录 ID 和产生记录的工具。",
+      "本轮最终实测结果": "新会话的证据摘要为 0 条记录。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8ff10bfd71781071",
+          "轮次指纹": "4edf4dd8c249cfab",
+          "指令SHA256": "7b4b9e1122b6c3ee2017e777ad1f8780f2fb8190461d48c42a70eb328d50dbf5",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ed08660385ccda72"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 102,
+      "工具": "export_evidence_bundle",
+      "原文": "请用 `rea` 的 `export_evidence_bundle` 把本次测试会话的证据包保存为工作区中新文件 demo-evidence.json。",
+      "最终指令": "请用 `rea` 的 `export_evidence_bundle` 把本次测试会话的证据包保存为工作区中新文件 demo-evidence.json。",
+      "本轮最终实测结果": "导出的 demo-evidence.json 可解析，共 105 字节，包含 0 条证据。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5200e6ee2e60bd9d",
+          "轮次指纹": "81f26d6a0936ec40",
+          "指令SHA256": "0f46991bdba5e0e8e1f604363de0d8cbafb4a6d84c808d56f92ae002cceaba97",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "export_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "86903bbfc3f548af"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 103,
+      "工具": "import_evidence_bundle",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/members.json。导入到全新测试会话。\n请用 rea 的 import_evidence_bundle 校验我提供的 evidence/members.json，并把通过校验的记录导入当前测试会话。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/members.json。导入到全新测试会话。\n请用 rea 的 import_evidence_bundle 校验我提供的 evidence/members.json，并把通过校验的记录导入当前测试会话。",
+      "本轮最终实测结果": "校验并导入 2 条成员证据。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "10f9c28a9d15a219",
+          "轮次指纹": "1e2cc25d544e93ae",
+          "指令SHA256": "9ffbe7ab8fa66d4522c3dde56d0cae7ec67e498bf9b524d763e2aa83c97d0679",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "da2f61d0a496e6e0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 104,
+      "工具": "compare_bundles",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/empty.json 和 evidence/comparison.json。旧包选 empty.json，新包选 comparison.json。\n请用 rea 的 compare_bundles 对比我提供的 evidence/empty.json 和 evidence/comparison.json，概括证据记录的差异。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/empty.json 和 evidence/comparison.json。旧包选 empty.json，新包选 comparison.json。\n请用 rea 的 compare_bundles 对比我提供的 evidence/empty.json 和 evidence/comparison.json，概括证据记录的差异。",
+      "本轮最终实测结果": "旧包有 0 条记录，新包有 7 条。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1e4ebb99d69817dc",
+          "轮次指纹": "95bcf0a95d7ced11",
+          "指令SHA256": "e6ee050fca853ff2bf2113d67377d11466bc7d4ffaf9167b32039337eb64bb4a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "compare_bundles",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_b73a1d3b8294da38e43b6538dd41417f212585c962bd5bd4cabb27950c588805"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 105,
+      "工具": "compare_artifacts",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 读取 evidence/args-105.json，把其中的 left 和 right 用作本工具参数；顺序已经按旧版、新版排好。\n请用 rea 的 compare_artifacts 比较本对话中旧版和新版安装包的两份文件清单证据，列出新增和内容变化的文件。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 读取 evidence/args-105.json，把其中的 left 和 right 用作本工具参数；顺序已经按旧版、新版排好。\n请用 rea 的 compare_artifacts 比较本对话中旧版和新版安装包的两份文件清单证据，列出新增和内容变化的文件。",
+      "本轮最终实测结果": "新增文件为 0 个，确认外层安装包本身发生内容变化。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "182fa0dd56588efc",
+          "轮次指纹": "109922fe89b09021",
+          "指令SHA256": "74492cc6642eaefe74dfbcc1b9a92b86e3a34372aae4d0584741cd034f1022da",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "4ef49fe3d3f27325"
+            },
+            {
+              "工具": "compare_artifacts",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_fe5928b028fde07259a0f9270c3a9ec91948c9026aeb5dd382f54621eca2a9cd"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 106,
+      "工具": "compare_process_captures",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 读取 evidence/args-106.json，把其中的 left 和 right 用作本工具参数；顺序已经按旧版、新版排好。\n请用 rea 的 compare_process_captures 对比我提供的同一测试命令前后两次的 REA 进程记录，告诉我终端输出有什么变化。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 读取 evidence/args-106.json，把其中的 left 和 right 用作本工具参数；顺序已经按旧版、新版排好。\n请用 rea 的 compare_process_captures 对比我提供的同一测试命令前后两次的 REA 进程记录，告诉我终端输出有什么变化。",
+      "本轮最终实测结果": "两次终端输出均为 0 字节，比较结果为 unchanged。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8eed7ec377934579",
+          "轮次指纹": "fae8ee2e25e6eca0",
+          "指令SHA256": "815cc9984ba68423f8d7da207cde6155b0fb169796c06117eb081c6aa78d75df",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "4ef49fe3d3f27325"
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 107,
+      "工具": "find_changed_behavior",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 用 evidence/args-105.json 内的参数运行 compare_artifacts，记下这次返回的 evidence_id。用 evidence/args-106.json 内的参数运行 compare_process_captures，记下这次返回的 evidence_id。读取 evidence/args-107.json，把其中形如 {\"ref\":\"编号/evidence_id\"} 的对象替换成相应步骤刚返回的 ID 字符串，再提交整个参数对象。\n请用 rea 的 find_changed_behavior 汇总本对话中已有的产物和进程比较证据，指出哪些行为有可核实的变化。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 用 evidence/args-105.json 内的参数运行 compare_artifacts，记下这次返回的 evidence_id。用 evidence/args-106.json 内的参数运行 compare_process_captures，记下这次返回的 evidence_id。读取 evidence/args-107.json，把其中形如 {\"ref\":\"编号/evidence_id\"} 的对象替换成相应步骤刚返回的 ID 字符串，再提交整个参数对象。\n请用 rea 的 find_changed_behavior 汇总本对话中已有的产物和进程比较证据，指出哪些行为有可核实的变化。",
+      "本轮最终实测结果": "发现 1 项根产物内容差异，受控观测中的运行时行为变化为 0 项。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1d1d7f406b8755ca",
+          "轮次指纹": "32d30c405d123851",
+          "指令SHA256": "de020405694c746d7a97fb46311e2d2b6476d6490637bddeeda64720576273f1",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "4ef49fe3d3f27325"
+            },
+            {
+              "工具": "compare_artifacts",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_fe5928b028fde07259a0f9270c3a9ec91948c9026aeb5dd382f54621eca2a9cd"
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6"
+            },
+            {
+              "工具": "find_changed_behavior",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_33fba8c2fbe16a40ae16f178542ea0a2456e2c5295c7d578cf250a81296e7c14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 108,
+      "工具": "correlate_static_and_runtime",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 用 evidence/args-106.json 内的参数运行 compare_process_captures，记下这次返回的 evidence_id。读取 evidence/args-108.json，把其中形如 {\"ref\":\"编号/evidence_id\"} 的对象替换成相应步骤刚返回的 ID 字符串，再提交整个参数对象。\n请用 rea 的 correlate_static_and_runtime 使用本对话的函数比较和进程比较证据，按旧版对应旧版、新版对应新版，核对该函数的变化是否伴随终端输出变化。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 用 evidence/args-106.json 内的参数运行 compare_process_captures，记下这次返回的 evidence_id。读取 evidence/args-108.json，把其中形如 {\"ref\":\"编号/evidence_id\"} 的对象替换成相应步骤刚返回的 ID 字符串，再提交整个参数对象。\n请用 rea 的 correlate_static_and_runtime 使用本对话的函数比较和进程比较证据，按旧版对应旧版、新版对应新版，核对该函数的变化是否伴随终端输出变化。",
+      "本轮最终实测结果": "伪代码文本发生变化，终端输出一致，关联结果为 static_only。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1b5549cdbbf4c354",
+          "轮次指纹": "549a4a164aa8e6d4",
+          "指令SHA256": "7f91068f7d5a86c8b9619d84c55027d11ffa8d016c12907a0721f1ba7f9cc458",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "4ef49fe3d3f27325"
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6"
+            },
+            {
+              "工具": "correlate_static_and_runtime",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_9a9751d8a47f7d74277d14e789c4aab9de6b01ae6a78b99fd6b1fa5d514a37e7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 109,
+      "工具": "build_reconstruction_obligation_ledger",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/ledger.json。读取 JSON，将顶层对象作为工具参数。\n请用 rea 的 build_reconstruction_obligation_ledger 根据我提供的 REA 证据包、已审阅事项和重建清单，列出仍需验证的事项。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/ledger.json。读取 JSON，将顶层对象作为工具参数。\n请用 rea 的 build_reconstruction_obligation_ledger 根据我提供的 REA 证据包、已审阅事项和重建清单，列出仍需验证的事项。",
+      "本轮最终实测结果": "待验证与已验证事项均为 0 项，整体验证状态为 unknown。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "7459ea9a41f1c512",
+          "轮次指纹": "6e95d6b2d5106288",
+          "指令SHA256": "fec3673b8fdec2d06600a87b74bb86ab9db63f8dae92baf2ac8a710a8c90129a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "build_reconstruction_obligation_ledger",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_3fb4398cd7638634fae2fabf7e4cceb3bca8e721e7713d41282a06e11310c920"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 110,
+      "工具": "evaluate_reconstruction_coverage",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/coverage.json。读取 JSON，将顶层对象作为工具参数。\n请用 rea 的 evaluate_reconstruction_coverage 使用我提供的覆盖评估输入，检查 replacement.cli 这个边界还有哪些要求缺少验证证据。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n本项输入按顺序为 evidence/coverage.json。读取 JSON，将顶层对象作为工具参数。\n请用 rea 的 evaluate_reconstruction_coverage 使用我提供的覆盖评估输入，检查 replacement.cli 这个边界还有哪些要求缺少验证证据。",
+      "本轮最终实测结果": "replacement.cli 的覆盖状态为 partial，返回 4 项缺口。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "51b7d15d5f82a9b5",
+          "轮次指纹": "18cfe09e9379c266",
+          "指令SHA256": "5d74c1ff15148de18e3b70e35d9ec79e489bbf17a9f78df8e26a08e28ce2a67f",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "evaluate_reconstruction_coverage",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "c6dbeacfaa1a213c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 111,
+      "工具": "verify_reconstruction",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 用 evidence/args-106.json 内的参数运行 compare_process_captures，记下这次返回的 evidence_id。读取 evidence/args-111.json，把其中形如 {\"ref\":\"编号/evidence_id\"} 的对象替换成相应步骤刚返回的 ID 字符串，再提交整个参数对象。\n请用 rea 的 verify_reconstruction 按我提供的重建规格和本会话的证据，核验两版测试命令的终端输出是否满足规格中的一致性要求。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 import_evidence_bundle 导入 evidence/comparison.json。 用 evidence/args-106.json 内的参数运行 compare_process_captures，记下这次返回的 evidence_id。读取 evidence/args-111.json，把其中形如 {\"ref\":\"编号/evidence_id\"} 的对象替换成相应步骤刚返回的 ID 字符串，再提交整个参数对象。\n请用 rea 的 verify_reconstruction 按我提供的重建规格和本会话的证据，核验两版测试命令的终端输出是否满足规格中的一致性要求。",
+      "本轮最终实测结果": "两份记录的终端输出一致，规格中的 stdout 断言为 pass。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "c6bf65993ecd8dd7",
+          "轮次指纹": "0935ccf226828147",
+          "指令SHA256": "fd0ef85722dee1e44a58df5a9f4918d13a873090d1b746a0562f1881bfe93e76",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "import_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "4ef49fe3d3f27325"
+            },
+            {
+              "工具": "compare_process_captures",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6"
+            },
+            {
+              "工具": "verify_reconstruction",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_0c3b3840b7fd3db1ce844146324c74fb93b2ba494ac166b56c6534c99ba1f12c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 112,
+      "工具": "record_unknown",
+      "原文": "请用 `rea` 的 `record_unknown` 在“离线输出”领域登记中等严重度问题“相同输入是否生成相同摘要”，以受控重放的实测结果为结案依据，暂不指定环境、关联记录或后续探针，并返回问题 ID。",
+      "最终指令": "请用 `rea` 的 `record_unknown` 在“离线输出”领域登记中等严重度问题“相同输入是否生成相同摘要”，以受控重放的实测结果为结案依据，暂不指定环境、关联记录或后续探针，并返回问题 ID。",
+      "本轮最终实测结果": "已登记中等严重度问题并返回问题 ID。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "3291550e534045a9",
+          "轮次指纹": "8d8c2857204b0c3e",
+          "指令SHA256": "a9c9886383c59cbab933ae1eee109473c21d9af62d741c25210a324516c02a19",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "record_unknown",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "9b4fb24947e27a70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 113,
+      "工具": "list_unknowns",
+      "原文": "请用 `rea` 的 `list_unknowns` 列出当前调查中严重度为中等的待解问题，最多显示十条。",
+      "最终指令": "请用 `rea` 的 `list_unknowns` 列出当前调查中严重度为中等的待解问题，最多显示十条。",
+      "本轮最终实测结果": "中等严重度的待解问题为 0 项。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "4defc6ed6ddfc84c",
+          "轮次指纹": "cb2164c915061ea3",
+          "指令SHA256": "c4b88b5278f4ed27de0f2af12da34beaf96456c01e0019732d48a2e8a4747624",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "list_unknowns",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "0748fdef00a26a67"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 114,
+      "工具": "update_unknown",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 record_unknown 登记一个新的测试问题：“同一输入能否产生相同摘要？”domain 填“离线输出”，severity 填 medium，required_authority 填 controlled-replay，required_confidence 填 observed，无指定环境，relationships 和 recommended_probes 为空数组。 从返回结果取 unknown_id、revision 和其余当前字段；用该 revision 作为 expected_revision，仅将 status 改为 investigating。\n请用 rea 的 update_unknown 使用上一条问题的 ID 和当前修订号，将该问题的处理状态更新为调查中。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 record_unknown 登记一个新的测试问题：“同一输入能否产生相同摘要？”domain 填“离线输出”，severity 填 medium，required_authority 填 controlled-replay，required_confidence 填 observed，无指定环境，relationships 和 recommended_probes 为空数组。 从返回结果取 unknown_id、revision 和其余当前字段；用该 revision 作为 expected_revision，仅将 status 改为 investigating。\n请用 rea 的 update_unknown 使用上一条问题的 ID 和当前修订号，将该问题的处理状态更新为调查中。",
+      "本轮最终实测结果": "新问题状态更新为 investigating，修订号从 1 变为 2。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1ae875f146256f3c",
+          "轮次指纹": "f605f7ef62b842ac",
+          "指令SHA256": "e3324296fb3257d4f3e1ab213b84b214d0e4fa05fe47525e914ebb7509787fd0",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "record_unknown",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ff3b6a0303621a67"
+            },
+            {
+              "工具": "update_unknown",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "54476193b406eb59"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 115,
+      "工具": "verify_unknown_resolution",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 record_unknown 登记一个新的测试问题：“同一输入能否产生相同摘要？”domain 填“离线输出”，severity 填 medium，required_authority 填 controlled-replay，required_confidence 填 observed，无指定环境，relationships 和 recommended_probes 为空数组。 使用该 unknown_id；保留当前证据条件，按实际返回说明是否还缺少受控重放。\n请用 rea 的 verify_unknown_resolution 根据我选中的问题 ID 和当前证据，说明它是否满足结案条件。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 record_unknown 登记一个新的测试问题：“同一输入能否产生相同摘要？”domain 填“离线输出”，severity 填 medium，required_authority 填 controlled-replay，required_confidence 填 observed，无指定环境，relationships 和 recommended_probes 为空数组。 使用该 unknown_id；保留当前证据条件，按实际返回说明是否还缺少受控重放。\n请用 rea 的 verify_unknown_resolution 根据我选中的问题 ID 和当前证据，说明它是否满足结案条件。",
+      "本轮最终实测结果": "未满足结案条件，缺少受控重放的直接观测证据。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f7e0769f9c03bfa3",
+          "轮次指纹": "5cbe48ea1ce84e2f",
+          "指令SHA256": "9557dce34a877096a235f18cd90287707e1099692b54bc1c74e65312e7a0f4c1",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "record_unknown",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ff3b6a0303621a67"
+            },
+            {
+              "工具": "verify_unknown_resolution",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "4c2bbc37a40edf22"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 116,
+      "工具": "export_environment_bundle",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 inspect_web_network_capture 按 har 格式读取 web/demo.har，取完整记录的 evidence_id 作为抓包ID。在工作区新建专用目录，选其中尚不存在的 demo-environment 作为导出绝对路径。\n调用 export_environment_bundle 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"name\": \"offline-demo\", \"source\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<抓包ID>\"}, \"output_directory\": \"<导出绝对路径>\"}\n请用 rea 的 export_environment_bundle 用本对话中合成 HAR 的分析证据，把测试环境包导出到工作区新目录 demo-environment。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 inspect_web_network_capture 按 har 格式读取 web/demo.har，取完整记录的 evidence_id 作为抓包ID。在工作区新建专用目录，选其中尚不存在的 demo-environment 作为导出绝对路径。\n调用 export_environment_bundle 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。\n{\"name\": \"offline-demo\", \"source\": {\"kind\": \"retained-evidence\", \"evidence_id\": \"<抓包ID>\"}, \"output_directory\": \"<导出绝对路径>\"}\n请用 rea 的 export_environment_bundle 用本对话中合成 HAR 的分析证据，把测试环境包导出到工作区新目录 demo-environment。",
+      "本轮最终实测结果": "从本轮 HAR 证据成功导出 offline-demo 环境包，共 7 个文件。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "d2004fec7bdb7f2f",
+          "轮次指纹": "7ec39afc29446691",
+          "指令SHA256": "3963d06a526f29666863c1833fa8a54164c73c0a052b357c91323541f1b4fee2",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_5df33b523f337f3f4a884e7bd5ab41640dc5f1aec19893e2c168c361e01cb6be"
+            },
+            {
+              "工具": "export_environment_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "6d9760f4f51b3fcc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 117,
+      "工具": "reset_investigation",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n在专用的新 Codex 测试对话里运行这一条。先用 get_evidence_bundle 和 list_unknowns 确认两者均为空，有其他数据就停止。用 inspect_web_network_capture 读取 web/demo.har，让临时调查包含一份证据。在新建的空工作目录中选 before-reset.json，调用时 overwrite 设为 false。完成后核对备份含该记录，再确认本次调查为空。\n请用 rea 的 reset_investigation 将当前临时测试调查的证据保存到工作区新文件 before-reset.json，再清空这次调查的证据和问题历史。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n在专用的新 Codex 测试对话里运行这一条。先用 get_evidence_bundle 和 list_unknowns 确认两者均为空，有其他数据就停止。用 inspect_web_network_capture 读取 web/demo.har，让临时调查包含一份证据。在新建的空工作目录中选 before-reset.json，调用时 overwrite 设为 false。完成后核对备份含该记录，再确认本次调查为空。\n请用 rea 的 reset_investigation 将当前临时测试调查的证据保存到工作区新文件 before-reset.json，再清空这次调查的证据和问题历史。",
+      "本轮最终实测结果": "将临时调查备份到 before-reset.json，随后重置了该调查。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "3cabb8e73970b5b1",
+          "轮次指纹": "577915c8827c39c4",
+          "指令SHA256": "f3f9f02dce50f5254cbd30db34a62bfc6ffaa82526c293935fd71b91c56f3a4a",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ed08660385ccda72"
+            },
+            {
+              "工具": "list_unknowns",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "0748fdef00a26a67"
+            },
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_a3991e1a4efbd4e6264f1a3c2eac2bf1426016a17f9425f71655d0bbb63cf1a2"
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "05c1422e2d279065"
+            },
+            {
+              "工具": "reset_investigation",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "31bacaf929910756"
+            },
+            {
+              "工具": "get_evidence_bundle",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "ed08660385ccda72"
+            },
+            {
+              "工具": "list_unknowns",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "0748fdef00a26a67"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 118,
+      "工具": "guided_workflows",
+      "原文": "请用 `rea` 的 `guided_workflows` 列出 REA 内置的工作流程，并指出哪一个适合初次检查应用包。",
+      "最终指令": "请用 `rea` 的 `guided_workflows` 列出 REA 内置的工作流程，并指出哪一个适合初次检查应用包。",
+      "本轮最终实测结果": "返回 6 个内置流程。已有功能线索时可选 investigate_feature，未列出专门的单包盘点流程。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "215cf6bde9e8bf62",
+          "轮次指纹": "2909805bc563a004",
+          "指令SHA256": "716f591adae74c85f73b5319d3345c39ae27a3d19a6bdc9cc0e321693208b580",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "guided_workflows",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "bdd02b9bb660e4e9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 119,
+      "工具": "search_guidance",
+      "原文": "请用 `rea` 的 `search_guidance` 在已安装的指南中搜索 JavaScript module，给出最相关的三个章节及定位信息。",
+      "最终指令": "请用 `rea` 的 `search_guidance` 在已安装的指南中搜索 JavaScript module，给出最相关的三个章节及定位信息。",
+      "本轮最终实测结果": "搜索命中 10 个章节，返回了最相关的 3 个及其定位信息。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "09c422175f39c272",
+          "轮次指纹": "7521908fb6187d76",
+          "指令SHA256": "0e1a48a8b531f41121aa47688de7d8c0e3aa8781e4da6c86f2ec2c22a099e0e8",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "search_guidance",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "29ce0279a656db0f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 120,
+      "工具": "read_guidance_section",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n调用 search_guidance 搜索 JavaScript module，limit 填 3。取首项实际返回的完整 locator，原样传给 read_guidance_section。\n请用 rea 的 read_guidance_section 用上一条指南搜索结果中第一项的定位信息读取该节，并概括操作步骤。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n调用 search_guidance 搜索 JavaScript module，limit 填 3。取首项实际返回的完整 locator，原样传给 read_guidance_section。\n请用 rea 的 read_guidance_section 用上一条指南搜索结果中第一项的定位信息读取该节，并概括操作步骤。",
+      "本轮最终实测结果": "使用本轮搜索首项的完整 locator 读到了对应指南章节。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "4af2568118298e87",
+          "轮次指纹": "2a030c2cd3d1ffe2",
+          "指令SHA256": "e9da0138928ee5386042a733e9d9d539a3c41aee7e93b706c8c9d5f19abdd91f",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "search_guidance",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "29ce0279a656db0f"
+            },
+            {
+              "工具": "read_guidance_section",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "82448ef15faa426f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 121,
+      "工具": "inspect_analysis_settings",
+      "原文": "请用 `rea` 的 `inspect_analysis_settings` 查看 asar.max_header_bytes 的当前值、允许范围和生效时机。",
+      "最终指令": "请用 `rea` 的 `inspect_analysis_settings` 查看 asar.max_header_bytes 的当前值、允许范围和生效时机。",
+      "本轮最终实测结果": "当前值为 16 MiB，范围为 1 字节至 256 MiB，下一次适用操作生效。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "4f7b0f739d49a65a",
+          "轮次指纹": "b30f8eb59a2152dd",
+          "指令SHA256": "91bc1d9b37f78cd6c95c97532b6322126a6cbdbba7b2f2dbebd69f0acf201b54",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_analysis_settings",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "921e8c768c9a838f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 122,
+      "工具": "update_analysis_settings",
+      "原文": "请用 `rea` 的 `update_analysis_settings`，按参数 {\"changes\":[{\"setting\":\"asar.max_header_bytes\",\"action\":\"reset\"}]} 仅将本次 REA 服务的这一项恢复到启动值，报告恢复后的值和 changed 标志。",
+      "最终指令": "请用 `rea` 的 `update_analysis_settings`，按参数 {\"changes\":[{\"setting\":\"asar.max_header_bytes\",\"action\":\"reset\"}]} 仅将本次 REA 服务的这一项恢复到启动值，报告恢复后的值和 changed 标志。",
+      "本轮最终实测结果": "重置后为 16 MiB，changed=false，因为原值已等于启动值。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f39790b36d7e03f6",
+          "轮次指纹": "b703d8d70794ab61",
+          "指令SHA256": "ab1caf5109c9e36827cbee2598dfb5730d8098fe531a79661703462258e896f9",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "update_analysis_settings",
+              "有效返回": true,
+              "服务": "rea",
+              "返回指纹": "2d60851f1fb73fbb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 123,
+      "工具": "inspect_analysis_view",
+      "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n分别用 analyze_javascript_application 分析 js/endpoint 目录、用 inspect_web_network_capture 按 HAR 格式读取 web/demo.har。保留这两项完整证据的 ID；摘要结果取 parent_evidence_id。 接着调用 compare_static_and_observed_endpoints，传入 application、capture 和 origin=https://fixture.invalid，detail 选 summary。从返回的 normalized_result 取 parent_evidence_id 作为下一步的 source。\n请用 rea 的 inspect_analysis_view 使用刚得到的接口对比摘要中的 parent_evidence_id，在 endpoint-comparison 视图的 static-endpoints 集合中读取前十条接口记录。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n分别用 analyze_javascript_application 分析 js/endpoint 目录、用 inspect_web_network_capture 按 HAR 格式读取 web/demo.har。保留这两项完整证据的 ID；摘要结果取 parent_evidence_id。 接着调用 compare_static_and_observed_endpoints，传入 application、capture 和 origin=https://fixture.invalid，detail 选 summary。从返回的 normalized_result 取 parent_evidence_id 作为下一步的 source。\n请用 rea 的 inspect_analysis_view 使用刚得到的接口对比摘要中的 parent_evidence_id，在 endpoint-comparison 视图的 static-endpoints 集合中读取前十条接口记录。",
+      "本轮最终实测结果": "按父证据 ID 读取 static-endpoints，返回全部 1 条记录。",
+      "验收记录": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8489652d4ddc771e",
+          "轮次指纹": "62af5cdc967d0c1e",
+          "指令SHA256": "af893108eff02e41da0046664d38f182b64bd251d5c928cb2abe0360d7bd488e",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "inspect_web_network_capture",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_95615382feda3dbdd7b207bf264b540521c4199c71c1a2501a8e228cc87fb6aa"
+            },
+            {
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_5adb6579600d6dbe71ffe1de1e4c404bddfe3cd5b2d6925a4329672fda07c4ee"
+            },
+            {
+              "工具": "compare_static_and_observed_endpoints",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_84fe6925e55cb45118f032e2c445b12b87c6fa60cc38bc87253098c11e1238b7"
+            },
+            {
+              "工具": "inspect_analysis_view",
+              "有效返回": true,
+              "服务": "rea",
+              "证据ID": "ev_49b01df06c8a59ee4b370c3b2aed0babb7fabc3b5cabaaaf139c6ac95f7ac580"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
