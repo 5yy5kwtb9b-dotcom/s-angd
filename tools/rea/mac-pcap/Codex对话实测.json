@@ -1,0 +1,74 @@
+{
+  "fixture": "两帧样例.pcap",
+  "sha256": "5720b2de8a7b601aafef6b7a80c1673ff231a5ae99c6fd14f56c2917fa33a51a",
+  "calls": [
+    {
+      "server": "mac_pcap",
+      "tool": "inspect_packet_fields",
+      "arguments": {
+        "query": "frame.len"
+      },
+      "status": "completed",
+      "returned": {
+        "fields": [
+          {
+            "name": "frame.len",
+            "label": "Frame Length"
+          },
+          {
+            "name": "frame.len_lt_caplen",
+            "label": "Frame length is less than captured length"
+          }
+        ],
+        "total_matches": 2
+      }
+    },
+    {
+      "server": "mac_pcap",
+      "tool": "inspect_packet_capture",
+      "arguments": {
+        "path": "两帧样例.pcap",
+        "fields": [
+          "frame.number",
+          "frame.len"
+        ],
+        "packet_limit": 5
+      },
+      "status": "completed",
+      "returned": {
+        "fields": [
+          "frame.number",
+          "frame.len"
+        ],
+        "rows": [
+          [
+            "1",
+            "60"
+          ],
+          [
+            "2",
+            "74"
+          ]
+        ],
+        "input_packet_limit": 5
+      }
+    },
+    {
+      "server": "mac_pcap",
+      "tool": "inspect_pcap_capture",
+      "arguments": {
+        "path": "两帧样例.pcap"
+      },
+      "status": "completed",
+      "returned": {
+        "format": "pcap",
+        "encapsulation": "ether",
+        "packet_count": 2,
+        "file_bytes": 190,
+        "wire_bytes": 134,
+        "duration_seconds": 1
+      }
+    }
+  ],
+  "归档说明": "公开副本省略本机对话 ID，样例路径以同目录文件名表示。调用状态与返回值保留原样。"
+}
