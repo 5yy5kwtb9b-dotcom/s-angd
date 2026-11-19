@@ -1,0 +1,66 @@
+{
+  "用例": 66,
+  "测试方式": "先导单测，独立新对话一次发送修订原文。",
+  "旧失败记录": "../2026-11-20-030019/results.json#L2804",
+  "排查边界": "旧记录保存了调用顺序、失败状态和模型答复，未保存原调用入参。以下错误码来自本次独立 REA 进程的对照实测。",
+  "对照样例": "测试样例.zip → samples/native/demo 的临时副本",
+  "关闭对照": {
+    "改名及回读": "0x100000328 → demo_entry",
+    "带 snapshot_path": "evidence_integrity_mismatch",
+    "错误说明": "修改分析元数据后不能导出不可变分析快照。",
+    "空参数关闭": {
+      "result": null
+    }
+  },
+  "实现依据": "REA 6.9.0 的 src/application/binary/BinarySessionRecords.ts 中 exportAnalysisSnapshot 检查 snapshotInvalidated。src/contracts/sessionToolContracts.ts 中 close_binary 说明 snapshot_path 会先保存快照，保存失败时保留会话。",
+  "修订原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 rea 的 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。调用 list_procedures，取第一个函数的起始 address。\n在该地址调用 set_address_name，将名称改为 demo_entry。随后用 address_name 回读同一地址，确认名称为 demo_entry。\n本项只验证临时会话内的改名。回读后用空参数 {} 调用 close_binary 释放目标，省略 snapshot_path 和 overwrite。报告改动的地址、回读名称及关闭结果。",
+  "指令SHA256": "2dc0c58a08bcc7ebe6d610dcd5a8041ed5df1ac74fa40351e3ee564a52924ba6",
+  "用户消息数": 1,
+  "与原文相同": true,
+  "对话SHA256": "4bbd2d4d209e0ec003727133d08170ed0906de24be5868554ef52c3c0e3113dc",
+  "轮次SHA256": "acaf2644e60f6c512d436352b405b9da76a2d293bcf7cfa91c5e19bd6113d6d1",
+  "实际调用": [
+    {
+      "server": "rea",
+      "tool": "open_binary",
+      "ok": true
+    },
+    {
+      "server": "rea",
+      "tool": "list_procedures",
+      "ok": true
+    },
+    {
+      "server": "rea",
+      "tool": "set_address_name",
+      "ok": true,
+      "address": "0x100000328"
+    },
+    {
+      "server": "rea",
+      "tool": "address_name",
+      "ok": true,
+      "address": "0x100000328",
+      "readback": "demo_entry"
+    },
+    {
+      "server": "rea",
+      "tool": "close_binary",
+      "ok": true,
+      "empty_arguments": true
+    }
+  ],
+  "目标断言": [
+    {
+      "rule": [
+        ".",
+        "eq",
+        true
+      ],
+      "matched": true
+    }
+  ],
+  "改名回读及空参数关闭": true,
+  "最终答复": "临时 Ghidra 会话验证通过。`list_procedures` 返回的第一个函数为 `_demo_value`，起始地址是 `0x100000328`。改名后，`address_name` 在同一地址回读到 `demo_entry`。\n\n随后按要求调用 `close_binary({})`，目标已关闭，返回 `{\"result\":null}`。",
+  "通过": true
+}

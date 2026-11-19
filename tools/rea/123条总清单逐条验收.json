@@ -2088,8 +2088,8 @@
       "编号": 66,
       "工具": "set_address_name",
       "原文": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 set_address_name 将我选中的测试函数起始地址重命名为 demo_entry，并告诉我改动的地址。",
-      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，从返回列表取第一个函数的起始 address。\n请用 rea 的 set_address_name 将我选中的测试函数起始地址重命名为 demo_entry，并告诉我改动的地址。",
-      "本轮最终实测结果": "把临时会话中的首个函数改名为 demo_entry，回读一致。",
+      "最终指令": "定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。\n用 rea 的 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。调用 list_procedures，取第一个函数的起始 address。\n在该地址调用 set_address_name，将名称改为 demo_entry。随后用 address_name 回读同一地址，确认名称为 demo_entry。\n本项只验证临时会话内的改名。回读后用空参数 {} 调用 close_binary 释放目标，省略 snapshot_path 和 overwrite。报告改动的地址、回读名称及关闭结果。",
+      "本轮最终实测结果": "在临时 Ghidra 会话中把 0x100000328 改为 demo_entry，同地址回读一致，空参数关闭成功。",
       "验收记录": [
         {
           "版本": "original",
@@ -2119,6 +2119,43 @@
               "证据ID": "ev_2e595064b335e7ec0f605aadc5927ace00661372ff40a6afa135ccb370a22a54"
             }
           ]
+        },
+        {
+          "版本": "rename-close-66",
+          "用户消息数": 1,
+          "对话指纹": "4bbd2d4d209e0ec0",
+          "轮次指纹": "acaf2644e60f6c51",
+          "指令SHA256": "2dc0c58a08bcc7ebe6d610dcd5a8041ed5df1ac74fa40351e3ee564a52924ba6",
+          "完成目标": true,
+          "MCP报错次数": 0,
+          "实际调用": [
+            {
+              "工具": "open_binary",
+              "有效返回": true,
+              "服务": "rea"
+            },
+            {
+              "工具": "list_procedures",
+              "有效返回": true,
+              "服务": "rea"
+            },
+            {
+              "工具": "set_address_name",
+              "有效返回": true,
+              "服务": "rea"
+            },
+            {
+              "工具": "address_name",
+              "有效返回": true,
+              "服务": "rea"
+            },
+            {
+              "工具": "close_binary",
+              "有效返回": true,
+              "服务": "rea"
+            }
+          ],
+          "实测详情": "regression/runs/2026-11-20-rename66/single-066.json"
         }
       ]
     },
@@ -3820,5 +3857,6 @@
         }
       ]
     }
-  ]
+  ],
+  "后续验收说明": "统计字段对应首次整批验收。第 66 条的最终指令与最新验收记录已根据单条新对话复测更新。"
 }

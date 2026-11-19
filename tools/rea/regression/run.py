@@ -254,12 +254,36 @@ def record_item(item, case, report):
         call = {"server": item.get("server"), "tool": item.get("tool"), "ok": error is None}
         if error is not None:
             call["error"] = error
+        # Case 66 verifies a temporary edit and must close the same target cleanly.
+        if case["id"] == 66 and call["server"] == "rea":
+            args = item.get("arguments")
+            if call["tool"] in ("set_address_name", "address_name") and isinstance(args, dict):
+                call["address"] = args.get("address")
+            if call["tool"] == "address_name":
+                call["readback"] = payload if isinstance(payload, str) else None
+            if call["tool"] == "close_binary":
+                call["empty_arguments"] = args == {}
         report["calls"].append(call)
         if (call["server"], call["tool"]) == (case["server"], case["tool"]) and error is None:
             report.setdefault("_target_results", []).append(payload)
             for check in report["checks"]:
                 if matches(payload, check["rule"]):
                     check["matched"] = True
+
+
+def verified_rename_close(calls):
+    address = None
+    verified = False
+    for call in calls:
+        if call["server"] != "rea" or not call["ok"]:
+            continue
+        if call["tool"] == "set_address_name":
+            address, verified = call.get("address"), False
+        elif call["tool"] == "address_name" and address and call.get("address") == address:
+            verified = call.get("readback") == "demo_entry"
+        elif call["tool"] == "close_binary":
+            return verified and call.get("empty_arguments") is True
+    return False
 
 
 def save(path, value):
@@ -289,7 +313,9 @@ def run_case(case, directory, timeout):
                 server.close()
     except (OSError, RuntimeError, ValueError, KeyError) as err:
         report["error"] = str(err)
-    report["passed"] = (not report.get("error") and report.get("turn_status") == "completed"
+    if case["id"] == 66:
+        report["rename_readback_and_close"] = verified_rename_close(report["calls"])
+    report["passed"] = (report.get("rename_readback_and_close", True) and not report.get("error") and report.get("turn_status") == "completed"
                         and report["messages_match"] == [True] and bool(report["answer"].strip())
                         and all(c["ok"] for c in report["calls"])
                         and all(c["matched"] for c in report["checks"]))
