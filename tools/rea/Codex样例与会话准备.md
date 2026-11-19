@@ -646,6 +646,8 @@
 
 ## 58 条会话或前序结果示例
 
+[查看上轮出现 MCP 报错的 11 条指令复测结果](./11条指令MCP零报错复测.md)
+
 [查看这 58 条指令在全新对话里的首轮和复测结果](./58条准备指令全新对话实测.md)
 
 ### 网页、浏览器与 Electron
@@ -738,7 +740,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-先用 analyze_javascript_application 读取 js/app.asar，detail 选 complete，保留完整应用图的 evidence_id。 把它作为 application，从 renderer.js 向外追踪。
+用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。
+调用 trace_application_feature 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"application": {"kind": "retained-evidence", "evidence_id": "<应用图ID>"}, "seed": {"kind": "module", "value": "renderer.js", "match": "exact"}, "direction": "outgoing"}
 请用 rea 的 trace_application_feature 在刚生成的 JavaScript 应用图中，以 renderer.js 模块为起点追踪它关联的功能。
 ```
 
@@ -748,7 +752,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-先用 analyze_javascript_application 读取 js/app.asar，detail 选 complete，保留完整应用图的 evidence_id。 在返回的语义图里取 profile.js 中 getProfile 的返回值节点，使用 jsrg_node_ 开头的 ID，种类填 semantic-node，方向填 backward-provenance。
+用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。从该结果的语义图取 profile.js 中 getProfile 的 return 节点，把实际的 jsrg_node_ 标识作为返回节点ID。
+调用 trace_javascript_semantics 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"application": {"kind": "retained-evidence", "evidence_id": "<应用图ID>"}, "query": {"seed": {"kind": "semantic-node", "node_id": "<返回节点ID>"}, "direction": "backward-provenance"}}
 请用 rea 的 trace_javascript_semantics 使用我选中的语义节点 ID，在本对话的 JavaScript 应用图中向后追溯它的值来自哪里。
 ```
 
@@ -758,7 +764,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-先用 analyze_javascript_application 读取 js/app.asar，detail 选 complete，保留完整应用图的 evidence_id。 将 js/reference.json 作为 reference（kind 为 file，path 用绝对路径）。
+用 analyze_javascript_application 分析 js/app.asar，detail 填 complete，从返回顶层取 evidence_id 作为应用图ID。取 js/reference.json 解压后的绝对路径。
+调用 compare_source_to_bundle 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"reference": {"kind": "file", "path": "<reference.json绝对路径>"}, "application": {"kind": "retained-evidence", "evidence_id": "<应用图ID>"}}
 请用 rea 的 compare_source_to_bundle 将我提供的历史源码图 HistoricalSourceGraph 与本对话的打包应用图比对，列出修改过的模块。
 ```
 
@@ -768,7 +776,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-分别用 analyze_javascript_application 分析 js/v1 和 js/v2，detail 选 summary，取各自 normalized_result.parent_evidence_id，旧版传 left，新版传 right。
+对 js/v1 和 js/v2 分别调用 analyze_javascript_application，detail 填 summary。从各自 normalized_result.parent_evidence_id 取旧版ID和新版ID。
+调用 compare_application_versions 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"left": {"kind": "retained-evidence", "evidence_id": "<旧版ID>"}, "right": {"kind": "retained-evidence", "evidence_id": "<新版ID>"}}
 请用 rea 的 compare_application_versions 使用本会话中新旧两份 JavaScript 分析摘要各自的 parent_evidence_id 对比应用图，分别列出新增和删除的模块。
 ```
 
@@ -778,7 +788,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-分别用 analyze_javascript_application 分析 js/v1 和 js/v2，detail 选 summary，取各自 normalized_result.parent_evidence_id，旧版传 left，新版传 right。 两侧的 module_path 均填 profile.js，两侧的 export_name 均填 getProfile。
+对 js/v1 和 js/v2 分别调用 analyze_javascript_application，detail 填 summary。从各自 normalized_result.parent_evidence_id 取旧版ID和新版ID。
+调用 compare_javascript_export_shapes 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"left": {"kind": "retained-evidence", "evidence_id": "<旧版ID>"}, "right": {"kind": "retained-evidence", "evidence_id": "<新版ID>"}, "left_export_name": "getProfile", "right_export_name": "getProfile", "left_module_path": "profile.js", "right_module_path": "profile.js"}
 请用 rea 的 compare_javascript_export_shapes 使用新旧 JavaScript 分析摘要各自的 parent_evidence_id，比较两版 profile.js 中 getProfile 的静态返回属性。
 ```
 
@@ -798,7 +810,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-用 Python 3 在独立的终端任务启动 live/start.py node，保持进程运行，读取它打印的第一行 JSON，把其中全部字段作为本次工具的连接参数。整个比对完成后再停止该进程。先用 observe_javascript_runtime 观测该 Node 样例，取得完整观测的证据 ID。用 analyze_javascript_application 分析同包的 node 目录，取得完整应用图的证据 ID。将图放入 static_layers（role 为 application），观测放入 runtime_observations。
+用 Python 3 启动 live/start.py node，保持它运行。将首行 JSON 原样传给 observe_javascript_runtime，取该观测的证据ID。用 analyze_javascript_application 分析 node 目录，detail 填 summary，取 normalized_result.parent_evidence_id 作为应用图ID。完成比对后停止本次启动的 Node 测试进程。
+调用 reconcile_javascript_runtime 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"static_layers": [{"role": "application", "analysis": {"kind": "retained-evidence", "evidence_id": "<应用图ID>"}}], "runtime_observations": [{"kind": "retained-evidence", "evidence_id": "<观测的证据ID>"}]}
 请用 rea 的 reconcile_javascript_runtime 对齐本对话的 JavaScript 静态应用图和已有的 V8 观测记录，列出两边都能确认的脚本。
 ```
 
@@ -808,7 +822,12 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-分别用 analyze_javascript_application 分析 js/endpoint 目录、用 inspect_web_network_capture 按 HAR 格式读取 web/demo.har。保留这两项完整证据的 ID；摘要结果取 parent_evidence_id。 将二者作为 application 和 capture，origin 填 https://fixture.invalid。
+分别用以下参数准备两份摘要，路径换成本次解压的绝对路径。
+analyze_javascript_application 用 {"input_path":"<js/endpoint目录>","detail":"summary"}。
+inspect_web_network_capture 用 {"capture_path":"<web/demo.har文件>","format":"har","detail":"summary"}。
+依次取两份摘要的 normalized_result.parent_evidence_id，作为应用图ID和抓包ID。
+调用 compare_static_and_observed_endpoints 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"application": {"kind": "retained-evidence", "evidence_id": "<应用图ID>"}, "capture": {"kind": "retained-evidence", "evidence_id": "<抓包ID>"}, "origin": "https://fixture.invalid", "detail": "complete"}
 请用 rea 的 compare_static_and_observed_endpoints 核对本对话的应用图与同一测试应用的 HAR 分析结果，列出代码声明且抓包中出现过的接口。
 ```
 
@@ -1064,7 +1083,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-用 open_binary 以 ghidra 后端打开 native/demo 的临时副本，等待分析完成。 调用 list_procedures，依次取前两个不同函数的起始 address，按顺序分别对应 demo_load 与 demo_save。
+将 native/demo 的临时副本用 open_binary 打开，provider_id 填 ghidra。调用 list_procedures，按顺序取前两个不同函数的起始地址作为下面的键。保留改名返回的回读结果，最后用空参数 {} 调用 close_binary 关闭本次临时目标。
+调用 set_addresses_names 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"names": {"<第一个地址>": "demo_load", "<第二个地址>": "demo_save"}}
 请用 rea 的 set_addresses_names 将我依次选中的两个不同测试函数地址分别命名为 demo_load 和 demo_save。
 ```
 
@@ -1086,7 +1107,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-先用 inspect_managed_native_boundaries 检查 native/Interop.dll，保留 P/Invoke 证据。再用 open_binary 打开 native/libdemo.dylib，调用 inspect_macho。使用完整证据 ID，将前者传给 managed_boundaries，将后者放入 native_observations 数组。
+用 inspect_managed_native_boundaries 读 native/Interop.dll，取声明证据ID。再用 open_binary 打开 native/libdemo.dylib，调用 inspect_macho 取得导出证据ID。直接在当前会话引用这两份记录。
+调用 verify_managed_native_boundaries 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"managed_boundaries": {"kind": "retained-evidence", "evidence_id": "<声明证据ID>"}, "native_observations": [{"kind": "retained-evidence", "evidence_id": "<导出证据ID>"}]}
 请用 rea 的 verify_managed_native_boundaries 用本对话的 P/Invoke 声明证据和对应动态库的 inspect_macho 导出证据，逐项核对入口名并说明匹配依据。
 ```
 
@@ -1106,7 +1129,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-分别调用 inspect_wasm_artifact 读取 native/old.wasm 和 native/new.wasm，detail 选 complete。将两个 evidence_id 按旧左新右传入，scope 选 exports。
+用 inspect_wasm_artifact 依次读取 native/old.wasm 和 native/new.wasm，detail 均填 complete，各取顶层 evidence_id 作为旧版ID和新版ID。
+调用 compare_wasm_interfaces 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"left": {"kind": "retained-evidence", "evidence_id": "<旧版ID>"}, "right": {"kind": "retained-evidence", "evidence_id": "<新版ID>"}, "scope": "exports"}
 请用 rea 的 compare_wasm_interfaces 比较本对话中两份 WASM 模块检查结果，列出新增、移除或签名变化的导出项。
 ```
 
@@ -1210,7 +1235,9 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-用 inspect_web_network_capture 按 HAR 格式读 web/demo.har，取返回的完整证据 ID，作为 source。新建一个专用工作目录，把其中尚不存在的 demo-environment 路径作为 output_directory，name 填 offline-demo。
+用 inspect_web_network_capture 按 har 格式读取 web/demo.har，取完整记录的 evidence_id 作为抓包ID。在工作区新建专用目录，选其中尚不存在的 demo-environment 作为导出绝对路径。
+调用 export_environment_bundle 时使用下面的 JSON 结构，把尖括号占位符替换为本次实际值。
+{"name": "offline-demo", "source": {"kind": "retained-evidence", "evidence_id": "<抓包ID>"}, "output_directory": "<导出绝对路径>"}
 请用 rea 的 export_environment_bundle 用本对话中合成 HAR 的分析证据，把测试环境包导出到工作区新目录 demo-environment。
 ```
 

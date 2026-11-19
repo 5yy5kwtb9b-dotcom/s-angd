@@ -1,0 +1,940 @@
+{
+  "日期": "2026-11-20",
+  "基线提交": "0603a2bd975c80de13bec9a26f057b04192c4f39",
+  "说明": "本次使用 13 个全新 Codex 对话，每个对话只发送一次对应版本的指令。修订后首次复测有 9/11 条完成目标且全程 MCP 零报错，最终指令达到 11/11 条。",
+  "逐条记录": [
+    {
+      "编号": 17,
+      "工具": "trace_application_feature",
+      "上轮原因及修订": "application 只传 ID 时缺少证据字段，改传整图又超出输入上限。改用带 kind 的应用图引用。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "ea457013aff68b95",
+          "指令SHA256": "82b1568d4d19eaeb3f04ea0f833e6335e8de571ddb86de103a9d9cfcc58ab80e",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 2,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_f6b3258473573cc41d4cc4cc1ccfc7ffa629b73e6bb9235960ccb40635084d82"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_application_feature",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_f6b3258473573cc41d4cc4cc1ccfc7ffa629b73e6bb9235960ccb40635084d82"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_application_feature",
+              "成功": false,
+              "错误码": "resource_constraint"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_application_feature",
+              "成功": true,
+              "返回证据ID": "ev_1ee5d12daa6b41f26bbbb987ad5a171b5c1aa98946e6048d2a99daf13a0dfb0f"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "aa3ce98278f1c99c",
+          "指令SHA256": "ec1d6cc8d55be4554e918e4a816384fa6c17621ac61c7c43fa993fa5d9ace1a1",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_777168942f91245423fe5e19935b71d1f763c3fce295da4afe9de948e292d137"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_application_feature",
+              "成功": true,
+              "返回证据ID": "ev_94a0637bece571c1dd2ceb069e74cbaffbd74985b9dce287812fedce6e6aab8f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 18,
+      "工具": "trace_javascript_semantics",
+      "上轮原因及修订": "语义查询也先传了不完整的证据，再传整图时超限。把应用图引用和 return 节点 ID 分别写在对应位置。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "e8799bd7cbbd2da0",
+          "指令SHA256": "cad3f8c8abc4990a92da6b5c208f40ac0fbe227d49eff1ee2a8622f0ad894ca8",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 2,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_bce8fc7272d5969f3de117d96e5dc17388b44133c73636f74ac46578478043ed"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_javascript_semantics",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_javascript_semantics",
+              "成功": false,
+              "错误码": "resource_constraint"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_javascript_semantics",
+              "成功": true,
+              "返回证据ID": "ev_d48dc8982b20199524699312bad727b3a9e8b1ec7a10c1c229573cbbff32bc31"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "132c0fefe140ab56",
+          "指令SHA256": "144e097d29009863981a76eb9dfa152c141f92f16072d1b11460b59ee566e11a",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_5ff653090f27257523a63c9e4f7c9479a5d42fdf727b9fc3a644102ba35ddd38"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_javascript_semantics",
+              "成功": true,
+              "返回证据ID": "ev_c4b8b7747fd81c77a7b56a4ed99211db8314678857dfab6f089dc87f612ab9e4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 22,
+      "工具": "compare_source_to_bundle",
+      "上轮原因及修订": "application.kind 写成 retained。改用 retained-evidence，并给历史源码图单独传文件路径。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "5f45c508eeba03ab",
+          "指令SHA256": "4d08a83f1e91417f8c37621e927ec5920f6da9e5d47894c1095cdd7eb53eb982",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_85070e21e8101e77e9b6be24b1a6436ee99e2792834381d71d4751223dadc6e4"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_source_to_bundle",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_source_to_bundle",
+              "成功": true,
+              "返回证据ID": "ev_7b4c375377ce2ab5d5dd9c5f5a4efd31d37d59d2f8b687906e90d95db141d4cf"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "59a35e860420cdee",
+          "指令SHA256": "f3085723711a0cc1760943fdc772005ecba2c02b0fe63f4eea64fe70a23de658",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_d5fa12c53462a47953ec66a69d54b0cb6bb20e87cb48fa221799b4ddc6df20c1"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_source_to_bundle",
+              "成功": true,
+              "返回证据ID": "ev_7d2ba0650cfff106fbe8c3784319438619b8e881f3276953e39e376cbb728664"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 23,
+      "工具": "compare_application_versions",
+      "上轮原因及修订": "左右两侧只传了 evidence_id 或 parent_evidence_id。分别取两版摘要的父 ID，用带 kind 的 left、right 引用提交。首次复测中我给比较调用多写了 detail，最终版已删去该字段。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "7b12cf2c144ead44",
+          "指令SHA256": "2fd3473f87b70e5164e08b89bf90ffb131269167aff92ed23523b5788dd0494f",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 2,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_41bde558ab990da89e1deff5e4df0d5d0526f2333a64491bea62b34c221e2cd6"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_6a6cd294f2f361d06a24d3d220d5b55da13461ff3889114c2879de69db99d489"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_9c5ba0829ba650715318df29787ac56a86e2d84f6051c3c09377107809209d46"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_9c5ba0829ba650715318df29787ac56a86e2d84f6051c3c09377107809209d46"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_9c5ba0829ba650715318df29787ac56a86e2d84f6051c3c09377107809209d46"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "d958848dcc0f4e83",
+          "指令SHA256": "c2816f69db913b9908b885d29651301330d553d9ec85240f097add9677448bbc",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_355377ba0731d9759d37c273023ad1c0f1a4c5ea162ea76986c87d6c5c720876"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_c7c463bf7e99e971f1595519846f92bde32ebb913dc1cc38a587c51312a7a731"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_0d7f53fff90b781f34337f7aacfa16163b3275f483dd223379d29ddb412521c1"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_0d7f53fff90b781f34337f7aacfa16163b3275f483dd223379d29ddb412521c1"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11-v2",
+          "对话指纹": "dc11a0ed3fe4bb05",
+          "指令SHA256": "da1f719cf328e0dd31b357b9acc7fd286d037b54b3391a4576b47097996be13e",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_f62f426fd285635096c537d4e27128ae8240253acd38cb67ba1ddab9ffaffea2"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_292d19bdda2f474d4585cd1038edde2baa1eff47d7bb974f86b6b037ead517e1"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_0693db482bed29d7bd8c63797d1fbcbb5ef699f91b87fc00305c7c69d04922c6"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_0693db482bed29d7bd8c63797d1fbcbb5ef699f91b87fc00305c7c69d04922c6"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_application_versions",
+              "成功": true,
+              "返回证据ID": "ev_0693db482bed29d7bd8c63797d1fbcbb5ef699f91b87fc00305c7c69d04922c6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 24,
+      "工具": "compare_javascript_export_shapes",
+      "上轮原因及修订": "两版证据引用缺少 kind。为每侧写明引用、模块路径和导出名。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "3b88ab608c7cec7b",
+          "指令SHA256": "b0337f5b2906880f8baf8959f5a4b5fd8c6c8a23ac769f8bd970eed09fe8b9fe",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 2,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_5644a4f775b39d9729424dc1fb14c16722ffbd135121a1828d77274703c5d0c2"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_4c2d22c0a33902128dc2555d9c2530b8339ec7f4ea35306527723513f8231012"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_javascript_export_shapes",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_javascript_export_shapes",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_javascript_export_shapes",
+              "成功": true,
+              "返回证据ID": "ev_c6f78dc278722ab9438a1e1a4fc169dae72b128484dd5555da7f863eea5505a7"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "01d882af373a7932",
+          "指令SHA256": "9be2170cb0294f30276021421c4c14a664eac7e3258ca8f624d4fb24ec2bdcbd",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_cf3802b27b4d4908486f32b57dd3636865d206573b73b9e6c50a8dd7c8b39bcb"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_2866af17b6b3030c7c2273ec6a21496d62f2b8ae77d9b36f4ab8b71abb21f334"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_javascript_export_shapes",
+              "成功": true,
+              "返回证据ID": "ev_c8ba107d10518291a5927012872d823dbcd7fcd280a79326852283c1cf447cab"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 26,
+      "工具": "reconcile_javascript_runtime",
+      "上轮原因及修订": "静态层缺少 analysis 层级，后续用了无效的引用、证据查询 detail 值和超限的整图。直接引用本轮应用图和 V8 观测。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "8dfe13423fb803c9",
+          "指令SHA256": "00e9a789123ac481590ec4a4ad7499ad770f35075d15df1f88c26eecd4053cd8",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 6,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "observe_javascript_runtime",
+              "成功": true,
+              "返回证据ID": "ev_8e08e613a4a9e44ae0a5568041b38cf2e4820bbad9e02793bd2443b8648bea78"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_60b1ae030a18a47b698768f44ad18f85f6fb0b299bfe95d7f551d5d922eda33c"
+            },
+            {
+              "服务": "rea",
+              "工具": "reconcile_javascript_runtime",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "reconcile_javascript_runtime",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "reconcile_javascript_runtime",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "reconcile_javascript_runtime",
+              "成功": false,
+              "错误码": "resource_constraint"
+            },
+            {
+              "服务": "rea",
+              "工具": "reconcile_javascript_runtime",
+              "成功": true,
+              "返回证据ID": "ev_beba1817036fb93d04c2add78a2a8f007e29a16a60f4f4ac0bbeacc890ce7086"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "90c505e2c169f780",
+          "指令SHA256": "ef6b0d85326161946d7ff74374173eda033174eb9a42ca6f8f8889580cba38ee",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "observe_javascript_runtime",
+              "成功": true,
+              "返回证据ID": "ev_607caf7ba9f0224ca0ac49e29c4c5cf3058026c69437d1c6c1491a05287cba17"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_826aebadb09f1215ad01ef9c3f8bfe26d7aaeddb9a6a9c3f31dd09f7a53be597"
+            },
+            {
+              "服务": "rea",
+              "工具": "reconcile_javascript_runtime",
+              "成功": true,
+              "返回证据ID": "ev_0a4fc2cfd65f43143654613e72f0a4880a5780ea6480ce842920fbca698a3c06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 27,
+      "工具": "compare_static_and_observed_endpoints",
+      "上轮原因及修订": "应用图和 HAR 均只传 ID，证据校验失败。分别用 application、capture 引用两项摘要的父记录。首次复测时 HAR 路径被填入 input_path，最终版明确使用 capture_path。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "1182ab05861de63f",
+          "指令SHA256": "8c1dfee3e1512a0d2227f3929c3d299eae87f0915b5d5307932709532665f51d",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_web_network_capture",
+              "成功": true,
+              "返回证据ID": "ev_f69702586dad99e600cd59032ce2755e5da4c07b7e195b9db74496d46e2f737f"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_6e86b783569ac0e9f1ff29e60ed26c560d25202acd6ec5928d743ca46606f17a"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_static_and_observed_endpoints",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_static_and_observed_endpoints",
+              "成功": true,
+              "返回证据ID": "ev_5c548b4a31a8c415eb4e3a1554425a4b10780bc1eb0fb115ee6111503efbd66e"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "ced830e16131ecd8",
+          "指令SHA256": "fae39a36230cc995113e6fcb66552d9179db36454bb451d3c67ab9733bc5102d",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_web_network_capture",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_e26400afcdf4f13377789658a7f942ec7ceb982a8ab0994525f6da3238093960"
+            },
+            {
+              "服务": "rea",
+              "工具": "inspect_web_network_capture",
+              "成功": true,
+              "返回证据ID": "ev_f77b2e8b16929aac8242cf56947887d67acee843d47c472f87d77a560d5d14cc"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_static_and_observed_endpoints",
+              "成功": true,
+              "返回证据ID": "ev_c3c80a3fca6b0357ae5cf488a47049262d688205f980cf48ea17b38dea07b3f2"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11-v2",
+          "对话指纹": "c7186ab7c57f11cc",
+          "指令SHA256": "f43c7a3e76418cae713ae368fc2bb828e9b7cdca132eb087ec68b0405bb84284",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "成功": true,
+              "返回证据ID": "ev_026399086a9317f0fb564c37952f11806ff9461924340335e7137aed5eebbe62"
+            },
+            {
+              "服务": "rea",
+              "工具": "inspect_web_network_capture",
+              "成功": true,
+              "返回证据ID": "ev_355060e66f387e754b71712e49f0d7d8f3122ad9b80d9a51024ef08ecdefe784"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_static_and_observed_endpoints",
+              "成功": true,
+              "返回证据ID": "ev_00d2878d1a881ee9ae339a945ea71b841da83e880b7ac96c76981e17b36f5c2b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 67,
+      "工具": "set_addresses_names",
+      "上轮原因及修订": "改名已成功，关闭时额外传入 snapshot_path，后端拒绝保存已改动元数据的快照。回读改名结果后以空参数关闭临时目标。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "08fd5fdec3aa4123",
+          "指令SHA256": "063e157c2d14f0f97cb4cb89c116cd850cce20f358380aca1102f67ea3ac66bb",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "open_binary",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "list_procedures",
+              "成功": true,
+              "返回证据ID": "ev_99c9a8a1d4c734f28b72bf495d2b3a3f366cf623c97833592c9cdb586e034990"
+            },
+            {
+              "服务": "rea",
+              "工具": "set_addresses_names",
+              "成功": true,
+              "返回证据ID": "ev_a1be9aba548e7fc64aecc48c1da6c92f56a34459637dc04a9cef8add09ca2330"
+            },
+            {
+              "服务": "rea",
+              "工具": "close_binary",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "4b69fe8ee93376e9",
+          "指令SHA256": "b08b6deefe8f94841bfa991a472caa8e4b02929b817bb5d845b82280b0276adf",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "open_binary",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "list_procedures",
+              "成功": true,
+              "返回证据ID": "ev_99c9a8a1d4c734f28b72bf495d2b3a3f366cf623c97833592c9cdb586e034990"
+            },
+            {
+              "服务": "rea",
+              "工具": "set_addresses_names",
+              "成功": true,
+              "返回证据ID": "ev_a1be9aba548e7fc64aecc48c1da6c92f56a34459637dc04a9cef8add09ca2330"
+            },
+            {
+              "服务": "rea",
+              "工具": "close_binary",
+              "成功": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 89,
+      "工具": "verify_managed_native_boundaries",
+      "上轮原因及修订": "P/Invoke 与 Mach-O 证据只传 ID，补查时 get_evidence_bundle 使用了无效的 complete 选项。直接引用同一会话的两项证据。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "8bdb427359e2a4f3",
+          "指令SHA256": "264633ca1ca5c7daf769bc62b2c948d06c9424afea673b554afcc0950c941629",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 3,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_managed_native_boundaries",
+              "成功": true,
+              "返回证据ID": "ev_36796fe2176919b16e0268aa2308cc87429c43d0f3641ba5b7d1fc03be646df6"
+            },
+            {
+              "服务": "rea",
+              "工具": "open_binary",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "inspect_macho",
+              "成功": true,
+              "返回证据ID": "ev_9ec76290dcb3aca74ca4614ccf4de000cd1f654fd091a9541944e49300861675"
+            },
+            {
+              "服务": "rea",
+              "工具": "verify_managed_native_boundaries",
+              "成功": false,
+              "错误码": "evidence_integrity_mismatch"
+            },
+            {
+              "服务": "rea",
+              "工具": "close_binary",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "get_evidence_bundle",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "verify_managed_native_boundaries",
+              "成功": true,
+              "返回证据ID": "ev_304c893f594366e37321b42f19d8723ea0833131f30fcf2b540e0e36d75c9d13"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "ac354adac6c1dca5",
+          "指令SHA256": "d348dbec3b75bfb78880451a29641cfeb983b72fec6b5f4a75cac55d72cf1f24",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_managed_native_boundaries",
+              "成功": true,
+              "返回证据ID": "ev_291690de7c9afa5ec7a0f23fcecc053e7feae087bc48ff94ae11df7b6fbc476c"
+            },
+            {
+              "服务": "rea",
+              "工具": "open_binary",
+              "成功": true
+            },
+            {
+              "服务": "rea",
+              "工具": "inspect_macho",
+              "成功": true,
+              "返回证据ID": "ev_be6383a5a686259e528b6762fe44d648be5d146376566dd3875cb83254c846a1"
+            },
+            {
+              "服务": "rea",
+              "工具": "verify_managed_native_boundaries",
+              "成功": true,
+              "返回证据ID": "ev_1a9261504901177ea3f2337d78ae6f8f6dfb5fdf07cd061bdfaa60e0211a4935"
+            },
+            {
+              "服务": "rea",
+              "工具": "close_binary",
+              "成功": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 93,
+      "工具": "compare_wasm_interfaces",
+      "上轮原因及修订": "左右证据先缺少 kind，后又填为 evidence_ref。两侧使用 retained-evidence 并固定旧左新右。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "213de000435f4739",
+          "指令SHA256": "e99bbb5d582f72cfe279cc702616bb7f928454e167e97207e23d3ee86e80966f",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 2,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_wasm_artifact",
+              "成功": true,
+              "返回证据ID": "ev_70a25aa77ff10214c209d0d21d4300bc9f631bcfeb78675d6590dc6268d63b87"
+            },
+            {
+              "服务": "rea",
+              "工具": "inspect_wasm_artifact",
+              "成功": true,
+              "返回证据ID": "ev_904e4d3a3d5c76f5d6d224c3c26e21b5a3ae139f34fbafaaea142672a9e3b000"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_wasm_interfaces",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_wasm_interfaces",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_wasm_interfaces",
+              "成功": true,
+              "返回证据ID": "ev_02ce7f0691f00a6ea0864e109ac921cc3c442d7d29fa4c48133c84e14eec5ea3"
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "22e10b0ba4f8f3cb",
+          "指令SHA256": "7b3898283eab6727a9cdc8f38294b7ca35d1d4347bf5dbf3900a4ed516d3cade",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_wasm_artifact",
+              "成功": true,
+              "返回证据ID": "ev_510fe65133a474bf78996a5d824e94cd83e7b09afb7fb7acdc2bd9bb35df6e2f"
+            },
+            {
+              "服务": "rea",
+              "工具": "inspect_wasm_artifact",
+              "成功": true,
+              "返回证据ID": "ev_3b249db52256c3307a2fcd46eab8349659b09c585f9b8f3f11ceaf60660350af"
+            },
+            {
+              "服务": "rea",
+              "工具": "compare_wasm_interfaces",
+              "成功": true,
+              "返回证据ID": "ev_7e13a91181c540cdd4b40ac14319f48c78bd90236f838e7173e387498ab03c20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 116,
+      "工具": "export_environment_bundle",
+      "上轮原因及修订": "导出时 source 只传了 evidence_id。写明来源引用的 kind，以及尚不存在的输出目录。",
+      "各轮": [
+        {
+          "版本": "original",
+          "对话指纹": "eb51143c6b755876",
+          "指令SHA256": "d812830a7e061b896c7b699f8a0310f97db2810a4ee0f2ddd2433e5faa157a04",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_web_network_capture",
+              "成功": true,
+              "返回证据ID": "ev_45e0f291579e21faffd3366dfbc9e3886b75d006403814ffa266ee906da2966c"
+            },
+            {
+              "服务": "rea",
+              "工具": "export_environment_bundle",
+              "成功": false,
+              "错误码": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "export_environment_bundle",
+              "成功": true
+            }
+          ]
+        },
+        {
+          "版本": "mcp11",
+          "对话指纹": "882b94b07b5481f8",
+          "指令SHA256": "3963d06a526f29666863c1833fa8a54164c73c0a052b357c91323541f1b4fee2",
+          "用户消息数": 1,
+          "完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_web_network_capture",
+              "成功": true,
+              "返回证据ID": "ev_f717d91ce898c5ffc185ce055d15ce09100f22b17abf227a608e2e6ebf3aa94e"
+            },
+            {
+              "服务": "rea",
+              "工具": "export_environment_bundle",
+              "成功": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
