@@ -1,0 +1,5195 @@
+[
+  {
+    "编号": 1,
+    "工具": "inspect_packet_fields",
+    "服务": "mac_pcap",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "47c813496ead8898c04912a6062ee83533c7fbb6dda40dfed7a21d213f9a8961",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-1",
+    "对话ID的SHA256": "b9b272379d7b1ba240e8a6ee544a103b509b4655df44de7ed1a7ca9cfbc20046",
+    "轮次ID的SHA256": "7bcf48d743ebaeb05a67bd8d77c080cc4abcedce450ad0b1c6d75cd69bb42985",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "mac_pcap",
+        "tool": "inspect_packet_fields",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "fields",
+          "contains",
+          "frame.len"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**`frame.len` 表示帧长**，Wireshark 将其标为 `Frame Length`，单位是字节。\n\n`mac_pcap.inspect_packet_fields` 还匹配到 `frame.len_lt_caplen`，它是一个标志，表示帧长小于捕获长度。",
+    "原始结果文件SHA256": "cea483259c8a7f85980322875af8f42bd92cb315b77a91d8db0c59735ac2b49e"
+  },
+  {
+    "编号": 2,
+    "工具": "inspect_packet_capture",
+    "服务": "mac_pcap",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "dfa7cbb68a8cc15604a10943331fcc8a2958d295164a03a34b833843b08b5ef1",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-2",
+    "对话ID的SHA256": "e847d1fd56a695a97d0eee80e32fbc42188616196f2d77b81578a8f1e5501828",
+    "轮次ID的SHA256": "20e3b14b61e0700216a6f477068ac9384d785ba988f0b1b08d2c023808755a26",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "mac_pcap",
+        "tool": "inspect_packet_capture",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "rows",
+          "eq",
+          [
+            [
+              "1",
+              "60"
+            ],
+            [
+              "2",
+              "74"
+            ]
+          ]
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "使用 mac_pcap 的 `inspect_packet_capture` 读取 `web/两帧样例.pcap`，结果如下。\n\n| frame.number | frame.len（字节） |\n|---:|---:|\n| 1 | 60 |\n| 2 | 74 |",
+    "原始结果文件SHA256": "7cc1007a88fba7f0109b9219b23fc1d8a8790b894f3a92d87a2c9b26e6baa054"
+  },
+  {
+    "编号": 3,
+    "工具": "inspect_pcap_capture",
+    "服务": "mac_pcap",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "cc8dea9554001f18e20f32d4564d3498598ef43e85cbd48537942c947980c0fe",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-3",
+    "对话ID的SHA256": "ce4d2f4c6ac816efaeba183ab9fef8b6674e76b464303240408ae8199b0e88b8",
+    "轮次ID的SHA256": "b36f9101c8a59998316c1fa2f408f15564fb1e5c7d448dfdd2d6e28d2419507c",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "mac_pcap",
+        "tool": "inspect_pcap_capture",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "packet_count",
+          "eq",
+          2
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "wire_bytes",
+          "eq",
+          134
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "使用 `mac_pcap.inspect_pcap_capture` 核实，`web/两帧样例.pcap` 共 **2 个包**，线上字节总数为 **134 字节**，持续时间为 **1 秒**。",
+    "原始结果文件SHA256": "d99a96aac7b54e355fef0ba9e3f9cca1dd3fa30eb8f93da5abb9890d59ae464b"
+  },
+  {
+    "编号": 4,
+    "工具": "inspect_pcap_client",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "607823e039145fc0d5240f53e61ec64d2ca642a952768a0f1e5fa19c2163422a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-4",
+    "对话ID的SHA256": "89bcdd2aa305f7357007b6e743fca5415aa84d371c83a9312b2b1267bd9c9cf0",
+    "轮次ID的SHA256": "6d98171f08054def0eb6fb8ab53c5d8267d1beecb7fa001e91c27f3a48817b11",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_pcap_client",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "client.tshark_version",
+          "nonempty",
+          true
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "client.capinfos_version",
+          "nonempty",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.inspect_pcap_client` 已验证这台 Mac 上 REA 通过环境变量选用的两个可执行文件。两者的版本均为 **Wireshark 4.6.10**，构建号均为 `v4.6.10-0-geac916f07299`。\n\n| 工具 | 实际路径 |\n|---|---|\n| TShark | `<用户目录>/.local/share/rea-dependencies/wireshark-1fa2b3cca5da/Wireshark.app/Contents/MacOS/tshark` |\n| capinfos | `<用户目录>/.local/share/rea-dependencies/wireshark-1fa2b3cca5da/Wireshark.app/Contents/MacOS/capinfos` |",
+    "原始结果文件SHA256": "fa81ad59faf8567372a1cadfc1c2525c6ecbe33490e6b88bf3d7b92d70f329b5"
+  },
+  {
+    "编号": 5,
+    "工具": "inspect_web_network_capture",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "1220b461f6418d062f893f2c700da263125fcbec04df5b6c069c4a8827559513",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-5",
+    "对话ID的SHA256": "26f6ac3b63752764354506163cc2be15845ef165504da21b769f4c0741da53e3",
+    "轮次ID的SHA256": "9e9bd9779bcaa18f6f2fcd144a8a5bd7e4e95fdf9e188fc0304dd111c3c8e473",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_web_network_capture",
+        "ok": true
+      }
+    ],
+    "命中断言数": 3,
+    "总断言数": 3,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "records.0.reported.request.method",
+          "eq",
+          "GET"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "records.0.reported.request.url",
+          "contains",
+          "/demo/report"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "records.0.reported.response.status",
+          "eq",
+          200
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 从 `web/requests.har` 中共读取到 1 条请求记录。\n\n| 序号 | 方法 | 路径 | 响应状态码 |\n|---|---|---|---|\n| 1 | `GET` | `/demo/report` | `200` |",
+    "原始结果文件SHA256": "45c92b24989baeb1463054b7ef55aab4130e4fb06642991e3833d5840f5ffc4e"
+  },
+  {
+    "编号": 6,
+    "工具": "inspect_web_page",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "fe0bb00a46ee3907bf8aba1bdc9041c03487e50474b9d474ce588787a7255fce",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-6",
+    "对话ID的SHA256": "4c693c5258d7de61a47e6da595966f175802867f1b40dcf653bb89383aecba14",
+    "轮次ID的SHA256": "14df1e6bbdae00ad6f57d8f094d98cb4ef44ddac24f7cc6dae9ac1bfc7709525",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_web_page",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "target.title",
+          "eq",
+          "REA 本机测试页"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "页面标题为 **REA 本机测试页**。\n\nREA 的 `inspect_web_page` 通过本机 CDP 检测到 **1 个脚本**，是直接写在 `/fixture` 页面 `<script>` 标签中的 JavaScript。该标签没有 `src` 属性，脚本为非模块类型，长度为 121 个 UTF-16 代码单元。脚本清单中没有外部脚本文件。\n\n本次启动的测试进程已正常退出，退出码为 `0`。",
+    "原始结果文件SHA256": "5b592f9e33b8927e51c7c45ab042f1188fa789d6c90d4b328da879402bb45f27"
+  },
+  {
+    "编号": 7,
+    "工具": "inspect_web_event_listeners",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "1e9fd7eb6b63766c28111aea9923410e105a4babfb72e3419d68b3890b783d2a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-7",
+    "对话ID的SHA256": "d3b5a2def5950f862aaeaf27288a1277df359b35b05778ff330040732b54d5e5",
+    "轮次ID的SHA256": "2cb9c55ca90a3a44abc47bd9c49b82b00fc85a5b1e795809c96b7d6261a3a4c3",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_web_event_listeners",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "listeners",
+          "contains",
+          "click"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_web_event_listeners` 查到 `#submit` 按钮直接注册了 **1 个 `click` 监听器**。\n\n回调是匿名箭头函数，位于 `http://127.0.0.1:51082/fixture` 的内联脚本第 4 行、第 69 列（行列从 1 起算，CDP `script_id` 为 `3`）。捕获到的注册语句如下。\n\n```javascript\ndocument.querySelector('#submit').addEventListener('click', () => {document.querySelector('#result').textContent='已提交'});\n```\n\n本次启动的测试进程已停止，退出码为 `0`。",
+    "原始结果文件SHA256": "f097ab50880935060e357d9a30308871197248a2061a4ff9f1b6efdbe3dded9b"
+  },
+  {
+    "编号": 8,
+    "工具": "capture_web_screenshot",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "a4464cb383734f935a919f69b3ee9994a476bbb658ba953e019f66e51f7a3ddd",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-8",
+    "对话ID的SHA256": "9f7560dd020cb3024f0ad08040956abf75cf65ad7c9c52ef47ff49a2efad0615",
+    "轮次ID的SHA256": "32e8d850a51c5ff5ae90c47fa5a25970dbb9d2915ca1690b9c2e2d5cdb237f9b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "capture_web_screenshot",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "artifact.media_type",
+          "eq",
+          "image/png"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `capture_web_screenshot` 截取测试页当前可见区域，尺寸为 756 × 469 像素。PNG 已通过 SHA-256 校验，本次启动的测试进程已正常退出。\n\n查看 PNG 截图",
+    "原始结果文件SHA256": "2d490afd555d3ed3a9df2481ee8044cca119ed4571606a3b7608c245b8f725d3"
+  },
+  {
+    "编号": 9,
+    "工具": "compare_web_screenshots",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "0b6deb14a3319e95b9b3b1c1108965cad6168ef0e20819c45030abb26b3d4771",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-9",
+    "对话ID的SHA256": "f291817ee6e0b2a272d2b4ef94ef4f2d81caf53fe959cd392b775b7c72f81382",
+    "轮次ID的SHA256": "413bb0f3094e81ea4634bf17fcf3df7bb07dd05c506de575828e871c475872bf",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "compare_web_screenshots",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "changed_pixels",
+          "eq",
+          0
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "变化像素占比为 **0%**。按 `screenshots.json` 中的 `before`、`after` 顺序，将完整截图数据和校验字段传入 REA 的 `compare_web_screenshots`。两张截图均为 1 × 1 像素，通道阈值为 0，共比较 1 个像素，变化 0 个。",
+    "原始结果文件SHA256": "99e72001be25c0a9a103db365b01018580d7d1f0e7647f4148c4d4a0742b2755"
+  },
+  {
+    "编号": 10,
+    "工具": "observe_web_session",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "1f6f59deb357570f74bf77231e2e87e8949f19d7e45286f93f0d30e00d9090b0",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-10",
+    "对话ID的SHA256": "b9b55db05124507320db72f91a404649489a13c6f6e47fb7832ff59b24749581",
+    "轮次ID的SHA256": "b1e10e620af7229981f0f24ac87c756a178f7831ab565744b6df5646f8ce6adb",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "observe_web_session",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "window.requested_ms",
+          "eq",
+          10000
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `observe_web_session` 完成了 10 秒观察，**时间线为空，共记录 0 个页面事件**。观察开始和结束时，页面地址均为 `http://127.0.0.1:51234/fixture`。记录范围从 REA 连接后开始。\n\n本次启动的测试进程已停止，退出码为 `0`。",
+    "原始结果文件SHA256": "a41c7b813855ede1835fa2ec3818c397e2f11b2c6fbe7146a73b9eded234c908"
+  },
+  {
+    "编号": 11,
+    "工具": "compare_web_captures",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "572aae9cdcb3f468403d56aef332d6053e803b77f1a08aafe41c76ef8f44e5ad",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-11",
+    "对话ID的SHA256": "1c7423bf0ef3fbe3826dea74e6d3958ab53a53c6bb89eb30849d26385091c9be",
+    "轮次ID的SHA256": "eb7e2a5122dffc2f1ccc78b37bdd2ced8805c492411bad4875dd6f2af2402a85",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "compare_web_captures",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "overall_status",
+          "eq",
+          "changed"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "两份场景记录中，只有 **1 个页面资源**发生变化：`https://fixture.test/main.js`。脚本导出的常量 `sample` 从 `1` 改为 `2`。\n\n```diff\n-export const sample=1;\n+export const sample=2;\n```\n\nREA 的 `compare_web_captures` 成功对齐了两个步骤。差异出现在 `scenario_start` 的网络响应正文中，两次请求均返回 HTTP 200，正文均为 22 字节。`ready` 步骤未发现差异。",
+    "原始结果文件SHA256": "68e7358bc0340d6774bd8fe15890412bf75eda2361117007d0e4e172c57d3c8b"
+  },
+  {
+    "编号": 12,
+    "工具": "discover_webmcp_tools",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "5217fda0aa964a033af62227acfc0d5c16568df08f4e3ab2d6c93d82971c9a75",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-12",
+    "对话ID的SHA256": "ae06abf3d8eb4704b5c976acc2e53d5eeef43e052feaa9e365c8df8181394924",
+    "轮次ID的SHA256": "a9b620dedf8ef92752ea160cdb6b15a58c03f664739f046f5137ceaa4bb1f92f",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "discover_webmcp_tools",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "tools.items",
+          "eq",
+          []
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `discover_webmcp_tools` 在观测窗口内完整查询了指定的本机测试页，实际发现 **0 个 WebMCP 工具**，无工具名称或参数可列出。本次启动的进程已正常退出。",
+    "原始结果文件SHA256": "bd226a34c9df8035bd95797fd1457584247f0a871db0d7c1542d7837b584bdfa"
+  },
+  {
+    "编号": 13,
+    "工具": "inspect_playwright_trace",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "a37d03a7a0b51806ee4e8ccbce0520c5b0489e6d4fcee04a83f82f9448abfdf2",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-13",
+    "对话ID的SHA256": "5a99a61bce18e37d107201fc6194998ecb1865f7b57bb41e88f197cd61f41060",
+    "轮次ID的SHA256": "f7ebf8728886358df220564930b113060d57b2b7261f95d480122f54236e23ac",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_playwright_trace",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.network",
+          "eq",
+          3
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已在临时目录解压 `samples/web/trace.zip`，并用 REA 的 `inspect_playwright_trace` 读取。按记录顺序取前十条时，工具共返回 **3 条网络事件**。\n\n| 原始记录行号 | 请求方法 | 请求 URL | HTTP 状态码 |\n|---:|---|---|---:|\n| 1 | GET | `http://127.0.0.1:43883/redirect` | 302 |\n| 2 | GET | `http://127.0.0.1:43883/` | 200 |\n| 3 | GET | `http://127.0.0.1:43883/api/value` | 200 |\n\nREA 将第 3 条事件标记为凭据信息已脱敏。",
+    "原始结果文件SHA256": "c5ebb2533fc5e64e56e51b373febff415b45450ebd1034bed18a62f3d7efc0e3"
+  },
+  {
+    "编号": 14,
+    "工具": "inspect_electron_page",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "b4dd817989e14534e26840ffcd2e47a5347ad4ef8293a9e384d8c6ab59f63ea6",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-14",
+    "对话ID的SHA256": "1de080ab23257debb3344fe2d88fd2d978c6ff673639f4de348e1f09e19291db",
+    "轮次ID的SHA256": "620d9998c22c1181ca74138a4c293349de46b768abc03e29042ff8d16ccc1748",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_electron_page",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "frames",
+          "contains",
+          "/live/page.html"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "主框架 URL 为 `file://<临时目录>/samples/live/page.html`。\n\n该 URL 由 REA 的 `inspect_electron_page` 返回的 `file_path` 换算得到，对应帧的 `parent_frame_id` 为 `null`。本次使用的独立 Electron 运行时压缩包已通过指定的 SHA-256 校验，检查结束后已停止测试进程。",
+    "原始结果文件SHA256": "ac2e137ad9204980c77c66662bb1dc5cf51f4000dde4f7607e6adebc8c8c8efc"
+  },
+  {
+    "编号": 15,
+    "工具": "inspect_electron_fuses",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "715969ffaf1429984c86a7872f39f41b019e07bf52771d73dff72e0e795cca4a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-15",
+    "对话ID的SHA256": "d842e4aee731436576c234f2f361f6f7231d601047c3a02a5f21f847515cd27c",
+    "轮次ID的SHA256": "eac26ab693d57e2709ba63f1217be97c1b708c107df30fb001e6b5262dad8b6b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_electron_fuses",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "slices",
+          "contains",
+          "RunAsNode"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_electron_fuses` 在 `samples/electron/Demo.app` 的 arm64 切片中读到 4 个 Electron 功能开关，当前值如下。\n\n| 索引 | 开关名称 | 当前值 |\n|---:|---|---|\n| 0 | `RunAsNode` | `0`（关闭） |\n| 1 | `EnableCookieEncryption` | `1`（开启） |\n| 2 | `EnableNodeOptionsEnvironmentVariable` | `0`（关闭） |\n| 3 | `EnableNodeCliInspectArguments` | `1`（开启） |",
+    "原始结果文件SHA256": "a5ce4093cc4e4678d04826868a10ad0f1c92296f02772c1bc2188de1be67907b"
+  },
+  {
+    "编号": 16,
+    "工具": "analyze_javascript_application",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "026d3cceebd53aeb22b4789d7e54681e0a2c1ce32c013bd2eda64d4322ea868d",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-16",
+    "对话ID的SHA256": "6799a3ea737573a74a2e191599ad11c707d8e04de9d328428f9abf36c2505744",
+    "轮次ID的SHA256": "cd0e28fa398e5299b34b1fbd23e3a4d804ff62e98dcfd84d1ba9527621bbb9a0",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "graph",
+          "contains",
+          "profile.js"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `analyze_javascript_application` 对 `samples/js/app.asar` 的静态分析确认：\n\n- **入口模块**为 `renderer.js`，由包内 `package.json` 的 `main` 字段指定。\n- **唯一直接导入的模块**为 `./profile.js`。`renderer.js` 第 1 行从中导入了命名导出 `getProfile`。",
+    "原始结果文件SHA256": "5772bb98b2abccb22bc1d8ad1935295c8879fcf7350060572e11f3557f1c781a"
+  },
+  {
+    "编号": 17,
+    "工具": "trace_application_feature",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "ec1d6cc8d55be4554e918e4a816384fa6c17621ac61c7c43fa993fa5d9ace1a1",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-17",
+    "对话ID的SHA256": "9693ac52f20a31a33037a771870de3a302cf898694fd877b9217adda7f58b6f8",
+    "轮次ID的SHA256": "0f4f77da06a3ac7233587178022fd1881165051a3d8b50d7017479e8fa878738",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "trace_application_feature",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "graph.nodes",
+          "contains",
+          "profile.js"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`renderer.js` 的出向静态追踪显示，它导出 `render`，并导入 `profile.js`。沿这条依赖继续追踪，可见 `profile.js` 导出 `getProfile`。图中记录了模块导入和符号导出关系，尚无证据确认 `render` 在运行时调用了 `getProfile`。\n\n已将样例解压到临时目录，用 `detail: \"complete\"` 分析 `samples/js/app.asar`，并将返回的顶层 `evidence_id` 传给 `trace_application_feature`。按 `module` 类型精确匹配 `renderer.js` 并向外追踪，共命中 2 个起点，覆盖 6 个节点、6 条边。REA 报告源图内追踪完整。\n\n- 应用图证据 ID：`ev_9b0adbb90f89310982dc81458c1923a3e2381c2e0fcb8cace8fee7685beda3dd`\n- 追踪结果证据 ID：`ev_b6335300291e3d9d0c76278414c425c9ef3bf40de237d319db218c67b34ecac0`",
+    "原始结果文件SHA256": "d8e22904dd88889e37b37d45cbe9e9f12f824c2b993bb778d2eddcd2ee4ea04c"
+  },
+  {
+    "编号": 18,
+    "工具": "trace_javascript_semantics",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "144e097d29009863981a76eb9dfa152c141f92f16072d1b11460b59ee566e11a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-18",
+    "对话ID的SHA256": "7ae6575e3108ecda384d4e95e25ea18f0bcf8627b312c2fb005a566b824542c8",
+    "轮次ID的SHA256": "008ad515e0cb5c6b9466d8b5d565b2d2cb6b2164bb27687799ffa25d3982efc7",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "trace_javascript_semantics",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "status",
+          "eq",
+          "found"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`profile.js` 中的 `getProfile()` 直接返回对象字面量 `{name:'demo'}`。包内源码第 1 行的 `return {name:'demo'};` 表明，每次调用都会创建一个新对象，`name` 的值来自字符串字面量 `'demo'`。\n\nREA 已在本次 `detail: \"complete\"` 分析保留的应用图中，以该 `return` 节点执行 `backward-provenance`。结果为 `found`，遍历了 **1 个节点、0 条关系**，覆盖状态为 `partial`。对象字面量的来源由包内源码确认，本次追溯只命中了返回节点本身。\n\n| 标识 | 本次实际值 |\n|---|---|\n| 应用图 ID（顶层 `evidence_id`） | `ev_9a4609093896c67650e4fda6a66655bd28b9c063f7ab65c66a690d4bd66fb3f0` |\n| 返回节点 ID（`profile.js` 第 1 行，第 29 至 50 列） | `jsrg_node_00f2b752542b60b919422852f7ea7b26e59fb6353957e6ed6e3ad512190c7a05` |\n| 追溯结果 `evidence_id` | `ev_be0f1bae45976c80cfcc2df37e5c1664f489212e90c8aba3a9ce2d11c0494fdb` |",
+    "原始结果文件SHA256": "24105a8e3cffb1ad78f15951d164aac6aa89ff72ae180f5d4d95869d463f27fc"
+  },
+  {
+    "编号": 19,
+    "工具": "trace_web_module_imports",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "e9f776bcea8de646c56f6cd011d431ecfee4f55ddd4393b3dffd3a17dcd7d5ca",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-19",
+    "对话ID的SHA256": "d414df9284630ac2002ac7f0c5895e2f5f81bde97a4f4b58dc7feb39e949e6d4",
+    "轮次ID的SHA256": "d12084538b2ee495d7cdb383f9b398175b30e0684d2eb7cb8920bea12f6385b0",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "trace_web_module_imports",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "imports",
+          "eq",
+          []
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "编号 0 的脚本 `main.js` 没有可识别的原生 ES 模块导入。REA 的 `trace_web_module_imports` 成功解析了该脚本，返回的 `imports` 列表为空（`[]`）。",
+    "原始结果文件SHA256": "cd3605a44e01587185e80d9348c8ad2a0274b6deedb80970612b4ef612055947"
+  },
+  {
+    "编号": 20,
+    "工具": "trace_web_source_location",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "2359ca0fc7d9cde6a57dddec2178de6927fa824535e3baacd401af694045bb91",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-20",
+    "对话ID的SHA256": "66f9dc538b9542efe64d65c9fafc5b71b5aa8472f3740514a927dd4f3549c5d4",
+    "轮次ID的SHA256": "2f26cc2b24b1eff0daddaae37beb53c3db22da737b918b001d55e4d900d110ce",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "trace_web_source_location",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "matches",
+          "contains",
+          "main.ts"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "编号 0 的 `main.js` 第 1 行、第 0 列精确映射到 **`https://example.test/main.ts` 第 1 行、第 0 列**，即 `import './dependency.js';` 的首字符 `i`。REA 已在 source map 内嵌的源码中验证该位置，字符偏移为 `0`。\n\n已用 `unzip` 将整个压缩包解压到本次临时目录，保留了 `files/` 的完整目录结构。调用 `trace_web_source_location` 前已确认清单、编号 0 的脚本和本地 `main.js.map` 均存在，并使用了你指定的 `https://example.test/main.js.map` 解析源码 URL。",
+    "原始结果文件SHA256": "0db69139c25f7e9e00c523ca6867d5c5aee40a216503f23faddf4f69ce69a305"
+  },
+  {
+    "编号": 21,
+    "工具": "export_web_scripts",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "00c809c2913b3d73dfa7dc8ff9ab39784628014f9fba18529a5b400fbf0a3712",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-21",
+    "对话ID的SHA256": "e32ab2d03ecc53f6e56a53e229a2c83f0865fb742bff3806f22d2a538b127d39",
+    "轮次ID的SHA256": "dab887a26f73732c0241a805138d5ba5f2c7c379404399546010676f17a376f6",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "export_web_scripts",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "scripts",
+          "contains",
+          "main.js"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `export_web_scripts` 从 `samples/web/web-scenario1.json` 导出 1 个已保存的脚本，并将脚本和清单写入新建的临时工作目录。\n\n打开 scripts-export 目录 · 查看 manifest.json 清单",
+    "原始结果文件SHA256": "5225d7833f585f4e416e9650dd1f6ad1e2ce3c416eb7e64c0131fe29bdabcc8f"
+  },
+  {
+    "编号": 22,
+    "工具": "compare_source_to_bundle",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "f3085723711a0cc1760943fdc772005ecba2c02b0fe63f4eea64fe70a23de658",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-22",
+    "对话ID的SHA256": "377f6bd6097cdd636806c88fcd45adc475cc5f6ac9636246847a76f928f62f3e",
+    "轮次ID的SHA256": "a601d1a673d30ea4e31a7e49cfb39786cb807bfe6d41973f67b0570552ecbca3",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_source_to_bundle",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.unknown",
+          "eq",
+          2
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 本次比对**未能确认有修改过的模块**。历史源码图中的 `greet.js` 和 `index.js` 均返回 `unknown`，两者是否修改仍待确定。\n\n打包应用图完整，历史源码清单覆盖不完整。比对工具评估了 0 个候选匹配，因此无法据此认定两个模块均未修改。\n\n应用图 `evidence_id` 为 `ev_da5b30053cdcc335a89acd4c6d1c49a7e0ed58b676ee8daf7dc53f5141419ede`。比对使用了临时目录中的 reference.json。",
+    "原始结果文件SHA256": "ef9a5e0e746099bcf58ce69080106cce9ed919d9a43f586df17e68891a170d47"
+  },
+  {
+    "编号": 23,
+    "工具": "compare_application_versions",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "da1f719cf328e0dd31b357b9acc7fd286d037b54b3391a4576b47097996be13e",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-23",
+    "对话ID的SHA256": "6007ff761b58c7499c42851160a9c54793e0d8d09f9ca036731612d88d4c4cc5",
+    "轮次ID的SHA256": "dfc16f265ab31e1f76c3772605832506344fbe5e3014414d3e25c3348e17345a",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_application_versions",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_application_versions",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.added",
+          "positive",
+          true
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "summary.removed",
+          "positive",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "从 `js/v1` 到 `js/v2`，REA 将以下 `javascript-module` 节点标记为新增和删除。\n\n| 图中状态 | 源模块 | 导出绑定 |\n|---|---|---|\n| 新增（v2） | `profile.js` | `profile.js:getProfile` |\n| 删除（v1） | `profile.js` | `profile.js:getProfile` |\n\n两个版本都包含 `profile.js`，也都导出 `getProfile`。文件内容的 SHA-256 已变化，REA 未将这两组同名节点跨版本配对，因此它们同时出现在新增和删除列表中。\n\n`compare_application_versions` 使用了本会话两次 `detail: \"summary\"` 分析各自返回的 `normalized_result.parent_evidence_id`，实际入参如下。\n\n```json\n{\n  \"left\": {\n    \"kind\": \"retained-evidence\",\n    \"evidence_id\": \"ev_6aa333c18a725d42ddccb6655550dd5652762b9b8bddce10784b901a7c3b70a9\"\n  },\n  \"right\": {\n    \"kind\": \"retained-evidence\",\n    \"evidence_id\": \"ev_cbcf62eaeedee69747ec8e7ee208b456924534bab03f96c505ad896872f2faef\"\n  }\n}\n```",
+    "原始结果文件SHA256": "d7df09c7bb1e7f746131f3ae1cceeaa1b0b89e32b067f2c2eceb5f4db8ce80f2"
+  },
+  {
+    "编号": 24,
+    "工具": "compare_javascript_export_shapes",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "9be2170cb0294f30276021421c4c14a664eac7e3258ca8f624d4fb24ec2bdcbd",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-24",
+    "对话ID的SHA256": "2dfa09de3469d2845bfc2176a7d97c08157bfcca830068d27bb9b9043b96a5e3",
+    "轮次ID的SHA256": "fdc5f26074eb06bc77642108171a694280d603c823d496ab5e885eed77fe2310",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_javascript_export_shapes",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "changes",
+          "contains",
+          "/count"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`profile.js` 中的 `getProfile` 从 v1 到 v2 只有一处静态返回属性变化：在 `name` 为 `\"demo\"` 的返回对象中，v1 没有 `count` 属性，v2 新增了 `count`，值为数字 `1`。两版静态分析覆盖完整，唯一的返回变体已配对。\n\nREA 的 `compare_javascript_export_shapes` 使用了两份 `summary` 各自的 `normalized_result.parent_evidence_id`：\n\n| 比较侧 | 版本 | `parent_evidence_id` |\n|---|---|---|\n| `left` | `js/v1` | `ev_33744dc3f64dbd7212d2ef7e6850989f46e3692d51992f43467d9779afe7cdb2` |\n| `right` | `js/v2` | `ev_23dc4c8b0146276a3335f6e2b66dfe6b9513884ff87a76fc9c6726f612730e13` |",
+    "原始结果文件SHA256": "cef246ef7c6f7b49d90241d617f15400e5870ec9b508a10f6e5e0d3c941c8e02"
+  },
+  {
+    "编号": 25,
+    "工具": "observe_javascript_runtime",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "b907c5c4690d966a4459591c7cc9f4b3d1c0ec602fc16265190201df30e46dfb",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-25",
+    "对话ID的SHA256": "09bc02a93b20fff089041ac89f5abeaba25ec21ddf964cb4c2ba2dc79635cd4a",
+    "轮次ID的SHA256": "cfa3b664a65e472cef67b9d04088ea473296d2299bc7a2fb00517d692c809b8a",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "observe_javascript_runtime",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "scripts",
+          "contains",
+          "idle.cjs"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `observe_javascript_runtime` 实际观测到 **83 个已载入脚本**，其中 82 个是 `node:` 内置脚本，1 个是样例入口 `samples/node/idle.cjs`。完整列表保留了 Inspector 报告的脚本标识，每行一项。查看全部 83 个脚本\n\n本次调用使用了启动器首行 JSON 的全部三个字段。观测期间事件丢弃数为 0，结果未截断。观测完成后已停止本次 Node 测试进程，启动器以状态码 0 退出。",
+    "原始结果文件SHA256": "816a8b336958a446fcae29c7637da76fd7da35c86c8553f0c4ba4ec640917b9e"
+  },
+  {
+    "编号": 26,
+    "工具": "reconcile_javascript_runtime",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "ef6b0d85326161946d7ff74374173eda033174eb9a42ca6f8f8889580cba38ee",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-26",
+    "对话ID的SHA256": "328d2673e63219029c65d3c1693f631726840deef2d7e78e66b82335ac12b67b",
+    "轮次ID的SHA256": "d71ea77a146a1f6f88ca269dee26cd24b8d6abb00efa1881d0b87cc521015e1f",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "observe_javascript_runtime",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "reconcile_javascript_runtime",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.static_loaded",
+          "positive",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "双方共同确认的脚本只有 **`node/idle.cjs`**（相对于 `samples/`）。REA 按文件路径将静态应用图中的脚本与 V8 观测到的已加载脚本唯一匹配。比对摘要中的 2 项匹配分别对应 1 个运行目标和 1 个脚本，其余 82 条脚本记录的匹配状态为 `unknown`。\n\n| 证据 | ID |\n|---|---|\n| 静态应用图 | `ev_0aa05435a4fee3023114a9f9da83b91e3b9db37b0a725f3765e156a0ce9cdfca` |\n| V8 观测 | `ev_90fc34db21a381b28e7be2b6aa6d41c8cad6345aecc1b9ef4c229b79a1217bc7` |\n| REA 比对结果 | `ev_9be2d33d7c325b47749a1210d925fa093ef5a55c4ae0e6ffd209d56e9fcf72b1` |\n\n比对完成后已停止本次启动的 Node 测试进程，启动脚本以状态码 `0` 退出。",
+    "原始结果文件SHA256": "2d01883fcb3077bae41465e820ec3c6a972816eed044e04a4707f429adbf977d"
+  },
+  {
+    "编号": 27,
+    "工具": "compare_static_and_observed_endpoints",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "f43c7a3e76418cae713ae368fc2bb828e9b7cdca132eb087ec68b0405bb84284",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-27",
+    "对话ID的SHA256": "8a12f52ae08d39abb1adcab8ebdd47c6c38409283ea11a0d443f31b953edba5b",
+    "轮次ID的SHA256": "fb69a3b6693aef0923bff71ba3750ae921e5578d9a91e5e5deaef92f8a622e7b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_web_network_capture",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_static_and_observed_endpoints",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.matched",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 使用本次应用图和 HAR 摘要的父证据 ID 完成比对。代码声明且抓包中出现过的接口共 **1 个**。\n\n| 代码声明的路径 | HAR 中的请求 | HAR 记录序号 | 匹配结果 |\n|---|---|---:|---|\n| `/demo/report` | `GET https://fixture.invalid/demo/report` | `0` | 路径精确匹配 |\n\n代码声明的是相对路径，比对时使用了你指定的源 `https://fixture.invalid`。静态分析未确定 HTTP 方法，`GET` 来自 HAR 的实际记录。",
+    "原始结果文件SHA256": "b5955e8679e60a4e67e2d88084b67da94b5d3d97936086a8ddadd93b6b535bfb"
+  },
+  {
+    "编号": 28,
+    "工具": "inspect_api_contract",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "ced6e57b922647971b353e3d3af75d0fb696ae8230533b7c5d568ce2c3ab1652",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-28",
+    "对话ID的SHA256": "56452a2e64d082ba65b7a2c382f2466f93824abbf6876816019a2e8929671d09",
+    "轮次ID的SHA256": "6e3c6432428496876c5454d1086172f9c8e46e105f7afc54dd7b50b8d96e74fb",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_api_contract",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.declared",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_api_contract` 已读取 `samples/web/openapi.json`，共找到 1 条路径，声明了 1 个 HTTP 方法。\n\n| 路径 | 声明的 HTTP 方法 |\n|---|---|\n| `/books` | `GET` |",
+    "原始结果文件SHA256": "3d235145ea139b27f20d92ce8660403a6b2891325c299d24df6a77b2c8eff4ac"
+  },
+  {
+    "编号": 29,
+    "工具": "inspect_android_package",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "f1ed9c1565362ceec00bb30bd8adbd94563f2e3620d76b1edab660188775711e",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-29",
+    "对话ID的SHA256": "ab7cfe4a86c6a10f7b128f2a562452d92bfc907f72d7492d03e0f4870c6de0a6",
+    "轮次ID的SHA256": "32662ef96b461bb993adc4c4e9018dc4327c7ede9c59f9e60bde8d46b4053235",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_android_package",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.package_name|package_name",
+          "eq",
+          "demo.fixture"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `inspect_android_package` 检查 `samples/mobile/Demo.apk`。\n\n| 清单字段 | 检查结果 |\n|---|---|\n| 包名 | `demo.fixture` |\n| 目标 SDK | API 28 |\n| 声明的权限 | 无，权限列表为 `[]` |",
+    "原始结果文件SHA256": "0f9c4130d8ac71ccf863c724525e7a2a6deaeaac1658d48590a462a1045333ab"
+  },
+  {
+    "编号": 30,
+    "工具": "inspect_apk_signature",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "1c70a56482fbd187ac77c248d62275c1c2ab83f783437ad1cfd30ec81d838d2c",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-30",
+    "对话ID的SHA256": "b790b77723f3f0a88e5af03ec123a0c4360a0f83c796fc491b7c2ec22e143725",
+    "轮次ID的SHA256": "eb3f9a5312daa409fa79b98cdbf3c1d3a6f39677fb777b8689d9823c3b657679",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_apk_signature",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.schemes.v1.present|schemes.v1.present",
+          "eq",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_apk_signature` 检查了从压缩包解压到临时目录的 `samples/mobile/Demo.apk`。在检查的 v1、v2、v3 和 v3.1 方案中，仅检测到 **v1（JAR 签名）**，包含 1 个签名者。\n\n**签名证书 SHA-256 指纹**  \n`fa0e0daeef2f16c4b750a0ec079713529740d31d61c2b123dd812d39ebfedb7e`\n\n该指纹来自 APK 声明的签名证书。此次检查未执行密码学验签。",
+    "原始结果文件SHA256": "5fdba32d25ad39d885474085263d0de0176b842cbb08ef410b5d4334ad8a4d3d"
+  },
+  {
+    "编号": 31,
+    "工具": "search_android_classes",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "4245b98c7c3be46f34cb5f0b82cd119cc9ad35cefab8c1fccffdde5b23042321",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-31",
+    "对话ID的SHA256": "bb85ac194cb071569cbb064ee61f4a45b579c1286e20137971b15e294dba6efe",
+    "轮次ID的SHA256": "0695941bad38e23c787d44397981f79c1b4a2144d1507f8365d861331e80f0d5",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "search_android_classes",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "matches",
+          "contains",
+          "demo.fixture.MainActivity"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `search_android_classes` 在 `samples/mobile/Demo.apk` 的 2 个顶层类中找到 1 个名称含 `Activity` 的类，完整类名为 `demo.fixture.MainActivity`。",
+    "原始结果文件SHA256": "92cb6f996c693693a70ca663099161d8d012006f7f83af1c6a16233482ba9fbf"
+  },
+  {
+    "编号": 32,
+    "工具": "inspect_android_class",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "0918d996e2065c91b8c90417994ed0976fcef037aec36a2cb6578d16e185739e",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-32",
+    "对话ID的SHA256": "1842792065539c0f10c9c65ad0da75d2f0afe490474f4bd620b876f6220a6ff9",
+    "轮次ID的SHA256": "94912c56fdcb6e141c2ec92fcb3fcfbe10b1b9cdf10fd8e65a72f3d583279f03",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_android_class",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "class_name",
+          "eq",
+          "demo.fixture.MainActivity"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "使用 REA 的 `inspect_android_class` 读取了 `samples/mobile/Demo.apk`。`demo.fixture.MainActivity` 声明了 1 个字段和 1 个构造方法。\n\n| 类别 | 声明 | DEX 信息 |\n|---|---|---|\n| 字段 | `int f0demo` | 编码的静态初始值为 `1` |\n| 构造方法 | `MainActivity()` | 方法名为 `<init>`，描述符为 `()V` |",
+    "原始结果文件SHA256": "44218867317a04e10ea8dbfb4222293aca838f3df775deba81fe57b171996cd7"
+  },
+  {
+    "编号": 33,
+    "工具": "inspect_apktool_client",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "6b6def99de65525b4afe5fd7f83b01452012c996902dbd8beb39a824361bdcaf",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-33",
+    "对话ID的SHA256": "faf69120962b4052acdbc60ad59bc3d16711538a73d972c47839ee8990cc4c97",
+    "轮次ID的SHA256": "21d9ae1bbdae4590f6b884fadfd298877cfd606801091d9a3c3e8939324f95fe",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_apktool_client",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "client.apktool_version",
+          "nonempty",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.inspect_apktool_client` 实测确认，这台 Mac 上 REA 使用的 **Apktool 版本为 `3.0.3`**。启动命令由环境变量 `REA_APKTOOL_COMMAND` 指定，完整路径为：\n\n```sh\n<用户目录>/.local/share/rea-dependencies/apktool-dbf930b076c6/apktool\n```",
+    "原始结果文件SHA256": "b83a4294663d17b55c68cc8c32a0a83e4b709964aa6ed3411c5ea9a680a389a9"
+  },
+  {
+    "编号": 34,
+    "工具": "decode_android_resources",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "bc647d842fa0de628cd034b39f28599c4c89967869f3d8af7997c1d4ba14310e",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-34",
+    "对话ID的SHA256": "ec10da654afa1ab4ecf025a31b8d0c94b50c8ac30f33b10a3ef006707e85a2ec",
+    "轮次ID的SHA256": "bbd0049003a1cf29c1dc951c536b2fcef59b504bec9ef00ba18b88f59afd7df0",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "decode_android_resources",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "decode_android_resources",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "strings",
+          "contains",
+          "Fixture cup"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "string_tables|strings",
+          "contains",
+          "样例纸杯"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已从 `tools/rea/测试样例.zip` 将 `samples/mobile/Demo.apk` 解压到临时目录，用 REA 的 `decode_android_resources` 先读取默认表，再指定 `locales=[\"zh\"]` 读取中文表。**唯一显式声明的语言是中文（`zh`）**。默认表没有语言限定符，其字符串为英文。\n\n| 字符串资源表 | 资源键 | 实际值 |\n|---|---|---|\n| 默认（`res/values/strings.xml`） | `app_name` | `Fixture cup` |\n| 中文（`res/values-zh/strings.xml`） | `app_name` | `样例纸杯` |\n\n两张表均完整解码，各含 1 条字符串。",
+    "原始结果文件SHA256": "4e44b3c8e9b3b26e2aeb6067766a147d0dc3f1ff8095506b1f81a8b096873fca"
+  },
+  {
+    "编号": 35,
+    "工具": "inspect_adb_client",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "db1abf6ad82fd701578d45db994684cd53460a019d3fe7b1bd6a7fe19690a794",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-35",
+    "对话ID的SHA256": "23e317f1b12e627e4fd879c391e58e8c68645f84eb47e4674ca3bc68d65e7e5e",
+    "轮次ID的SHA256": "f1f01c96933ad84516e2e46c2c6d9a410fc3dd8109fb94f42e99b497c90f2f8a",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_adb_client",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "client.version",
+          "nonempty",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.inspect_adb_client` 确认，本机 REA 通过环境变量选用的 ADB 客户端信息如下。\n\n- **安装位置** `<用户目录>/.local/share/rea-dependencies/adb-ee39ad5967e9/platform-tools/adb`\n- **版本** `37.0.1-15733141`",
+    "原始结果文件SHA256": "d94c0cdf4af30d87d3d25eff31ad2c526861668c302179d8fc402e38df7c1290"
+  },
+  {
+    "编号": 36,
+    "工具": "list_adb_devices",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "ac063e75871e1c58a2b2908a80a84160bacbfd294c08f48e4671fc6121ab671b",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-36",
+    "对话ID的SHA256": "ac4c1c7b495e4bc895d6276a60fa5248c4d551da7b5dbfc4df96703421699993",
+    "轮次ID的SHA256": "b52a5cd15fa9234899189aee019085aad2abad3f3fe7d529b3363e333babba55",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "list_adb_devices",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "devices",
+          "list",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "ADB 当前可见的设备列表为空。",
+    "原始结果文件SHA256": "b58e40faf0d54f4f29b1f2ccccfdf0e1ba42ad6d99070985a4816d122dc1630b"
+  },
+  {
+    "编号": 37,
+    "工具": "project_android_application_graph",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "f53beb75aa47ff1cd4fc30792554aa55d512fd8a404ff6253dd5ce565a367687",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-37",
+    "对话ID的SHA256": "4072688a80bc381ae0af94282f6b1c2444541bf15bf0203d83ef21aa89d3840b",
+    "轮次ID的SHA256": "794ccf082e61b9d154d6dca19a2e3598b26fea8803c6f1f9eb2197df15d977be",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_artifact",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "project_android_application_graph",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "components",
+          "contains",
+          "AndroidManifest.xml"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 从 `mobile/toy.apk` 的嵌套清单中识别出 **1 个组件**。已将 `inspect_artifact` 返回的完整证据原样放入 `inventory_evidence` 数组，供 `project_android_application_graph` 使用。\n\n| APK 内组件路径 | 类型 | SHA-256 |\n|---|---|---|\n| `AndroidManifest.xml` | Android 应用清单 | `7dd8c98c66b1ba268a99a4f08852e6777055bcd5d552d7da6b2ad0019670578f` |\n\n**运行时线索**：在已完整覆盖的 ZIP 中央目录条目中，REA 未识别到 DEX、JVM 类、原生库或 JavaScript。`runtime_families` 和 `bridge_candidates` 均为空。此次静态投影未解码清单或执行 APK，因此无法据此确定应用入口或实际运行时。\n\n源证据 ID 为 `ev_1dda1b5350a034e9c043e3b4ea178d025f675be60004e6f1ab0f446e413cf851`。",
+    "原始结果文件SHA256": "5f8b75a2f90e65565aa03fe22d1e6cc42cf5f118a15b3730dc0e81abadb9e902"
+  },
+  {
+    "编号": 38,
+    "工具": "identify_flutter_build",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "a0865f18f1bf07d6291b16fc21235c6adc7f4c673e692e8d1c2ec6b658c19f70",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-38",
+    "对话ID的SHA256": "1efbf59bec82de54d3c59791b9d778689f77841c1efb2bebca901fe2f2899d69",
+    "轮次ID的SHA256": "2818761869ea694ed59942d956b185f523402568f66e42808959cbe9724d5b9b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "identify_flutter_build",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "abis",
+          "contains",
+          "arm64-v8a"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `identify_flutter_build` 在 `samples/mobile/flutter.apk` 中仅识别到一个 ABI：`arm64-v8a`。其 Dart 快照标识为 `65817c30a78bb44c3dc3771876b6010a`。\n\n`lib/arm64-v8a/libapp.so` 中的两个独立快照头均给出这一标识，REA 报告检查覆盖完整。",
+    "原始结果文件SHA256": "9bffdf3c284799e3cf654e699d7f4c0b1d9d237ed508ccf8ff7a2907cb45d133"
+  },
+  {
+    "编号": 39,
+    "工具": "inspect_dart_aot",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "e1f899720a18a3067ad5b16a219816921cabc1b48eed89c85dbc27d1d0c57571",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-39",
+    "对话ID的SHA256": "4b4b7c41929cd6e66b7d2f30a1f2ba6b97613f47e90bd002d860863875575c42",
+    "轮次ID的SHA256": "1b51a9927345c8a9d9a3e4251f4cd7ba46ba4e33ed72e4a9923d67717fd72fa8",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_dart_aot",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "abi",
+          "eq",
+          "arm64-v8a"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已将 `tools/rea/测试样例.zip` 解压到临时目录，并用 REA 的 `inspect_dart_aot` 静态读取了 `samples/mobile/flutter.apk`。其 `lib/arm64-v8a/libapp.so` 共 9,744 字节，采用 **Dart 2.14 FullAOT 的分离式布局**。REA 通过 ELF 动态符号表定位到四个快照区域，以下偏移均相对于 `libapp.so` 文件起点。\n\n| 导出符号 | 文件偏移 | 大小 |\n|---|---:|---:|\n| `_kDartVmSnapshotData` | `0x1000` | 52 字节 |\n| `_kDartVmSnapshotInstructions` | `0x1800` | 16 字节 |\n| `_kDartIsolateSnapshotData` | `0x2000` | 1,536 字节 |\n| `_kDartIsolateSnapshotInstructions` | `0x2600` | 16 字节 |\n\nVM 与 isolate 的数据区均有有效的快照魔数，两个头部的 `kind` 都是 `3`，快照哈希也一致，均为 `65817c30a78bb44c3dc3771876b6010a`。\n\nREA 在 isolate 数据区识别出 7 段可打印字节，其中包括以下字符串。\n\n| 类型 | 观察值 |\n|---|---|\n| 包 URI | `package:adaptive_breakpoints/src/adaptive_breakpoints.dart`、`package:animations/src/fade_scale_transition.dart` |\n| Dart URI | `dart:_http`、`dart:_http/crypto.dart` |\n| 类名样式的标识符 | `AdaptiveBreakpoint`、`FadeScaleTransition` |\n\n这些字符串可以作为定位相关代码的线索。扫描计数是下限，本次读取未反序列化类表或函数表，因此无法据此确认具体类定义或函数实现。\n\nREA 证据 ID 为 `ev_6f3ec593ea4902866d8ab8869767318c3f8dbf0a1a13210da08778b3a61761fe`。",
+    "原始结果文件SHA256": "960b9436af40abe009735636c15c9d5b0b7e93f194dbd50c95fdb46d5417a710"
+  },
+  {
+    "编号": 40,
+    "工具": "project_harmony_application_graph",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "22b281658ffae27e1b7550f7cf1b4ef07e4c4dda1addadb54a4da9c1b9a620d7",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-40",
+    "对话ID的SHA256": "951efbff88e99045c19e979d4948b7e1950ae8ef54e3e1874727f3f46c2ce911",
+    "轮次ID的SHA256": "33b92189d133c9bf6716b147e831e9da5b1314a4e0da7f356288bd88cb2992d5",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_artifact",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "project_harmony_application_graph",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "app_pack_children",
+          "contains",
+          "modules/entry.hap"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`mobile/harmony.app` 共包含 **1 个子包**。\n\n| 子包名称 | 类型 | 在 `harmony.app` 内的路径 |\n|---|---|---|\n| `entry.hap` | HAP | `modules/entry.hap` |\n\n已将 `inspect_artifact` 返回的完整证据原样放入 `inventory_evidence` 数组。`project_harmony_application_graph` 返回上述子包，并确认清单完整（`inventory_complete: true`）。",
+    "原始结果文件SHA256": "3cc035bffc5de4e430c69dd97b5866c24f3edb23ddaf195acddd0465849e22c3"
+  },
+  {
+    "编号": 41,
+    "工具": "project_apple_application_graph",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "272da01ecade7561acf031609d166db5a9eaf1a413183fc533ed51a2fe1cf18c",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-41",
+    "对话ID的SHA256": "ce2809bbc212827314369a908bc7b5c5c64e149db8a18f9c7614118681af4ac2",
+    "轮次ID的SHA256": "2d99e821680f3e6521bf0852f7cb1195f26c94fcfd4c62dba9ae03b6cd9e0812",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_artifact",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "project_apple_application_graph",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "application_roots",
+          "contains",
+          "Payload/Fixture.app"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已将 `inspect_artifact` 返回的完整证据原样放入 `inventory_evidence` 数组，并调用 `project_apple_application_graph`。`mobile/toy.ipa` 内的目录结果如下。\n\n| 类型 | IPA 内目录 |\n|---|---|\n| 主应用 | `Payload/Fixture.app/` |\n| 内嵌扩展 | 未发现。嵌套清单中没有 `.appex` 路径，应用图也只列出了主应用。 |",
+    "原始结果文件SHA256": "ea5d2058c67a83075d62172c47f99d33b659b05003c02e87b74b478b5acdb8e2"
+  },
+  {
+    "编号": 42,
+    "工具": "open_bundle_resources",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "426558d393768bff00f789bf53c3094f858cf3b89cdae55070738541d7c54596",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-42",
+    "对话ID的SHA256": "142d1c9b82ecd456e03547680514a191567ecb69ba9c6c04885c5e744c73c32d",
+    "轮次ID的SHA256": "aaf5b7826814db84c92b29fed76be1fe83fb3632118243a9d01c3dca81e246f3",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_bundle_resources",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "info_plist_path",
+          "contains",
+          "Demo.app/Contents/Info.plist"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "当前选中的应用包是 **`apple/Demo.app`**（相对于包内 `samples/`）。REA 已通过 `open_bundle_resources` 以只读方式打开其资源目录，并定位到 `Contents/Info.plist`。",
+    "原始结果文件SHA256": "e70a0f99dd7a925a8b02c0517937a2d086aee7b90d562750a02ebadceede9c01"
+  },
+  {
+    "编号": 43,
+    "工具": "decode_interface_builder",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "52d648fc0e46614efdab60717fd39fb367175832ba75f97c810f975701589b42",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-43",
+    "对话ID的SHA256": "94d5c0ba8ca582cf2e48c79e04f50d38dbab16611ee0c48acc5b49c9b3399c8b",
+    "轮次ID的SHA256": "cf6c9c68f62fad8f8cef2abf09975cfbcea9d3bbcef537f0745bcabdbaa22c4c",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_bundle_resources",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "decode_interface_builder",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "documents",
+          "contains",
+          "Demo.nib"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 在 `Contents/Resources/Demo.storyboardc/Demo.nib` 中识别出 **1 个场景、2 个界面对象、0 条控件连接**。`apple/Demo.app` 的资源会话已保持打开。\n\n**界面层级**：对象 `0` 是 `NSView`，其 `NSChild` 字段指向对象 `1`。对象 `1` 是 `NSButton`，按钮标题为 `Demo`。据此可推断该按钮是视图的子控件。`decode_interface_builder` 未生成正式的层级边，并将层级覆盖标记为 `unsupported`，因此只能确认这条对象引用。\n\n**控件连接**：解码器未识别到 outlet 或 target-action 连接，无法从该场景确定按钮点击时调用的方法。",
+    "原始结果文件SHA256": "e8452560ff7b31b74162c328f01fddfba2d495f7cfd2c2de2bc6da7b6c0b2da4"
+  },
+  {
+    "编号": 44,
+    "工具": "inspect_asset_catalog",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "85a172f82b88de266a0754970493c609a2c7a1919afa40dbe730b294a4d65805",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-44",
+    "对话ID的SHA256": "4e359fe3895d593567ed5a4894c74d822e83a1767ac8d40ae72d7f97766f412a",
+    "轮次ID的SHA256": "2a43fa64757ccedb4cf597eb295ffafc5899de26380d93ae8699568393e108cb",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_bundle_resources",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_asset_catalog",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "total_records",
+          "positive",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 已通过 `open_bundle_resources` 打开临时目录中的 Demo.app 副本，并用 `inspect_asset_catalog(offset=0, limit=10)` 读取了 `Contents/Resources/Assets.car`。共 **276 条记录**，前 10 条按 REA 返回顺序如下。\n\n| 索引 | 类型 | 资源名称 |\n|---:|---|---|\n| 0 | 目录元数据 | 无名称 |\n| 1 | 颜色 | `AccentColor` |\n| 2 | 颜色 | `AppIcon_Assets/Color-1` |\n| 3 | 颜色 | `AppIcon_Assets/Color-10` |\n| 4 | 颜色 | `AppIcon_Assets/Color-11` |\n| 5 | 颜色 | `AppIcon_Assets/Color-12` |\n| 6 | 颜色 | `AppIcon_Assets/Color-13` |\n| 7 | 颜色 | `AppIcon_Assets/Color-14` |\n| 8 | 颜色 | `AppIcon_Assets/Color-2` |\n| 9 | 颜色 | `AppIcon_Assets/Color-3` |\n\n复制时系统拒绝同步文件标志。已用 `cmp` 逐字节确认副本中的 `Assets.car` 与本机 Calculator.app 的源文件内容一致。",
+    "原始结果文件SHA256": "631eac52018e126aab64d039c083b620d89c8e0093cbc13167a0444194edcf1f"
+  },
+  {
+    "编号": 45,
+    "工具": "inspect_keyed_archive",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "19816100e451a6cf3684eea1b6a2cb9977cc2253f8265a0cdbd29ea333ac2b63",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-45",
+    "对话ID的SHA256": "315ca33ee403422f7fdb49ad53701cfe71b39d59e8e8a30e6b18edf6375bb9fd",
+    "轮次ID的SHA256": "bb89d2424c50a0795f388ee33c07fd9ad9829e0a458d7500204ee4df4d4d540c",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_bundle_resources",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_keyed_archive",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "roots.root.CF$UID",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`inspect_keyed_archive` 读到 `Contents/Resources/Model.plist` 的根键 `root` 指向 **UID 1，类名为 `NSArray`**。数组的两个元素都指向同一个对象 **UID 2，类名为 `main.ReaArchiveRecord`**。\n\n| 对象 | `$class` 指向 | 归档中的类继承链 |\n|---|---|---|\n| UID 1（根数组） | UID 5 | `NSArray` → `NSObject` |\n| UID 2（共享记录） | UID 4 | `main.ReaArchiveRecord` → `NSObject` |\n\nUID 2 的 `cycle` 字段指回自身，`payload` 指向 UID 3 的二进制数据，`conditional` 指向 UID 0（`nil`）。\n\n通过 `open_bundle_resources` 打开的 `samples/apple/Demo.app` 资源会话已保持。",
+    "原始结果文件SHA256": "43b63419d637124aa99977c323c49105f5a5fedd0e748f3ebbc984f69459ff00"
+  },
+  {
+    "编号": 46,
+    "工具": "inspect_plist",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "33f4525ef9f4fa6dfd00f2785a3a6da1b98d6dacd97a61894cef19500aaa1816",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-46",
+    "对话ID的SHA256": "2b6d69af29c7fa4937c456eeae46cd47c1bcb83fd8b6196601713f914553632a",
+    "轮次ID的SHA256": "0b05f7234947819a1bbd6393b4e8e423209ed79c203bb9d1c1bf3819a7f7bef5",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_bundle_resources",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_plist",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "value.CFBundleIdentifier",
+          "eq",
+          "dev.example.rea-smoke"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_plist` 已读取 `apple/Demo.app` 内的 `Contents/Info.plist`，资源会话保持打开。\n\n- `CFBundleIdentifier` 为 `dev.example.rea-smoke`\n- `CFBundleVersion` 为字符串 `\"1\"`",
+    "原始结果文件SHA256": "d930739678a320f9aec758c3894a29dbf3a140f2f5c5591c0e4307a50ad28b70"
+  },
+  {
+    "编号": 47,
+    "工具": "inspect_macho",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "b96c76cbf1c159c003ba4fd4d489c4051281460666a1b9ac85e902ab94c6642c",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-47",
+    "对话ID的SHA256": "0d19d43131ce49d35aaea76c9141d43b9eaa7191e7558d949164806a3e3bf4ce",
+    "轮次ID的SHA256": "813bc1caea9a97ac98aba2d59e8623b9f09459efe63bbb7da9c319c9134289bc",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_macho",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "architectures.items",
+          "contains",
+          "arm64"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "architectures.items",
+          "contains",
+          "x86_64"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`open_binary` 已自动识别并成功打开 `samples/native/universal`，返回格式为 `mach-o-universal`。同一 REA 会话中的 `inspect_macho` 确认文件包含两个切片，并返回了默认选中的 `arm64` 切片的加载命令。`x86_64` 的加载命令通过 `otool -arch x86_64 -l` 补充核对。\n\n| 切片架构 | 文件偏移 | 切片大小 | 加载命令数 |\n|---|---:|---:|---:|\n| `x86_64` | `0x1000` | 4,312 字节 | 15 |\n| `arm64` | `0x4000` | 16,888 字节 | 16 |\n\n两个切片的前 15 条加载命令类型和顺序相同。`arm64` 在索引 15 处多一条 `LC_CODE_SIGNATURE`。\n\n| 索引 | 加载命令 |\n|---:|---|\n| 0–2 | `LC_SEGMENT_64`（连续三条） |\n| 3 | `LC_DYLD_CHAINED_FIXUPS` |\n| 4 | `LC_DYLD_EXPORTS_TRIE` |\n| 5 | `LC_SYMTAB` |\n| 6 | `LC_DYSYMTAB` |\n| 7 | `LC_LOAD_DYLINKER` |\n| 8 | `LC_UUID` |\n| 9 | `LC_BUILD_VERSION` |\n| 10 | `LC_SOURCE_VERSION` |\n| 11 | `LC_MAIN` |\n| 12 | `LC_LOAD_DYLIB` |\n| 13 | `LC_FUNCTION_STARTS` |\n| 14 | `LC_DATA_IN_CODE` |\n| 15 | `LC_CODE_SIGNATURE`（仅 `arm64`） |",
+    "原始结果文件SHA256": "f8c33c7f9893602b2d13e21b5da08fe890771e5ac5df4feb3b3874d1a982d7d6"
+  },
+  {
+    "编号": 48,
+    "工具": "inspect_signature",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "fe945cf769e43008418d6b1c0ca5e38887047b3dd299da0ba1022346a71146e2",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-48",
+    "对话ID的SHA256": "81896ae971142957b7435e9a75bff029b7cbef92e078a268572d78eda55effdd",
+    "轮次ID的SHA256": "9df1a2aeab0edf03a5b883cf68fd31d293a8b711c73e3bbcc36df724eb9e979d",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_signature",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "identifier",
+          "eq",
+          "demo"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`open_binary` 已自动识别并成功打开 `samples/native/universal`，格式为通用 Mach-O。随后在同一 REA 会话中调用 `inspect_signature`，得到以下结果。\n\n| 架构 | 签名身份 | 声明的授权项 |\n|---|---|---|\n| `arm64` | 已签名，签名标识符为 `demo`。未记录 Team ID 或签名证书颁发机构 | 无，`entitlements` 返回 `null` |\n| `x86_64` | 未签名 | 工具仅检查了该切片的签名状态，未返回授权项元数据 |",
+    "原始结果文件SHA256": "b95e16aa80c6c198795395b7a1ccff98599a427185dc8bfa00f5daf3fe8a482d"
+  },
+  {
+    "编号": 49,
+    "工具": "inspect_apple_ips",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "a4a8849eee7224de7bf777aa2372b11288be4a5f371f6b6001b56e4c9112c932",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-49",
+    "对话ID的SHA256": "a67a3412015cbe556656c78a4a35aa7b580beed6ad9bb468a6c3f24a718e598f",
+    "轮次ID的SHA256": "c1e21e7cba13c73f9771ae7a84e602bd4aaa7aeb9dbf42a4e5e9f1df824e4833",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_apple_ips",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "exception.type",
+          "eq",
+          "EXC_BAD_ACCESS"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`inspect_apple_ips` 读取 `samples/apple/Demo.ips` 后确认：\n\n- **异常类型**为 `EXC_BAD_ACCESS`（`SIGSEGV`），异常子类型为 `KERN_INVALID_ADDRESS`，访问的无效地址为 `0x10`。\n- **触发崩溃的是线程 0（主线程）**，线程 ID 为 `1`，队列为 `com.apple.main-thread`。报告中的 `faultingThread` 为 `0`，该线程也标记了 `triggered: true`。",
+    "原始结果文件SHA256": "9fda4bc7396e1addde8cddb2a3b4e4dec1c2f1c2bb55e9fcd4acc4121fba848c"
+  },
+  {
+    "编号": 50,
+    "工具": "demangle_swift",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "215f7f74288bbee64b787d8ad7be3f8d66507c3908fae984c1305b61d77e08a0",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-50",
+    "对话ID的SHA256": "8c9a7cf56728f0704cdd2e8db4c0916037beb58e729ff33875f17d380d418722",
+    "轮次ID的SHA256": "785fc01121f57d7b524f07b11fc8df076b7d65330ea14b9d8f0da6c70f723133",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "demangle_swift",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "symbols",
+          "contains",
+          "Test.foo() -> ()"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `open_binary` 打开 `samples/native/types-demo`，确认为 arm64 Mach-O 可执行文件。在同一会话中，`demangle_swift` 将 `$s4Test3fooyyF` 还原为 **`Test.foo() -> ()`**，表示 `Test` 模块中的无参函数 `foo`，返回 `Void`。",
+    "原始结果文件SHA256": "4cf3e7b8730797501302ee6c4100745ce255bb3bef1d9d0bae410f3dd9769007"
+  },
+  {
+    "编号": 51,
+    "工具": "analyze_swift_types",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "3e66dcc9e2a54c8944d6a9250feec4f9fd4397da9b6ac49e1f2205d429d697a4",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-51",
+    "对话ID的SHA256": "6d6c4ef1857362eba940340c9a94834d560b2abc23b7274873e1dca28bb2b5fd",
+    "轮次ID的SHA256": "a830f41f44d50932d1dcf35161c14c5d13ca164a9db5df773a7e455fea2d8e64",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "analyze_swift_types",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "categories",
+          "contains",
+          "AccountSample"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "找到 1 个名称含 `Account` 的 Swift 类：**`DemoTypes.AccountSample`**。\n\n已从压缩包解出 `samples/native/types-demo`，用 `open_binary` 打开，并在同一 REA 会话中调用 `analyze_swift_types(category=\"classes\", pattern=\"Account\")`。该类共命中 6 个去重后的过程符号。\n\n| 过程符号 | 地址 |\n|---|---|\n| `typeMetadataAccessor` | `0x100000e7c` |\n| `__allocating_init` | `0x100000ea0` |\n| `label` | `0x100000ed8` |\n| `deinit` | `0x1000011ec` |\n| `__deallocating_init` | `0x100001210` |\n| `init` | `0x10000124c` |\n\n目标仍在当前 REA 会话中打开。",
+    "原始结果文件SHA256": "7c4b5222b796a4b1392b77607d1e0e65fa8e13bcb3e12d62af73279b4f203a04"
+  },
+  {
+    "编号": 52,
+    "工具": "get_objc_classes",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "3c62867f2c3830d167b2de9d4af35a2fe9d74ce782d7f995b5ea02a806ced34a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-52",
+    "对话ID的SHA256": "011ca8f0fb8fab06f3d6fa17eb63b40678a3617ad34e1d6cd90b5ae2fab16ad6",
+    "轮次ID的SHA256": "d704e2de32f4a3025acc5a0f7ac146981b6fbbceeaaf1ab2486e8f2b2ead74b8",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "get_objc_classes",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "classes",
+          "contains",
+          "DemoViewController"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 `open_binary` 打开解压到临时目录的 `samples/native/types-demo`，并在同一 REA 会话中调用 `get_objc_classes(pattern=\"ViewController\")`。查询返回 1 个匹配项。\n\n| Objective-C 类名 | REA 返回的类符号 | 地址 |\n|---|---|---|\n| `DemoViewController` | `_OBJC_CLASS_$_DemoViewController` | `0x1000081d8` |",
+    "原始结果文件SHA256": "c8e66ff8ed3a58d8179f394bbc6c1aa990100569aad87f82cdf3b8902c0bbf55"
+  },
+  {
+    "编号": 53,
+    "工具": "get_objc_protocols",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "302c513be3cbe37e2068d250463cb4e2ff8e2ee30c4cafbef00fe5f07bfdf783",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-53",
+    "对话ID的SHA256": "b8ce0bc5f9076081f92184248c4b0bbfb92327b26b73495a78bbdf4ec918c405",
+    "轮次ID的SHA256": "89b992e6017c3d3dc845b32689b0b7cbbc256df6528b9ded8fe09b8a8c4a0886",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "get_objc_protocols",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "protocols",
+          "eq",
+          []
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 用 `open_binary` 打开 `samples/native/types-demo` 后，在同一会话调用 `get_objc_protocols`，返回 `{\"count\":0,\"protocols\":[]}`。当前分析后端识别到的 Objective-C 协议共 **0 项**。",
+    "原始结果文件SHA256": "807881b0b866c91aa37bc76231b5e2de18273d75e3a218a8a4ddf87344dd6463"
+  },
+  {
+    "编号": 54,
+    "工具": "open_binary",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "f329c36f8dcceb6cdde8d3ceb28c7c76e4402bb367bcfbbf85e5e5da820680da",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-54",
+    "对话ID的SHA256": "a4e951a91c5b850f85406a03c54b5eca2bd3480842b2a70b3061ea8eb0c024ed",
+    "轮次ID的SHA256": "df023e8b436dc5e38e1632225f42ab0454aa80e538fb3c8565ecbda6e17d2a86",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "format",
+          "eq",
+          "mach-o"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已将 `samples/native/demo` 解压到临时目录，并通过 REA 的 `open_binary` 使用 Ghidra 打开。识别结果为 **Mach-O 格式的 ARM64 可执行文件**。",
+    "原始结果文件SHA256": "2d5ffb06be7e9c94e3a1488d0ca8b34d4d65288f297ffad88363e09efb72ed84"
+  },
+  {
+    "编号": 55,
+    "工具": "binary_session",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "0ea3afa6eb40aecc902c5ee0aa8b8feb798c812457710c98fd5e3b23ae1e0d46",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-55",
+    "对话ID的SHA256": "0af7d1998ab341985014b675a11b4c68500cc9d463a44a4f6063d798283fd6ac",
+    "轮次ID的SHA256": "c23801b25e346d30b9238aefc2e68acdac6c54a495ed55ac4143cfecf554bb0e",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "binary_session",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "open",
+          "eq",
+          false
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.binary_session` 返回 `open: false`。当前 REA 会话未选中任何文件，也未绑定分析后端。",
+    "原始结果文件SHA256": "148aebf3ae1837585fc154fe411baecd956ffe08dbd11edeec40364e60f47a2b"
+  },
+  {
+    "编号": 56,
+    "工具": "close_binary",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "c6572802a01e6c1a7ef09ed46e31fb8d5e023fedb772106ec04911776f86d5fd",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-56",
+    "对话ID的SHA256": "1231ebfa7e53bfc28ebdf1561fd5f824289971016d3659290ea41d71c0197985",
+    "轮次ID的SHA256": "eb81ab8442fcf33e3fa31d266935ceed0f94524e63d57fde9a2c0cc644876995",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "binary_session",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_documents",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "binary_session",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "eq",
+          null
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `open_binary` 打开从 `tools/rea/测试样例.zip` 解压到临时目录的 `samples/native/demo`。Ghidra 12.1.4 完成自动分析后，`close_binary` 成功关闭该副本，返回 `{\"result\":null}`。\n\n随后用 `binary_session` 复核，当前会话 `open=false`，且 `cleanup_pending=false`，没有待清理资源。",
+    "原始结果文件SHA256": "34a5795c277ea7ab1e1b865f555f2b7410cd0ad0407ad11f8ed8c0739dffb751"
+  },
+  {
+    "编号": 57,
+    "工具": "binary_overview",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "77bcade936ce534b1a0e8cd9fcae96323b70aa6e3191cd119360db466d1dc7d6",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-57",
+    "对话ID的SHA256": "0291c7dd588768907137e280a16ccd4757b92d63340e7606cef0309c698a3e26",
+    "轮次ID的SHA256": "dac6c18a4653ee99c7a609d5e6a35e8e876c9e2cb664a3ffcf599b91814cbf98",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "binary_overview",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "procedure_count",
+          "eq",
+          2
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "string_count",
+          "eq",
+          10
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "Ghidra 分析完成后，REA 的 `binary_overview` 显示，`samples/native/demo` 的临时副本共识别出 **2 个函数**和 **10 个字符串**。",
+    "原始结果文件SHA256": "b789cf5a66538acf4d674222bebe6340900f69c23d5afe8261632f7c1a0b824c"
+  },
+  {
+    "编号": 58,
+    "工具": "list_architectures",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "76720fa43e96571c29210cffbb01f18cf4b8d30420b217a5a5198be5504d95c4",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-58",
+    "对话ID的SHA256": "545fd29db7d669796c6237e57c7dc5b91e091f3a986fc728cc22456a2c1e35e3",
+    "轮次ID的SHA256": "47b35d187550dea8a330626760d125890f0fccd550cec38d378b2cdcd606ff33",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_architectures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "architectures.items",
+          "contains",
+          "x86_64"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "architectures.items",
+          "contains",
+          "arm64"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`open_binary` 成功打开了临时目录中的 `samples/native/universal`，并自动识别为 `mach-o-universal`。同一 REA 会话中的 `list_architectures` 完整枚举出两个架构，按工具返回顺序为：\n\n1. `x86_64`\n2. `arm64`",
+    "原始结果文件SHA256": "793b42449037696b9fd7a51c4e8903c785e0074f53083e5f91b274409ab6b4c2"
+  },
+  {
+    "编号": 59,
+    "工具": "list_documents",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "8ebbe6a073ca6c675b4d6374268f110e525d471593576f9edd09ef403169e962",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-59",
+    "对话ID的SHA256": "cf2fa9487c7e7cae9c79add23ea0405ee86681b3a94d4254b1b0f620d76f5079",
+    "轮次ID的SHA256": "f14e23829c48af52607fd4a5364da5d76952c5e7482b83963bb84d2fbf3d7b58",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_documents",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "nonempty",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "Ghidra 12.1.4 已完成默认自动分析。rea 的 `list_documents` 仅返回一份文档：**`target-1a3858a31bbe.bin`**，对应刚用 `open_binary` 打开的 `native/demo`。\n\n返回记录中的目标路径为 `<临时目录>/samples/native/demo`，与从 `tools/rea/测试样例.zip` 解压后打开的临时副本一致。",
+    "原始结果文件SHA256": "8f95bff1536b81003dbe9a2843d9f7ec88ba9d68b6d41b1a1612c913c09d0a08"
+  },
+  {
+    "编号": 60,
+    "工具": "list_segments",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "f69d3ff5177032f4e35905bd148291c36a282a276fc651ab2d471237b5be6797",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-60",
+    "对话ID的SHA256": "a971b1c045a0eb0056009dc17c016be1d59d96062f308b282b8a4ee243315e41",
+    "轮次ID的SHA256": "988c3c555e1073a012540e05024356b9f48489b700bfcb6d809bdcfcbf52dcc7",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "binary_session",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_segments",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "contains",
+          "__TEXT"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `open_binary` 以 Ghidra 后端打开临时解压的 `samples/native/demo`。自动分析完成后，`list_segments` 返回 5 个内存块。地址范围均含起始地址、不含结束地址。\n\n| 内存块名称 | 起始地址 | 结束地址（不含） |\n|---|---|---|\n| `__TEXT` | `0x100000000` | `0x100000328` |\n| `__text` | `0x100000328` | `0x100000364` |\n| `__unwind_info` | `0x100000364` | `0x100004000` |\n| `__LINKEDIT` | `0x100004000` | `0x1000041f8` |\n| `__LINKEDIT` | `0x1000041f8` | `0x100008000` |\n\nGhidra 将 `__LINKEDIT` 列为两个相邻的同名内存块，分界地址为 `0x1000041f8`。",
+    "原始结果文件SHA256": "f363d2cc573dd1294102e727673afe94c58e43160b748b9e3e1ba98443e5d1c2"
+  },
+  {
+    "编号": 61,
+    "工具": "list_procedures",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "1df7da4264fa2fd57d57610f9d688a01e22e99ebaa91b88fda0220385cbfa0c7",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-61",
+    "对话ID的SHA256": "e75cad0addc009bd4e375da451c6721389e0376f9378ae09b9d18d14c600b6e0",
+    "轮次ID的SHA256": "5b5c8be723e1d2dbedbdeb701a541e42618da7820b146a7f2d7bf76e6d935a30",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_procedures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "contains",
+          "_demo_value"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `open_binary` 通过 Ghidra 后端打开 native/demo 的临时副本。分析完成后，`list_procedures` 共返回 **2 个函数**，按原顺序列出如下。\n\n| 函数名称 | 入口地址 |\n|---|---|\n| `_demo_value` | `0x100000328` |\n| `entry` | `0x100000340` |",
+    "原始结果文件SHA256": "9f6149cc968ef2ebdd404773628a94b82119d33f847c6fda953b25473728d5d9"
+  },
+  {
+    "编号": 62,
+    "工具": "search_procedures",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "cc5963452a1d2f984ee51cd2dba5547258b5fe41f94f2ae77952b1517516aecf",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-62",
+    "对话ID的SHA256": "be62318eb48f56daf83a0f3e7d86361b2e69915b3338a52546f4a19e3d40a10f",
+    "轮次ID的SHA256": "e85bd4ae87d9a80cae8e850ffd0231e31e1b00f591d22bf786568ce6c6575992",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "binary_session",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "search_procedures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "contains",
+          "_main"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "Ghidra 完成对 `samples/native/demo` 临时副本的分析后，REA 的 `search_procedures` 按字面、不区分大小写搜索 `main`，共匹配 **1 个函数**。\n\n| 函数主名称 | 入口地址 | 命中的别名 |\n|---|---|---|\n| `entry` | `0x100000340` | `_main` |",
+    "原始结果文件SHA256": "d0ed849ff8677317266dfffdc9bb68b9304ed29acde8774f5ce4f5a8cb2c06fa"
+  },
+  {
+    "编号": 63,
+    "工具": "list_names",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "2d3aa708e2840e953aa1c986b9c94e5c96b980b56d377987716789f579ccc4e9",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-63",
+    "对话ID的SHA256": "5db097ccc24e68077dcc0a18a737548ee05b6adbb59d3546d74d7523f3e31d75",
+    "轮次ID的SHA256": "8c0901325bd0add77ee39b81167b6478daff489e3077d0900e7a67bb786392da",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_names",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "contains",
+          "MACH_HEADER"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `open_binary` 以 Ghidra 后端分析临时解压的 `samples/native/demo`。`list_names` 共返回 **9 组**地址和名称，以下按原始顺序列出全部结果。\n\n| 地址 | 名称 |\n|---|---|\n| `0xfffeff00` | `_objc_msgSend_rtp` |\n| `0x100000000` | `MACH_HEADER` |\n| `0x100000000` | `__mh_execute_header` |\n| `0x100000328` | `_demo_value` |\n| `0x100000340` | `_main` |\n| `0x100000340` | `entry` |\n| `0x1000040b2` | `s___mh_execute_header_1000040b2` |\n| `0x1000040c6` | `s__demo_value_1000040c6` |\n| `0x1000040d2` | `s__main_1000040d2` |",
+    "原始结果文件SHA256": "99b9f16b69ae8204bfe8e94e4e626cfaee769c58fe1b9fa82106265301e23c60"
+  },
+  {
+    "编号": 64,
+    "工具": "address_name",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "a757daad50dd5fda16dda40ddd0d314bc949df6ed0c605c26f727602ecaa6b4a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-64",
+    "对话ID的SHA256": "635fdc934a26bec81c0174c2614b5e902a05ae086471e9b2e51c39758943e47b",
+    "轮次ID的SHA256": "682ef9d3bb49cdb7d3607e3c5de79edd296642acd0fe4a5aa33c843fe3b882bb",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_procedures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "address_name",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "eq",
+          "_demo_value"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "Ghidra 的 `list_procedures` 返回的第一个函数起始地址为 `0x100000328`。REA 的 `address_name` 查询确认，其符号名为 `_demo_value`。",
+    "原始结果文件SHA256": "0488319afa3e69f7a40505fdd947b98a41babeae2740e71aba1840205664aa2f"
+  },
+  {
+    "编号": 65,
+    "工具": "inspect_address_context",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "24160e533a6ad0f4459c11e362737eefcaf1478d6ca001b3cff390c69728e9aa",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-65",
+    "对话ID的SHA256": "6162ac6009e556c1473cd6970339cb0ee4f502959cab556fe01c4042ef07c721",
+    "轮次ID的SHA256": "a8fe8011490102bc0bbae22755e07805a9133b7d7869c5b3a88e8896a5937ebc",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_procedures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_address_context",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "name.value",
+          "eq",
+          "_demo_value"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "Ghidra 分析完成后，`list_procedures` 返回的第一个函数是 `_demo_value`，起始地址为 `0x100000328`。REA 的 `inspect_address_context` 确认该地址是 `_demo_value` 的入口，函数范围为 `0x100000328` 至 `0x10000033f`，共 24 字节。\n\n**未读到该地址的注释文本。** Ghidra 后端对普通注释和行内注释均返回 `unavailable`，当前 REA 会话也未提供备用的 `analyze_function` 工具，因此无法判定该地址是否存在注释。",
+    "原始结果文件SHA256": "951fcd8a9d67733a9c49aec7605cf021f2eb043377a946a03eb964b6bc783be4"
+  },
+  {
+    "编号": 66,
+    "工具": "set_address_name",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "2dc0c58a08bcc7ebe6d610dcd5a8041ed5df1ac74fa40351e3ee564a52924ba6",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-66",
+    "对话ID的SHA256": "3a03638971bada9fe2fc85bdbe5dc72fc6997340bc8b596b07ac97b8ec06e384",
+    "轮次ID的SHA256": "c262d9ed43358255df8aaa70f28f33be456e219229d6a990c078d529f0a5cbb6",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_procedures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "set_address_name",
+        "ok": true,
+        "address": "0x100000328"
+      },
+      {
+        "server": "rea",
+        "tool": "address_name",
+        "ok": true,
+        "address": "0x100000328",
+        "readback": "demo_entry"
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true,
+        "empty_arguments": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "eq",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "Ghidra 临时会话内改名验证通过。`list_procedures` 返回的第一个函数为 `_demo_value`，起始地址为 `0x100000328`。`set_address_name` 返回 `true`，随后在同一地址调用 `address_name`，回读名称为 `demo_entry`。\n\n已用空参数调用 `close_binary({})` 释放目标，关闭结果为 `{\"result\":null}`。",
+    "原始结果文件SHA256": "90861d1ae0e81eedfd197fef0ae26011352c39f2ff15c24d58e8b5553533e165",
+    "改名后同地址回读且空参数关闭": true
+  },
+  {
+    "编号": 67,
+    "工具": "set_addresses_names",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "b08b6deefe8f94841bfa991a472caa8e4b02929b817bb5d845b82280b0276adf",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-67",
+    "对话ID的SHA256": "867a5ce39e093a3922afb623eeec3b509ed25bf01fe67325fbdb8c0997365f4d",
+    "轮次ID的SHA256": "f4ca355a8ebb3fd7ad6a99744271eaa628800844218e0600b03b3d108b8fe816",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_procedures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "set_addresses_names",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "0x100000328",
+          "eq",
+          true
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "0x100000340",
+          "eq",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 Ghidra 分析器对临时副本 `samples/native/demo` 完成批量改名。按 `list_procedures` 的返回顺序，`set_addresses_names` 的逐地址回读结果如下。\n\n| 函数起始地址 | 原名 | 新名 | 回读结果 |\n|---|---|---|---|\n| `0x100000328` | `_demo_value` | `demo_load` | `true` |\n| `0x100000340` | `entry` | `demo_save` | `true` |\n\n改名证据 ID 为 `ev_a1be9aba548e7fc64aecc48c1da6c92f56a34459637dc04a9cef8add09ca2330`。最后已调用 `close_binary({})` 关闭临时目标，返回 `{\"result\":null}`。",
+    "原始结果文件SHA256": "8bac0495e95d3f1afb6ed07d63e4033c2053a70d23fc46e8e13f2a6c18d92d19"
+  },
+  {
+    "编号": 68,
+    "工具": "list_cutter_sessions",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "eee6effeb382ed7ead9058978b08d539bec6c8b731999d1cbbdeacdecbe2f65d",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-68",
+    "对话ID的SHA256": "5d7fe4eae29da6e16929355c0868735f6cae781dcdccdc6ffe618af56ae6d45d",
+    "轮次ID的SHA256": "20c64e57a28f86fff9b800edd33a6524ac448fe5086c7d729ad68c6366b9207b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "list_cutter_sessions",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "sessions",
+          "list",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.list_cutter_sessions` 返回 `[]`。这台 Mac 当前未发现活跃的 Cutter 桥接会话。",
+    "原始结果文件SHA256": "d16c6f835768718de313ab0dde665dc8f7a1debafef589718e943310b3235a45"
+  },
+  {
+    "编号": 69,
+    "工具": "inspect_native_exports",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "2e6fa6b4ef2a197e2a7b4b384976d59001a3bc56b8d38ebc1c08391858007b4e",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-69",
+    "对话ID的SHA256": "5b838ef4dd520dbd38fdd5b1d4519bb58d999dcaaa2025ac7c9c34662fb1dc62",
+    "轮次ID的SHA256": "a578a1662700b5d18e8b5206288790ab718e1598e64b7b30cf200c9fcf8c1bfe",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_native_exports",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "exports",
+          "contains",
+          "demo_add"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_native_exports` 已完整检查 `samples/native/libdemo.so`，共找到 **1 个已定义的动态导出符号**。\n\n| 序号 | 符号名 | 类型 | 绑定 | 可见性 | 符号值 | 大小 |\n|---:|---|---|---|---|---|---:|\n| 1 | `demo_add` | 函数 | 全局 | 默认 | `0x1010` | 16 字节 |",
+    "原始结果文件SHA256": "b5b76063f9280846db85548f16246ce0a319ad396effc37cace5e58a7de29535"
+  },
+  {
+    "编号": 70,
+    "工具": "inspect_binary_hardening",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "691bd8458ea682cbfb1d26a9d0ad3f38ff6aec64b576567670bd15c9db6fb518",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-70",
+    "对话ID的SHA256": "e0e0b48929a5f9bfca0b7a3e610bd12d77484bf74c88125bcea8356dab2402f5",
+    "轮次ID的SHA256": "045a76dccd25d27d762f719727a6f5597a3d062515a0ccbcf1223c080bec4352",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_binary_hardening",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "images",
+          "contains",
+          "relro"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_binary_hardening` 对 `samples/native/go.elf` 的静态检查结果如下。\n\n| 加固项 | 声明状态 | 依据 |\n|---|---|---|\n| PIE | 未启用（`disabled`） | ELF 类型为 `ET_EXEC`。 |\n| NX | 未知（`unknown`） | 缺少 `PT_GNU_STACK`，文件未显式声明栈是否可执行。 |\n| RELRO | 未启用（`disabled`） | 缺少 `PT_GNU_RELRO` 段。 |",
+    "原始结果文件SHA256": "d330150a9a067a013eab2ed3636808b01a0c6d9eb4e6f44eecbb859302fe4398"
+  },
+  {
+    "编号": 71,
+    "工具": "inspect_byte_entropy",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "77bc183d9635a5db7fce9e6448f569dd87dd62c586582a5c8ace2c53b36196ba",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-71",
+    "对话ID的SHA256": "0f74ebc2dc12417e74501a4f2e1eada0e6571745f150e73314c7ea398c1add84",
+    "轮次ID的SHA256": "8174b637da6c97f45e5c6b96be38b88c76a2f42630fb6d6aff1aab452b91cfdf",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_byte_entropy",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "file_entropy",
+          "eq",
+          6.5213
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已在临时目录解压 `samples/native/kernel.bin`。REA 的 `inspect_byte_entropy` 测得整体字节熵为 **6.5213 比特/字节**。\n\n文件共 446 字节，按 4096 字节分块后只有一块，覆盖整个文件。\n\n| 块序号 | 字节偏移（含首尾） | 实际长度（字节） | 字节熵（比特/字节） |\n|---:|---|---:|---:|\n| 1 | 0–445 | 446 | 6.5213 |",
+    "原始结果文件SHA256": "0791f26e01d7309855dfb739783dbafbe745d345b86bdd376e99177031e755ca"
+  },
+  {
+    "编号": 72,
+    "工具": "inspect_pe_imports",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "a9dc8c85cce72b5f49bdb67ecf63b8655b02fde5b97e9eb0064035453d3ca9a0",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-72",
+    "对话ID的SHA256": "7640f8af86251898e9c3622accde3b9fe9f7c26f098ad2db178e27b8506b0261",
+    "轮次ID的SHA256": "3fd5999a7e8cbd0ced1dfd54183719981b4eebffb497b16fb0cb5e87a37e4140",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_pe_imports",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "imports",
+          "eq",
+          []
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "delay_imports",
+          "eq",
+          []
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_pe_imports` 已完整读取 `samples/native/native.exe` 的 PE 导入信息。标准导入和延迟导入均为 0 项，因此没有可按 DLL 分组列出的函数。此结果仅涵盖 PE 中声明的导入。",
+    "原始结果文件SHA256": "19182547417e0b842a6eb8257adbe9da72b91d836d661d20a3ca63b8062bda78"
+  },
+  {
+    "编号": 73,
+    "工具": "inspect_pe_resources",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "7e39de3622d60c1a408d485ce349a4897dd2047b3db4ff99d3228d44860ccdaa",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-73",
+    "对话ID的SHA256": "a8422a3dd1f0066f862f3468fb8acb47f2ae44e14ccc491b9a64f9a4ca2aa97f",
+    "轮次ID的SHA256": "59ab8f49309b4d3628f9422824977ae7bb56bf1cef476e8aa977e9531d7c2186",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_pe_resources",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "resources",
+          "length",
+          5
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_pe_resources` 完整读取了 `samples/native/resources.exe` 的资源树，共发现 3 种资源类型、5 个资源条目。\n\n| 资源类型 ID | 资源类型 | 语言编号（十进制） |\n|---:|---|---|\n| 3 | `RT_ICON`（图标） | 1033、1041 |\n| 10 | `RT_RCDATA`（原始数据） | 1033、1041 |\n| 14 | `RT_GROUP_ICON`（图标组） | 1033 |\n\n1033（`0x0409`）对应英语（美国），1041（`0x0411`）对应日语（日本）。",
+    "原始结果文件SHA256": "00a1535746351074fd5ca84a20831e5df44a4f92b9b40cbf27dacff591f917ef"
+  },
+  {
+    "编号": 74,
+    "工具": "inspect_pe_certificates",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "5e1f1be94d520bf1e0217dde3cf96fb78a7a1c11fb6ca92f47c45e349be8efdc",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-74",
+    "对话ID的SHA256": "5812c11934eaae7e4fa6f6b47c49ca5e53bb8c26442452672d5de5f1b9522b5f",
+    "轮次ID的SHA256": "938b44dafc0ca3ec61c586063e8018fd762d092b9cc68c62924c43123e10d2f6",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_pe_certificates",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "entries",
+          "length",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.inspect_pe_certificates` 完整读取了 `samples/native/certificate.exe` 的证书表。唯一的 PKCS#7 条目记录了 1 位签名者。\n\n| 签名者（证书主体） | 摘要算法 | 摘要算法 OID |\n|---|---|---|\n| `CN=REA Fixture, O=REA Tests` | SHA-256 | `2.16.840.1.101.3.4.2.1` |",
+    "原始结果文件SHA256": "d58c2dd5f2242c71dbcffacd9fd1c71430104021814d9847722743e69adc1824"
+  },
+  {
+    "编号": 75,
+    "工具": "inspect_windows_shortcut",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "070e92548a1298f7d75a9a0893ce79935790a605b555d730713bd12848e40694",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-75",
+    "对话ID的SHA256": "e0543ae4f67779ef4e226017f7d954dcb130c2e7b800e9402f742dab012661bc",
+    "轮次ID的SHA256": "df49c80e777ed845067c01cbf933984dc8d0a6da1c2df0e75278dfeb55d9a035",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_windows_shortcut",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "string_data.relative_path.value",
+          "eq",
+          "./readme.txt"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_windows_shortcut` 静态读取了 `native/readme.lnk`，其中记录的字段为：\n\n- **目标路径（相对路径）**：`./readme.txt`\n- **工作目录**：`C:\\Example`",
+    "原始结果文件SHA256": "2922089ebe1f83f812a37b78f817c2a15deca72854efc254c74d75bfbe779642"
+  },
+  {
+    "编号": 76,
+    "工具": "inspect_ntfs_journal",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "45adacf67d5b998ade06a7857a2874c66e886d017e6893de0e1948b196fa92ac",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-76",
+    "对话ID的SHA256": "9349645ec59263eab70ae06abfc8b40f920a06df70a94befdd5544d9726208d6",
+    "轮次ID的SHA256": "24bc7fc18bfb6afb8decda0833745c4161239554a3666129933285e55da53e7f",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_ntfs_journal",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "rows",
+          "length",
+          3
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已将压缩包中的两个文件解压到临时目录，并用 rea 的 `inspect_ntfs_journal` 配对读取 `native/records`（MFT）和 `native/journal`（USN 日志）。这份 224 字节的日志共读到 **3 条变更记录**，按文件中的读取顺序如下。\n\n| 顺序 | 字节偏移 | 记录长度（字节） | 版本 | USN | 文件名 | 原因标志 |\n|---:|---:|---:|---|---:|---|---|\n| 1 | 0 | 64 | V2 | `0` | 空字符串 | `0x00000000` |\n| 2 | 64 | 80 | V3 | `9007199254740993` | `v3` | `0x00000000` |\n| 3 | 144 | 80 | V4 | `0` | 无文件名字段 | `0x00000000` |\n\n第三条记录结束于文件末尾，rea 返回 `nextFileOffset = null`。三条记录的原因标志均为零，无法据此判定具体变更类型。",
+    "原始结果文件SHA256": "7ec93b6303582f3fc66c6f3f7287dae446c3beaac6e1568f250b3908a8f38248"
+  },
+  {
+    "编号": 77,
+    "工具": "inspect_elf_notes",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "9d9a859511163729b9a63b6e2745eae1f8b7301919771f689909af799beec3eb",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-77",
+    "对话ID的SHA256": "9bf4b9912b609a3ee3c1403369fe20dd1c0f8eb31d0d063736afcbf774d14866",
+    "轮次ID的SHA256": "5ea7790ada7df269f28bb9b4def6de2a3a0645a2e5a912be4be682aaa227db08",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_elf_notes",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "entries",
+          "contains",
+          "gnu_build_id"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_elf_notes` 在 `samples/native/notes.elf` 中识别出两条注记，所有者均为 `GNU`。\n\n| 文件偏移 | 所有者 | 类型 | 识别结果 |\n|---|---|---|---|\n| `0x138` | `GNU` | `3`（`NT_GNU_BUILD_ID`） | **构建 ID** `0123456789abcdef0123456789abcdef01234567` |\n| `0x15c` | `GNU` | `1`（`NT_GNU_ABI_TAG`） | Linux ABI `3.2.0` |\n\n`PT_NOTE` 段和 `.note.gnu.build-id` 节指向同一段文件内容，因此工具对每条注记各报告了两次。表中已按文件偏移去重。",
+    "原始结果文件SHA256": "3372a15befc61bbd5ddda955a313dc73f631535709e2b6f3f4b3320fa5a2ac45"
+  },
+  {
+    "编号": 78,
+    "工具": "inspect_kernel_build_config",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "ed537e756183edb7fdf8f365f42d8f050cf996ede2ae000fa586f20efe5fa190",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-78",
+    "对话ID的SHA256": "8b81d1843f61fa14f6a6f82cf81464774ee4217231548b38c5e98932d276c786",
+    "轮次ID的SHA256": "8210212d8145c985554cc8037506b15af8f766899905140590d56c597e5ac69a",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_kernel_build_config",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "config.option_count",
+          "eq",
+          9
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_kernel_build_config` 成功读取了 `native/kernel.bin` 的嵌入配置，其中共有 9 项。精确查询 `CONFIG_SMP` 命中 0 项，因此该配置中没有 `CONFIG_SMP` 的记录值。",
+    "原始结果文件SHA256": "78b7e6845a7991d1d2c52a8ef177400e74e2f463aa7712c602e9d73b5c6608ee"
+  },
+  {
+    "编号": 79,
+    "工具": "inspect_kernel_module",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "bb3cfeefa360d81b41e53defa400901deeffb00112a64be94746f128da4d9486",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-79",
+    "对话ID的SHA256": "72b1b7a1bc190e248d17f27dcf1624795b74a01730a4f38f0a18fa1dc8e1a9ea",
+    "轮次ID的SHA256": "7fd96f0db81705cae89e095b19de153f6885e3f454f78537a81e40a1a1ef5fce",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_kernel_module",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "modinfo",
+          "contains",
+          "GPL"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "用 rea 的 `inspect_kernel_module` 读取了 `samples/native/module.ko` 的 `.modinfo` 段。\n\n| 字段 | 读取结果 |\n|---|---|\n| 模块名称 `name` | `demo` |\n| 许可证 `license` | `GPL` |\n| 声明的依赖 `depends` | 空字符串，未声明模块依赖 |",
+    "原始结果文件SHA256": "9e8e5ae2c65e15dd2e3b6e3d4f24c8b51071023bfc3da1c4b0ddaa56964177f5"
+  },
+  {
+    "编号": 80,
+    "工具": "inspect_devicetree",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "20ddf888f31b0a0a386dd2bfa0ab9378b5dccdd584963c7f609e10e5fb8b51aa",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-80",
+    "对话ID的SHA256": "c59c4792e799ae1f00105085822912dd3bb58b3d3cfe7b651ca84a37623b13bb",
+    "轮次ID的SHA256": "8c0aeb18760c00989af811346fa67d99bfc44f92ab21f5dcb9929b11dd55bff6",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_devicetree",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "nodes",
+          "contains",
+          "/serial@1000"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "用 REA 的 `inspect_devicetree` 读取 `samples/native/device.dtb` 后，确认根节点 `/` 有 4 个直接子节点，均未声明 `compatible` 属性。\n\n| 节点路径 | `compatible` |\n|---|---|\n| `/chosen` | 未声明 |\n| `/aliases` | 未声明 |\n| `/serial@1000` | 未声明 |\n| `/consumer` | 未声明 |\n\n根节点 `/` 自身的 `compatible` 值为 `\"test,board\"`。",
+    "原始结果文件SHA256": "ba9685f26513870983d845a10071d6f0aeaa95192c4353a6a5090d5b960182ab"
+  },
+  {
+    "编号": 81,
+    "工具": "inspect_go_binary",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "5bab598342a7a8b4d23202ac26d49b5e2cf4ccc8d35169cdb3042d4f552afaf1",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-81",
+    "对话ID的SHA256": "02320a86a2930a73b78aa0badad256c7bcd1b066f33a191929ea44fe54f73e36",
+    "轮次ID的SHA256": "a6dcc7055383602f40df8018edbc2e641514ccbe29457b984eb2b522ed3d0f63",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_go_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "build_info.go_version",
+          "eq",
+          "go1.26.0"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_go_binary` 从 `samples/native/go.elf` 的内嵌构建信息中读到以下记录。\n\n| 项目 | 结果 |\n|---|---|\n| 编译器 | `gc`，版本 `go1.26.0` |\n| 主模块 | `example.com/tool`，版本标记为 `(devel)` |\n| 主程序包 | `example.com/tool/cmd/tool` |\n| 依赖模块（共 1 项） | `example.com/dependency`，声明版本为 `v1.2.3`，构建时由本地路径 `../dependency` 替代 |",
+    "原始结果文件SHA256": "e52bfcd74daf670eeadabac0b0e094b8bb14e3c85b31d154a2765fbab5fb083e"
+  },
+  {
+    "编号": 82,
+    "工具": "inspect_rust_binary",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "c522bbaf738b308275fcef58b6841022bc1c4a58c7426f0a19a8f120b4391939",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-82",
+    "对话ID的SHA256": "f99d46753225a3ccd698ba9a3cf5a33689e71881e5e341c382b8d3b01a6fbd03",
+    "轮次ID的SHA256": "4be4e99c279237b0011deb9c15473b537fa01c4079274f2eb4624279a0a2b9c7",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_rust_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "auditable_metadata.packages",
+          "contains",
+          "itoa"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`native/rust.elf` 的根包是 `sample 0.1.0`，其唯一记录的依赖是 **`itoa 1.0.18`**，来自 `crates.io`，由根包直接依赖。\n\n已将样例解压到临时目录，并使用 REA 的 `inspect_rust_binary` 从 ELF 的 `.dep-v0` 节读取了上述 cargo-auditable 元数据。",
+    "原始结果文件SHA256": "cf5b0c25155c0f4273d4a8b4d772aabc5479350ee2b41c436707b033d17debf5"
+  },
+  {
+    "编号": 83,
+    "工具": "inspect_erlang_beam",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "6c52f70fda08ee47e24f9eac6243414b7aae7555435a50b5f70f76e01394cc8f",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-83",
+    "对话ID的SHA256": "7540e866209ca23715ec8826dd6cff14b7e11587b97480396837154443a46c61",
+    "轮次ID的SHA256": "af5361abc8cfeadcb411f02fdf1eccaf500736577325835d397f0483fa140f81",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_erlang_beam",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "exports",
+          "length",
+          3
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_erlang_beam` 从 `samples/native/sample.beam` 读到 3 条导出记录。\n\n| 函数名称 | 参数个数 |\n|---|---:|\n| `start` | 0 |\n| `module_info` | 0 |\n| `module_info` | 1 |",
+    "原始结果文件SHA256": "84a9ae22e80c12ed44a000685fd4a7653e0db300cdaf6bdd2f20a4c709d94570"
+  },
+  {
+    "编号": 84,
+    "工具": "inspect_python_pyc",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "b36c7a4c2dd5d30b4d175f778855d540ec21d003c008996fec0909af9987219d",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-84",
+    "对话ID的SHA256": "034dbaceb199120a3cda6ef221dd55766b2cd73c3b89fa7f3d013192029e9010",
+    "轮次ID的SHA256": "cd4b2ced869a94d785252d07494ac432e7114ab7b8b6aee2df629159e54c95c5",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_python_pyc",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "header.python_version",
+          "eq",
+          "3.12"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_python_pyc` 确认，`samples/native/sample.pyc` 对应 **CPython 3.12**，文件头魔数为 `3531`。文件依次记录了两个代码对象，名称为 `<module>` 和 `inner`。",
+    "原始结果文件SHA256": "58233f170030480db4abb5ac8de5bdd92c7981f537f4d52c625a9a8f85df4272"
+  },
+  {
+    "编号": 85,
+    "工具": "inspect_v8_code_cache",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "c0ac312f9949f0a912081ebe309e3f3ea3350a706ab16dd0cdc37cd68724ca11",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-85",
+    "对话ID的SHA256": "ef0a22c75cf0b4111ee74a592227fea1db193f0b1a4c6f7217fa6029ef7ba911",
+    "轮次ID的SHA256": "e206d75516e3dc593ead60d04ef8fbbb38de6050d4a413919841b71fbfcfa963",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_v8_code_cache",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "header.fields",
+          "length",
+          8
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已在临时目录解压 `samples/native/sample.jsc`，并用 REA 的 `inspect_v8_code_cache` 读取。该样本的 V8 缓存文件头共 **32 字节**，包含 8 个 32 位字段。下表的偏移从文件起始处计算，确认程度指字段含义，数值均为实读值。\n\n| 字节偏移 | REA 字段名 | 读取值 | 字段含义与确认程度 |\n|---|---|---:|---|\n| `0x00` | `magic` | `0xC0DE06A9` | 已确认，缓存魔数 |\n| `0x04` | `version_hash` | `0x97FFBD52` | 推断为 V8 版本哈希 |\n| `0x08` | `source_length` | 38 | 已确认，缓存记录的源码长度 |\n| `0x0C` | `flag_hash` | `0xCF44F5B3` | 推断为 V8 配置标志哈希 |\n| `0x10` | `build_constant` | `0xA8697F87` | 推断为构建相关常量 |\n| `0x14` | `payload_length` | 440 | 已确认，缓存载荷长度为 440 字节 |\n| `0x18` | `reserved` | 0 | 用途未确认，REA 标记为保留字段 |\n| `0x1C` | `reserved` | 0 | 用途未确认，REA 标记为保留字段 |",
+    "原始结果文件SHA256": "854dc7bf005408d8b871a50d7a49f71e7721ac4f5d236f1ca05a70cd7b736fd4"
+  },
+  {
+    "编号": 86,
+    "工具": "inspect_managed_artifact",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "cec6fb638c48bd7bb2549a5dfed46dcb822efc19d92803665e93f9201db4fbfc",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-86",
+    "对话ID的SHA256": "7787db16dc243dfb6735081a1300b60a88485abdd35f8b8c6915812c9146b8d4",
+    "轮次ID的SHA256": "bfd14dd9278e7b6c250eba0fdbdf608fb723d8872d366a5711e2c012898eb68f",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_managed_artifact",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.assembly.name|assembly.name",
+          "eq",
+          "Fixture.Managed"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`samples/native/Interop.dll` 的程序集名称为 **`Fixture.Managed`**，程序集版本为 **`1.2.3.4`**。已将该文件解压到临时目录，并用 REA 的 `inspect_managed_artifact` 静态读取。工具报告元数据解析完整，未发现解析问题。\n\n| 项目 | 读取结果 |\n|---|---|\n| 内部模块名 | `Fixture.dll` |\n| 模块版本标识（MVID） | `00112233-4455-6677-8899-aabbccddeeff` |\n| 目标框架 | `.NETCoreApp,Version=v8.0`（.NET 8） |\n| 格式与架构 | PE32 容器，CLI 标记为 `IL-only`，托管架构为 `AnyCPU` |\n| 元数据 | 版本串 `v4.0.30319`，大小 540 字节，包含 `#~`、`#Strings`、`#GUID`、`#Blob` 四个流 |\n| 表记录 | 类型定义、字段定义、方法定义各 1 条；程序集引用、清单资源、自定义特性各 1 条 |\n| 原生互操作 | `ModuleRef` 和 `ImplMap` 表各有 1 条记录 |\n| 强名称 | 未签名，程序集未声明公钥 |",
+    "原始结果文件SHA256": "4abf474ca40cf8bebd16587f415d05f890da5cbc3efab9b919b55fb21061f6a1"
+  },
+  {
+    "编号": 87,
+    "工具": "compare_managed_members",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "3ad9400248084345631929eef44e48f78fdfcf593fee031ee0a0dfe7488e2266",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-87",
+    "对话ID的SHA256": "8443b1d2c31eabb9ee857f8aa1a5f989acde85fd67423917045f034aaf97ed3f",
+    "轮次ID的SHA256": "b0dca9b55587f2b9fc087dde6353b7169cd1f211c013db7eb9c840de3a9646ec",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_managed_members",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.unchanged",
+          "eq",
+          2
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "按 `args-87.json` 指定的左右证据运行 REA `compare_managed_members` 后，`Fixture.dll` 中的 **2 个成员均精确匹配，签名均未变化**。\n\n| 成员 | 类型 | REA 匹配依据 | 签名变化 |\n|---|---|---|---|\n| `Fixture.Program.Main` | 方法 | 方法签名和规范化 CIL 均一致 | 无 |\n| `Fixture.Program.counter` | 字段 | 声明类型、字段名和字段签名均一致 | 无 |\n\n比较覆盖了两份输入证据中的全部成员，新增、移除和无法判定的成员均为 0。",
+    "原始结果文件SHA256": "0c805e00f6edca044a40fc837f11efbeee45367fea6a466ab5cc9e390f0d80dc"
+  },
+  {
+    "编号": 88,
+    "工具": "inspect_managed_native_boundaries",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "3bbdd4ccb3d3e667a7fa25aa9dbf2894406950eca692d6350b8f70c9f84893f1",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-88",
+    "对话ID的SHA256": "714f059b37365003f9f00f98d2b6932ef9a6d1d2fe5e164a12851a7c0f7de971",
+    "轮次ID的SHA256": "900c149b4b951f47f6fe0cbe44a2032951ba6fe92bb2bcb7cbd11c7e6f510653",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_managed_native_boundaries",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.pinvoke_import_count",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_managed_native_boundaries` 在解压后的 `samples/native/Interop.dll` 中检出 **1 条 P/Invoke 声明**，元数据读取完整。\n\n| 托管方法 | 声明的原生库 | 声明的原生入口点 | 调用约定 |\n|---|---|---|---|\n| `Main`（`0x06000001`） | `libdemo.dylib` | `demo_value` | `stdcall` |",
+    "原始结果文件SHA256": "9a3bc8a4f5da4355b77c8cd41c04b4ba1e52091c1721030a48a66ab7d1b20eaf"
+  },
+  {
+    "编号": 89,
+    "工具": "verify_managed_native_boundaries",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "d348dbec3b75bfb78880451a29641cfeb983b72fec6b5f4a75cac55d72cf1f24",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-89",
+    "对话ID的SHA256": "79ca420d402d0588efdca7d02dedf1a29e516b315407fab85f4b859027e3c07b",
+    "轮次ID的SHA256": "f1b6ee21d84e6ae502d922d26417d3f05113f9740c9a0e2783d51357e8f03faf",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_managed_native_boundaries",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_macho",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "verify_managed_native_boundaries",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.verified",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**`Interop.dll` 中唯一一条 P/Invoke 声明已匹配。** REA 的 `verify_managed_native_boundaries` 返回 `verified`，匹配依据为 `exact-export-name`。\n\n| 托管方法 | 声明的目标库 | 声明入口 | Mach-O 实际导出 | 导出地址 |\n|---|---|---|---|---|\n| `Main`（`0x06000001`） | `libdemo.dylib` | `demo_value` | `_demo_value` | `0x2d8` |\n\n声明和导出记录中的库名都是 `libdemo.dylib`。`inspect_macho` 在该库的 arm64 Mach-O 中观察到 `_demo_value`。按 Mach-O 的 C 符号命名约定去掉前导下划线后，名称与声明入口 `demo_value` 逐字一致。本次核对验证了静态导出名称，运行时 CLR 绑定和参数封送未作验证。\n\n实际调用使用了本会话保留的两份证据：\n\n```json\n{\n  \"managed_boundaries\": {\n    \"kind\": \"retained-evidence\",\n    \"evidence_id\": \"ev_811f9c9326d0b8363e12071041d8d90a6e34cc68d6245eb8deef1be34f43c30f\"\n  },\n  \"native_observations\": [\n    {\n      \"kind\": \"retained-evidence\",\n      \"evidence_id\": \"ev_1420d619a79215698683ea2d597b634ee871f86c50c668d0d166da8a5f005be2\"\n    }\n  ]\n}\n```\n\n核验结果证据 ID 为 `ev_9fbb8aebc4d9136ca8a42ad85c0a4b8975a867c3c5d87f472d7a8e607e293dc3`。",
+    "原始结果文件SHA256": "c46501aacfc9ecdbef194902b3b310d49a08437aee293fafa6abc800a3498e00"
+  },
+  {
+    "编号": 90,
+    "工具": "project_managed_application_graph",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "3bf56afef0e0e8a02bd54ad90288668770683017caa2fc92df2c3eaf778e62f5",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-90",
+    "对话ID的SHA256": "d2ece999ab08e0544069488f06b408ea7a1a34fb77f3950a2470c654b40fa714",
+    "轮次ID的SHA256": "acde32a8598a620e4644c1c0de4962e2930aed664eddc05fc1756859f9879b27",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "project_managed_application_graph",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.types",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 从 `managed/managed.dll` 的成员证据中识别出 **1 个类型和 2 个成员**。类型 `Fixture.Program` 声明了方法 `Main` 和字段 `counter`。`Main` 的 IL 中有一处 `ldfld` 指令读取 `counter`。\n\n已通过 `import_evidence_bundle` 从 `evidence/members.json` 导入 2 条证据，再按 `evidence/args-90.json` 指定的成员证据调用 `project_managed_application_graph`。生成的关系图共 5 个节点、5 条边。查看完整关系图 JSON\n\n```mermaid\nflowchart LR\n    A[\"文件 managed.dll\"] -->|包含| B[\"模块 Fixture.dll\"]\n    A -->|包含| T[\"类型 Fixture.Program · 0x02000001\"]\n    T -->|声明| M[\"方法 Main · 0x06000001\"]\n    T -->|声明| F[\"字段 counter · 0x04000001\"]\n    M -->|读取| F\n```\n\n成员证据中另有 1 处通过 `MemberRef` 引用目标的调用。REA 只为能关联到当前模块方法节点的调用生成边，因此这处调用未显示在图中。",
+    "原始结果文件SHA256": "6971706637b8e1779685c0a99012e5ff78ff57e2985a0f669efb64eb62d34507"
+  },
+  {
+    "编号": 91,
+    "工具": "inspect_il2cpp_metadata",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "bbb787814811e4e5fbf4c270aa387efda037bd87e4dc71e08ed91275487cd9ba",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-91",
+    "对话ID的SHA256": "5d6268f3fc07b3dd090f52a8a8727646302b5906f10d93fc53a9f4b6c4ddd709",
+    "轮次ID的SHA256": "af28a5c8ec57e43eb032be85960b0a8b74e14dddddbc47bec0064b8c5d98a48d",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_il2cpp_metadata",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "metadata_version",
+          "eq",
+          39
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_il2cpp_metadata` 读取了从压缩包解压的 samples/native/global-metadata.dat。**IL2CPP 元数据版本为 39**，文件头中可识别 31 个元数据区段，其中 11 个有数据，20 个为空。\n\n| 非空区段 | 区段头计数 `count` | 大小（字节） |\n|---|---:|---:|\n| `stringLiterals` | 3 | 12 |\n| `stringLiteralData` | 2 | 7 |\n| `strings` | 16 | 119 |\n| `methods` | 5 | 120 |\n| `parameters` | 1 | 9 |\n| `fields` | 2 | 18 |\n| `nestedTypes` | 1 | 4 |\n| `interfaceOffsets` | 1 | 5 |\n| `typeDefinitions` | 4 | 288 |\n| `images` | 2 | 68 |\n| `assemblies` | 0 | 0 |\n\n更正上表最后一项：`assemblies` 属于空区段。实际为 **10 个非空区段、21 个空区段**。`stringLiterals` 的区段头计数为 3，REA 实际返回了 2 条字符串字面量记录。\n\n全部 21 个空区段如下，计数和大小均为 0。\n\n- `events`、`properties`、`parameterDefaultValues`、`fieldDefaultValues`、`fieldAndParameterDefaultValueData`、`fieldMarshaledSizes`\n- `genericParameters`、`genericParameterConstraints`、`genericContainers`、`interfaces`、`vtableMethods`\n- `assemblies`、`fieldRefs`、`referencedAssemblies`、`attributeData`、`attributeDataRanges`\n- `unresolvedIndirectCallParameterTypes`、`unresolvedIndirectCallParameterRanges`、`windowsRuntimeTypeNames`、`windowsRuntimeStrings`、`exportedTypeDefinitions`",
+    "原始结果文件SHA256": "da7ce8523f6d0bb8d341ac9941d65db74aad8e84d5b8b7394e784b35452c32ad"
+  },
+  {
+    "编号": 92,
+    "工具": "inspect_wasm_artifact",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "76c4d88906e3eb2a04dae57795fd975fc5c6fe595e1ea6793a265c146f1235e7",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-92",
+    "对话ID的SHA256": "7098d84a94e8eb5de8e8d892984fa6be7e7317bcaf1012ab3d5b8b5c6be50c76",
+    "轮次ID的SHA256": "6d24605e32281d223825302fac9b057a06a143ffb84577f14cbc078b06075daf",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_wasm_artifact",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "exports",
+          "contains",
+          "hello"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已从 `tools/rea/测试样例.zip` 解压 `samples/native/old.wasm` 到临时目录。REA 的 `inspect_wasm_artifact` 验证结果为 `valid`。\n\n- **导入（0 项）**：无。\n- **导出（1 项）**：`hello`，类型为函数，函数索引为 `0`。",
+    "原始结果文件SHA256": "3801b0e8c4cd2ba4c103e4b3d3fa5458598dbec6503251baf5801e1c14f181f0"
+  },
+  {
+    "编号": 93,
+    "工具": "compare_wasm_interfaces",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "7b3898283eab6727a9cdc8f38294b7ca35d1d4347bf5dbf3900a4ed516d3cade",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-93",
+    "对话ID的SHA256": "4bdbb397a3a3987e8f43945dc015817c3038366ccdfe0ff02056104bd34c69a1",
+    "轮次ID的SHA256": "978d620519ca8025278b7fafa03182e19d8194001f52beaec21ec83aa045c510",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_wasm_artifact",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_wasm_artifact",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_wasm_interfaces",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.added",
+          "eq",
+          1
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "summary.removed",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `compare_wasm_interfaces` 完整比较了两份模块的导出接口（`scope: \"exports\"`）。从 `old.wasm` 到 `new.wasm`，**新增 1 项，移除 1 项，同名导出的签名变化 0 项**。\n\n| 变更 | 导出名 | 类型 | 签名 |\n|---|---|---|---|\n| 新增 | `greet` | 函数 | `() → ()`，无参数、无返回值 |\n| 移除 | `hello` | 函数 | `() → ()`，无参数、无返回值 |\n\n两次 `inspect_wasm_artifact` 均使用 `detail: \"complete\"`，比较时引用的顶层 `evidence_id` 如下。\n\n| 模块 | `evidence_id` |\n|---|---|\n| `native/old.wasm` | `ev_783532fbd862e8bced66dbca17ef6a0300747b3b5df93c32edc8528d22d92d16` |\n| `native/new.wasm` | `ev_1aa5038622225911458a4ab7f6d259b4bf7c0db7ac407a11c78f2e09e0b35483` |",
+    "原始结果文件SHA256": "db3cc52ad920489b0d784c7704525c868ba9c06de53c62b8e36281cdb3aa5a52"
+  },
+  {
+    "编号": 94,
+    "工具": "inspect_gpu_code_objects",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "8e875ae95b952dca8a2504721e81a6b0c98294a3ddefac495cc19d5a5aa135e4",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-94",
+    "对话ID的SHA256": "c0799822c77509474e3d8a9c2e03509e84f85c430602363c8bbef14121943dc9",
+    "轮次ID的SHA256": "4593020114066e0c889659d98c5bcebefe6054e5de37a9758f211319189f0689",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_gpu_code_objects",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "contains",
+          "sm_80"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_gpu_code_objects` 在解压后的 `samples/native/sample.cubin` 中识别出 1 个 GPU 代码对象，唯一的目标架构为 **`sm_80`**（NVIDIA Ampere，计算能力 8.0）。",
+    "原始结果文件SHA256": "5e0a6cd7c0cd210f6e410e70df6ef5cba7b8e78e8b76890cb7bc35b2728bd934"
+  },
+  {
+    "编号": 95,
+    "工具": "inspect_model_artifact",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "bf51865a5b41a9691bb59d383d8512a04f539450bb90bbb4f3cf1e28193d967d",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-95",
+    "对话ID的SHA256": "81c1d1b219c704dcc9a9574550639355c4a44ced1a67c2186fea4abb0f1b401d",
+    "轮次ID的SHA256": "fef0070bb4e5dc8f52e1cc2eec3d6fdcd1dbe9eab6f46e0e1ca9b46c138e2dd9",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_model_artifact",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "tensors.0.type",
+          "eq",
+          "F32"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "tensors.0.name",
+          "eq",
+          "example"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_model_artifact` 从 `samples/native/weights.safetensors` 中读取到 1 个张量。\n\n| 张量名称 | 数据类型 | 形状 |\n|---|---|---|\n| `example` | `F32`（32 位浮点数） | `[1]` |",
+    "原始结果文件SHA256": "83b717a84ebbf212510e8c699e749d2db501d8c7420a772f960f7a46db8d4cab"
+  },
+  {
+    "编号": 96,
+    "工具": "inspect_artifact",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "d7db897f7c8dd3c35fdf2aa23d0ac3b13c4f19cb27a58933e04cc882df64764a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-96",
+    "对话ID的SHA256": "db082fdb1644acfc94ae2299a1bdb2f1a62c08ea42af6bde91eeca9b4ead0d04",
+    "轮次ID的SHA256": "2f340c60ee74cd1dbc08fbd41aafd844c877c25149886b35c68daa45edefd30b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_artifact",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "substeps",
+          "contains",
+          "README.txt"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "REA 的 `inspect_artifact` 在 `data/demo.zip` 中检出 1 个文件。当前归档会话保持打开。\n\n| 归档内路径 | 条目标识（`occurrence_id`） |\n|---|---|\n| `README.txt` | `occ_3e419e6d6110f3064c46468bc0ae836832e73224e6a6e6ab7fc945f4c38ada83` |",
+    "原始结果文件SHA256": "1682591504b6de852906df52b07142ff9c6e8c6decb41b0827084bd5ec284c63"
+  },
+  {
+    "编号": 97,
+    "工具": "extract_artifact",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "5901044e8f6093b202af30208cad81f38a912dba66dbd3667d53cc60658cae88",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-97",
+    "对话ID的SHA256": "084e432960264adf5433eabd1aa5d4fa9d1048a5c6fbe1347ca85cd007b4402f",
+    "轮次ID的SHA256": "fce7aff1da1ef51cf76484dc30d96f6ec9f68759d55da8b060195d49520c128f",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_artifact",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "extract_artifact",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "artifacts.0.relative_path",
+          "eq",
+          "README.txt"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "artifacts.0.bytes_written",
+          "eq",
+          36
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已使用 REA 的 `extract_artifact` 按清单中的 `occurrence_id` 仅提取了 demo-extract/README.txt，共 36 字节。`demo.zip` 归档会话保持打开。\n\n条目标识为 `occ_3e419e6d6110f3064c46468bc0ae836832e73224e6a6e6ab7fc945f4c38ada83`。",
+    "原始结果文件SHA256": "64c174e85a3d1e25e4e9fce71c24ac1780a293466539750ef2a9d8f087e076be"
+  },
+  {
+    "编号": 98,
+    "工具": "inspect_desktop_application",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "46c3056e1dcaf4e4d609b200955ef5b117364a7f136761059376418ca32a5b62",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-98",
+    "对话ID的SHA256": "8f3ef495de752aba2a7c318dd8fbb971b6a9084af96b7ab59e538a97695ee27e",
+    "轮次ID的SHA256": "397a98d4a7e06c6fe26d11a9123daea7605c7d0f61adb4864322e3c47905f68d",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_desktop_application",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.candidates|candidates",
+          "list",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**Demo.app 的启动入口是原生 arm64 Mach-O 程序，唯一列出的直接动态依赖是 `libSystem.B.dylib`。** `Contents/Info.plist` 将 `CFBundleExecutable` 指向 `Example`，与实际检查的 `Contents/MacOS/Example` 一致。\n\nREA 的 `inspect_desktop_application` 检查了 8 个目录项，返回 **0 个运行时候选**。该次扫描读取了 0 字节文件内容，上述入口格式和依赖来自对可执行文件的补充静态检查。\n\n资源中还有 Foundation 的线索。`Contents/Resources/Model.plist` 使用 `NSKeyedArchiver` 格式，记录了 `NSArray`、`NSObject` 和 `main.ReaArchiveRecord`。这些元数据说明了资源的归档方式，但不足以确认应用运行时加载了 Foundation、Objective-C 或 Swift 运行时。",
+    "原始结果文件SHA256": "f7b7e55b3a5cef0e811e8409d86e7346f17cfa7ea3f14d38255ee26dee8aa135"
+  },
+  {
+    "编号": 99,
+    "工具": "audit_release_exposure",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "6e00091fd615c66f720494f745bd3df45a6e8c3d476acb809045de12f3a3ce2c",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-99",
+    "对话ID的SHA256": "1be241ebf746527bbb9b1ba5e98944d9e6c5f1e9b4ad943c621749c1a285b767",
+    "轮次ID的SHA256": "941fb417b4a57f5c9cde58e334d58661dc3b34f02b4a17f17002bee016497782",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "audit_release_exposure",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.by_status.exposed",
+          "eq",
+          0
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已将 `tools/rea/测试样例.zip` 解压到临时目录，并对 `samples/apple/Demo.app` 运行了 rea 的 `audit_release_exposure`。**15 项检查中，0 项被标记为 `exposed`。** 逐文件静态核对后，确认包内可以直接读出以下信息。表中路径均相对于 `samples/`。\n\n| 对应文件 | 可静态读取的信息 |\n|---|---|\n| `apple/Demo.app/Contents/Info.plist` | Bundle 标识符为 `dev.example.rea-smoke`，应用名称和可执行文件名均为 `Example`，包类型为 `APPL`，构建版本 `CFBundleVersion` 为 `1`。 |\n| `apple/Demo.app/Contents/MacOS/Example` | 文件头显示它是面向 `arm64` 的 64 位 Mach-O 可执行文件。 |\n| `apple/Demo.app/Contents/Resources/Model.plist` | `NSKeyedArchiver` 归档保留了类名 `main.ReaArchiveRecord` 和对象关系。根 `NSArray` 的两个元素指向同一条记录。该记录的 `cycle` 指回自身，`conditional` 指向空对象，`payload` 的原始字节为 `00 01 02 FF`。 |\n| `apple/Demo.app/Contents/Resources/Demo.storyboardc/Demo.nib` | 编译后的界面资源仍保留 `NIBArchive` 标识、类名 `NSView` 和 `NSButton`、字段名 `NSChild` 和 `NSTitle`，以及标题文本 `Demo`。 |\n\nREA 在扫描的 2 个文本成员中未命中凭据标记，也未观察到 JavaScript source map、调试伴随文件或嵌套可提取载荷。Go 构建路径和 Rust 依赖元数据的结果均为 `unknown`。原生加固与 Mach-O Hardened Runtime 均未评估，因此这次审计无法判定其启用状态。",
+    "原始结果文件SHA256": "dd7e5bd157a5eaf40efe6fe2aafa92a9f494a821c78e1e15eac7d08d9a44d96e"
+  },
+  {
+    "编号": 100,
+    "工具": "inspect_sqlite_database",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "4e7d40518475c0f87b0532369e895525b446f70468566360e41bb3019b2bf956",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-100",
+    "对话ID的SHA256": "46fd026e18bc195e764fe9b1a2699a1371516980eae716090152e6cff8455e0b",
+    "轮次ID的SHA256": "6732ce7c3c49ef1784664cb42f82348c18fd944148b4affaa690ffbf015a58e1",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_sqlite_database",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "rows.values",
+          "contains",
+          "纸杯"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "| id | name |\n|---:|---|\n| 1 | 纸杯 |",
+    "原始结果文件SHA256": "9b9127452fafec9f15a20cb7e7890a81ec9417134f70fe5de054b49cf0d7f6b3"
+  },
+  {
+    "编号": 101,
+    "工具": "get_evidence_bundle",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "7b4b9e1122b6c3ee2017e777ad1f8780f2fb8190461d48c42a70eb328d50dbf5",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-101",
+    "对话ID的SHA256": "60d2292804a8f50130b920a210b8382231a2899ee474e7419a0b67f3859562eb",
+    "轮次ID的SHA256": "34280a8ab9d5251572c12f1e8ece6aaa97dab7d045742761066a00edea1e399a",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "get_evidence_bundle",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "total_retained_records",
+          "eq",
+          0
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 rea 的 `get_evidence_bundle` 查询无筛选摘要。当前会话保留的证据记录为 **0 条**，因此没有可列出的记录 ID 或对应的生成工具。",
+    "原始结果文件SHA256": "ade1deab11726bfc8c46d8586c1f17ab8bb10b45242808bd4eaa588ce568e205"
+  },
+  {
+    "编号": 102,
+    "工具": "export_evidence_bundle",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "0f46991bdba5e0e8e1f604363de0d8cbafb4a6d84c808d56f92ae002cceaba97",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-102",
+    "对话ID的SHA256": "39451c059667a115252f64354f712f2b6bdfa9b0643f6fb6dc68b5d6d01c80af",
+    "轮次ID的SHA256": "6432d843ad65c66c4f565478bbcf2cb2822e1189e41ed10c8fcf08188fc34400",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "export_evidence_bundle",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "records",
+          "eq",
+          0
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 `rea.export_evidence_bundle` 将本次测试会话的证据包保存为工作区新文件 demo-evidence.json。已验证 JSON 可正常解析，文件大小为 105 字节，包含 0 条证据记录。",
+    "原始结果文件SHA256": "87d0d61bdbd22fee3c7c816183182fe33c3757e487b7637fae6e0269fa64760a"
+  },
+  {
+    "编号": 103,
+    "工具": "import_evidence_bundle",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "9ffbe7ab8fa66d4522c3dde56d0cae7ec67e498bf9b524d763e2aa83c97d0679",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-103",
+    "对话ID的SHA256": "84d72cfc145ed3caa6cffe32a3e98ec079d23979ebe88bdb6c3d57b9811c0869",
+    "轮次ID的SHA256": "6387d03c3967e536d524c1f302118009baebd7712395f8f2b3d1b8fa1e327b54",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "imported",
+          "eq",
+          2
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "校验通过。REA 的 `import_evidence_bundle` 已将 members.json 中的 2 条记录全部导入当前测试会话。导入后共有 2 条记录，新增 Unknown 条目 0 条。\n\n本次使用的是当前 REA 会话，未单独创建或验证全新会话。",
+    "原始结果文件SHA256": "8f232cff95050da26592c0f17827c92240b59bdb022c50b95d6cb01d75c8b6df"
+  },
+  {
+    "编号": 104,
+    "工具": "compare_bundles",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "e6ee050fca853ff2bf2113d67377d11466bc7d4ffaf9167b32039337eb64bb4a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-104",
+    "对话ID的SHA256": "0d79925f624818bf707ccee2075c66de3e6807feb8869f5f0c4f4cf5a4c236f3",
+    "轮次ID的SHA256": "6c100138fe92a5d0067a6085cbf31f8570b28f289d05086979995860a033af5f",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "compare_bundles",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.unresolved",
+          "eq",
+          7
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "旧包 `evidence/empty.json` 有 0 条证据记录，新包 `evidence/comparison.json` 有 7 条。新包包含 2 条制品清点、2 条函数分析、2 条进程场景捕获和 1 条函数比较记录。\n\n按指定顺序运行 REA 的 `compare_bundles` 后，工具将这 7 条差异全部归为**未决**（`unresolved: 7`），新增、移除、修改和未变的记录数均为 0。旧包没有可供对照的记录，因此能确认的是这 7 条记录仅见于新包，无法据此判断底层行为是否发生变化。",
+    "原始结果文件SHA256": "753cffa16bbc0fe3ec628a551113e4925ac4cac359e77bd0852454b17ac35931"
+  },
+  {
+    "编号": 105,
+    "工具": "compare_artifacts",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "74492cc6642eaefe74dfbcc1b9a92b86e3a34372aae4d0584741cd034f1022da",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-105",
+    "对话ID的SHA256": "2665c07e39c2db42738a5ed18cfea913a5f4aa4d59aaf88402201b2ea2455905",
+    "轮次ID的SHA256": "a8e3348235696b613f2300201262a3b438039d2a0fd8f2efc9848812448cdd29",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_artifacts",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.changed",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已导入 `evidence/comparison.json`，并按 `evidence/args-105.json` 指定的旧版到新版顺序运行 REA `compare_artifacts`。\n\n- **新增文件：0 个。**\n- **内容变化：1 项。** 路径 `.` 表示安装包文件本身，其内容发生了变化。比较结果未列出任何发生变化的包内文件路径。",
+    "原始结果文件SHA256": "31803ebf53b21bd9ab76b4317b9fb7d1342b71c03259d83e4553280cd3b4d673"
+  },
+  {
+    "编号": 106,
+    "工具": "compare_process_captures",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "815cc9984ba68423f8d7da207cde6155b0fb169796c06117eb081c6aa78d75df",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-106",
+    "对话ID的SHA256": "ce855d45a7bf68fd04fd04708c729b27ef9cafa4e08958045ec5efaad59ec630",
+    "轮次ID的SHA256": "fe916adb5ff0902c7e431ab0142c970dd3d243e06c4f3feae9f1122163d77253",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_process_captures",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "terminal",
+          "eq",
+          "unchanged"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "旧版和新版记录中的**终端输出一致**。按 `args-106.json` 指定的顺序比较后，REA 的 `compare_process_captures` 将终端输出判定为 `unchanged`，未发现差异。",
+    "原始结果文件SHA256": "d8d9730fcd4ca54ca4ab73816d86cea8cf5e9c07777544ebbd71004c246878d3"
+  },
+  {
+    "编号": 107,
+    "工具": "find_changed_behavior",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "de020405694c746d7a97fb46311e2d2b6476d6490637bddeeda64720576273f1",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-107",
+    "对话ID的SHA256": "219e59c55586471f1513b263ba23feed875269d352a389c54373f901cb88ef7f",
+    "轮次ID的SHA256": "18934c9beedf8ccc30e987299522af393566ae744e4645065e185721e6f5d58f",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_artifacts",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_process_captures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "find_changed_behavior",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "behavior_status",
+          "eq",
+          "observed_unchanged"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**两次进程捕获中均未观察到可核实的运行时行为变化。** `find_changed_behavior` 返回 `observed_unchanged`。终端输出、交互、退出情况、文件系统和进程观测五项均为 `unchanged`，未发现首个分歧点。\n\n可核实的变化只有一处：根产物 `.` 的内容发生了变化。REA 将其列为静态候选项。运行时观测缺少可关联的产物身份，因此无法据此判断这处内容变化是否影响了执行行为。\n\n已从临时目录中的 `comparison.json` 导入 7 条证据，并将 `args-107.json` 中的两处引用替换为步骤 105 和 106 本次返回的 ID 后，提交了完整参数对象。\n\n| 步骤 | 工具 | 本次返回的 `evidence_id` |\n|---|---|---|\n| 105 | `compare_artifacts` | `ev_fe5928b028fde07259a0f9270c3a9ec91948c9026aeb5dd382f54621eca2a9cd` |\n| 106 | `compare_process_captures` | `ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6` |\n| 107 | `find_changed_behavior` | `ev_33fba8c2fbe16a40ae16f178542ea0a2456e2c5295c7d578cf250a81296e7c14` |",
+    "原始结果文件SHA256": "e7681d97b103b9578a59ff3d7b9bee0d44b32fd2f5a5f74f1770767fde658faa"
+  },
+  {
+    "编号": 108,
+    "工具": "correlate_static_and_runtime",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "7f91068f7d5a86c8b9619d84c55027d11ffa8d016c12907a0721f1ba7f9cc458",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-108",
+    "对话ID的SHA256": "d5a5fdf1c78d82513ebe6679e79328db6b11ed741fe4ae56afb403fe9a6cf3e2",
+    "轮次ID的SHA256": "bc2fd610419497718cd3bac3cac2c68eac9a59439cbd53ee5b4450742ffd7349",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_process_captures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "correlate_static_and_runtime",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "correlations",
+          "contains",
+          "static_only"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**该函数的伪代码发生了变化，两次进程捕获中的终端输出一致。** REA 按旧版对应旧版、新版对应新版（`left_to_left`）关联两组证据，返回的观测模式为 `static_only`。版本对应关系来自参数文件，REA 未独立验证。\n\n已用 `import_evidence_bundle` 导入 7 条证据，按 `args-106.json` 完成进程比较，并将 `args-108.json` 中两处 `106/evidence_id` 引用替换为本次返回的 ID，再将完整参数对象提交给 `correlate_static_and_runtime`。\n\n| 比较结果 | evidence_id |\n|---|---|\n| 步骤 106 进程比较 | `ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6` |\n| 步骤 108 静态与运行时关联 | `ev_9a9751d8a47f7d74277d14e789c4aab9de6b01ae6a78b99fd6b1fa5d514a37e7` |",
+    "原始结果文件SHA256": "eed03647ff779b85ccb1ea39029f6ff1556f5614f9d617b1037932e2447fc6b2"
+  },
+  {
+    "编号": 109,
+    "工具": "build_reconstruction_obligation_ledger",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "fec3673b8fdec2d06600a87b74bb86ab9db63f8dae92baf2ac8a710a8c90129a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-109",
+    "对话ID的SHA256": "12d04990c22b8b42b784aa70f6e83f5a97e5eaf7882b1ce623ec74acd8eca178",
+    "轮次ID的SHA256": "d2e182ffe1637ef9727605b203792af562c4771c342ec48fa39dbc63ddbfbbe2",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "build_reconstruction_obligation_ledger",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "status",
+          "eq",
+          "unknown"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**待验证事项清单为空，重建验证状态仍为未知。**\n\n已从压缩包中解压 `samples/evidence/ledger.json`，并将 JSON 顶层对象原样传给 REA 的 `build_reconstruction_obligation_ledger`。证据包中的各列表、已审阅事项、清单绑定和矛盾记录均为空。\n\nREA 共生成 0 项，已验证 0 项，必需且待验证 0 项。工具将覆盖范围标记为 `partial`、总体状态标记为 `unknown`。现有输入不足以确认重建验证已完成。",
+    "原始结果文件SHA256": "d9278767af8bc457bbea90cd02a22b6d930e1e03b521b1c1d2db32a349ad4844"
+  },
+  {
+    "编号": 110,
+    "工具": "evaluate_reconstruction_coverage",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "5d74c1ff15148de18e3b70e35d9ec79e489bbf17a9f78df8e26a08e28ce2a67f",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-110",
+    "对话ID的SHA256": "5da6b0e2047925cb45f3a88f6eaf7760ff25b03677d7b268fcf44641f2caf76f",
+    "轮次ID的SHA256": "3abe16e8eed05971c48b61dade0758fdfad882811545f35b73a4d7eb377e9cbc",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "evaluate_reconstruction_coverage",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "status",
+          "eq",
+          "partial"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已将 `samples/evidence/coverage.json` 的顶层对象原样传给 REA 的 `evaluate_reconstruction_coverage`。`replacement.cli` 的评估状态为 **`partial`（覆盖不完整）**，共报告 4 项缺口，返回的证据 ID 列表为空。\n\n| 边界要求 | 评估发现 | REA 建议的下一步 |\n|---|---|---|\n| `cli.help` | 权威清单缺少该 CLI 帮助接口的条目（`surface-missing`） | 在权威清单中补录该接口 |\n| `claim.cli.help` | 缺少该接口对应的必需验证声明（`claim-missing`） | 在权威清单中补录该声明 |\n| `clean-install` | 缺少干净安装的包级或集成验证证据（`package-proof-missing`） | 运行 `verify_reconstruction_package` 获取安装验证证据 |\n| `authority-independence` | 缺少独立于原权威实现的包级或集成验证证据（`package-proof-missing`） | 运行 `verify_reconstruction_package` 获取独立性验证证据 |",
+    "原始结果文件SHA256": "b6ff1cd5d4f26c3b335853c0447ca772e7ddf0c4289231bc8f6176ce2e3c4c3f"
+  },
+  {
+    "编号": 111,
+    "工具": "verify_reconstruction",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "fd0ef85722dee1e44a58df5a9f4918d13a873090d1b746a0562f1881bfe93e76",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-111",
+    "对话ID的SHA256": "9ceac4f6fc37772f9e06b390024d0d130b16d7f2e4c264ec90727c03e702a472",
+    "轮次ID的SHA256": "83ec9df1554f745c681b9cb135447d25c05ce460360908baf243a55edaa7c387",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "import_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_process_captures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "verify_reconstruction",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "status",
+          "eq",
+          "pass"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**核验通过。** 两份测试命令捕获记录的终端输出满足规格中的一致性要求。`compare_process_captures` 返回 `terminal = unchanged`，`verify_reconstruction` 对规格中唯一的声明 `stdout` 返回 `pass`。\n\n已导入 `comparison.json` 中的 7 条证据，按 `args-106.json` 完成比较，并将 `args-111.json` 中的 `106/evidence_id` 引用替换为本次比较返回的 ID 后，提交了完整参数对象。\n\n| 步骤 | 本会话返回的 `evidence_id` |\n|---|---|\n| 106 · 捕获比较 | `ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6` |\n| 111 · 重建核验 | `ev_0c3b3840b7fd3db1ce844146324c74fb93b2ba494ac166b56c6534c99ba1f12c` |\n\n核验结论限于这两份捕获记录。REA 提示观测中缺少制品身份信息，因此具体构建版本的归属仍未核实。",
+    "原始结果文件SHA256": "bed01f5494d787065e2a9e7789dd02f3eb4034872235b3d85e93a85aa341441c"
+  },
+  {
+    "编号": 112,
+    "工具": "record_unknown",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "a9c9886383c59cbab933ae1eee109473c21d9af62d741c25210a324516c02a19",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-112",
+    "对话ID的SHA256": "81406ff24af14a47ece6a2fa8ec594a5b21e7afe227949b3b7ade9cfe9e9e68d",
+    "轮次ID的SHA256": "f6124bf4bba6834fd4cb6db0f9cf9fc6f4417c882a336e384c2b4ba015afdae9",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "record_unknown",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "severity",
+          "eq",
+          "medium"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "unknown_id",
+          "nonempty",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已登记，问题 ID 为 `unk_b315c6d7d4fd42e53afa9a835d37eff8080451292c4219d0dea3a8ea9c94180c`。",
+    "原始结果文件SHA256": "182924a9540e7a47c04a6f9094e00061863a7557c207e1bfd851655851f06684"
+  },
+  {
+    "编号": 113,
+    "工具": "list_unknowns",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "c4b88b5278f4ed27de0f2af12da34beaf96456c01e0019732d48a2e8a4747624",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-113",
+    "对话ID的SHA256": "a3818dfdd84e63238c3b57afca0b54b2ea67c6f7ec6d9544f1bf1b58dca2dafc",
+    "轮次ID的SHA256": "42df1c6636b7d637946498a2466cb985e27c1c44d7de9f9d12298faef3ca6798",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "list_unknowns",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "total",
+          "eq",
+          0
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.list_unknowns` 查询结果为 **0 条**。当前调查尚未登记严重度为中等的待解问题。",
+    "原始结果文件SHA256": "ccaafdcfef7c14d8348fe65ac32094aefc3df21696310f7cdb710b115d46f840"
+  },
+  {
+    "编号": 114,
+    "工具": "update_unknown",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "e3324296fb3257d4f3e1ab213b84b214d0e4fa05fe47525e914ebb7509787fd0",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-114",
+    "对话ID的SHA256": "236c160ca540e59c0d73a176e1fc2a6ed729d062a74bec8c20c419ec9383160c",
+    "轮次ID的SHA256": "e2b0299f30589443910df64fcd7aa8a2ef8e81941916df2a10de36de81616d8e",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "record_unknown",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "update_unknown",
+        "ok": true
+      }
+    ],
+    "命中断言数": 2,
+    "总断言数": 2,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "status",
+          "eq",
+          "investigating"
+        ],
+        "matched": true
+      },
+      {
+        "rule": [
+          "revision",
+          "eq",
+          2
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `record_unknown` 登记“同一输入能否产生相同摘要？”，并以返回的修订号 `1` 作为 `expected_revision` 调用 `update_unknown`。仅修改了 `status`，返回结果确认为 **调查中（`investigating`）**，当前修订号为 **`2`**。\n\n问题 ID 为 `unk_47b6bb5e1d60f65233d63a7c947bb6b596af66baea2ab8b9c590dc394006c1e4`。\n\n样例包已解压到临时目录下的 samples 文件夹。",
+    "原始结果文件SHA256": "2cec485d89207c37a0e1215085e354a9d675237810f8d94f6b004d3e80066489"
+  },
+  {
+    "编号": 115,
+    "工具": "verify_unknown_resolution",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "9557dce34a877096a235f18cd90287707e1099692b54bc1c74e65312e7a0f4c1",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-115",
+    "对话ID的SHA256": "2a5c7a0f4b85bc8ac49efb6e82a3b3c3523e74657da4585be7b9854fafd2568b",
+    "轮次ID的SHA256": "916477110425d4f3fbcc9f376d50176d9d5fd8bb49af05969a9d1657ed47e230",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "record_unknown",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "verify_unknown_resolution",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "valid",
+          "eq",
+          false
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**当前不满足结案条件，仍缺少受控重放的直接观测证据。**\n\n已将仓库中的 `tools/rea/测试样例.zip` 解压至临时样例目录，并按指定字段登记了“同一输入能否产生相同摘要？”。返回的 `unknown_id` 为 `unk_47b6bb5e1d60f65233d63a7c947bb6b596af66baea2ab8b9c590dc394006c1e4`。\n\n使用该 ID 调用 `verify_unknown_resolution`，返回 `valid=false`、`truthVerified=false`。问题状态为 `open`，`resolution=null`，支持与反驳证据列表均为空。现有记录只证明问题已登记；要判定摘要是否一致，还需记录同一输入在受控重放中多次运行所得的摘要，并比较实际结果。",
+    "原始结果文件SHA256": "a8a9418e645498eca94a594c782063fa0c175d73bd1fb40790dcf9fd18631e89"
+  },
+  {
+    "编号": 116,
+    "工具": "export_environment_bundle",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "3963d06a526f29666863c1833fa8a54164c73c0a052b357c91323541f1b4fee2",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-116",
+    "对话ID的SHA256": "54e1a7dd1984728d154b97a512fb469c50c385d66bf852ecaa7b3e274edddec9",
+    "轮次ID的SHA256": "ca3d4987e9edd909047e27015ce5b83c4c8ee5796334565708a535197ec70f50",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_web_network_capture",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "export_environment_bundle",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "status",
+          "eq",
+          "built"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `export_environment_bundle` 将 `offline-demo` 测试环境包导出到工作区新目录 demo-environment。\n\n`inspect_web_network_capture` 按 `har` 格式完整读取了 `samples/web/demo.har`，共 1 条记录。导出使用的抓包 ID 为 `ev_72d9e7c0a0e5f291cdb5969face6d96744e1f20828f2291bd7e0bee8643256e7`。\n\nREA 返回 `built`，共写入 7 个文件，无导出警告。",
+    "原始结果文件SHA256": "8165247ab816f8cae32fc610632a06e48782bc1b3834f7196c01dbbd62fced2c"
+  },
+  {
+    "编号": 117,
+    "工具": "reset_investigation",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "f3f9f02dce50f5254cbd30db34a62bfc6ffaa82526c293935fd71b91c56f3a4a",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-117",
+    "对话ID的SHA256": "f1634a14c172fd103a1dae3fa6a2f6cf8332ea858c12056a99d88b9110245282",
+    "轮次ID的SHA256": "f02b3af7b1f41430e3380a65a01c083a321489ba9b712ce4a0abd2e6aa492743",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "get_evidence_bundle",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_unknowns",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_web_network_capture",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "reset_investigation",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_unknowns",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "get_evidence_bundle",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "cleared_evidence_records",
+          "eq",
+          1
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `reset_investigation` 将证据保存到新建空目录中的 before-reset.json，调用时设置了 `overwrite=false`。\n\n开始前已确认调查为空。重置后回读备份，确认其中恰有 1 条证据，其 ID 与读取 `samples/web/demo.har` 时返回的 ID 完全一致。随后再次调用 `get_evidence_bundle` 和 `list_unknowns`，确认当前调查有 **0 条证据、0 个问题、0 条问题修订记录**。",
+    "原始结果文件SHA256": "96fd411d2d5d9c41f29b60a39da2e17bfab6b3d90c7e6f75642b61c6b8d20e47"
+  },
+  {
+    "编号": 118,
+    "工具": "guided_workflows",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "716f591adae74c85f73b5319d3345c39ae27a3d19a6bdc9cc0e321693208b580",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-118",
+    "对话ID的SHA256": "49326ac1877797194e42a9f647f5dc516a9b77027640095f150ec6f26e2cd58f",
+    "轮次ID的SHA256": "c1476c158a7ff65c1c63df67e3eff7d1abb3e5d53181020b1bbb42ec252e2677",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "guided_workflows",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "workflows",
+          "contains",
+          "investigate_feature"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "**初次检查单个应用包时，若已有想了解的功能、行为或字符串，最适合从 `investigate_feature` 开始。** 它要求提供 `feature` 作为调查线索。如果只是想盘点包里有哪些文件和组件，当前列表中没有专门针对单包盘点的引导流程。\n\nREA 的 `guided_workflows(action=\"list\")` 实际返回了 6 个内置流程。\n\n| 工作流程 | 用途 |\n|---|---|\n| `investigate_feature` | 从功能、行为、字符串或符号入手，追踪相关文件、符号和函数。 |\n| `compare_application_versions` | 对比两个已发布版本的应用包，检查组件清单和变化。 |\n| `verify_reconstruction` | 根据已有对比证据，验证重建结果是否满足指定的行为或结构要求。 |\n| `trace_crash` | 从崩溃消息、异常或地址入手，关联调用关系、引用和可用的进程记录。 |\n| `audit_residual_unknowns` | 对照已有证据，复核调查中仍未解决的问题。 |\n| `prepare_bounded_process_capture` | 围绕具体行为问题，确定进程采集所需的命令、输入、观察项和停止条件。 |",
+    "原始结果文件SHA256": "61455eda54d3b4afe11b97f194653f012c30d912ad46e9b22ea68dcdb4275bc9"
+  },
+  {
+    "编号": 119,
+    "工具": "search_guidance",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "0e1a48a8b531f41121aa47688de7d8c0e3aa8781e4da6c86f2ec2c22a099e0e8",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-119",
+    "对话ID的SHA256": "c9409451d5d85aab55dbd92f7f4cd8159209ea604a1d4816c265ba3264f8e085",
+    "轮次ID的SHA256": "26b8e096db0074b7400997954e4fba23d9059dbd668a3d48a18d6587b6b629a5",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "search_guidance",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "matches",
+          "length",
+          3
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.search_guidance` 在已安装的 `rea-agents@6.9.0` 指南中检索 `JavaScript module`，共命中 10 个章节。按工具的相关性排序，前三项均在章节正文中同时匹配了 `JavaScript` 和 `module`。\n\n| 排名 | 章节 | 指南路径 | 内容 |\n|---|---|---|---|\n| 1 | **Read a module without repeating analysis** | `references/javascript-applications.md` | 按路径和 `javascript-module` 类型查找已分析的模块，读取其引用。 |\n| 2 | **JavaScript and Electron application artifacts** | `references/javascript-applications.md` | 从捕获或打包的 JavaScript 中恢复可读源码。 |\n| 3 | **Bun standalone executables** | `references/native-and-artifacts.md` | 定位 `bun build --compile` 生成的可执行文件中保存的模块图。 |\n\n以下 `locator` 按相同排名列出，可直接传给 `rea.read_guidance_section`。\n\n**1 · Read a module without repeating analysis**\n\n```text\nrea-guide-v1.eyJ2IjoxLCJidW5kbGUiOiI1MjRlYmZjZjc5ZjE3ZmQxNjRjNDVlYjhjYTE0ZjU1NTUyMGY4NzUyMDFmYjMwMGYxNzMzY2I0Y2ZjYzgzNmIwIiwiZ3VpZGUiOiJyZWZlcmVuY2VzL2phdmFzY3JpcHQtYXBwbGljYXRpb25zLm1kIiwib3JkaW5hbCI6Miwic2VjdGlvbiI6IjllZTE3Mjc1ZjgyYWQ0ZjljM2EyZThhMDc2YjVhYTdjM2NhMTc2NjlmMTc0YTU3MTdjNTMwNGRiOGM1YjQ3ZTYifQ\n```\n\n**2 · JavaScript and Electron application artifacts**\n\n```text\nrea-guide-v1.eyJ2IjoxLCJidW5kbGUiOiI1MjRlYmZjZjc5ZjE3ZmQxNjRjNDVlYjhjYTE0ZjU1NTUyMGY4NzUyMDFmYjMwMGYxNzMzY2I0Y2ZjYzgzNmIwIiwiZ3VpZGUiOiJyZWZlcmVuY2VzL2phdmFzY3JpcHQtYXBwbGljYXRpb25zLm1kIiwib3JkaW5hbCI6MCwic2VjdGlvbiI6ImI4ZTUwYmE5YWVhNGVkMzkwODVmYmI0ZDFhNWIxMTUwMmU3YWI0MGNjZGZlNjQ0ZDA5NjIwOWY1OTNmNzE3YzIifQ\n```\n\n**3 · Bun standalone executables**\n\n```text\nrea-guide-v1.eyJ2IjoxLCJidW5kbGUiOiI1MjRlYmZjZjc5ZjE3ZmQxNjRjNDVlYjhjYTE0ZjU1NTUyMGY4NzUyMDFmYjMwMGYxNzMzY2I0Y2ZjYzgzNmIwIiwiZ3VpZGUiOiJyZWZlcmVuY2VzL25hdGl2ZS1hbmQtYXJ0aWZhY3RzLm1kIiwib3JkaW5hbCI6NDMsInNlY3Rpb24iOiI3MTQ3ODUxYmZhNmQ3MTFiY2M4NjQyZWYxYTI3YzYzMzBmNjIwYmUyMTg2Yzg2N2Y3MDIyZjE4OTcwYWI2NDExIn0\n```",
+    "原始结果文件SHA256": "15fef02da3984729bde5d4652201b51bdaccc9d3b9b951ed5d080be753ec51c6"
+  },
+  {
+    "编号": 120,
+    "工具": "read_guidance_section",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "e9da0138928ee5386042a733e9d9d539a3c41aee7e93b706c8c9d5f19abdd91f",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-120",
+    "对话ID的SHA256": "6f743fce78dd5c9126c8a975348cd74770d7abd1fc7b187940da1ffe50ac97ec",
+    "轮次ID的SHA256": "2550c650f050c793eac8300d2915e5edfcc289bcaf044a4b9f251d3f5bb98b51",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "search_guidance",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "read_guidance_section",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "heading",
+          "eq",
+          "Read a module without repeating analysis"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已将 `tools/rea/测试样例.zip` 解压到临时目录，点击进入 samples/。已调用 `search_guidance(query=\"JavaScript module\", limit=3)`，将首项返回的完整 `locator` 原样传给 `read_guidance_section`，成功读取 **Read a module without repeating analysis**。\n\n该节说明如何复用已有分析结果读取 JavaScript 模块：\n\n1. **复用父证据。** 在同一 REA 连接中，将 `source.kind` 设为 `retained-evidence`，将实际返回的父证据 ID 填入 `source.evidence_id`。\n2. **定位模块。** 如果还不知道 `node_id`，用 `page` 视图分页查看 `modules`，按路径和角色选中条目。需要下一页时使用 `coverage.next_offset`。同一路径可能对应多个角色，只有确认路径唯一时才用路径选择。\n3. **读取模块。** 用 `item` 视图和选中条目的精确 `selector.node_id`，读取该模块已记录的标识、哈希、导出和源码范围。\n4. **按需批量查看。** 若只需模块标识和已保留的源码范围计数，可用 `javascript` 视图的 `references` 投影，再按 `node_id` 查看明细。该计数表示已保留的源码范围观察条数。判断整个应用是否缺少某项内容前，应检查 `source_coverage`。",
+    "原始结果文件SHA256": "bcfc2313b44b0d0549771901d6f6c282fcf02340e4d8d159ffbfce8bebc44d50"
+  },
+  {
+    "编号": 121,
+    "工具": "inspect_analysis_settings",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "91bc1d9b37f78cd6c95c97532b6322126a6cbdbba7b2f2dbebd69f0acf201b54",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-121",
+    "对话ID的SHA256": "99b6388e155a2b51071590a4aebf2336978ba016cc3ed53941f530ba0a96a2c0",
+    "轮次ID的SHA256": "8e780b99a7ebfdddd0150133accda8557c48abae163302b991a96cb11db3a1c6",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_analysis_settings",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "settings.0.applies_at",
+          "eq",
+          "next_operation"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`rea.inspect_analysis_settings` 返回的 `asar.max_header_bytes` 配置如下。\n\n| 项目 | 结果 |\n|---|---|\n| 当前配置值 | **16,777,216 字节（16 MiB）**，采用默认值 |\n| 允许范围 | 1 至 268,435,456 字节（256 MiB），含两端 |\n| 生效时机 | 运行时修改后，从下一次使用该设置的操作起生效（`next_operation`），无需重启 |",
+    "原始结果文件SHA256": "b74f5a5a7944cdda10ec0b0a7c60e0830b8162422f8f03b5e1eebc71b6a3620e"
+  },
+  {
+    "编号": 122,
+    "工具": "update_analysis_settings",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "ab1caf5109c9e36827cbee2598dfb5730d8098fe531a79661703462258e896f9",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-122",
+    "对话ID的SHA256": "bcef0fa8e6f065ba6a94125786158e6391aabbdc671f788712357ef03ca09875",
+    "轮次ID的SHA256": "e7e9eea5cb0beaa24725fc6dddc6751b1ed6a25269b9318bf891426d3a5e5254",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "update_analysis_settings",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "changed",
+          "eq",
+          false
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`asar.max_header_bytes` 恢复后的值为 `16777216` 字节（16 MiB）。`changed` 为 `false`，因为重置前已是启动值。",
+    "原始结果文件SHA256": "cc6e878fb7526ac5ad1ecd082193d227036e20d7dfdc8d8e5bc71d9874d7ef5f"
+  },
+  {
+    "编号": 123,
+    "工具": "inspect_analysis_view",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "af893108eff02e41da0046664d38f182b64bd251d5c928cb2abe0360d7bd488e",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-123",
+    "对话ID的SHA256": "3e811fa3d851cd279d405debd73626dfbec8ddacf84e6488f7aadc24da358c94",
+    "轮次ID的SHA256": "0fed505f448bf616e0b1d3d941fc7ba6b603744802f5346175b744a33babe681",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_web_network_capture",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "analyze_javascript_application",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "compare_static_and_observed_endpoints",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "inspect_analysis_view",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "view.collection",
+          "eq",
+          "static-endpoints"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `inspect_analysis_view` 读取 `endpoint-comparison` 视图中的 `static-endpoints` 集合，分页参数为 `offset=0`、`limit=10`。该集合共 **1 条**，已全部返回。\n\n| 路径 | HTTP 方法 | Origin | 对比状态 |\n|---|---|---|---|\n| `/demo/report` | 未知（`null`） | `https://fixture.invalid`（调用时指定） | `matched` |\n\n**完整证据 ID** 均取自对应摘要的 `normalized_result.parent_evidence_id`。其中第三项已用作 `inspect_analysis_view` 的 `source.evidence_id`。\n\n| 证据 | 完整证据 ID |\n|---|---|\n| JavaScript 静态分析 `js/endpoint` | `ev_bfa735836b1edd42aea1de579cf917175313e816d69e0e87cfe82c0111be8e6b` |\n| HAR 抓包 `web/demo.har` | `ev_877f2c4bc7d321293e070b3dfb12ceee84c0eb5948b487bf04d6f532b3c8ad90` |\n| 静态接口与抓包对比 | `ev_39c5174c199b35e019824f753c5837e718361c627706d3102a585f281c6eacef` |",
+    "原始结果文件SHA256": "d90189c96cdaec19e7bdf5b61bb28d7b5671911ceb8da83efef58f6e860bcfdb"
+  }
+]

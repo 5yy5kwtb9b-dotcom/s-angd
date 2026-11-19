@@ -1,0 +1,175 @@
+[
+  {
+    "编号": 66,
+    "工具": "set_address_name",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "2dc0c58a08bcc7ebe6d610dcd5a8041ed5df1ac74fa40351e3ee564a52924ba6",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-66",
+    "对话ID的SHA256": "ea8ef86ae31fb56df13b7e7cb938cbbdd09ca7d7024559cd222439c89f27e372",
+    "轮次ID的SHA256": "13c1c5c68242842825f0e2ec13f0e02e450dbf8e8c9771121b76120195c43daa",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "open_binary",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "list_procedures",
+        "ok": true
+      },
+      {
+        "server": "rea",
+        "tool": "set_address_name",
+        "ok": true,
+        "address": "0x100000328"
+      },
+      {
+        "server": "rea",
+        "tool": "address_name",
+        "ok": true,
+        "address": "0x100000328",
+        "readback": "demo_entry"
+      },
+      {
+        "server": "rea",
+        "tool": "close_binary",
+        "ok": true,
+        "empty_arguments": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          ".",
+          "eq",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "Ghidra 临时会话改名验证通过。`list_procedures` 返回的第一个函数是 `_demo_value`，起始地址为 `0x100000328`。`set_address_name` 返回 `true`，随后 `address_name` 在同一地址回读到 `demo_entry`。\n\n已用 `close_binary({})` 释放目标，返回 `{\"result\":null}`，未保存快照。",
+    "原始结果文件SHA256": "a3ee9c2d591991990d0ee9e20ca94d95050274bdebe6aeecf6ff12d95dc9a3cb",
+    "改名后同地址回读且空参数关闭": true
+  },
+  {
+    "编号": 73,
+    "工具": "inspect_pe_resources",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "7e39de3622d60c1a408d485ce349a4897dd2047b3db4ff99d3228d44860ccdaa",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-73",
+    "对话ID的SHA256": "5988690bcf2917cd817ecffb6049a5e131bded96465ba81d3fafa4db9057c63e",
+    "轮次ID的SHA256": "89595d878b5b2252a6ff135075a798c2cc77322273202cc7a6270c3dd67c664b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_pe_resources",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "resources",
+          "length",
+          5
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "已用 REA 的 `inspect_pe_resources` 完整检查 `samples/native/resources.exe` 的资源树，共发现 3 种资源类型、5 个资源条目。\n\n| 资源类型 | 类型编号 | 语言编号（十进制） |\n|---|---:|---|\n| `RT_ICON`（图标） | 3 | 1033（美国英语）、1041（日语） |\n| `RT_RCDATA`（原始数据） | 10 | 1033（美国英语）、1041（日语） |\n| `RT_GROUP_ICON`（图标组） | 14 | 1033（美国英语） |",
+    "原始结果文件SHA256": "c1b862893bfaa77c19d8516de2d21084b76686d85d4348ca7756ada6388476ed"
+  },
+  {
+    "编号": 86,
+    "工具": "inspect_managed_artifact",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "cec6fb638c48bd7bb2549a5dfed46dcb822efc19d92803665e93f9201db4fbfc",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-86",
+    "对话ID的SHA256": "db5dd0ced37f1ff45e6e605226442a793acbe2dff98fa4f263c89c0557476da1",
+    "轮次ID的SHA256": "d0110ef579e491f74019869e309c701a31b50ecc0631f0519b321a701b8a43d4",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_managed_artifact",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.assembly.name|assembly.name",
+          "eq",
+          "Fixture.Managed"
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`samples/native/Interop.dll` 的程序集名称为 **`Fixture.Managed`**，程序集版本为 **`1.2.3.4`**。已将该 DLL 解压到临时目录，并用 REA 的 `inspect_managed_artifact` 静态读取。工具报告元数据完整，未发现解析问题。\n\n| 项目 | 检查结果 |\n|---|---|\n| 模块标识 | 内部模块名 `Fixture.dll`，MVID 为 `00112233-4455-6677-8899-aabbccddeeff` |\n| 目标框架 | `.NETCoreApp,Version=v8.0`（.NET 8） |\n| 格式与架构 | PE32，CLI 标志为 `IL-only`，托管架构为 `AnyCPU` |\n| CLI 元数据 | 版本字符串 `v4.0.30319`，包含 `#~`、`#Strings`、`#GUID`、`#Blob` 四个流 |\n| 定义与互操作 | `TypeDef`、`Field`、`MethodDef` 各 1 行，`ModuleRef` 和 `ImplMap` 各 1 行 |\n| 程序集引用 | 仅引用 `System.Runtime`，版本 `8.0.0.0` |\n| 特性与资源 | 1 个自定义特性 `TargetFrameworkAttribute`，1 个私有嵌入资源 `Fixture.resources`（13 字节） |\n| 强名称 | 未声明公钥，无强名称签名 |",
+    "原始结果文件SHA256": "a307bdd7090ad8ca331f095a2d0e7c898b07d4a0eb13ecd29b1ab613dcda1a78"
+  },
+  {
+    "编号": 98,
+    "工具": "inspect_desktop_application",
+    "服务": "rea",
+    "首轮通过": true,
+    "仅一条且与原文相同": true,
+    "用户消息数": 1,
+    "原文SHA256": "46c3056e1dcaf4e4d609b200955ef5b117364a7f136761059376418ca32a5b62",
+    "原文链接": "https://github.com/5yy5kwtb9b-dotcom/s-angd/blob/8d8b24a4951fe7142604dc85284db24b5201681b/tools/rea/123条零报错指令中文总清单.md#item-98",
+    "对话ID的SHA256": "866c96455b7a2fe46ab2e65c6033740215a49f5e1d7a022908787bc3455fe346",
+    "轮次ID的SHA256": "059ae6eb27f06426ee8a15c2b9abb77075a5f8ee3bb9b2438ad2bd64d508c86b",
+    "轮次状态": "completed",
+    "目标工具成功返回": true,
+    "MCP报错次数": 0,
+    "调用顺序": [
+      {
+        "server": "rea",
+        "tool": "inspect_desktop_application",
+        "ok": true
+      }
+    ],
+    "命中断言数": 1,
+    "总断言数": 1,
+    "工具返回值断言": [
+      {
+        "rule": [
+          "summary.candidates|candidates",
+          "list",
+          true
+        ],
+        "matched": true
+      }
+    ],
+    "运行错误": null,
+    "最终答复（本机路径已处理）": "`apple/Demo.app` 的主程序是 **macOS 原生 arm64 可执行文件**。静态检查能确认的直接运行时依赖只有系统库 `/usr/lib/libSystem.B.dylib`。\n\n已将 `tools/rea/测试样例.zip` 解压到临时目录，并对 `samples/apple/Demo.app` 调用 REA 的 `inspect_desktop_application`。REA 枚举了 8 个条目，未探测文件内容，返回的运行时候选列表为空。\n\n补充核对发现，`Contents/Info.plist` 将 `Example` 声明为主程序，`file` 确认 `Contents/MacOS/Example` 是 64 位 arm64 Mach-O，`otool -L` 仅列出上述系统库。包内还有 `Demo.storyboardc/Demo.nib` 界面资源，但仅凭该资源无法确认应用实际加载了 AppKit、Objective-C 或 Swift 运行时。",
+    "原始结果文件SHA256": "f6b4b7509e184b4b781b10840eefa967d7ff5ca99dfb004cf46e551ca3018549"
+  }
+]
