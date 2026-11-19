@@ -1,0 +1,1419 @@
+{
+  "日期": "2026-11-20",
+  "原文提交": "e3ea77e306598131fb54aba96107ffc24ea1ba6d",
+  "ZIP的SHA256": "d5f4f569f5641e2d5b202a4e67db77025e1907ac60864a683bccecfe7d67941b",
+  "摘要": "2026-11-20，在这台已配置 REA 与 mac_pcap 的 Mac 上，50 条原文均在首轮完成目标，其中 49 条全程 MCP 零报错。第 20 条经过两次修订，最终 50 条指令均已在独立对话中取得预期结果且全程 MCP 零报错。共使用 52 个全新临时对话。",
+  "修订原因": "第 20 条首轮把 source map 的 URL 写入 original_url，工具要求 source_map.url。首次修订明确了参数结构，但对话只解压了清单和映射文件，缺少清单引用的 main.js。最终版要求完整解压 ZIP，确认脚本、清单与映射文件均存在后再调用。工具成功把第 1 行第 0 列映射到 main.ts 的同一位置。",
+  "逐条结果": [
+    {
+      "编号": 2,
+      "工具": "inspect_packet_capture",
+      "样例路径": [
+        "web/两帧样例.pcap"
+      ],
+      "样例结果": "两帧长度分别为 60、74 字节。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fdba9e217a940cf2",
+          "轮次指纹": "f31d7d97b93382e1",
+          "指令SHA256": "dfa7cbb68a8cc15604a10943331fcc8a2958d295164a03a34b833843b08b5ef1",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "mac_pcap",
+              "工具": "inspect_packet_capture",
+              "有效返回": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 3,
+      "工具": "inspect_pcap_capture",
+      "样例路径": [
+        "web/两帧样例.pcap"
+      ],
+      "样例结果": "包数 2，线上合计 134 字节，持续 1 秒。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b919c7de4d436f8f",
+          "轮次指纹": "974a0fbc93160016",
+          "指令SHA256": "cc8dea9554001f18e20f32d4564d3498598ef43e85cbd48537942c947980c0fe",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "mac_pcap",
+              "工具": "inspect_pcap_capture",
+              "有效返回": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 5,
+      "工具": "inspect_web_network_capture",
+      "样例路径": [
+        "web/requests.har"
+      ],
+      "样例结果": "1 条请求，GET /demo/report，状态码 200。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "3b2db2ddb82ebc40",
+          "轮次指纹": "0557ab733c312315",
+          "指令SHA256": "11f8b179118679bcca101b0461dd87b67d863b8dff6e8258adc103f02aaf90a7",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_web_network_capture",
+              "有效返回": true,
+              "证据ID": "ev_31a331c714598bc3e3c139f2c56c577417d4ac9ddbc5a80fc2b162173e75aaf2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 13,
+      "工具": "inspect_playwright_trace",
+      "样例路径": [
+        "web/trace.zip"
+      ],
+      "样例结果": "3 条网络事件，响应状态码依次为 302、200、200。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "729b76ec7ecf5af0",
+          "轮次指纹": "93f5f3cd4aa91453",
+          "指令SHA256": "a37d03a7a0b51806ee4e8ccbce0520c5b0489e6d4fcee04a83f82f9448abfdf2",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_playwright_trace",
+              "有效返回": true,
+              "证据ID": "ev_2fd9bdac2d21ca5ad1981a0c955ca0cc567a3482e6c9284a66918b2357c70565"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 15,
+      "工具": "inspect_electron_fuses",
+      "样例路径": [
+        "electron/Demo.app"
+      ],
+      "样例结果": "4 个开关，按索引顺序为关、开、关、开。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b4036b3490b6e9dc",
+          "轮次指纹": "6a2419c4bb53e356",
+          "指令SHA256": "715969ffaf1429984c86a7872f39f41b019e07bf52771d73dff72e0e795cca4a",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_electron_fuses",
+              "有效返回": true,
+              "证据ID": "ev_10350a81c97bbbd92e5386d92865aab2cbdf629731d90f992583130b43fcebb8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 16,
+      "工具": "analyze_javascript_application",
+      "样例路径": [
+        "js/app.asar"
+      ],
+      "样例结果": "入口 renderer.js 直接导入 profile.js。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "9ed604549800c7ee",
+          "轮次指纹": "25ba02916c43f790",
+          "指令SHA256": "026d3cceebd53aeb22b4789d7e54681e0a2c1ce32c013bd2eda64d4322ea868d",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "analyze_javascript_application",
+              "有效返回": true,
+              "证据ID": "ev_b26da4175bdf0670a599726a3208b42fb5b4b5eb4c3e0033871dc1718365c314"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 19,
+      "工具": "trace_web_module_imports",
+      "样例路径": [
+        "web/exported-traces/manifest.json"
+      ],
+      "样例结果": "编号 0 的脚本成功解析，原生 ES 模块导入数为 0。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fa81dcb0350082e4",
+          "轮次指纹": "6f5b9af18bb5abc9",
+          "指令SHA256": "e9f776bcea8de646c56f6cd011d431ecfee4f55ddd4393b3dffd3a17dcd7d5ca",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "trace_web_module_imports",
+              "有效返回": true,
+              "证据ID": "ev_b8ad594d2b5e21daa6f581d9e314c12b42d939dc51b2ccd286a2876c6df67412"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 20,
+      "工具": "trace_web_source_location",
+      "样例路径": [
+        "web/exported-traces/manifest.json",
+        "web/main.js.map"
+      ],
+      "样例结果": "脚本 0 的第 1 行第 0 列映射到 main.ts 同一位置。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "686f98fb32975125",
+          "轮次指纹": "b0e20a58dbc4ec7c",
+          "指令SHA256": "c60a9f7018bdc27c71f526efbe139f7ed1c9d242db5d417fcba242cfd7778025",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "trace_web_source_location",
+              "有效返回": false,
+              "错误": "invalid_request"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_web_source_location",
+              "有效返回": true,
+              "证据ID": "ev_48e19578dd26dc637975555788acd76db38be6ef1e19ce074a51f46c82699abc"
+            }
+          ]
+        },
+        {
+          "版本": "revised",
+          "用户消息数": 1,
+          "对话指纹": "9a1f87379dd1b27f",
+          "轮次指纹": "bcd8a3fcacba87e6",
+          "指令SHA256": "86c45ea6dda2549db9d492bb55faec7a489178d6fcb576ff3a896ca8b2c81af1",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 1,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "trace_web_source_location",
+              "有效返回": false,
+              "错误": "artifact_operation_failed"
+            },
+            {
+              "服务": "rea",
+              "工具": "trace_web_source_location",
+              "有效返回": true,
+              "证据ID": "ev_424364bbbd616d184d15c50e0c26ff70172b41d4b0b38f6ce8fefe58dcc2bdd0"
+            }
+          ]
+        },
+        {
+          "版本": "revised2",
+          "用户消息数": 1,
+          "对话指纹": "87415b375083044a",
+          "轮次指纹": "7879e5bba4c00b22",
+          "指令SHA256": "2359ca0fc7d9cde6a57dddec2178de6927fa824535e3baacd401af694045bb91",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "trace_web_source_location",
+              "有效返回": true,
+              "证据ID": "ev_5086b7eae37baa4bb461b108f8ab70104095a6f108b7ab54864af082138e2fd1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 21,
+      "工具": "export_web_scripts",
+      "样例路径": [
+        "web/web-scenario1.json"
+      ],
+      "样例结果": "导出 main.js（22 字节）及配套清单。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8caab160848dd369",
+          "轮次指纹": "dc41c0f8ca1e8561",
+          "指令SHA256": "00c809c2913b3d73dfa7dc8ff9ab39784628014f9fba18529a5b400fbf0a3712",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "export_web_scripts",
+              "有效返回": true,
+              "证据ID": "ev_3e55889ebd9fb1fdab9dcbc680b3da621ffa6fe90b67393b15f4917465fc91f7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 28,
+      "工具": "inspect_api_contract",
+      "样例路径": [
+        "web/openapi.json"
+      ],
+      "样例结果": "OpenAPI 中声明 GET /books。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "c919972f21775a15",
+          "轮次指纹": "b182842a8ef5e413",
+          "指令SHA256": "ced6e57b922647971b353e3d3af75d0fb696ae8230533b7c5d568ce2c3ab1652",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_api_contract",
+              "有效返回": true,
+              "证据ID": "ev_0b61a974608a0542d0a22ef717e54607c6e146cd6fe6ba908b2ddb195d5e350d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 29,
+      "工具": "inspect_android_package",
+      "样例路径": [
+        "mobile/Demo.apk"
+      ],
+      "样例结果": "包名 demo.fixture，目标 SDK 28，没有声明权限。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "31a085258b1aeaa6",
+          "轮次指纹": "c6298e48d4226ac5",
+          "指令SHA256": "f1ed9c1565362ceec00bb30bd8adbd94563f2e3620d76b1edab660188775711e",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_android_package",
+              "有效返回": true,
+              "证据ID": "ev_42b23e0f8b9835d323d6affae80ee2d12f9e097ae1d6b1ebabcaa61f875d36ef"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 30,
+      "工具": "inspect_apk_signature",
+      "样例路径": [
+        "mobile/Demo.apk"
+      ],
+      "样例结果": "检测到 v1 签名和一份证书指纹。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "fe6c71619365055e",
+          "轮次指纹": "4494e06d147cf103",
+          "指令SHA256": "1c70a56482fbd187ac77c248d62275c1c2ab83f783437ad1cfd30ec81d838d2c",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_apk_signature",
+              "有效返回": true,
+              "证据ID": "ev_9c327505a53667e98ab64dffea73c28e2c373b0a80af79b879b6432f1eee14a1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 31,
+      "工具": "search_android_classes",
+      "样例路径": [
+        "mobile/Demo.apk"
+      ],
+      "样例结果": "Activity 搜索匹配 demo.fixture.MainActivity。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "63e4a9a011ad0698",
+          "轮次指纹": "909f22f8e1764871",
+          "指令SHA256": "4245b98c7c3be46f34cb5f0b82cd119cc9ad35cefab8c1fccffdde5b23042321",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "search_android_classes",
+              "有效返回": true,
+              "证据ID": "ev_18d08c20e4b6f105109102c7aa6526bfb15c96dccb4e13a0b80991e715bcd32c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 32,
+      "工具": "inspect_android_class",
+      "样例路径": [
+        "mobile/Demo.apk"
+      ],
+      "样例结果": "MainActivity 声明 1 个字段和 1 个方法。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "61b3a839a1b9ee2e",
+          "轮次指纹": "822757ab8fac60f4",
+          "指令SHA256": "0918d996e2065c91b8c90417994ed0976fcef037aec36a2cb6578d16e185739e",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_android_class",
+              "有效返回": true,
+              "证据ID": "ev_736a54000132eb257689b581b66f6d64c19759046a64db699e86adf8fefcbcad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 34,
+      "工具": "decode_android_resources",
+      "样例路径": [
+        "mobile/Demo.apk"
+      ],
+      "样例结果": "默认表和中文表分别读到 Fixture cup 和“样例纸杯”。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "ca1a1258078a7664",
+          "轮次指纹": "bd2cdb5b7669d332",
+          "指令SHA256": "bc647d842fa0de628cd034b39f28599c4c89967869f3d8af7997c1d4ba14310e",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "decode_android_resources",
+              "有效返回": true,
+              "证据ID": "ev_5525260de1812be2a7ad0a6438bb0e294ba8888c7f8a665f55458d9fa2f1ae01"
+            },
+            {
+              "服务": "rea",
+              "工具": "decode_android_resources",
+              "有效返回": true,
+              "证据ID": "ev_da519e60df8b45fb2566bf9cc863d59689e98ecc2f585b67c1bfc32d16900a51"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 38,
+      "工具": "identify_flutter_build",
+      "样例路径": [
+        "mobile/flutter.apk"
+      ],
+      "样例结果": "识别 arm64-v8a 及 Dart 快照标识。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "37797cfb4e3369e2",
+          "轮次指纹": "92f4fc4b14b9f69c",
+          "指令SHA256": "a0865f18f1bf07d6291b16fc21235c6adc7f4c673e692e8d1c2ec6b658c19f70",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "identify_flutter_build",
+              "有效返回": true,
+              "证据ID": "ev_09a90df42b7991f80599f64a9ef8ec60a8237d27be9b1c0378f138d045912810"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 39,
+      "工具": "inspect_dart_aot",
+      "样例路径": [
+        "mobile/flutter.apk"
+      ],
+      "样例结果": "VM 与 isolate 各有一块数据和一块指令。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "22a9560b3b84a9a0",
+          "轮次指纹": "c12d0e0426f46be7",
+          "指令SHA256": "e1f899720a18a3067ad5b16a219816921cabc1b48eed89c85dbc27d1d0c57571",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_dart_aot",
+              "有效返回": true,
+              "证据ID": "ev_99dba03bb03f1a8c3cb4daa09b006e986201a048b8a0b47d791a4d4273bfb9eb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 42,
+      "工具": "open_bundle_resources",
+      "样例路径": [
+        "apple/Demo.app"
+      ],
+      "样例结果": "只读打开了 apple/Demo.app。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "412c44256ff9d004",
+          "轮次指纹": "c5d05c5fec1aba6a",
+          "指令SHA256": "426558d393768bff00f789bf53c3094f858cf3b89cdae55070738541d7c54596",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "open_bundle_resources",
+              "有效返回": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 49,
+      "工具": "inspect_apple_ips",
+      "样例路径": [
+        "apple/Demo.ips"
+      ],
+      "样例结果": "EXC_BAD_ACCESS，触发者是线程索引 0 的主线程。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1683476a964667e1",
+          "轮次指纹": "4c1201c3944b3ebf",
+          "指令SHA256": "a4a8849eee7224de7bf777aa2372b11288be4a5f371f6b6001b56e4c9112c932",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_apple_ips",
+              "有效返回": true,
+              "证据ID": "ev_73e91c93f1c97bebff9df840f34b71cb9c0f11581387c03586484c6359d587c9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 54,
+      "工具": "open_binary",
+      "样例路径": [
+        "native/demo"
+      ],
+      "样例结果": "Ghidra 识别出 ARM64 Mach-O 可执行文件。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "40010dc6da199afc",
+          "轮次指纹": "866205be0823a261",
+          "指令SHA256": "f329c36f8dcceb6cdde8d3ceb28c7c76e4402bb367bcfbbf85e5e5da820680da",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "open_binary",
+              "有效返回": true
+            },
+            {
+              "服务": "rea",
+              "工具": "close_binary",
+              "有效返回": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 69,
+      "工具": "inspect_native_exports",
+      "样例路径": [
+        "native/libdemo.so"
+      ],
+      "样例结果": "动态导出有 1 个，名称为 demo_add。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "50c71f55846eb816",
+          "轮次指纹": "1e2f7417a0f00978",
+          "指令SHA256": "2e6fa6b4ef2a197e2a7b4b384976d59001a3bc56b8d38ebc1c08391858007b4e",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_native_exports",
+              "有效返回": true,
+              "证据ID": "ev_6c35f7e9f36c09668ebe6ecd29d3b3148d70c1b318c1105f44a98f4beea7931f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 70,
+      "工具": "inspect_binary_hardening",
+      "样例路径": [
+        "native/go.elf"
+      ],
+      "样例结果": "PIE 和 RELRO 未启用，NX 缺少声明，返回 unknown。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "a84b80cdde20444b",
+          "轮次指纹": "27a86864f58c48cf",
+          "指令SHA256": "691bd8458ea682cbfb1d26a9d0ad3f38ff6aec64b576567670bd15c9db6fb518",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_binary_hardening",
+              "有效返回": true,
+              "证据ID": "ev_3840b24d8edaf9819e91a0507a1291c6ecb3c1f1053e0280588e081655e18700"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 71,
+      "工具": "inspect_byte_entropy",
+      "样例路径": [
+        "native/kernel.bin"
+      ],
+      "样例结果": "整体字节熵约 6.5213，比对的 446 字节落在同一块中。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f57548ecac40ec16",
+          "轮次指纹": "a924c0f74a3d5e19",
+          "指令SHA256": "77bc183d9635a5db7fce9e6448f569dd87dd62c586582a5c8ace2c53b36196ba",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_byte_entropy",
+              "有效返回": true,
+              "证据ID": "ev_e79260e40e69e4942416297c2ecb6a5f30b9f4190850febf45f981888b84ca7f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 72,
+      "工具": "inspect_pe_imports",
+      "样例路径": [
+        "native/native.exe"
+      ],
+      "样例结果": "标准导入与延迟导入均为 0。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "21dbc3692ff80841",
+          "轮次指纹": "d5620abe3307a7c9",
+          "指令SHA256": "a9dc8c85cce72b5f49bdb67ecf63b8655b02fde5b97e9eb0064035453d3ca9a0",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_pe_imports",
+              "有效返回": true,
+              "证据ID": "ev_9082f5eccc656108298beaee7ba11a47e35e4ebfa324d2294c89a64d2053c4c3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 73,
+      "工具": "inspect_pe_resources",
+      "样例路径": [
+        "native/resources.exe"
+      ],
+      "样例结果": "3 种资源类型，共 5 个叶节点，含语言编号 1033 和 1041。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "f37e1c6940344a6d",
+          "轮次指纹": "efb88a6c7abafbed",
+          "指令SHA256": "7e39de3622d60c1a408d485ce349a4897dd2047b3db4ff99d3228d44860ccdaa",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_pe_resources",
+              "有效返回": true,
+              "证据ID": "ev_3f7a6dce57d2ad9b3bb5cae1a6eb65a7076a87401a4875fc07fee3489c72b45a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 74,
+      "工具": "inspect_pe_certificates",
+      "样例路径": [
+        "native/certificate.exe"
+      ],
+      "样例结果": "证书表中有 1 位测试签名者，摘要算法 SHA-256。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "208b352d777c0f51",
+          "轮次指纹": "0d334823f40febf4",
+          "指令SHA256": "5e1f1be94d520bf1e0217dde3cf96fb78a7a1c11fb6ca92f47c45e349be8efdc",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_pe_certificates",
+              "有效返回": true,
+              "证据ID": "ev_647167cb31e7d139225e95eb57356b040ee154fe89a7f6e5fd21cf7e4b4b50da"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 75,
+      "工具": "inspect_windows_shortcut",
+      "样例路径": [
+        "native/readme.lnk"
+      ],
+      "样例结果": "目标相对路径为 ./readme.txt，工作目录为 C:\\Example。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "45f47f619ca0d708",
+          "轮次指纹": "82243cd006fff958",
+          "指令SHA256": "070e92548a1298f7d75a9a0893ce79935790a605b555d730713bd12848e40694",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_windows_shortcut",
+              "有效返回": true,
+              "证据ID": "ev_701651b0312707caf08a56341c0dfa77ec6fb8100a994c6f0a7add89e687e41d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 76,
+      "工具": "inspect_ntfs_journal",
+      "样例路径": [
+        "native/records",
+        "native/journal"
+      ],
+      "样例结果": "提供的 USN 日志共有 3 条记录，已读至文件末尾。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "1b354b3cc5d5a69b",
+          "轮次指纹": "98e87890721ec51f",
+          "指令SHA256": "45adacf67d5b998ade06a7857a2874c66e886d017e6893de0e1948b196fa92ac",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_ntfs_journal",
+              "有效返回": true,
+              "证据ID": "ev_cc4306b3a4ab7fdc95075e0ec08610250cbf395a89965cd27b3e5961bd64fa65"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 77,
+      "工具": "inspect_elf_notes",
+      "样例路径": [
+        "native/notes.elf"
+      ],
+      "样例结果": "读到 GNU 构建 ID 及 Linux ABI 注记。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "20d27380160230a8",
+          "轮次指纹": "3514a7cb883bc7b6",
+          "指令SHA256": "9d9a859511163729b9a63b6e2745eae1f8b7301919771f689909af799beec3eb",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_elf_notes",
+              "有效返回": true,
+              "证据ID": "ev_417c95efe9b37a015d43eac9e2423a07b5582029cb9c63ac634256242bb2046f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 78,
+      "工具": "inspect_kernel_build_config",
+      "样例路径": [
+        "native/kernel.bin"
+      ],
+      "样例结果": "读到 9 个内核配置项，其中没有 CONFIG_SMP 记录。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "8a289b48e315d7e7",
+          "轮次指纹": "317ac016625e1ddd",
+          "指令SHA256": "ed537e756183edb7fdf8f365f42d8f050cf996ede2ae000fa586f20efe5fa190",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_kernel_build_config",
+              "有效返回": true,
+              "证据ID": "ev_3c7b0a045bd82d7e7a44483302dd0c359b46c0a212056a88efd5aafb1d270e1a"
+            },
+            {
+              "服务": "rea",
+              "工具": "inspect_kernel_build_config",
+              "有效返回": true,
+              "证据ID": "ev_59949b09f0a577583427a736e9ec7dd8aed033fcee8d6d317a87bf7ec71e414d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 79,
+      "工具": "inspect_kernel_module",
+      "样例路径": [
+        "native/module.ko"
+      ],
+      "样例结果": "模块名 demo，许可证 GPL，依赖字段为空。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "08c0d88fc7b3adbf",
+          "轮次指纹": "cbc34560b7023128",
+          "指令SHA256": "bb3cfeefa360d81b41e53defa400901deeffb00112a64be94746f128da4d9486",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_kernel_module",
+              "有效返回": true,
+              "证据ID": "ev_00a05bfc06a1b28ddaf7e8a63c35d4cbc490a4bf08b183a312c95275d6c5a494"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 80,
+      "工具": "inspect_devicetree",
+      "样例路径": [
+        "native/device.dtb"
+      ],
+      "样例结果": "根节点下的 serial@1000 与 consumer 均未声明 compatible。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "72961a02f69bc57f",
+          "轮次指纹": "05ba51ae7b5d2e3b",
+          "指令SHA256": "20ddf888f31b0a0a386dd2bfa0ab9378b5dccdd584963c7f609e10e5fb8b51aa",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_devicetree",
+              "有效返回": true,
+              "证据ID": "ev_850114fd4779d7100e4fdb07533c004dac28004de3898e66059af34021ead537"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 81,
+      "工具": "inspect_go_binary",
+      "样例路径": [
+        "native/go.elf"
+      ],
+      "样例结果": "读到 go1.26.0、主模块 example.com/tool 及一项依赖。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "e66aab34e8a01b80",
+          "轮次指纹": "9cf4d7d457059974",
+          "指令SHA256": "5bab598342a7a8b4d23202ac26d49b5e2cf4ccc8d35169cdb3042d4f552afaf1",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_go_binary",
+              "有效返回": true,
+              "证据ID": "ev_14d104ba74a09ec44a526f8b15fd5b3ae0938f913ce6c6d1d57ad75b541549d8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 82,
+      "工具": "inspect_rust_binary",
+      "样例路径": [
+        "native/rust.elf"
+      ],
+      "样例结果": "根包 sample 0.1.0 的直接依赖为 itoa 1.0.18。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "5854f865c0f3d47f",
+          "轮次指纹": "195cd3693eacc757",
+          "指令SHA256": "c522bbaf738b308275fcef58b6841022bc1c4a58c7426f0a19a8f120b4391939",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_rust_binary",
+              "有效返回": true,
+              "证据ID": "ev_c4a0d5592f0c269f11f8d46069781d0e056a8b9ce33d56ba3b888dbbf4621b6a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 83,
+      "工具": "inspect_erlang_beam",
+      "样例路径": [
+        "native/sample.beam"
+      ],
+      "样例结果": "导出 start/0、module_info/0 和 module_info/1。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "83187c5293637c3b",
+          "轮次指纹": "632c41ec94696a77",
+          "指令SHA256": "6c52f70fda08ee47e24f9eac6243414b7aae7555435a50b5f70f76e01394cc8f",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_erlang_beam",
+              "有效返回": true,
+              "证据ID": "ev_90615ba6a79153ad1396f4b86bc2f017708a6a0a95a21faf1b4404b7688e3602"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 84,
+      "工具": "inspect_python_pyc",
+      "样例路径": [
+        "native/sample.pyc"
+      ],
+      "样例结果": "CPython 3.12，代码对象为 <module>、inner。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "b453dc166cfd1881",
+          "轮次指纹": "5c23584dac9f224d",
+          "指令SHA256": "b36c7a4c2dd5d30b4d175f778855d540ec21d003c008996fec0909af9987219d",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_python_pyc",
+              "有效返回": true,
+              "证据ID": "ev_d92449fa59266eaa9333aba2d84bc2f09640df32820ab9b024f05df7f76bb8d4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 85,
+      "工具": "inspect_v8_code_cache",
+      "样例路径": [
+        "native/sample.jsc"
+      ],
+      "样例结果": "32 字节缓存头，读到 8 个四字节字段，部分字段含义为推断。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "55fd7c6b0d82a6ff",
+          "轮次指纹": "4598e228a84309da",
+          "指令SHA256": "c0ac312f9949f0a912081ebe309e3f3ea3350a706ab16dd0cdc37cd68724ca11",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_v8_code_cache",
+              "有效返回": true,
+              "证据ID": "ev_29ff6c02c2857400c35f172b1e1a4dc2395977b9be25a6ebc3bad9b8e441642d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 86,
+      "工具": "inspect_managed_artifact",
+      "样例路径": [
+        "native/Interop.dll"
+      ],
+      "样例结果": "程序集 Fixture.Managed，版本 1.2.3.4。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "ca0b6896602b0365",
+          "轮次指纹": "aa83bcce15336737",
+          "指令SHA256": "cec6fb638c48bd7bb2549a5dfed46dcb822efc19d92803665e93f9201db4fbfc",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_managed_artifact",
+              "有效返回": true,
+              "证据ID": "ev_e7aac44f40c90634082a7a2903c7b70aeb103cd1e57724898d3da6f98ae88270"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 88,
+      "工具": "inspect_managed_native_boundaries",
+      "样例路径": [
+        "native/Interop.dll"
+      ],
+      "样例结果": "唯一 P/Invoke 声明将 Main 映射到 libdemo.dylib 的 demo_value。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "6ad76831183df469",
+          "轮次指纹": "90c6a60d1c0dfb2c",
+          "指令SHA256": "3bbdd4ccb3d3e667a7fa25aa9dbf2894406950eca692d6350b8f70c9f84893f1",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_managed_native_boundaries",
+              "有效返回": true,
+              "证据ID": "ev_6e42483db093aae9166e63f3a62567c3a76fc12b6818dc1690580c3745ca29fb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 91,
+      "工具": "inspect_il2cpp_metadata",
+      "样例路径": [
+        "native/global-metadata.dat"
+      ],
+      "样例结果": "元数据版本 39，识别 31 个表或数据区段。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "deb4ab5bd684d1bc",
+          "轮次指纹": "9e909a8568033d4e",
+          "指令SHA256": "bbb787814811e4e5fbf4c270aa387efda037bd87e4dc71e08ed91275487cd9ba",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_il2cpp_metadata",
+              "有效返回": true,
+              "证据ID": "ev_aa0b40c7542ef8e9a4c0e3ceebf09e0424bd136b94504998a6563fa8fc742596"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 92,
+      "工具": "inspect_wasm_artifact",
+      "样例路径": [
+        "native/old.wasm"
+      ],
+      "样例结果": "模块有效，导入 0 项，导出函数 hello。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "c6633ae197b08a1b",
+          "轮次指纹": "73b5b5c2b9feec2d",
+          "指令SHA256": "76c4d88906e3eb2a04dae57795fd975fc5c6fe595e1ea6793a265c146f1235e7",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_wasm_artifact",
+              "有效返回": true,
+              "证据ID": "ev_edbdda33eb7752faae3b5ec5201f7f295113f45b0fdeebf16afb1d4f8379df32"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 94,
+      "工具": "inspect_gpu_code_objects",
+      "样例路径": [
+        "native/sample.cubin"
+      ],
+      "样例结果": "一个 GPU 代码对象，目标架构 sm_80。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "48e15e5a920835a5",
+          "轮次指纹": "85d8dc903fe9046b",
+          "指令SHA256": "8e875ae95b952dca8a2504721e81a6b0c98294a3ddefac495cc19d5a5aa135e4",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_gpu_code_objects",
+              "有效返回": true,
+              "证据ID": "ev_e217a8f10c575fd793cfd819d6ff1dfe16a0b52d0009a674bb4c301007dea10c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 95,
+      "工具": "inspect_model_artifact",
+      "样例路径": [
+        "native/weights.safetensors"
+      ],
+      "样例结果": "一个张量 example，类型 F32，形状 [1]。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "440c828dab6ad89e",
+          "轮次指纹": "873067ecf075c404",
+          "指令SHA256": "bf51865a5b41a9691bb59d383d8512a04f539450bb90bbb4f3cf1e28193d967d",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_model_artifact",
+              "有效返回": true,
+              "证据ID": "ev_6eae1d67bec2adce9c62cda9017db611e201013a89737525edf643d30f13db2a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 98,
+      "工具": "inspect_desktop_application",
+      "样例路径": [
+        "apple/Demo.app"
+      ],
+      "样例结果": "REA 返回的运行时候选为空。对话另用 file 和 otool 核实 ARM64 主程序及系统库依赖。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "96acbc349795841d",
+          "轮次指纹": "d0369d118bdbc083",
+          "指令SHA256": "46c3056e1dcaf4e4d609b200955ef5b117364a7f136761059376418ca32a5b62",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_desktop_application",
+              "有效返回": true,
+              "证据ID": "ev_1abdf8e8a755e6de1938d1f6b82177e03ce1ec5779b0fd2bb785ec6134cbd030"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 99,
+      "工具": "audit_release_exposure",
+      "样例路径": [
+        "apple/Demo.app"
+      ],
+      "样例结果": "REA 的 15 项检查中 0 项标记 exposed。对话另从包内文件读出应用标识等信息。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "85c3d1eb69864208",
+          "轮次指纹": "c7e920d3977500c9",
+          "指令SHA256": "6e00091fd615c66f720494f745bd3df45a6e8c3d476acb809045de12f3a3ce2c",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "audit_release_exposure",
+              "有效返回": true,
+              "证据ID": "ev_b3c609908173543e10158c4b6fb20d37a95b2bb92dd4aaef7a651681af162a0d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 100,
+      "工具": "inspect_sqlite_database",
+      "样例路径": [
+        "data/demo.sqlite"
+      ],
+      "样例结果": "products 表返回一行，id 为 1，name 为“纸杯”。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "dc761d96775d4d15",
+          "轮次指纹": "6d097e475074913b",
+          "指令SHA256": "4e7d40518475c0f87b0532369e895525b446f70468566360e41bb3019b2bf956",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "inspect_sqlite_database",
+              "有效返回": true,
+              "证据ID": "ev_db430a878e26eb715a941f4510ed7c939a8d6424fa8e84512ca33a36454c56f7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 103,
+      "工具": "import_evidence_bundle",
+      "样例路径": [
+        "evidence/members.json"
+      ],
+      "样例结果": "校验通过，在本次新对话中导入 2 条成员证据。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "c6c32f660301744c",
+          "轮次指纹": "d82f1d1a4555c5de",
+          "指令SHA256": "9ffbe7ab8fa66d4522c3dde56d0cae7ec67e498bf9b524d763e2aa83c97d0679",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "import_evidence_bundle",
+              "有效返回": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 104,
+      "工具": "compare_bundles",
+      "样例路径": [
+        "evidence/empty.json",
+        "evidence/comparison.json"
+      ],
+      "样例结果": "旧包 0 条，新包 7 条。因清单完整性未知，工具将差异列为待定。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "52c8ca5d2ee2f061",
+          "轮次指纹": "263f4487f12bcdd8",
+          "指令SHA256": "e6ee050fca853ff2bf2113d67377d11466bc7d4ffaf9167b32039337eb64bb4a",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "compare_bundles",
+              "有效返回": true,
+              "证据ID": "ev_b73a1d3b8294da38e43b6538dd41417f212585c962bd5bd4cabb27950c588805"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 109,
+      "工具": "build_reconstruction_obligation_ledger",
+      "样例路径": [
+        "evidence/ledger.json"
+      ],
+      "样例结果": "待验证事项为空，验证状态 unknown。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "d4c8722649c70674",
+          "轮次指纹": "66a785247110f0db",
+          "指令SHA256": "fec3673b8fdec2d06600a87b74bb86ab9db63f8dae92baf2ac8a710a8c90129a",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "build_reconstruction_obligation_ledger",
+              "有效返回": true,
+              "证据ID": "ev_3fb4398cd7638634fae2fabf7e4cceb3bca8e721e7713d41282a06e11310c920"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "编号": 110,
+      "工具": "evaluate_reconstruction_coverage",
+      "样例路径": [
+        "evidence/coverage.json"
+      ],
+      "样例结果": "replacement.cli 覆盖状态 partial，共报告 4 项缺口。",
+      "各轮": [
+        {
+          "版本": "original",
+          "用户消息数": 1,
+          "对话指纹": "d6ba93f6a184b0d9",
+          "轮次指纹": "73c624cd7a1370e8",
+          "指令SHA256": "5d74c1ff15148de18e3b70e35d9ec79e489bbf17a9f78df8e26a08e28ce2a67f",
+          "读取指定样例并完成目标": true,
+          "MCP报错数": 0,
+          "MCP调用": [
+            {
+              "服务": "rea",
+              "工具": "evaluate_reconstruction_coverage",
+              "有效返回": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

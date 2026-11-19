@@ -24,6 +24,8 @@
 
 ## 50 条文件类示例
 
+[查看 50 条原文的首轮与修订复测结果](./50条文件示例全新对话实测.md)
+
 ### 抓包与网络记录
 
 <a id="item-2"></a>
@@ -122,7 +124,8 @@
 
 ```text
 定位本仓库 tools/rea/测试样例.zip，在临时目录解压，以下路径均相对于包内 samples/。
-本项输入按顺序为 web/exported-traces/manifest.json 和 web/main.js.map。其中 web/main.js.map 的原始 URL 填 https://example.test/main.js.map。
+先用 unzip 将整个测试样例.zip 完整解压到新临时目录，保留 samples/web/exported-traces/files/ 及其所有子目录。确认编号 0 对应的 main.js、web/exported-traces/manifest.json 和 web/main.js.map 三者都在，再调用工具。使用下面的工具参数，把两个占位符换成本次解压后的绝对路径。
+{"manifest_path":"<manifest.json绝对路径>","script_index":0,"generated_position":{"line":1,"column":0},"source_map":{"path":"<main.js.map绝对路径>","url":"https://example.test/main.js.map"}}
 请用 rea 的 trace_web_source_location 用我提供的脚本清单、配套 source map 本地路径和原始 URL，将编号 0 的脚本第 1 行、第 0 列映射回源码。
 ```
 
