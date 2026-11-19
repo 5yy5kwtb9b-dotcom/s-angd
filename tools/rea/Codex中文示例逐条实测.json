@@ -1,0 +1,3345 @@
+{
+  "日期": "2026-11-20",
+  "时区": "Asia/Shanghai",
+  "环境": "macOS arm64；REA 6.9.0；mac_pcap 使用 Wireshark 4.6.10。",
+  "统计": {
+    "工具": 123,
+    "REA": 120,
+    "Mac替代": 3,
+    "用途分类": 11,
+    "直接用": 15,
+    "先备文件或材料": 50,
+    "先备会话或前序结果": 58,
+    "调整示例": 12,
+    "自然语言测试轮次（含重测）": 149
+  },
+  "方法": "每一条在单独的 Codex turn 中以中文发送。只统计该 turn 里由模型实际发起、服务名与工具名相符的 MCP 调用。准备文件、连接测试对象、装入已有证据等准备动作单独进行。完整案例结论见样例结果；正常的零行或部分覆盖按实际返回记录。对话轮次指纹由聊天和轮次标识生成，用于区分复测。",
+  "工具": [
+    {
+      "序号": 1,
+      "分类": "抓包与网络记录",
+      "服务": "mac_pcap",
+      "工具": "inspect_packet_fields",
+      "使用条件": "直接用",
+      "所需准备": "字段前缀即可",
+      "采用示例": "请用 `mac_pcap` 的 `inspect_packet_fields` 查找以 frame.len 开头的 Wireshark 字段，告诉我哪个字段表示帧长。",
+      "样例结果": "frame.len 的标签是 Frame Length。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f88bfb880f9b7a70",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "1b8b9dd90ae9b5c073c8b598a30228b862f6c4744f81c16764fedc3379ca534f"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 2,
+      "分类": "抓包与网络记录",
+      "服务": "mac_pcap",
+      "工具": "inspect_packet_capture",
+      "使用条件": "先备文件或材料",
+      "所需准备": "本地未压缩抓包",
+      "采用示例": "请用 `mac_pcap` 的 `inspect_packet_capture` 读取我提供的《两帧样例.pcap》，按帧号列出 frame.number 和 frame.len。",
+      "样例结果": "两帧分别为 60、74 字节，帧号为 1、2。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "8e75b762e880824d",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "6bda7e203ff6abc102b20d6bb970aaaa035862b3ef36fbfa455689b3612f2db4"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 3,
+      "分类": "抓包与网络记录",
+      "服务": "mac_pcap",
+      "工具": "inspect_pcap_capture",
+      "使用条件": "先备文件或材料",
+      "所需准备": "本地未压缩抓包",
+      "采用示例": "请用 `mac_pcap` 的 `inspect_pcap_capture` 汇总我提供的《两帧样例.pcap》，告诉我包数、线上字节总数和持续时间。",
+      "样例结果": "2 个包，线上共 134 字节，时长 1 秒。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "02bd5be89215d5fc",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "623fd781b33c958fe44801094475118772e0365d17a044a607a30d54e2896434"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 4,
+      "分类": "抓包与网络记录",
+      "服务": "rea",
+      "工具": "inspect_pcap_client",
+      "使用条件": "直接用",
+      "所需准备": "本机已配置 Wireshark",
+      "采用示例": "请用 `rea` 的 `inspect_pcap_client` 检查这台 Mac 上 TShark 和 capinfos 的实际路径和版本。",
+      "样例结果": "TShark 和 capinfos 均报告 4.6.10，并给出实际路径。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "273a05a837d25b80",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_b805e5bad0da859a48437dfd850b0bcc5fd7385741c58bd94b1dd1823381a934"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 5,
+      "分类": "抓包与网络记录",
+      "服务": "rea",
+      "工具": "inspect_web_network_capture",
+      "使用条件": "先备文件或材料",
+      "所需准备": "HAR 文件",
+      "采用示例": "请用 `rea` 的 `inspect_web_network_capture` 读取我提供的 demo.har，按记录顺序列出前五个请求的方法、路径和响应状态码。",
+      "样例结果": "读到 1 条 GET /demo/report，状态码 200。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "9b85967398691608",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_2f32ebed4b514e0ffdfefac5fe73f0dcdabb82bb817825a64f53bcf091d1bb02"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 6,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "inspect_web_page",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已连接的本机 CDP 页面",
+      "采用示例": "请用 `rea` 的 `inspect_web_page` 检查我通过本机 CDP 连接并指定的测试页，告诉我页面标题和加载了哪些脚本。",
+      "样例结果": "读到测试页标题和 1 段内联脚本。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "719dcca067ec97fa",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_f95ff9c368ddba16c1651e6e86e5c4c8e124b65dbb3ee2c67ffd8a96ad045f5d"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 7,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "inspect_web_event_listeners",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "CDP 页面及存在的 CSS 选择器",
+      "采用示例": "请用 `rea` 的 `inspect_web_event_listeners` 查看指定 CDP 测试页上 #submit 按钮直接注册的监听器，列出事件类型及可定位的回调脚本。",
+      "样例结果": "按钮有 1 个 click 监听器，定位到内联脚本。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "b1b222734f83119a",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_74cd94d35fdf893b436e6cce4cd7b525185b9ad124dc6c6aa56c7bd0b8af627c"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 8,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "capture_web_screenshot",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "CDP 页面及目标 ID",
+      "采用示例": "请用 `rea` 的 `capture_web_screenshot` 为我指定的本机 CDP 测试页截一张当前可见区域的 PNG。",
+      "样例结果": "返回 8,820 字节的可见区域 PNG。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f5e019b926aaab79",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_4b8c0b7a16dca9d3bdb918bec430cb7514408424f83db67ef68b4a932974199f"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 9,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "compare_web_screenshots",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "两份带校验信息的 REA 截图对象",
+      "采用示例": "请用 `rea` 的 `compare_web_screenshots` 比较本对话中先后取得的两份 REA 网页截图，给出发生变化的像素占比。",
+      "样例结果": "用两份单像素合成截图比较，变化像素为 0%。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "bb5bdc2e67137aba",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_36a354b3b5f2f3640e02bccf7d93fa9521f5bc68b66ebeea86881abb76b86265"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 10,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "observe_web_session",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "CDP 页面及观测时段",
+      "采用示例": "请用 `rea` 的 `observe_web_session` 在我操作指定的本机 CDP 测试页时观察 10 秒，按顺序概括记录到的页面事件。",
+      "样例结果": "观察满 10 秒，静置期间记录到 0 条事件。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "dde66d5f12bd5254",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_e63bf41a7dd5019725b031c42d6bdbe879b35882de9ca267797d517fb1fec9e7"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 11,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "compare_web_captures",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "两份同类型的完整浏览器记录",
+      "采用示例": "请用 `rea` 的 `compare_web_captures` 比较我提供的改版前后两份同类 REA 浏览器场景记录，列出有变化的页面资源。",
+      "样例结果": "测试脚本 main.js 的常量由 1 改为 2。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "fbebc898a6b1eb7a",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_1a7084bae96aa3bb2890f5367d042e0444409dede91988a278dabd0af137551b"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "eff06eb2283e1358",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_1a7084bae96aa3bb2890f5367d042e0444409dede91988a278dabd0af137551b"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `compare_web_captures` 对比本对话中改版前、改版后的两份页面检查结果，列出发生变化的页面资源。",
+      "调整原因": "指明本次输入为两份同类型的浏览器场景记录。"
+    },
+    {
+      "序号": 12,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "discover_webmcp_tools",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "支持 WebMCP 的 CDP 页面",
+      "采用示例": "请用 `rea` 的 `discover_webmcp_tools` 查看我指定的本机 CDP 测试页声明了哪些 WebMCP 工具，给出名称和参数。",
+      "样例结果": "完成发现；此测试页声明了 0 个工具。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "1530fda2cc54630c",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_d6b7e0a22c20c5a9e10e3dfbf0baeafbc7ac6e6a11c8c4018836bc15618a1b68"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 13,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "inspect_playwright_trace",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Playwright 跟踪包",
+      "采用示例": "请用 `rea` 的 `inspect_playwright_trace` 读取我提供的 trace.zip，按记录顺序列出前十条网络事件。",
+      "样例结果": "从 trace.zip 读到 3 条网络事件。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "68f6ef826b2b111c",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_915e43e4aaf2157182c264a228a2c435864d930cc7b78567afc3681383ea78b9"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 14,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "inspect_electron_page",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "Electron 本地文件页、CDP 端点及目标 ID",
+      "采用示例": "请用 `rea` 的 `inspect_electron_page` 使用我提供的本机 CDP 端点和目标 ID，查看 Electron 测试应用中本地文件页的主框架 URL。",
+      "样例结果": "独立 Electron 测试页返回 index.html 的 file URL。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "c313cb08a8d5d667",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_381b1e5238e96d64da22027b46e19ee337536ed67873dd0c8476a00a1146070f"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 15,
+      "分类": "网页、浏览器与 Electron",
+      "服务": "rea",
+      "工具": "inspect_electron_fuses",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Electron 应用包或框架二进制",
+      "采用示例": "请用 `rea` 的 `inspect_electron_fuses` 检查我提供的 Demo.app，列出其中 Electron 功能开关的名称和当前值。",
+      "样例结果": "在 arm64 测试应用中读到 9 个开关，5 开、4 关。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "02fed64849abc931",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_35658a41500ee4ebd52bc533c5aefaede92a3b73956340391015bc13bbef6dad"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "479ba92e121c6612",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_bbfe5ce929e49d14eaa29b149c1f13a9467b7589879b573869127677d9fc2ba9"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 16,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "analyze_javascript_application",
+      "使用条件": "先备文件或材料",
+      "所需准备": "JavaScript 应用包或目录",
+      "采用示例": "请用 `rea` 的 `analyze_javascript_application` 分析我提供的 app.asar，列出入口模块及其直接导入的模块。",
+      "样例结果": "识别入口 renderer.js 及其直接依赖 profile.js。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "38527123401af955",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_2e795897ee28cd614ec62252de05264c5bf1ea4056751e31c798c0051948f97e"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 17,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "trace_application_feature",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "JavaScript 应用图及真实起点",
+      "采用示例": "请用 `rea` 的 `trace_application_feature` 在刚生成的 JavaScript 应用图中，以 renderer.js 模块为起点追踪它关联的功能。",
+      "样例结果": "从 renderer.js 追踪到 6 个节点、6 条关系。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "5c71588c86ea1773",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_617c880a59ee630657c56a877cdd74ee4e52240eb118d90d4f2008f59cb0e2fc"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 18,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "trace_javascript_semantics",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "应用图及选中的语义节点",
+      "采用示例": "请用 `rea` 的 `trace_javascript_semantics` 使用我选中的语义节点 ID，在本对话的 JavaScript 应用图中向后追溯它的值来自哪里。",
+      "样例结果": "追溯到 getProfile 返回点；样例没有更早的来源节点。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "ceac5af5cef62523",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_02a1c8b842923806826897429f89b36ea23147f765bd18e4760d67a8e3a6c11e"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_47044efab45c7c4a8b2d3e4fcd9afb2b596ddae5f97d6f908e616f3b8ea90d8a"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_7b6d54bb0066ff4df323b523141368692108904ad14454652d33998893b117e7"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_6f7f6f5f13c0a36211b2248d01d5673eefbd9a55d800e7d5b8abbef91b2af1e6"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 19,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "trace_web_module_imports",
+      "使用条件": "先备文件或材料",
+      "所需准备": "已导出的脚本及 manifest.json",
+      "采用示例": "请用 `rea` 的 `trace_web_module_imports` 读取我提供的脚本导出清单 manifest.json，列出编号 0 的脚本导入了哪些模块。",
+      "样例结果": "解析了编号 0 的 main.js，原生 ES 导入为 0 项。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "a8642d11d2515a78",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_4cc60347be62aaead4dc6bc2d549957dbe0d1ca90d955632f02db0644706f28c"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 20,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "trace_web_source_location",
+      "使用条件": "先备文件或材料",
+      "所需准备": "导出清单、映射文件及其原始 URL",
+      "采用示例": "请用 `rea` 的 `trace_web_source_location` 用我提供的脚本清单、配套 source map 本地路径和原始 URL，将编号 0 的脚本第 1 行、第 0 列映射回源码。",
+      "样例结果": "main.js 的第 1 行第 0 列映射到 main.ts 的同一位置。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "e7c595d8492c93fc",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_78e052c1696d0fd01c8496a99d862ee1300e8c3a14dc85e566dadd1cf16215a4"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "397cb1cee8a666d4",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_663914abef304448899a3e8ab50799f094ba19d6fb927438e6e02735653b69ee"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `trace_web_source_location` 使用我提供的导出清单和配套 app.js.map，把编号 0 的脚本第 1 行、第 0 列映射回源码位置。",
+      "调整原因": "补全 source map 的原始 URL。"
+    },
+    {
+      "序号": 21,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "export_web_scripts",
+      "使用条件": "先备文件或材料",
+      "所需准备": "已保存的网页记录及新输出目录",
+      "采用示例": "请用 `rea` 的 `export_web_scripts` 从我提供的页面检查记录 capture.json 导出已保存的脚本，将脚本和清单写入工作区新目录 scripts-export。",
+      "样例结果": "导出 22 字节的 main.js 和 manifest.json。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "3d1aba9bc207fb34",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_9bbcd234ef20afda16a5d0b847cec7b46c19f6cc533c472e080497133bb9afbc"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 22,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "compare_source_to_bundle",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "应用图及配套的历史源码图",
+      "采用示例": "请用 `rea` 的 `compare_source_to_bundle` 将我提供的历史源码图 HistoricalSourceGraph 与本对话的打包应用图比对，列出修改过的模块。",
+      "样例结果": "生成比对结果；样例中的两个历史模块均未匹配，修改状态未知。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "90bf5be189655b33",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_f49a0d34ad3b5e212cd6f57e6b3c84d6f53825d6ec1aa800700476d18264cde6"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 23,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "compare_application_versions",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "新旧两份完整应用图或摘要中的父证据 ID",
+      "采用示例": "请用 `rea` 的 `compare_application_versions` 使用本会话中新旧两份 JavaScript 分析摘要各自的 parent_evidence_id 对比应用图，分别列出新增和删除的模块。",
+      "样例结果": "两版模块节点新增 2 个、删除 2 个；按节点身份统计。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "65e9fe3dcfcba31c",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "7bc24087fc6c38aa",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_1a7b04c98b5c71f472fc1492065b2cdbf9a2b30dc5003f9c8d913b38e170024e"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_1a7b04c98b5c71f472fc1492065b2cdbf9a2b30dc5003f9c8d913b38e170024e"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `compare_application_versions` 比较本对话中旧版和新版的两份 JavaScript 应用图，分别列出新增和删除的模块。",
+      "调整原因": "区分完整应用图的父证据 ID 与摘要自身 ID。"
+    },
+    {
+      "序号": 24,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "compare_javascript_export_shapes",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "两份应用图及实际模块名、导出名",
+      "采用示例": "请用 `rea` 的 `compare_javascript_export_shapes` 使用新旧 JavaScript 分析摘要各自的 parent_evidence_id，比较两版 profile.js 中 getProfile 的静态返回属性。",
+      "样例结果": "getProfile 的返回值新增 count，保留 name。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "435db82f572dd82a",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "b0da3e5334f6fba7",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_82c4162a3e07d985c0e7be4f512096fb33839edbf1c0d333f88c24365f915d9a"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `compare_javascript_export_shapes` 对照本对话中新旧两份应用图，比较两版 profile.js 导出的 getProfile 返回哪些属性。",
+      "调整原因": "区分完整应用图的父证据 ID 与摘要自身 ID。"
+    },
+    {
+      "序号": 25,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "observe_javascript_runtime",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "本机 V8 Inspector 端点及目标 ID",
+      "采用示例": "请用 `rea` 的 `observe_javascript_runtime` 使用我提供的本机 V8 Inspector 端点和目标 ID，列出 Node 测试进程已载入的脚本。",
+      "样例结果": "观察到 Node 测试进程载入 83 个脚本。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "c2e2d48df005b684",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_869475ea12ad9c3703bee497b2c576a329d7ffd6f78705f6773ee6ad00c9f38d"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 26,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "reconcile_javascript_runtime",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "静态应用图及 V8 观测证据",
+      "采用示例": "请用 `rea` 的 `reconcile_javascript_runtime` 对齐本对话的 JavaScript 静态应用图和已有的 V8 观测记录，列出两边都能确认的脚本。",
+      "样例结果": "完成对齐；83 个运行时脚本中可确认与此静态图对应的有 0 个。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "09ead3b631a851a1",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_1c1775699c014b021fdc4e47ee2027bef292054e59b1a87080381c864eecf4ff"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 27,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "compare_static_and_observed_endpoints",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "应用图、HAR 分析证据及应用来源",
+      "采用示例": "请用 `rea` 的 `compare_static_and_observed_endpoints` 核对本对话的应用图与同一测试应用的 HAR 分析结果，列出代码声明且抓包中出现过的接口。",
+      "样例结果": "精确匹配 /demo/report；GET 由 HAR 确认。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "822b066f1ebe2844",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_594c18bf61795b03ddcad8ef204c6a38d3616b782fa59aeeb36a04bd021a26e7"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "25a9175883a2b4e6",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_526a267d1164009b7e8dd26ba335715b0446370eb06ecfe9b1ae58fc8a238371"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 28,
+      "分类": "JavaScript、源码映射与 API",
+      "服务": "rea",
+      "工具": "inspect_api_contract",
+      "使用条件": "先备文件或材料",
+      "所需准备": "OpenAPI 或 GraphQL 声明文件",
+      "采用示例": "请用 `rea` 的 `inspect_api_contract` 读取我提供的 openapi.json，按路径列出声明的 HTTP 方法。",
+      "样例结果": "从本地 OpenAPI 文件读到 GET /books。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "5b57e268098ee393",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_847d7534e9dc4fdccd993fdf6d5f384e2da11d3dcf439e92bb1a4f906b2312a9"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 29,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "inspect_android_package",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Android APK",
+      "采用示例": "请用 `rea` 的 `inspect_android_package` 查看我提供的 demo.apk，列出包名、目标 SDK 和声明的权限。",
+      "样例结果": "读到包名 de.rhab.helloworld、目标 SDK 25。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "e5b0297d9f0c4113",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_8da1ff91290f4ee7bac4ca91b82402760d7caca34e08397b41b5dd01bfb761b1"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 30,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "inspect_apk_signature",
+      "使用条件": "先备文件或材料",
+      "所需准备": "已签名 APK",
+      "采用示例": "请用 `rea` 的 `inspect_apk_signature` 读取我提供的 demo.apk，列出检测到的签名方案和签名证书指纹。",
+      "样例结果": "识别到 v1、v2 签名及相同的证书指纹。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "2e48400962ca2902",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_f55a27b91fd9cb5b85e830b76dbf0cfa1451dca8de72bf93e3c15e1ce9f5e5c8"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 31,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "search_android_classes",
+      "使用条件": "先备文件或材料",
+      "所需准备": "APK 及搜索字串",
+      "采用示例": "请用 `rea` 的 `search_android_classes` 在我提供的 demo.apk 中搜索名称含 Activity 的类，列出完整类名。",
+      "样例结果": "找到 24 个名称含 Activity 的类。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "ba81cea9c8a243df",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_3555a377946fb1dc97379e8b63d9915bafc6c6a107b011695586c30678684ebc"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 32,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "inspect_android_class",
+      "使用条件": "先备文件或材料",
+      "所需准备": "APK 及真实完整类名",
+      "采用示例": "请用 `rea` 的 `inspect_android_class` 在我提供的 APK 里，读取刚才搜索结果中选定的完整类名，列出该类声明的字段和方法。",
+      "样例结果": "MainActivity 有 4 个方法，声明的字段为 0 个。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "3c824e7d84f19e57",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "2f1250585c01f5bc",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_6f715e235081cd40d31f36a2c5fa2e9867ce475e51a3a168873a943793d51626"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `inspect_android_class` 打开我提供的 demo.apk 中的 example.MainActivity，列出它声明的字段与方法。",
+      "调整原因": "改为使用 APK 中实际返回的完整类名。"
+    },
+    {
+      "序号": 33,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "inspect_apktool_client",
+      "使用条件": "直接用",
+      "所需准备": "本机已配置 Apktool",
+      "采用示例": "请用 `rea` 的 `inspect_apktool_client` 检查这台 Mac 实际使用的 Apktool 启动命令和版本。",
+      "样例结果": "读到启动命令，版本为 3.0.3。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "968750b984524396",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_8a33e1623b683f13c2ee10841de11b74462c23a3c78ee05cf35fde8ef1ad6957"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 34,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "decode_android_resources",
+      "使用条件": "先备文件或材料",
+      "所需准备": "含资源的 APK",
+      "采用示例": "请用 `rea` 的 `decode_android_resources` 解码我提供的 demo.apk，列出实际包含的语言资源，并从每种语言中举一个字符串示例。",
+      "样例结果": "识别 81 个限定语言资源表和 1 个默认表，返回了字符串。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f717faeafadaa405",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_e0094e1b07c0669864ba73de8a6b56f23efb5e4269874bc8f61b655cf475b0d2"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_6985c64b34e97c1c15e7f5689e5805c4482e75c6b3d0b290c86c94f618ab8287"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_6e920d192157f25d8f913e8de67ad6e4754bc4d96a1ec671d86fe4fa5aaa61aa"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_6bdd9cd7a1b7f43903d14f26f201766c4c84582b4c3a754b70eaa9a588d6d790"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_0e732a41eb61701af373b607bad64f1eb9a49ef5cf30a6113c58f91b4978f069"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_489a5c277192a2ef90cb2ad124d12d3e2bc9644826123a4a658c40a6fa1694d1"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 35,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "inspect_adb_client",
+      "使用条件": "直接用",
+      "所需准备": "本机已配置 ADB",
+      "采用示例": "请用 `rea` 的 `inspect_adb_client` 告诉我本机 ADB 客户端的安装位置和版本。",
+      "样例结果": "读到客户端路径及版本 37.0.1。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "a58bde7aca0d3021",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_a1816d9a3d7b43e8a7e09b1f10ecc5636500e5b7fe685bc5992691d3f161d34f"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 36,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "list_adb_devices",
+      "使用条件": "直接用",
+      "所需准备": "本机 ADB 设备列表",
+      "采用示例": "请用 `rea` 的 `list_adb_devices` 只列出 ADB 当前可见的设备和连接状态，若列表为空就告诉我。",
+      "样例结果": "返回空设备列表；本次仅查客户端和列表。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f6e0908b94578cb6",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_6a97be5368f6cb40b85be6d6a699fb9f333db4af95b5c0f16603507a16296366"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 37,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "project_android_application_graph",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "APK 的嵌套清单证据",
+      "采用示例": "请用 `rea` 的 `project_android_application_graph` 根据本对话里 demo.apk 的嵌套文件清单证据，列出组件路径及运行时线索。",
+      "样例结果": "识别到 AndroidManifest.xml；该样例没有运行时线索。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "b7d29ce6584eb46b",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_21c81112e64e297fa69eb64a666fce475aa555729c4480f4d88627ef7070a7fb"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 38,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "identify_flutter_build",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Flutter APK",
+      "采用示例": "请用 `rea` 的 `identify_flutter_build` 检查我提供的 Flutter 安装包 demo.apk，列出其中的 ABI 和可识别的 Dart 快照标识。",
+      "样例结果": "识别出 arm64-v8a 和 Dart 快照标识。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "13a764d6ce2a5df8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_f8f09148e4ea9c475a2dea43d5113019a376bc70e820285f151e5a251fddb54f"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 39,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "inspect_dart_aot",
+      "使用条件": "先备文件或材料",
+      "所需准备": "含受支持旧版 AOT 快照的 APK 及 ABI",
+      "采用示例": "请用 `rea` 的 `inspect_dart_aot` 读取我提供的旧版 Flutter 测试 APK 中 arm64-v8a 的 Dart AOT 快照，概括可识别的结构。",
+      "样例结果": "识别 4 个 VM／isolate 数据或指令区域。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "273c8e4c218f7529",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_c9d16694e2560aa5d465c18ef216dd2c9545e7621abd5cc3d4065ad2189336e5"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 40,
+      "分类": "Android、ADB、Flutter 与鸿蒙",
+      "服务": "rea",
+      "工具": "project_harmony_application_graph",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "鸿蒙 App Pack 的嵌套清单证据",
+      "采用示例": "请用 `rea` 的 `project_harmony_application_graph` 根据本对话里 demo.app 鸿蒙 App Pack 的嵌套清单证据，列出子包名称及路径。",
+      "样例结果": "在实际 App Pack 内找到子包 modules/entry.hap。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "3e20f3cbb2424b29",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_33d85d0e34e81f95c71c5dfb9c4ad7372cabe3030579e876226d23a85c6ad8d8"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "203f382f66c1a32a",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_c877d81277683daf1e6fa19270e441fa466289b391ffb81b196aac7fc28e0cb8"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 41,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "project_apple_application_graph",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "IPA 等 Apple 包的嵌套清单证据",
+      "采用示例": "请用 `rea` 的 `project_apple_application_graph` 根据本对话里 Demo.ipa 的嵌套清单证据，列出主应用和内嵌扩展所在的目录。",
+      "样例结果": "定位到 Payload/Fixture.app；样例没有内嵌扩展。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "ba3015791169fdba",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_a95fcf9711e2549f4c2783ecfd13ccb53d363c4c4618e4e14f408ada1f827601"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 42,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "open_bundle_resources",
+      "使用条件": "先备文件或材料",
+      "所需准备": "本地 Apple 应用包",
+      "采用示例": "请用 `rea` 的 `open_bundle_resources` 以只读方式打开我提供的 Demo.app 资源目录，告诉我当前选中了哪个应用包。",
+      "样例结果": "成功以只读资源模式选中 Demo.app。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "2d84089748bd8d40",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "a134428189eb5b0020a9f9340d4091d891275d6da6be566e861d047f0140f956"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 43,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "decode_interface_builder",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的应用资源包及编译界面资源",
+      "采用示例": "请用 `rea` 的 `decode_interface_builder` 查看当前已打开的 Demo.app 中编译后的 storyboard，列出可识别的界面层级和控件连接。",
+      "样例结果": "识别 NSView 和名为 Demo 的 NSButton；无 outlet 或 action 连线。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "99ad9fe70cf37a48",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_733883a6f5f473c93a9b6dc9ccab3ce2d6231f97cf548ab6d1fd4e15f4ce4a26"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 44,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "inspect_asset_catalog",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "应用资源会话及 Assets.car",
+      "采用示例": "请用 `rea` 的 `inspect_asset_catalog` 查看当前已打开的 Demo.app 的资源目录，从第一项起列出最多十个资源条目。",
+      "样例结果": "资源目录共 276 条记录，返回了前 10 条。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "291bdb114bf77cd4",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_88f7379ea480b0dee295b91ebb70133a2a019e4f0a538ddb7899cdfad0879970"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 45,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "inspect_keyed_archive",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "应用资源会话及包内键值归档相对路径",
+      "采用示例": "请用 `rea` 的 `inspect_keyed_archive` 读取当前 Demo.app 中的 Contents/Resources/Model.plist 键值归档，列出根对象及其引用的类。",
+      "样例结果": "根对象为 NSArray，两个元素引用同一对象。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "cea319b0881037f9",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_db67e41ba798c128029d6741737a8d41d1a3fc7c5a19787906275227f3e69cfa"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 46,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "inspect_plist",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "应用资源会话及 Info.plist",
+      "采用示例": "请用 `rea` 的 `inspect_plist` 读取当前 Demo.app 的 Contents/Info.plist，告诉我 CFBundleIdentifier 和 CFBundleVersion。",
+      "样例结果": "读到应用标识 dev.example.rea-smoke 和构建版本 1。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "ba22247850786e08",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_66f2a348ce4de26ae812b13652df4fa62de5632721dda66120058fb1f04395e3"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 47,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "inspect_macho",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已成功打开 Mach-O 目标",
+      "采用示例": "请用 `rea` 的 `inspect_macho` 在已用 open_binary 成功打开的 Mach-O 样例中，列出切片架构和加载命令。",
+      "样例结果": "读到 arm64、x86_64 两个切片，arm64 有 16 条加载命令。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "cc903df052d00620",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "target_unavailable"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f8b67d0004dd0d9f",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_0d4a0e716d8368a2d5363232926b71ba82076ffe006d4c4436a27515889a01c9"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `inspect_macho` 查看当前打开的 Mach-O 测试文件，列出所选切片的架构和加载命令。",
+      "调整原因": "明确同一会话中已成功打开目标；首次夹具因多余的 architecture 参数未打开。"
+    },
+    {
+      "序号": 48,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "inspect_signature",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已成功打开 Mach-O 目标",
+      "采用示例": "请用 `rea` 的 `inspect_signature` 读取刚成功打开的 Mach-O 样例，列出它的签名身份和声明的授权项。",
+      "样例结果": "arm64 切片签名标识为 demo，无授权项；x86_64 切片未签名。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "b8ab37079e5be405",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "target_unavailable"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "4fa11073fc1ec0f0",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_8fc2fb9e3303931334c40a49ed3ed3d5d658a4d4a343d4ed88fe6e66cd0ab837"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `inspect_signature` 查看当前打开的 Mach-O 测试文件，告诉我签名身份和已声明的授权项。",
+      "调整原因": "明确同一会话中已成功打开目标；首次受前置打开失败影响。"
+    },
+    {
+      "序号": 49,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "inspect_apple_ips",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Apple IPS 崩溃报告",
+      "采用示例": "请用 `rea` 的 `inspect_apple_ips` 读取我提供的 Demo.ips 崩溃报告，找出异常类型和触发崩溃的线程。",
+      "样例结果": "报告为 EXC_BAD_ACCESS（SIGSEGV），触发者为线程 0。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "a390823746201a06",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_27781c50f7b42ea48578d95c543f564461324bd814df556157458a6b60a4760e"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 50,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "demangle_swift",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的 Mach-O 目标及 Swift 符号",
+      "采用示例": "请用 `rea` 的 `demangle_swift` 在已打开的 Mach-O 测试目标中，把 Swift 符号 $s4Test3fooyyF 还原成可读名称。",
+      "样例结果": "还原为 Test.foo() -> ()。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "6238889e4d46c45a",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "target_unavailable"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "2d2bfa01587b5376",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_23b860172f9ca51050434294d2744d1788db12557e363bc411397255db51ba00"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `demangle_swift` 把 Swift 符号 $s4Test3fooyyF 还原成可读名称。",
+      "调整原因": "补明 Swift 符号还原需要先打开合适的 Mach-O 目标。"
+    },
+    {
+      "序号": 51,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "analyze_swift_types",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的 Swift 二进制",
+      "采用示例": "请用 `rea` 的 `analyze_swift_types` 在当前打开的 Swift 测试程序里查找名称含 Account 的类。",
+      "样例结果": "Swift 样例匹配到 main.AccountSample 及 6 个过程符号。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "c71a67d5d87f95a1",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_75cb3d6390f06d4fee9551314a3df7a2e3dfe8c32b9e91c5cf2a1b723f9bd4ca"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "5d7692e45e077a34",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_547d3fdacaf37c9336e96001f065ef11563531f99efd99ce3cd7746d91d1ea4a"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 52,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "get_objc_classes",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的 Objective-C 二进制",
+      "采用示例": "请用 `rea` 的 `get_objc_classes` 在当前打开的测试程序中列出名称含 ViewController 的 Objective-C 类。",
+      "样例结果": "Objective-C 类列表识别到 DemoViewController。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f5f839615deb05da",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_ec365a6847878c277f2ffea4e5842710c55a80750dd7a2b0d6a7cdcc83da9c7a"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "0f70121a14f3e6d9",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_9a1cd0211ae6f13c929f87bc9bceafd75694fedc65a5b9303e7aec0214a1cda2"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 53,
+      "分类": "Apple 应用、Swift 与 Objective-C",
+      "服务": "rea",
+      "工具": "get_objc_protocols",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的 Objective-C 二进制",
+      "采用示例": "请用 `rea` 的 `get_objc_protocols` 列出当前分析后端在已打开的测试程序中识别到的 Objective-C 协议；如果列表为空，就报告零项。",
+      "样例结果": "混编样例返回 0 个协议；本项只反映后端可识别的范围。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "bfb38e2d25e12f7f",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_3df412f9976198d602e9ad1ea7a2be8a03ec770bf5649b0eb33613aaaa63a626"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "f79c5d8d7371663a",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_49fa128ef10c47256e34c93baa673395e3a8dbf3e435f781e337014acedcb7c1"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "8bdbfa0221e05327",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_49fa128ef10c47256e34c93baa673395e3a8dbf3e435f781e337014acedcb7c1"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `get_objc_protocols` 列出当前打开的测试程序声明的 Objective-C 协议名称。",
+      "调整原因": "说明列出的范围取决于当前后端识别到的协议。"
+    },
+    {
+      "序号": 54,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "open_binary",
+      "使用条件": "先备文件或材料",
+      "所需准备": "本地二进制及可用 Ghidra",
+      "采用示例": "请用 `rea` 的 `open_binary` 用 Ghidra 打开我提供的 demo 原生测试程序，并报告识别到的文件格式。",
+      "样例结果": "成功打开 ARM64 Mach-O 测试程序。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "b2ec5f8d8c041e39",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "85a7aca0b3b436099fd5a25150ba074db6dc38019d3d2b4639318a55b5b1af9a"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 55,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "binary_session",
+      "使用条件": "直接用",
+      "所需准备": "查询当前默认会话",
+      "采用示例": "请用 `rea` 的 `binary_session` 告诉我当前 REA 会话选中哪个文件、使用哪个分析后端。",
+      "样例结果": "新对话返回 open=false；打开文件后读到 Ghidra 12.1.4。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "61f4098c89fe94b9",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "fd2f93e819d8cfbd3d3154f255e3241d68be4b94641c661a4086851049b67000"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "ac651c1ab6e52e50",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "9faf8c6849e202039218a4cc322521a8e74f87e3e6eb9bf74938f2ddca4310d1"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 56,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "close_binary",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的测试目标",
+      "采用示例": "请用 `rea` 的 `close_binary` 关闭本对话当前打开的测试二进制，并报告关闭结果。",
+      "样例结果": "成功关闭本轮的 demo 测试目标。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "8899c462447664cc",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "ff9c534d8448cd26fb0c3076ac8e5b6fcf4d3537e8d4a5249e4bec6d56664582"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 57,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "binary_overview",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已绑定的分析文档",
+      "采用示例": "请用 `rea` 的 `binary_overview` 汇总当前打开的测试程序，告诉我后端已识别多少个函数和字符串。",
+      "样例结果": "Ghidra 报告 2 个函数、14 个字符串。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "52936f7937e8790e",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_03e5cc8def72b9b8af5d3cdbb9ca07f6163d0d825bc48290a0705407449962c5"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_29b206e78adadb98ef927d544da1d5119fddf58395f5d6fd3cc7ed15dcdd8625"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 58,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "list_architectures",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已成功打开通用 Mach-O",
+      "采用示例": "请用 `rea` 的 `list_architectures` 在刚成功打开的通用 Mach-O 文件中枚举架构，逐项给出工具识别的架构名。",
+      "样例结果": "返回 x86_64 和 arm64。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "e189e471c9449261",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "target_unavailable"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "be7e25cbee6d903a",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_4da658968e74fc5946ab96c1ecb3051c608f38b47342844d548fba8fb9fd92a4"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `list_architectures` 检查当前打开的通用 Mach-O 测试文件，列出其中包含的处理器架构。",
+      "调整原因": "明确先成功打开通用 Mach-O；首次受前置打开失败影响。"
+    },
+    {
+      "序号": 59,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "list_documents",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的分析后端",
+      "采用示例": "请用 `rea` 的 `list_documents` 列出当前分析后端可见的文档，并告诉我哪些对应刚打开的测试程序。",
+      "样例结果": "列出 1 个与测试程序对应的文档。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "41342dda77886291",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_f2a3562fa642b3f5854e2ed7fa1fc48fcab4e2616291ab7b2382aecba68ae3e4"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 60,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "list_segments",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的二进制",
+      "采用示例": "请用 `rea` 的 `list_segments` 列出当前测试程序的内存段名称以及各段的起止地址。",
+      "样例结果": "列出 5 个内存块，区间含起始地址、不含结束地址。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "1b8f93a20a5aac9d",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_b9a9e454a876eda13fdad24f574f9bcc852c755f8185b856387cc28e022060a7"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 61,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "list_procedures",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的二进制",
+      "采用示例": "请用 `rea` 的 `list_procedures` 列出当前测试程序中已识别的函数，先展示前十个名称和地址。",
+      "样例结果": "列出 2 个函数及其入口地址。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "782ba05c96ae7ca2",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_c4c42c433d7d199d64a80bc753f3baae5bb38bda2eb1a4508095ad89a6a23558"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 62,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "search_procedures",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的二进制",
+      "采用示例": "请用 `rea` 的 `search_procedures` 在当前测试程序中按字面、不区分大小写搜索 main，列出匹配的函数。",
+      "样例结果": "搜索 main 命中 1 个函数；匹配其别名 _main。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f3fb544abfe6fc9c",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_d9ed898307dfe7c6f1b5d4cb47b27794f04935c37c48c9aeb7dfacb17a6d3776"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 63,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "list_names",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的二进制",
+      "采用示例": "请用 `rea` 的 `list_names` 列出当前测试程序的已命名符号，先展示十组地址和名称。",
+      "样例结果": "返回 13 个已命名符号，展示前 10 组。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "00c2883a31561bea",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_4040b6e433de310c3fef956058375cac97be82040b9ad20d35887420fff56849"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 64,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "address_name",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的二进制及已知函数地址",
+      "采用示例": "请用 `rea` 的 `address_name` 查询上一条函数列表中第一个函数的起始地址，告诉我它的符号名。",
+      "样例结果": "查到首个函数的名称 _demo_value。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "d73bd2817cb48b21",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_c2b8574e06d3e1549747e4b7cce98608074554c2541a04d7ccb403314c265b03"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 65,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "inspect_address_context",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的二进制及已知地址",
+      "采用示例": "请用 `rea` 的 `inspect_address_context` 检查上一条函数列表中第一个函数的起始地址，给出所属函数和可读取的注释。",
+      "样例结果": "确认所属函数；该 Ghidra 后端的注释字段不可用。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "ee99334fa0001df8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "e2a8720648564cb835bede8fe9a1768490c4d04d14b380d9fd2a179fba2b55f7"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 66,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "set_address_name",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "可编辑的测试会话及选定地址",
+      "采用示例": "请用 `rea` 的 `set_address_name` 将我选中的测试函数起始地址重命名为 demo_entry，并告诉我改动的地址。",
+      "样例结果": "单个函数在测试会话中成功改名为 demo_entry。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "68e391591ec2e9d0",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_dbfb93a23b0b3d021ce7b31faab2dacbb8604c984989ddfd954394b2cb79b444"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 67,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "set_addresses_names",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "可编辑的测试会话及两个不同地址",
+      "采用示例": "请用 `rea` 的 `set_addresses_names` 将我依次选中的两个不同测试函数地址分别命名为 demo_load 和 demo_save。",
+      "样例结果": "成功将两处改名为 demo_load、demo_save。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "109045c814629ae5",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_302c9449780ace23ef948a61176dc0000916bdcf4bac2fb2a518a6d41e428068"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 68,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "list_cutter_sessions",
+      "使用条件": "直接用",
+      "所需准备": "查询本机桥接会话",
+      "采用示例": "请用 `rea` 的 `list_cutter_sessions` 列出这台 Mac 当前可发现的 Cutter 桥接会话，没有会话就报告空列表。",
+      "样例结果": "发现 0 个 Cutter 会话，正常返回空列表。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "80bbaf1fbe12f3fe",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "9ec2e5be60d1575cef9da00fc88db652a15fb3270c734a36f913975010809957"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 69,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "inspect_native_exports",
+      "使用条件": "先备文件或材料",
+      "所需准备": "ELF 共享库或 PE 文件",
+      "采用示例": "请用 `rea` 的 `inspect_native_exports` 从我提供的 libdemo.so 列出已定义的动态导出符号，先显示前十个。",
+      "样例结果": "从 ELF 样例读到导出函数 demo_add。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "02164c9bf432f270",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_0f65e1f4f3b849b76147cff9365e19a0a0b3ba558f261c9092aa5a8f631d5f6c"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "6ea1f85c695303b6",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_3837e31cdeac8bfe2c3b190923a53e4620b72851cfd8bbfd17c56c619a08e840"
+            }
+          ],
+          "本轮收到有效返回": true
+        }
+      ]
+    },
+    {
+      "序号": 70,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "inspect_binary_hardening",
+      "使用条件": "先备文件或材料",
+      "所需准备": "ELF、PE 或 Mach-O 文件",
+      "采用示例": "请用 `rea` 的 `inspect_binary_hardening` 检查我提供的 demo ELF 文件，列出它声明的 PIE、NX 和 RELRO 状态。",
+      "样例结果": "ELF 样例的 PIE 和 RELRO 未启用；NX 缺少声明。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "00192f7715434c49",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_c0faa52fd2e3d1ce6f31a7faa2f39a6942473324d61326aa5654f94c7c148051"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 71,
+      "分类": "原生二进制、符号与分析会话",
+      "服务": "rea",
+      "工具": "inspect_byte_entropy",
+      "使用条件": "先备文件或材料",
+      "所需准备": "本地二进制文件",
+      "采用示例": "请用 `rea` 的 `inspect_byte_entropy` 计算我提供的 sample.bin 的整体字节熵，并按 4096 字节分块展示分布。",
+      "样例结果": "446 字节样例的整体熵为 6.5213 比特/字节。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "1bdcb5820c35dd8c",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_44c10f208e3945a709e78677b7af7cd47183be277a1729e5171523cec25f2939"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 72,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_pe_imports",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Windows PE 文件",
+      "采用示例": "请用 `rea` 的 `inspect_pe_imports` 读取我提供的 demo.exe，按 DLL 分组列出它导入的函数。",
+      "样例结果": "样例无标准导入或延迟导入，返回 0 个 DLL。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "6bd377526a58cebb",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_d8e4d74aa999da1592854e8ddac629d11bcaee3284ceea7241b804b0b3ecf760"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 73,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_pe_resources",
+      "使用条件": "先备文件或材料",
+      "所需准备": "含资源的 PE 文件",
+      "采用示例": "请用 `rea` 的 `inspect_pe_resources` 查看我提供的 demo.exe 的资源树，列出资源类型和对应的语言编号。",
+      "样例结果": "找到 3 种资源、5 个条目，含语言编号 1033 和 1041。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "de2cf27d5f304748",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_fa432653c809663175e756cfdfa9e6236c10d20f73d70343e7c069577d6dab5b"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 74,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_pe_certificates",
+      "使用条件": "先备文件或材料",
+      "所需准备": "含证书表的 PE 文件",
+      "采用示例": "请用 `rea` 的 `inspect_pe_certificates` 读取我提供的 demo.exe 的证书表，列出其中记录的签名者和摘要算法。",
+      "样例结果": "读到 1 个测试签名者和 SHA-256 摘要算法。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "bf0ddc1a2ce38d38",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_f41e8dfedf428f51bcfce341e4a3b369d3f34e256282c89d8ca2a977f3ef922a"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 75,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_windows_shortcut",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Windows 快捷方式",
+      "采用示例": "请用 `rea` 的 `inspect_windows_shortcut` 静态读取我提供的 Demo.lnk，告诉我它记录的目标路径和工作目录。",
+      "样例结果": "读到相对目标 readme.txt 和工作目录。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f6a13bd5bc20fa03",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_234b8a4a820a83ee5d23e0094a8b767fcff94892773370e97ced8981e4340776"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 76,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_ntfs_journal",
+      "使用条件": "先备文件或材料",
+      "所需准备": "同一 NTFS 卷的 MFT 和 USN 日志",
+      "采用示例": "请用 `rea` 的 `inspect_ntfs_journal` 使用我提供的同一卷的 MFT 和 USN 日志文件，列出最先读到的十条变更记录。",
+      "样例结果": "按源顺序读取 3 条变更记录。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "7eaee84113bd4d4e",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_4181abf5161d2a60b5d2cf04d262716acafb36fc5502edcc5537bbb2018ed517"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 77,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_elf_notes",
+      "使用条件": "先备文件或材料",
+      "所需准备": "ELF 文件",
+      "采用示例": "请用 `rea` 的 `inspect_elf_notes` 读取我提供的 demo ELF 文件，列出注记的所有者和类型，并标出可识别的构建 ID。",
+      "样例结果": "读取 2 条去重注记，包含 GNU 构建 ID。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "25ad4fd832ff0520",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_3a854f3ad5b2faa061a9363917fc859e01c95daea97fe49a3881304e84ebe9a1"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 78,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_kernel_build_config",
+      "使用条件": "先备文件或材料",
+      "所需准备": "含内嵌内核配置的映像",
+      "采用示例": "请用 `rea` 的 `inspect_kernel_build_config` 查看我提供的 vmlinux 中嵌入的配置，告诉我 CONFIG_SMP 的记录值。",
+      "样例结果": "读到 9 项配置，样例未声明 CONFIG_SMP。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "3bb45c4218a022a8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_735e7d9c1015c612dc531c12ddf48668a2829d031690feb5ba271e62d50d2afa"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 79,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_kernel_module",
+      "使用条件": "先备文件或材料",
+      "所需准备": "未压缩的内核模块",
+      "采用示例": "请用 `rea` 的 `inspect_kernel_module` 从我提供的 demo.ko 中读取模块名称、许可证以及声明的依赖。",
+      "样例结果": "模块名 demo，许可证 GPL，依赖字段为空。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "0cb9220e06e78918",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_9954d8fe77d2ced3129ccc4b95eef2c9e6c846980411295e6ca45f49189148ef"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 80,
+      "分类": "Windows、Linux 与设备文件",
+      "服务": "rea",
+      "工具": "inspect_devicetree",
+      "使用条件": "先备文件或材料",
+      "所需准备": "设备树 DTB",
+      "采用示例": "请用 `rea` 的 `inspect_devicetree` 读取我提供的 board.dtb，列出根节点下的设备节点及其 compatible 属性。",
+      "样例结果": "读到根节点下 4 个设备节点；compatible 仅见于根节点。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "b59dac3c698abfd6",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_79f6fe2af06100e22d6b911c1f385f1ce9abf1704a3a48aab4a20ac62ff24600"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 81,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_go_binary",
+      "使用条件": "先备文件或材料",
+      "所需准备": "包含构建信息的 Go 程序",
+      "采用示例": "请用 `rea` 的 `inspect_go_binary` 检查我提供的 Go 测试程序，列出编译器版本、主模块和依赖模块。",
+      "样例结果": "读到 go1.26.0、主模块 example.com/tool 和 1 项依赖。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "a262737b2e09edea",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_0865164a38d75e01c81a7ff028efc146a189382aa763d36580231f5c542ab193"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 82,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_rust_binary",
+      "使用条件": "先备文件或材料",
+      "所需准备": "含 cargo-auditable 元数据的 Rust 程序",
+      "采用示例": "请用 `rea` 的 `inspect_rust_binary` 从我提供的含 cargo-auditable 元数据的 Rust 测试程序中列出依赖包及版本。",
+      "样例结果": "读到依赖 itoa，版本 1.0.18。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "aa4754126a55f7f8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_ea3ca20e07e788257c340816f7c5432c6d39289c07098767fbbeedab21cb5ab1"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 83,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_erlang_beam",
+      "使用条件": "先备文件或材料",
+      "所需准备": "Erlang BEAM 文件",
+      "采用示例": "请用 `rea` 的 `inspect_erlang_beam` 读取我提供的 demo.beam，列出导出函数的名称及参数个数。",
+      "样例结果": "导出 3 项，包括 start/0、module_info/0 和 module_info/1。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f25d4e08a2ec2039",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_f226a5b5d6d9745b6b6d9ba31c6578e0b77a834fa2b4a040c435b629de3bbc62"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 84,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_python_pyc",
+      "使用条件": "先备文件或材料",
+      "所需准备": "支持版本的 CPython 字节码",
+      "采用示例": "请用 `rea` 的 `inspect_python_pyc` 查看我提供的 demo.pyc，告诉我其对应的 CPython 版本及记录的代码对象名称。",
+      "样例结果": "识别 CPython 3.12 和两个代码对象。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "8e2e38ce4f1f1787",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_1ccb5c65371ae75da48184c37e5dd37564226d5cf5794d739c791dbf9283fa0f"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 85,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_v8_code_cache",
+      "使用条件": "先备文件或材料",
+      "所需准备": "本地 V8 缓存文件",
+      "采用示例": "请用 `rea` 的 `inspect_v8_code_cache` 读取我提供的 demo.jsc，列出可识别的 V8 缓存文件头字段。",
+      "样例结果": "识别 32 字节缓存头并返回字段。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "3e9619b03ef483b0",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_d655e102d519fb83d50bcff7a32196467a479c7efdc32c3471494df266f44757"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 86,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_managed_artifact",
+      "使用条件": "先备文件或材料",
+      "所需准备": ".NET 托管程序集",
+      "采用示例": "请用 `rea` 的 `inspect_managed_artifact` 读取我提供的 Demo.dll，告诉我程序集名称、版本和托管元数据概况。",
+      "样例结果": "程序集为 Fixture.Managed，版本 1.2.3.4。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "eb1251fe07f2e4cd",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_3d477b7258090a3abf88836c20a3630cbe92b0220b9a7a7a451c5e372a009d65"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 87,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "compare_managed_members",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "新旧两份托管成员证据",
+      "采用示例": "请用 `rea` 的 `compare_managed_members` 比较我提供的新旧两份 REA 托管成员证据，列出能够匹配的成员及其签名变化。",
+      "样例结果": "精确匹配 2 个成员，样例签名未变。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "3c8b6550e9fad7cd",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_110af092f15b2e5218dccafd9b90e81792fe351a1d5e53f851941d4d58803fd3"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 88,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_managed_native_boundaries",
+      "使用条件": "先备文件或材料",
+      "所需准备": "含 P/Invoke 声明的 .NET 程序集",
+      "采用示例": "请用 `rea` 的 `inspect_managed_native_boundaries` 从我提供的 Demo.dll 列出 P/Invoke 声明及各自引用的原生库。",
+      "样例结果": "Main 从 libdemo.dylib 导入 demo_value。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "df0774cccf9285a3",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_6fa1abc85e633e637c350c481f7e334b6e85a182c22096eea8acf3efc3178ed0"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "15d55812d0077fea",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_0d59039f188c8e3b4c1a02bf469fe83c50b710c562ede822e63cc1d972c9d44e"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 89,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "verify_managed_native_boundaries",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "P/Invoke 证据及匹配动态库的 Mach-O 导出证据",
+      "采用示例": "请用 `rea` 的 `verify_managed_native_boundaries` 用本对话的 P/Invoke 声明证据和对应动态库的 inspect_macho 导出证据，逐项核对入口名并说明匹配依据。",
+      "样例结果": "确认 demo_value 与 _demo_value 精确匹配。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "6ec46a86ee4dda16",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_63b555dd587869ed73f305c8bbadc734808ee674e229e1f83e4b188d55f3dad2"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "9a27f689eb51a2a8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_ff77a538a56d3eb7ff60b36528ad8ee390e2fc7e885c576e986c854edcdabb7a"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `verify_managed_native_boundaries` 用本对话的 P/Invoke 声明证据和对应 DLL 的原生导出证据，核对哪些入口名能匹配。",
+      "调整原因": "改用此工作流接受的 inspect_macho 导出证据，实测取得精确入口名匹配。"
+    },
+    {
+      "序号": 90,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "project_managed_application_graph",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "REA 托管成员证据",
+      "采用示例": "请用 `rea` 的 `project_managed_application_graph` 使用我提供的 REA 托管成员证据生成 .NET 应用关系图，列出其中可识别的类型与成员。",
+      "样例结果": "生成 5 个节点和 5 条边，识别类型、方法及字段。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "cd2f0e788adf9627",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_c47b36bb339c59771069a16889f2186123586affae28d86d9fa21dd6b08cd5a0"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 91,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_il2cpp_metadata",
+      "使用条件": "先备文件或材料",
+      "所需准备": "IL2CPP 元数据文件",
+      "采用示例": "请用 `rea` 的 `inspect_il2cpp_metadata` 读取我提供的 Unity 测试项目的 global-metadata.dat，列出元数据版本和可识别的表。",
+      "样例结果": "版本 39，识别 31 个表或数据区段。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "0f7df77079085a01",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_2c77473f3b8125a0522f858aa56f286aa70de82dc894076df3d7df8300b48742"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_e36237aef950d51ad86e15e4ceee5795d08702c70961f04a62ba154a25ec21ab"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 92,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_wasm_artifact",
+      "使用条件": "先备文件或材料",
+      "所需准备": "WebAssembly 模块",
+      "采用示例": "请用 `rea` 的 `inspect_wasm_artifact` 验证我提供的 demo.wasm，列出模块导入和导出的名称。",
+      "样例结果": "通过验证，导出 hello，导入 0 项。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "d6aebc06c5f8fe41",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_aaf5feac06de07bf30344a6d9f0f9b38b9067319ca1f8a7f78077ee69a936658"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "28b4dc7d52cad3f8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_e785c2184ba318cc942d81633ce5e4968c0fd6cedb108ab94852499f382424f2"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 93,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "compare_wasm_interfaces",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "两份 WASM 检查证据",
+      "采用示例": "请用 `rea` 的 `compare_wasm_interfaces` 比较本对话中两份 WASM 模块检查结果，列出新增、移除或签名变化的导出项。",
+      "样例结果": "新版新增 greet，移除 hello。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "a63c791e9583a347",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_d893f3f7a328c1298e8926bd1106664a256f8c2ad0b53509eae141f5587fc8d9"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "96644db593c3d2b8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_a2ea0b7cf29fd0749a6a73286403452eb280adc3140cbc21b2d860ec57b1ab85"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 94,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_gpu_code_objects",
+      "使用条件": "先备文件或材料",
+      "所需准备": "CUDA 或 HIP 代码对象",
+      "采用示例": "请用 `rea` 的 `inspect_gpu_code_objects` 盘点我提供的 demo.cubin，列出可识别的 GPU 目标架构。",
+      "样例结果": "从 CUBIN 识别到 sm_80 架构。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "f790fd9fccf6f278",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_25d5159956ecf993410b3c4290fa3a3762d4e7448e59cd3acc8617a999bc1cf3"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 95,
+      "分类": "编程语言、托管代码与计算模型",
+      "服务": "rea",
+      "工具": "inspect_model_artifact",
+      "使用条件": "先备文件或材料",
+      "所需准备": "GGUF 或 safetensors 模型文件",
+      "采用示例": "请用 `rea` 的 `inspect_model_artifact` 读取我提供的 demo.safetensors，列出每个张量的名称、数据类型和形状。",
+      "样例结果": "读取张量 example，类型 F32，形状 [1]。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "729d598d97643806",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_56fce2250f9d025d6a53d67dde2a5aa5763b70e8437fcc7dedef7fd7d11f853c"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 96,
+      "分类": "文件、应用包与数据库",
+      "服务": "rea",
+      "工具": "inspect_artifact",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的归档",
+      "采用示例": "请用 `rea` 的 `inspect_artifact` 检查当前已打开的 demo.zip，列出内部文件的路径和条目标识。",
+      "样例结果": "列出 README.txt 及其条目标识。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "20b916db50097ea0",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_073ac95b16a002a2609af54175289b9c10da5b858519156e9339bb5aa136646e"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 97,
+      "分类": "文件、应用包与数据库",
+      "服务": "rea",
+      "工具": "extract_artifact",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已打开的归档、条目标识及新输出目录",
+      "采用示例": "请用 `rea` 的 `extract_artifact` 按上一条清单中 README.txt 的条目标识，只把这个文件解包到工作区新目录 demo-extract。",
+      "样例结果": "按条目标识实际解包 README.txt，共 36 字节。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "bab2f253d7b1f9e2",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_7f425b46d13c2aab5e318b2cfaba7eda11998c651d490115c956ecfe608a1d29"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 98,
+      "分类": "文件、应用包与数据库",
+      "服务": "rea",
+      "工具": "inspect_desktop_application",
+      "使用条件": "先备文件或材料",
+      "所需准备": "桌面应用安装目录",
+      "采用示例": "请用 `rea` 的 `inspect_desktop_application` 检查我提供的桌面应用安装目录，根据文件和元数据列出可能使用的运行时。",
+      "样例结果": "检查了 6 个目录条目，样例未命中已知运行时标记。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "85c4b8b3b43c9c12",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_e3303c8b25c9cf716079f4935d0c7502b60bf768320e5ed9cb454cae2c489877"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 99,
+      "分类": "文件、应用包与数据库",
+      "服务": "rea",
+      "工具": "audit_release_exposure",
+      "使用条件": "先备文件或材料",
+      "所需准备": "待检查的发布包",
+      "采用示例": "请用 `rea` 的 `audit_release_exposure` 检查我自己的 Demo.app 发布包，列出可从成品静态读取的信息及对应文件。",
+      "样例结果": "在已评估项目中没有命中暴露项；部分检查依赖产物格式。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "00341d8176b7dba5",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_79fdb27b6ff762abaebc7f321f54febff7dc615b6d32c51c9224759aea0bafaf"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 100,
+      "分类": "文件、应用包与数据库",
+      "服务": "rea",
+      "工具": "inspect_sqlite_database",
+      "使用条件": "先备文件或材料",
+      "所需准备": "SQLite 快照及存在的表、列",
+      "采用示例": "请用 `rea` 的 `inspect_sqlite_database` 从我提供的 demo.sqlite 快照的 products 表中读取前五行，只显示 id 和 name 两列。",
+      "样例结果": "从 products 读到 id 为 1、名称为“纸杯”的记录。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "9fea970bd4700133",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_e95eef1c357807a2750f6290289e6c9d9681de356e4d1ea36901f809a02708bf"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 101,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "get_evidence_bundle",
+      "使用条件": "直接用",
+      "所需准备": "查询当前会话的证据摘要",
+      "采用示例": "请用 `rea` 的 `get_evidence_bundle` 以摘要列出当前会话保留的证据，给出记录 ID 和产生记录的工具。",
+      "样例结果": "新对话返回 0 条；有调查记录的对话返回 2 条。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "96c65b3019b2bfba",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "aaa05e5a1e10175e86e50868ca99e4aac1e894755d53c0c91a24f7f8c72847ec"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "7b72acabe00c230f",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "60e382639c417a9132fd0f1e63cba2a98df115547c74daf07b7e3c0561968adb"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 102,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "export_evidence_bundle",
+      "使用条件": "直接用",
+      "所需准备": "可写工作区及未占用的输出文件名",
+      "采用示例": "请用 `rea` 的 `export_evidence_bundle` 把本次测试会话的证据包保存为工作区中新文件 demo-evidence.json。",
+      "样例结果": "全新会话也能导出，得到 105 字节空证据包。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "3b46fcaebb29c559",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "a36e3869d7fe10fe18458734892d9eb6cc4e4d2dd7197244eb2e1365eb5285a2"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 103,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "import_evidence_bundle",
+      "使用条件": "先备文件或材料",
+      "所需准备": "REA 证据包 JSON",
+      "采用示例": "请用 `rea` 的 `import_evidence_bundle` 校验我提供的 demo-evidence.json，并把通过校验的记录导入当前测试会话。",
+      "样例结果": "校验并导入空包，新增 0 条记录。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "e60c97eb4a202aca",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "15b58ef25ac9c7ae28d5bdad53f59e278405fe66278229ca4af52a6a4105646e"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 104,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "compare_bundles",
+      "使用条件": "先备文件或材料",
+      "所需准备": "两个 REA 证据包文件",
+      "采用示例": "请用 `rea` 的 `compare_bundles` 对比我提供的 before-evidence.json 和 after-evidence.json，概括证据记录的差异。",
+      "样例结果": "两个相同的空包返回 unchanged。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "81f7b2472109e92d",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_e2d2c749db602390fae1add45da685d1297415075ccfe8ae3f3ec2514383115f"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 105,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "compare_artifacts",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "两份完整的产物清单证据",
+      "采用示例": "请用 `rea` 的 `compare_artifacts` 比较本对话中旧版和新版安装包的两份文件清单证据，列出新增和内容变化的文件。",
+      "样例结果": "发现根产物内容变化，未报告新增文件。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "457ec842c34bec6a",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_fe5928b028fde07259a0f9270c3a9ec91948c9026aeb5dd382f54621eca2a9cd"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 106,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "compare_process_captures",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "两份兼容的进程记录",
+      "采用示例": "请用 `rea` 的 `compare_process_captures` 对比我提供的同一测试命令前后两次的 REA 进程记录，告诉我终端输出有什么变化。",
+      "样例结果": "离线合成记录的终端输出一致。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "b882d0b584ae0182",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_a6658e0176cb146d43a509643c8781709c9c0eb5d7e36052c698222eb85a35f6"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 107,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "find_changed_behavior",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "前序产物或进程比较证据",
+      "采用示例": "请用 `rea` 的 `find_changed_behavior` 汇总本对话中已有的产物和进程比较证据，指出哪些行为有可核实的变化。",
+      "样例结果": "识别到静态产物差异，未确认运行行为变化。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "042962627b82f923",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_33fba8c2fbe16a40ae16f178542ea0a2456e2c5295c7d578cf250a81296e7c14"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 108,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "correlate_static_and_runtime",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "静态与运行时比较证据及配对假设",
+      "采用示例": "请用 `rea` 的 `correlate_static_and_runtime` 使用本对话的函数比较和进程比较证据，按旧版对应旧版、新版对应新版，核对该函数的变化是否伴随终端输出变化。",
+      "样例结果": "函数文本变化，终端输出一致；版本对应关系未经独立验证。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "2886fe8bc2f2d161",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_9a9751d8a47f7d74277d14e789c4aab9de6b01ae6a78b99fd6b1fa5d514a37e7"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 109,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "build_reconstruction_obligation_ledger",
+      "使用条件": "先备文件或材料",
+      "所需准备": "证据包、已审阅事项及重建清单",
+      "采用示例": "请用 `rea` 的 `build_reconstruction_obligation_ledger` 根据我提供的 REA 证据包、已审阅事项和重建清单，列出仍需验证的事项。",
+      "样例结果": "空清单返回 0 项待验证事项，覆盖状态为 partial。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "c88a8f7bbdeb203b",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_3fb4398cd7638634fae2fabf7e4cceb3bca8e721e7713d41282a06e11310c920"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 110,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "evaluate_reconstruction_coverage",
+      "使用条件": "先备文件或材料",
+      "所需准备": "覆盖评估数据及边界 ID",
+      "采用示例": "请用 `rea` 的 `evaluate_reconstruction_coverage` 使用我提供的覆盖评估输入，检查 replacement.cli 这个边界还有哪些要求缺少验证证据。",
+      "样例结果": "replacement.cli 返回部分覆盖，列出 4 个缺口。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "58aa1590a9459b30",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "9685b2c858d9ae70b0d16b6df015eb9ac6c8c817f98b07eaeba208ff519bbbe8"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 111,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "verify_reconstruction",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "验证规格及其引用的比较证据",
+      "采用示例": "请用 `rea` 的 `verify_reconstruction` 按我提供的重建规格和本会话的证据，核验两版测试命令的终端输出是否满足规格中的一致性要求。",
+      "样例结果": "唯一声明的终端输出一致性要求通过。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "88ea8e4544d2e4d1",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_0c3b3840b7fd3db1ce844146324c74fb93b2ba494ac166b56c6534c99ba1f12c"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 112,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "record_unknown",
+      "使用条件": "直接用",
+      "所需准备": "提供问题及结案标准即可",
+      "采用示例": "请用 `rea` 的 `record_unknown` 在“离线输出”领域登记中等严重度问题“相同输入是否生成相同摘要”，以受控重放的实测结果为结案依据，暂不指定环境、关联记录或后续探针，并返回问题 ID。",
+      "样例结果": "创建 1 个中等严重度待解问题，返回问题 ID。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "6eff618f2a7c0ae3",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "9e54f8a2793b2c7ce299445753261366d245f12944cd2c030fe2ed62e158a5b2"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 113,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "list_unknowns",
+      "使用条件": "直接用",
+      "所需准备": "可直接查询，列表允许为空",
+      "采用示例": "请用 `rea` 的 `list_unknowns` 列出当前调查中严重度为中等的待解问题，最多显示十条。",
+      "样例结果": "新对话返回 0 条；登记问题后返回 1 条。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "d94304c714d2befc",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "d3f78a46796c032899948a27b3e6bf31732e8a9cf7972fa009671505afd2976b"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "2cbb4a4a9ece72e4",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "0997db3debdbcc3cdb878ee087ae375cbe4d620070ea9c8fe235f83cbc7f8c43"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 114,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "update_unknown",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已有问题 ID 及当前修订号",
+      "采用示例": "请用 `rea` 的 `update_unknown` 使用上一条问题的 ID 和当前修订号，将该问题的处理状态更新为调查中。",
+      "样例结果": "状态变为调查中，修订号从 1 升至 2。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "34c0c9b2dda558fa",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "6f66040c2a75193064d15e28e977dfc068a3890df4794b4c34b75af7c059d107"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 115,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "verify_unknown_resolution",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已有问题 ID 及当前证据",
+      "采用示例": "请用 `rea` 的 `verify_unknown_resolution` 根据我选中的问题 ID 和当前证据，说明它是否满足结案条件。",
+      "样例结果": "报告缺少受控重放证据，问题尚不满足结案条件。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "d2463098334503b8",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "85f49cd15a60ca34c5eff8645c0963cd38616d0075f46cef9583048a68058523"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 116,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "export_environment_bundle",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "已分析的 HAR 证据及新的输出目录",
+      "采用示例": "请用 `rea` 的 `export_environment_bundle` 用本对话中合成 HAR 的分析证据，把测试环境包导出到工作区新目录 demo-environment。",
+      "样例结果": "由 1 条合成 HAR 记录实际生成环境包，共 7 个文件。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "d0cccb0ba1184507",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "15157880857094f246dca5179786de51cf31b466f6edec725a2eab526f1332db"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 117,
+      "分类": "证据、版本差异与重建验证",
+      "服务": "rea",
+      "工具": "reset_investigation",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "专用测试调查及新的备份文件名",
+      "采用示例": "请用 `rea` 的 `reset_investigation` 将当前临时测试调查的证据保存到工作区新文件 before-reset.json，再清空这次调查的证据和问题历史。",
+      "样例结果": "导出含 1 条记录的备份，再清空本轮测试调查。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "a1ea3d7ffa82c6d5",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "fc0564b247f8056621e9a7b2d5631c14c4492d1ec31e8b9038cc08ccb902fda3"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 118,
+      "分类": "工作指南、设置与结果浏览",
+      "服务": "rea",
+      "工具": "guided_workflows",
+      "使用条件": "直接用",
+      "所需准备": "本机已安装 REA 指南",
+      "采用示例": "请用 `rea` 的 `guided_workflows` 列出 REA 内置的工作流程，并指出哪一个适合初次检查应用包。",
+      "样例结果": "列出 6 个内置工作流程。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "67d716513ec8c83b",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "2e8d6d34bc3b9d8db35f8b03052e00e6348483b1ea961d9af2c0b0b916affa71"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 119,
+      "分类": "工作指南、设置与结果浏览",
+      "服务": "rea",
+      "工具": "search_guidance",
+      "使用条件": "直接用",
+      "所需准备": "本机已安装 REA 指南",
+      "采用示例": "请用 `rea` 的 `search_guidance` 在已安装的指南中搜索 JavaScript module，给出最相关的三个章节及定位信息。",
+      "样例结果": "关键词命中 10 章，给出前三章及定位信息。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "c5ae2555c339ab33",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "edf3787d8a1fd34c07db0e251cea93ca77347df8d0a61d0ec3bda44c07dc896c"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 120,
+      "分类": "工作指南、设置与结果浏览",
+      "服务": "rea",
+      "工具": "read_guidance_section",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "上次指南搜索返回的章节定位符",
+      "采用示例": "请用 `rea` 的 `read_guidance_section` 用上一条指南搜索结果中第一项的定位信息读取该节，并概括操作步骤。",
+      "样例结果": "成功读到首个匹配章节及操作步骤。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "d817111b2e551335",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "6a44bd2159bbedf32f8acade7b09a070cf13f3ef404072fe6e0f3fe87130e260"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 121,
+      "分类": "工作指南、设置与结果浏览",
+      "服务": "rea",
+      "工具": "inspect_analysis_settings",
+      "使用条件": "直接用",
+      "所需准备": "指定设置名即可",
+      "采用示例": "请用 `rea` 的 `inspect_analysis_settings` 查看 asar.max_header_bytes 的当前值、允许范围和生效时机。",
+      "样例结果": "读到 ASAR 文件头限制默认值 16 MiB 及允许范围。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "9678dfa194033cee",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "fdbd417390370f67b977d7ad66de082e1152eeb26687345e3ea94b937d6262fa"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 122,
+      "分类": "工作指南、设置与结果浏览",
+      "服务": "rea",
+      "工具": "update_analysis_settings",
+      "使用条件": "直接用",
+      "所需准备": "指定设置及重置动作即可",
+      "采用示例": "请用 `rea` 的 `update_analysis_settings` 仅将本次 REA 服务中的 asar.max_header_bytes 重置为启动时的值，并报告结果。",
+      "样例结果": "恢复到启动值；原值已经相同，返回 changed=false。",
+      "对话轮次": [
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "0a896a281a2ec071",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回摘要SHA256": "7255fe15d533e371bff187aab956d425c192327735703adbb3d452609c001970"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ]
+    },
+    {
+      "序号": 123,
+      "分类": "工作指南、设置与结果浏览",
+      "服务": "rea",
+      "工具": "inspect_analysis_view",
+      "使用条件": "先备会话或前序结果",
+      "所需准备": "接口对比摘要的父证据 ID 及对应视图",
+      "采用示例": "请用 `rea` 的 `inspect_analysis_view` 使用刚得到的接口对比摘要中的 parent_evidence_id，在 endpoint-comparison 视图的 static-endpoints 集合中读取前十条接口记录。",
+      "样例结果": "从 static-endpoints 读到 /demo/report，与 HAR 匹配。",
+      "对话轮次": [
+        {
+          "示例版本": "原句",
+          "对话轮次指纹": "6398ee37d423843b",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            }
+          ],
+          "本轮收到有效返回": false
+        },
+        {
+          "示例版本": "中间修订",
+          "对话轮次指纹": "5ca825f4f276eb00",
+          "工具调用": [
+            {
+              "调用状态": "failed",
+              "错误码": "invalid_request"
+            },
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_d752d2f5bf3dce8457ad73fa03ce6d8410dbade49c339729e0a15308a90d7cc3"
+            }
+          ],
+          "本轮收到有效返回": true
+        },
+        {
+          "示例版本": "清单采用",
+          "对话轮次指纹": "5c06286cb8dfeabd",
+          "工具调用": [
+            {
+              "调用状态": "completed",
+              "返回证据ID": "ev_1a368d126f954bf66e9162b16baa96f5ca1ea92528058cfb4218773f2f091901"
+            }
+          ],
+          "本轮收到有效返回": true,
+          "用于清单验收": true
+        }
+      ],
+      "调整前示例": "请用 `rea` 的 `inspect_analysis_view` 使用上一条 Web 应用分析摘要返回的父证据 ID，从 endpoints 集合的第一项起读取十条接口记录。",
+      "调整原因": "改用接口对比工具实际返回的父证据 ID、视图及集合。"
+    }
+  ]
+}
